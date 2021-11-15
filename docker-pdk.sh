@@ -1,0 +1,1 @@
+docker run --rm -i -v "$(pwd)":/src klakegg/pdk:v0.6.0 pdk "$@"
