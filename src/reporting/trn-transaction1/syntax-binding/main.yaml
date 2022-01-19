@@ -4,10 +4,10 @@ metadata:
     cac: urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2
     cbc: urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2
 content:
-  term: ubl:Invoice
+  element: ubl:Invoice
   cardinality: 1..1
   children:
-    - term: cbc:CustomizationID
+    - element: cbc:CustomizationID
       ## The following are inherited from the semantic model referenced item (IBT-024) if no reference
       ## exists, name and description should be added in this fle
 
