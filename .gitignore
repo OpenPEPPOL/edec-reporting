@@ -1,6 +1,8 @@
-.pdk
-target
-src/_library
-generated
-.DS_Store
+.pdk/
+target/
+src/_library/
+generated/
+.DS_Store/
+
 *.iml
+.project
