@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EndUserReport xmlns="urn:peppol:end-user-reporting:1.0">
+  <Header>
+    <ReportPeriodStart>2022-01-01</ReportPeriodStart>
+    <ReportPeriodEnd>2022-01-31</ReportPeriodEnd>
+    <ReportPeppolStage>development</ReportPeppolStage>
+    <ReporterID SchemeID="SubjectCN">POP000360</ReporterID>
+  </Header>
+  <EndUser>
+    <LegalID SchemeID="orgnr">ID12345</LegalID>
+    <LegalName>Acme Inc.</LegalName>
+    <Country>AT</Country>
+    <Datasets />
+    <Participants>
+      <ParticipantID SchemeID="iso6523-actorid-upis">9999:test1</ParticipantID>
+    </Participants>
+  </EndUser>
+</EndUserReport>

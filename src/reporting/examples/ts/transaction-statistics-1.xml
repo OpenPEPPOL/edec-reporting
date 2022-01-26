@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransactionStatistics xmlns="urn:peppol:transaction-statistics:1.0">
+  <Header>
+    <ReportPeriodStart>2022-01-01</ReportPeriodStart>
+    <ReportPeriodEnd>2022-01-31</ReportPeriodEnd>
+    <ReportPeppolStage>development</ReportPeppolStage>
+    <ReporterID SchemeID="SubjectCN">POP000360</ReporterID>
+  </Header>
+
+  <!-- Totals -->
+  <Total>
+    <Incoming>23</Incoming>
+    <Outgoing>0</Outgoing>
+  </Total>
+  
+  <!-- Sum per SP must match TotalCount -->
+  <PerServiceProvider>
+    <Incoming>5</Incoming>
+    <Outgoing>0</Outgoing>
+    <ID SchemeID="SubjectCN">POP000001</ID>
+  </PerServiceProvider>
+  
+  <PerServiceProvider>
+    <Incoming>7</Incoming>
+    <Outgoing>0</Outgoing>
+    <ID SchemeID="SubjectCN">POP000002</ID>
+  </PerServiceProvider>
+  
+  <PerServiceProvider>
+    <Incoming>11</Incoming>
+    <Outgoing>0</Outgoing>
+    <ID SchemeID="SubjectCN">POP000003</ID>
+  </PerServiceProvider>
+  
+  <!-- Sum per DT must match TotalCount -->
+  <PerDatasetType>
+    <Incoming>20</Incoming>
+    <Outgoing>0</Outgoing>
+    <ID SchemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ID>
+  </PerDatasetType>
+  
+  <PerDatasetType>
+    <Incoming>3</Incoming>
+    <Outgoing>0</Outgoing>
+    <ID SchemeID="busdox-docid-qns">busdox-docid-qns::urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ID>
+  </PerDatasetType>
+  
+  <!-- Sum per TP must match TotalCount -->
+  <PerTransportProtocol>
+    <Incoming>23</Incoming>
+    <Outgoing>0</Outgoing>
+    <ID SchemeID="">peppol-transport-as4-v2_0</ID>
+  </PerTransportProtocol>
+  
+  <!-- Sum of all Country Exchange must match TotalCount -->
+  <PerCountryExchange Sender="AT" Receiver="AT">
+    <Incoming>8</Incoming>
+    <Outgoing>0</Outgoing>
+  </PerCountryExchange>
+  
+  <PerCountryExchange Sender="AT" Receiver="DE">
+    <Incoming>9</Incoming>
+    <Outgoing>0</Outgoing>
+  </PerCountryExchange>
+  
+  <PerCountryExchange Sender="DE" Receiver="AT">
+    <Incoming>6</Incoming>
+    <Outgoing>0</Outgoing>
+  </PerCountryExchange>
+</TransactionStatistics>
