@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$ref": "#/definitions/document",
+    "definitions": {
+        "document": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "changes": {
+                    "$ref": "#/definitions/changes"
+                }
+            }
+        },
+        "changes": {
+            "type": "object",
+            "patternProperties": {
+                "^[^ ]+$": {
+                    "$ref": "#/definitions/change"
+                }
+            }
+        },
+        "change": {
+            "type": "object",
+            "properties": {
+                "term": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}
