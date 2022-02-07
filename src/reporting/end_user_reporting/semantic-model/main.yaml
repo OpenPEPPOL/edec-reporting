@@ -123,7 +123,6 @@ content:
           cardinality: 1..n
           datatype: text
           section: 
-          
           children:
             - id: ibt-130-10
               term: ParticipantID
@@ -137,4 +136,44 @@ content:
                   definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO / IEC 6253 maintenance agency.
                   cardinality: 1..1
                   type: text
-                  section:
+                 
+          id: ibt-140
+          term: Intermediaries
+          definition: A group of business terms providing information on the reporting Intermediaries.
+          cardinality: 1..n
+          datatype: text
+          section: 
+          children:
+            - id: ibt-140-10
+              term: Intermediary
+              definition: An unique identification of the PArticipant.
+              cardinality: 1..1
+              type: ID
+              section: 
+              children:
+                - id: ibt-140-20
+                term: LegalID
+                definition: An unique identification of the Intermediary.
+                cardinality: 1..1
+                type: ID
+                section: 
+                attribute:
+                  - id: ibt-140-20-1
+                    term: Scheme identifier
+                    definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO / IEC 6253 maintenance agency.
+                    cardinality: 1..1
+                    type: text
+                    section:
+                - id: ibt-140-30
+                  term: LegalName
+                  definition: The Legal name of the Intermediary.
+                  cardinality: 1..1
+                  type: text
+                  section: 
+               -  id: ibt-140-40
+                  term: Country
+                  definition: The country code  shall be chosen in the entries of the list published by the  ISO/IEC 3166 maintenance agency
+                  cardinality: 1..1
+                  datatype: text
+                  section:   
+                
