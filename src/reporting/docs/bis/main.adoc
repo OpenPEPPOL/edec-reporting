@@ -1,1 +1,41 @@
 # peppol
+Philippe Negro <p.negro@nleyes.com>
+
+include::./settings.adoc[]
+
+:description: Peppol Central Reporting platform (CRP) collects statistics that is sent by the Peppol Service Providers and aggregates the collected data into reports that are submitted to OpenPeppol and later also the Peppol Authorities.
+:icons: font
+:stem:
+:toc: left
+:hugo-weight: 1
+:toclevels: 2
+:source-highlighter: coderay
+:source-language: xml
+:sectanchors:
+:sectnums:
+:CIUS: Core Invoice Usage Specification (CIUS)
+:title-logo-image: ./images/peppol.jpg
+
+== {doctitle}
+
+{name-op-en}
+v{version}
+
+== Link to main site of documentation
+
+/**  link:/poacc/billing/[Main documentation site]*/
+
+:leveloffset: +1
+
+/** include::./doc-section/introduction.adoc[]*/
+
+include::./doc-section/business-processes.adoc[]
+
+/** include::./doc-section/business-info.adoc[]*/
+
+
+/**include::./doc-section/rules.adoc[]*/
+
+/**include::./doc-section/technical.adoc[]*/
+
+:leveloffset: -1

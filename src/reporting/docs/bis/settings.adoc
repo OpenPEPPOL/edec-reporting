@@ -1,0 +1,9 @@
+:lang: en
+
+:doctitle: Peppol International (PINT) model for Reporting
+:version: 0.1.2
+:shared-dir: ../shared
+:snippet-dir: ../rules/snippets
+:doctype: book
+
+:name-op-en: OpenPEPPOL AISBL, Post-Award Coordinating Community

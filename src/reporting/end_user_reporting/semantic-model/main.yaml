@@ -1,0 +1,140 @@
+content:
+  - id: ibt-01
+    term: EndUserReport
+    definition: A group of business terms providing information on end user reporting.
+    cardinality: 1..n
+    children:
+    - id: ibg-02
+      term: Header
+      definition: A group of business terms providing information on the business process and rules applicable to the End User Reporting document.
+      cardinality: 1..1
+      children:
+        - id: ibt-03
+          term: ReportPeriodStart
+          definition: The date starting the reporting period.
+          cardinality: 1..1
+          datatype: text
+          section: 
+          - id: ibt-04
+          term: ReportPeriodEnd
+          definition: The date ending the reporting period.
+          cardinality: 1..1
+          datatype: text
+          section: 
+          - id: ibt-05
+          term: ReportPeppolStage
+          definition: An indicator describing the purpose of the reporting message.
+          cardinality: 1..1
+          datatype: text
+          section: 
+          - id: ibt-060
+            term: ReporterID
+            definition: An identification of the reporting party.
+            cardinality: 1..1
+            type: ID
+            section: text
+            attribute:
+              - id: ibt-060-1
+                term: Scheme identifier
+                definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+                cardinality: 1..1
+                type: text
+                section: 
+    - id: ibg-100
+      term: EndUser
+      definition: A group of business terms providing information on the business process and rules applicable to the End User Reporting document.
+      cardinality: 1..n
+      children:
+        - id: ibt-100-10
+            term: LegalID
+            definition: An unique identification of the reporting party.
+            cardinality: 1..1
+            type: ID
+            section: 
+            attribute:
+              - id: ibt-100-10-1
+                term: Scheme identifier
+                definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+                cardinality: 1..1
+                type: text
+                section:  
+        - id: ibt-100-20
+          term: LegalName
+          definition: The Legal name of the entity.
+          cardinality: 1..1
+          datatype: text
+          section: 
+        - id: ibt-10-30
+          term: Country
+          definition: The country code  shall be chosen in the entries of the list published by the  ISO/IEC 3166 maintenance agency
+          cardinality: 1..1
+          datatype: text
+          section:   
+        - id: ibt-100-40
+          term: Dataset
+          definition: A group of business terms providing information on the reporting period.
+          cardinality: 1..1
+          datatype: text
+          section: 
+          children:
+            - id: ibt-110
+            term: SendingDatasets
+            definition: A group of business terms providing information on the reporting period.
+            cardinality: 1..1
+            datatype: text
+            section:
+            children:
+              - id: ibt-110-10
+              term: DatasetID
+              definition: An unique identification of the reportingdataset.
+              cardinality: 1..n
+              type: ID
+              section: 
+              attribute:
+                - id: ibt-110-10-1
+                  term: Scheme identifier
+                  definition: The identification scheme identifier shall be chosen from the entries of the list published by the xxxxxxxxxxxx maintenance agency.
+                  cardinality: 1..1
+                  type: text
+                  section:  
+            - id: ibt-120
+            term: ReceivingDatasets
+            definition: A group of business terms providing information on the reporting period.
+            cardinality: 1..1
+            datatype: text
+            section:
+            children:
+              - id: ibt-120-10
+              term: DatasetID
+              definition: An unique identification of the reportingdataset.
+              cardinality: 1..n
+              type: ID
+              section: 
+              attribute:
+                - id: ibt-120-10-1
+                  term: Scheme identifier
+                  definition: The identification scheme identifier shall be chosen from the entries of the list published by the xxxxxxxxxxxx maintenance agency.
+                  cardinality: 1..1
+                  type: text
+                  section:  
+        - id: ibt-130
+          term: Participants
+          definition: A group of business terms providing information on the reporting participants.
+          cardinality: 1..n
+          datatype: text
+          section: 
+          
+          children:
+            - id: ibt-130-10
+              term: ParticipantID
+              definition: An unique identification of the PArticipant.
+              cardinality: 1..1
+              type: ID
+              section: 
+              attribute:
+                - id: ibt-130-10-1
+                  term: Scheme identifier
+                  definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO / IEC 6253 maintenance agency.
+                  cardinality: 1..1
+                  type: text
+                  section:
