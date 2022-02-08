@@ -1,19 +1,181 @@
 content:
-  - id: ibt-001
-    term: Invoice number
-    definition: A unique identification of the Invoice.
-    cardinality: 1..1
-    type: ID
-    section: Shared
-
-  - id: ibg-02
-    term: PROCESS CONTROL
-    definition: A group of business terms providing information on the business process and rules applicable to the Invoice document.
-    cardinality: 1..1
+  - id: ibt-010
+    term: TransactionStatistics 
+    definition: A group of business terms providing information on Transaction Statistics  reporting.
+    cardinality: 1..n
     children:
-      - id: ibt-024
-        term: Specification identifier
-        definition: An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.
-        cardinality: 1..1
-        datatype: ID
-        section: Shared
+    - id: ibg-020
+      term: Header
+      definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
+      cardinality: 1..1
+      children:
+        - id: ibt-030
+          term: ReportPeriodStart
+          definition: The date starting the reporting period.
+          cardinality: 1..1
+          datatype: text
+          section: 
+          - id: ibt-040
+          term: ReportPeriodEnd
+          definition: The date ending the reporting period.
+          cardinality: 1..1
+          datatype: text
+          section: 
+          - id: ibt-050
+          term: ReportPeppolStage
+          definition: An indicator describing the purpose of the reporting message.
+          cardinality: 1..1
+          datatype: text
+          section: 
+          - id: ibt-060
+            term: ReporterID
+            definition: An identification of the reporting party.
+            cardinality: 1..1
+            type: text
+            section: 
+            attribute:
+              - id: ibt-060-1
+                term: Scheme identifier
+                definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+                cardinality: 1..1
+                type: text
+                section: 
+      - id: ibg-70
+      term: Total
+      definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
+      cardinality: 1..1
+      children:
+        - id: ibt-80
+          term: Incoming
+          definition:  Total number of documents received during the reporting period.
+          cardinality: 1..1
+          datatype: text
+          section: 
+        - id: ibt-90
+          term: Outgoing
+          definition: Total number of documents sent during the reporting period
+          cardinality: 1..1
+          datatype: text
+          section: 
+      - id: ibg-100
+      term: PerServiceProvider
+      definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
+      cardinality: 1..n
+      children:
+        - id: ibt-110
+          term: Incoming
+          definition:  Number of documents received during the reporting period. Sum per SP must MAtch TotalCount
+          cardinality: 1..1
+          datatype: text
+          section: 
+        - id: ibt-120
+          term: Outgoing
+          definition: Number of documents sent during the reporting period
+          cardinality: 1..1
+          datatype: text
+          section: 
+        - id: ibt-130
+            term: ID
+            definition: An identification of the Provider party.
+            cardinality: 1..1
+            type: text
+            section: 
+            attribute:
+              - id: ibt-130-1
+                term: Scheme identifier
+                definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+                cardinality: 1..1
+                type: text
+                section: 
+      - id: ibg-140
+      term: PerDatasetType
+      definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
+      cardinality: 1..n
+      children:
+        - id: ibt-150
+          term: Incoming
+          definition:  Number of documents received during the reporting period. Sum per Dataset Type must attch TotalCount
+          cardinality: 1..1
+          datatype: text
+          section: 
+        - id: ibt-160
+          term: Outgoing
+          definition: Number of documents sent during the reporting period
+          cardinality: 1..1
+          datatype: text
+          section: 
+        - id: ibt-170
+            term: ID
+            definition: An identification of the Provider party.
+            cardinality: 1..1
+            type: text
+            section: 
+            attribute:
+              - id: ibt-170-1
+                term: Scheme identifier
+                definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+                cardinality: 1..1
+                type: text
+                section: 
+      - id: ibg-180
+      term: PerTransportProtocol
+      definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
+      cardinality: 1..n
+      children:
+        - id: ibt-190
+          term: Incoming
+          definition:  Number of documents received during the reporting period. Sum per Transport Protocol must match TotalCount
+          cardinality: 1..1
+          datatype: text
+          section: 
+        - id: ibt-200
+          term: Outgoing
+          definition: Number of documents sent during the reporting period
+          cardinality: 1..1
+          datatype: text
+          section: 
+        - id: ibt-210
+            term: ID
+            definition: An identification of the Provider party.
+            cardinality: 1..1
+            type: text
+            section: 
+            attribute:
+              - id: ibt-210-1
+                term: Scheme identifier
+                definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+                cardinality: 1..1
+                type: text
+                section: 
+      - id: ibg-220
+      term: PerCountryExchange
+      definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
+      cardinality: 1..n
+      attribute:
+              - id: ibt-220-1
+                term: Sender
+                definition: The country code scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 3166 maintenance agency.
+                cardinality: 1..1
+                type: text
+                section: 
+      attribute:
+              - id: ibt-220-2
+                term: Receiver
+                definition: The country code scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 3166 maintenance agency.
+                cardinality: 1..1
+                type: text
+                section: 
+      children:
+        - id: ibt-230
+          term: Incoming
+          definition:  Number of documents received during the reporting period. Sum per Country Exchange must match TotalCount
+          cardinality: 1..1
+          datatype: text
+          section: 
+        - id: ibt-240
+          term: Outgoing
+          definition: Number of documents sent during the reporting period
+          cardinality: 1..1
+          datatype: text
+          section: 
+        
