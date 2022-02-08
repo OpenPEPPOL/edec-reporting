@@ -1,21 +1,253 @@
 metadata:
   namespaces:
-    ubl: urn:oasis:names:specification:ubl:schema:xsd:Invoice-2
-    cac: urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2
-    cbc: urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2
+    xmlns: urn:peppol:transaction-statistics:1.0
+    ## This is the schema for the Peppol Transaction Statistics Reporting
+    ##  This is based on the "Internal Regulations" document,
+    ##    chapter 4.4 "Service Provider Reporting on Transaction Statistics
 content:
-  element: ubl:Invoice
+  element: xs:TransactionStatistics
+  name: Transaction Statistics
+  description: 
   cardinality: 1..1
+  reference: IBG-010
   children:
-    - element: cbc:CustomizationID
-      ## The following are inherited from the semantic model referenced item (IBT-024) if no reference
-      ## exists, name and description should be added in this fle
-
-      #name: Specification identifier
-      #description: An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.
-
+    - element: xs:Header  ##element or term ???
+      name: Header
+      description: A group of business terms providing information on the Transaction statistic report
       cardinality: 1..1
-      reference: IBT-024
+      reference: IBG-020
       value:
-        type: Identifier
-        example: urn:peppol:pint:billing-3.0@jp:peppol-1
+        type: group
+        example: 
+      children:  
+        - element: xs:ReportPeriodStart  ##element or term ???
+          name: Report Period Start
+          description: A date indicating the start of the reporting period
+          cardinality: 1..1
+          reference: IBG-030
+          value:
+            type: text   ## text or date ?
+            example: 2022-01-01
+        - element: xs:ReportPeriodEnd  ##element or term ???
+          name: Report Period End
+          description: A date indicating the End of the reporting period
+          cardinality: 1..1
+          reference: IBG-040
+          value:
+            type: text   ## text or date ?
+            example: 2022-01-31
+        - element: xs:ReportPeppolStage  ##element or term ???
+          name: Report Peppol Stage
+          description: code indicating the purpose of the message. Code is selected in a list (development, test, production ) 
+          cardinality: 1..1
+          reference: IBG-050
+          value:
+            type: text   
+            example: development
+        - term: xs:ReporterID
+            name: Reporter ID
+            description: An identifier for the reporter.
+            cardinality: 1..1
+            reference: IBG-060
+            value:
+              type: Identifier
+              example: POP000360
+            attribute:
+              - term: schemeID
+                name: Scheme identifier
+                description: The identification scheme identifier of the Reporter object identifier.
+                usage: mandatory
+                reference: IBG-060-1
+                value:
+                  codelist: SubjectCN   # ref to a codelist ??
+                  example: POP000360
+    children:
+    - element: xs:Total  ##element or term ???
+      name: Total
+      description: A group of business terms providing information on the Transaction statistic report
+      cardinality: 1..1
+      reference: IBG-070
+      value:
+        type: group
+        example: 
+      children:  
+        - element: xs:Incoming  ##element or term ???
+          name: Incoming
+          description: A number providing the total of the incoming transaction for the reporting period
+          cardinality: 1..1
+          reference: IBG-080
+          value:
+            type: text   
+            example: 23
+        - element: xs:Outgoing  ##element or term ???
+          name: Outgoing
+          description: A number providing the total of the outgoing transaction for the reporting period
+          cardinality: 1..1
+          reference: IBG-090
+          value:
+            type: text   
+            example: 0
+  
+    children:  
+      - element: xs:PerServiceProvider  ##element or term ???
+        name: Per Service Provider
+        description: A group
+        cardinality: 1..n
+        reference: IBG-100
+        children:  
+          - element: xs:Incoming  ##element or term ???
+            name: Incoming
+            description: Total number of documents received during the reporting period
+            cardinality: 1..1
+            reference: IBG-110
+            value:
+              type: text   
+              example: 5
+          - element: xs:Outgoing  ##element or term ???
+            name: Outgoing
+            description: Total number of documents sent during the reporting period
+            cardinality: 1..1
+            reference: IBG-120
+            value:
+              type: text   
+              example: 0
+          - term: xs:ID
+              name: ID
+              description: An identifier for the service provider.
+              cardinality: 1..1
+              reference: IBG-130
+              value:
+                type: Identifier
+                example: POP000360
+              attribute:
+                - term: schemeID
+                  name: Scheme identifier
+                  description: The identification scheme identifier of the Service Provider object identifier.
+                  usage: mandatory
+                  reference: IBG-130-1
+                  value:
+                    codelist: SubjectCN  # ref to a codelist ??
+                    example: POP000001
+    children:  
+      - element: xs:PerDatasetType  ##element or term ???
+        name: Per Dataset Type
+        description: A group
+        cardinality: 1..n
+        reference: IBG-140
+        children:  
+          - element: xs:Incoming  ##element or term ???
+            name: Incoming
+            description: Total number of documents received during the reporting period
+            cardinality: 1..1
+            reference: IBG-150
+            value:
+              type: text   
+              example: 5
+          - element: xs:Outgoing  ##element or term ???
+            name: Outgoing
+            description: Total number of documents sent during the reporting period
+            cardinality: 1..1
+            reference: IBG-160
+            value:
+              type: text   
+              example: 0
+          - term: xs:ID
+              name: ID
+              description: An identifier for the dataset.
+              cardinality: 1..1
+              reference: IBG-170
+              value:
+                type: Identifier
+                example: POP000360
+              attribute:
+                - term: schemeID
+                  name: Scheme identifier
+                  description: The identification scheme identifier of the Dataset object identifier.
+                  usage: mandatory
+                  reference: IBG-170-1
+                  value:
+                    codelist: busdox-docid-qns  # ref to a codelist ??
+                    example: urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1
+    children:  
+      - element: xs:PerTransportProtocol  ##element or term ???
+        name: Per Transport Protocol
+        description: A group
+        cardinality: 1..1
+        reference: IBG-180
+        children:  
+          - element: xs:Incoming  ##element or term ???
+            name: Incoming
+            description: Total number of documents received during the reporting period
+            cardinality: 1..1
+            reference: IBG-190
+            value:
+              type: text   
+              example: 5
+          - element: xs:Outgoing  ##element or term ???
+            name: Outgoing
+            description: Total number of documents sent during the reporting period
+            cardinality: 1..1
+            reference: IBG-200
+            value:
+              type: text   
+              example: 0
+          - term: xs:ID
+              name: ID
+              description: An identifier for the transport Protocol.
+              cardinality: 1..1
+              reference: IBG-210
+              value:
+                type: Identifier
+                example: POP000360
+              attribute:
+                - term: schemeID
+                  name: Scheme identifier
+                  description: The identification scheme identifier of the transport Protocol object identifier.
+                  usage: mandatory
+                  reference: IBG-210-1
+                  value:
+                    codelist: ???  # ref to a codelist ??
+                    example: peppol-transport-as4-v2_0
+      children:  
+        - element: xs:PerCountryExchange  ##element or term ???
+          name: Per Country Exchange
+          description: A group
+          cardinality: 1..n
+          reference: IBG-220
+          attribute:
+            - term: Sender
+              name: Sender
+              description: The identification scheme identifier of the Sender country code.
+              usage: mandatory
+              reference: IBG-220-1
+              value:
+                codelist: The country code scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 3166 maintenance agency.
+                example: AT
+            - term: Receiver
+              name: Receiver
+              description: The identification scheme identifier of the Receiver country code.
+              usage: mandatory
+              reference: IBG-220-2
+              value:
+                codelist: The country code scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 3166 maintenance agency.
+                example: FR
+          children:  
+            - term: xs:Incoming
+                name: Incoming
+                description: Number of transaction received
+                cardinality: 1..1
+                reference: IBG-230
+                value:
+                  type: text
+                  example: 8
+                attribute:
+                  - term: Outgoing
+                    name: Outgoing
+                    description: Number of transaction Sent
+                    usage: mandatory
+                    reference: IBG-230-1
+                    value: text
+                      codelist: 
+                      example: 0
+          
+        
