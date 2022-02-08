@@ -1,0 +1,174 @@
+content:
+  - id: ibg-010
+    name: TransactionStatistics 
+    definition: A group of business terms providing information on Transaction Statistics  reporting.
+    cardinality: 1..n
+    children:
+    - id: ibg-020 
+      name: Header
+      definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
+      cardinality: 1..1
+      children:
+      - id: ibg-030
+        name: ReportPeriodStart
+        definition: The date starting the reporting period.
+        cardinality: 1..1
+        datatype: text
+
+      - id: ibg-040
+        name: ReportPeriodEnd
+        definition: The date ending the reporting period.
+        cardinality: 1..1
+        datatype: text
+
+      - id: ibg-050
+        name: ReportPeppolStage
+        definition: An indicator describing the purpose of the reporting message.
+        cardinality: 1..1
+        datatype: text
+        
+      - id: ibg-060
+        name: ReporterID
+        definition: An identification of the reporting party.
+        cardinality: 1..1
+        children:
+          - id: ibg-060-1
+            name: Scheme identifier
+            definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+            cardinality: 1..1
+            datatype: text
+
+      - id: ibg-70
+        name: Total
+        definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
+        cardinality: 1..1
+        children:
+          - id: ibg-80
+            name: Incoming
+            definition:  Total number of documents received during the reporting period.
+            cardinality: 1..1
+            value:
+              datatype: text
+
+          - id: ibg-90
+            name: Outgoing
+            definition: Total number of documents sent during the reporting period
+            cardinality: 1..1
+            value:
+              datatype: text
+
+      - id: ibg-100
+        name: PerServiceProvider
+        definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
+        cardinality: 1..n
+        children:
+          - id: ibg-110
+            name: Incoming
+            definition:  Number of documents received during the reporting period. Sum per SP must MAtch TotalCount
+            cardinality: 1..1
+            datatype: text
+
+          - id: ibg-120
+            name: Outgoing
+            definition: Number of documents sent during the reporting period
+            cardinality: 1..1
+            datatype: text
+
+          - id: ibg-130
+            name: ID
+            definition: An identification of the Provider party.
+            cardinality: 1..1
+            datatype: text
+
+            children:
+              - id: ibg-130-1
+                name: Scheme identifier
+                definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+                cardinality: 1..1
+                datatype: text
+
+          - id: ibg-140
+            name: PerDatasetType
+            definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
+            cardinality: 1..n
+            children:
+              - id: ibg-150
+                name: Incoming
+                definition:  Number of documents received during the reporting period. Sum per Dataset Type must attch TotalCount
+                cardinality: 1..1
+                datatype: text
+
+              - id: ibg-160
+                name: Outgoing
+                definition: Number of documents sent during the reporting period
+                cardinality: 1..1
+                datatype: text
+
+              - id: ibg-170
+                name: ID
+                definition: An identification of the Provider party.
+                cardinality: 1..1
+                datatype: text                
+                children:
+                  - id: ibg-170-1
+                    name: Scheme identifier
+                    definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+                    cardinality: 1..1
+                    datatype: text
+          
+          - id: ibg-180
+            name: PerTransportProtocol
+            definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
+            cardinality: 1..n
+            children:
+              - id: ibg-190
+                name: Incoming
+                definition:  Number of documents received during the reporting period. Sum per Transport Protocol must match TotalCount
+                cardinality: 1..1
+                datatype: text
+
+              - id: ibg-200
+                name: Outgoing
+                definition: Number of documents sent during the reporting period
+                cardinality: 1..1
+                datatype: text
+
+              - id: ibg-210
+                name: ID
+                definition: An identification of the Provider party.
+                cardinality: 1..1
+                datatype: text
+                attribute:
+                  - id: ibg-210-1
+                    name: Scheme identifier
+                    definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+                    cardinality: 1..1
+                    datatype: text
+          - id: ibg-220
+            name: PerCountryExchange
+            definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
+            cardinality: 1..n
+            children:
+            - id: ibg-220-1
+              name: Sender
+              definition: The country code scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 3166 maintenance agency.
+              cardinality: 1..1
+              datatype: text
+
+            - id: ibg-220-2
+              name: Receiver
+              definition: The country code scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 3166 maintenance agency.
+              cardinality: 1..1
+              datatype: text
+
+            - id: ibg-230
+              name: Incoming
+              definition:  Number of documents received during the reporting period. Sum per Country Exchange must match TotalCount
+              cardinality: 1..1
+              datatype: text
+
+            - id: ibg-240
+              name: Outgoing
+              definition: Number of documents sent during the reporting period
+              cardinality: 1..1
+              datatype: text

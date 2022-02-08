@@ -1,0 +1,268 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$ref": "#/definitions/element",
+    "definitions": {
+        "attribute": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "element": {
+                    "type": "string",
+                    "pattern": "^\\w+$"
+                },
+                "name": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "definition": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "reference": {
+                    "$ref": "#/definitions/some_value_array"
+                },
+                "rule": {
+                    "$ref": "#/definitions/some_value_array"
+                },
+                "value": {
+                    "$ref": "#/definitions/value"
+                },
+                "usage": {
+                    "type": "string"
+                }
+            }
+        },
+        "element": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/element_children"
+                },
+                {
+                    "$ref": "#/definitions/element_value"
+                },
+                {
+                    "$ref": "#/definitions/include"
+                }
+            ]
+        },
+        "element_children": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "element",
+                "children"
+            ],
+            "properties": {
+                "id": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "section": {
+                    "type": "string"
+                },
+                "cardinality": {
+                    "$ref": "#/definitions/cardinality"
+                },
+                "element": {
+                    "type": "string",
+                    "pattern": "^\\w+:\\w+$"
+                },
+                "selector": {
+                    "type": "string"
+                },
+                "name": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "definition": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "reference": {
+                    "$ref": "#/definitions/some_value_array"
+                },
+                "rule": {
+                    "$ref": "#/definitions/some_value_array"
+                },
+                "attribute": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/attribute"
+                    }
+                },
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/element"
+                    }
+                }
+            }
+        },
+        "element_value": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "element"
+            ],
+            "properties": {
+                "id": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "section": {
+                    "type": "string"
+                },
+                "cardinality": {
+                    "$ref": "#/definitions/cardinality"
+                },
+                "element": {
+                    "type": "string",
+                    "pattern": "^\\w+:\\w+$"
+                },
+                "selector": {
+                    "type": "string"
+                },
+                "name": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "definition": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "value": {
+                    "$ref": "#/definitions/value"
+                },
+                "reference": {
+                    "$ref": "#/definitions/some_value_array"
+                },
+                "rule": {
+                    "$ref": "#/definitions/some_value_array"
+                },
+                "attribute": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/attribute"
+                    }
+                }
+            }
+        },
+        "include": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "include": {
+                    "type": "string"
+                },"attribute": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/attribute"
+                    }
+                }
+            }
+        },
+        "cardinality": {
+            "anyOf": [
+                {
+                    "enum": [
+                        "0..1",
+                        "1..1",
+                        "0..n",
+                        "1..n"
+                    ]
+                },
+                {
+                    "type": "string",
+                    "pattern": "^[\\d]+\\.\\.[\\dn]+$"
+                }
+            ]
+        },
+        "value": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "datatype": {
+                    "type": "string"
+                },
+                "default": {
+                    "$ref": "#/definitions/some_value"
+                },
+                "example": {
+                    "$ref": "#/definitions/some_value"
+                },
+                "fixed": {
+                    "$ref": "#/definitions/some_value"
+                },
+                "codelist": {
+                    "$ref": "#/definitions/some_value_array"
+                },
+                "max_length": {
+                    "type": "integer"
+                },
+                "min_length": {
+                    "type": "integer"
+                },
+                "pattern": {
+                    "type": "string"
+                }
+            }
+        },
+        "some_value_array": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/some_value"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/some_value"
+                    }
+                }
+            ]
+        },
+        "some_value": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "boolean"
+                }
+            ]
+        },
+        "string_translatable": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "patternProperties": {
+                        "^.+$": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

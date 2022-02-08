@@ -1,0 +1,282 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$ref": "#/definitions/document",
+    "definitions": {
+        "document": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/item"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/item"
+                    }
+                }
+            ]
+        },
+        "item": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/item_element"
+                },
+                {
+                    "$ref": "#/definitions/item_group"
+                },
+                {
+                    "$ref": "#/definitions/include"
+                }
+            ]
+        },
+        "item_element": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "name",
+                "cardinality",
+                "value"
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/id"
+                },
+                "name": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "definition": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "value": {
+                    "$ref": "#/definitions/value"
+                },
+                "note": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "section": {
+                    "type": "string"
+                },
+                "cardinality": {
+                    "$ref": "#/definitions/cardinality"
+                },
+                "requirement": {
+                    "$ref": "#/definitions/requirements"
+                },
+                "attribute": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/item_attribute"
+                    }
+                }
+            }
+        },
+        "item_attribute": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "name",
+                "cardinality",
+                "value"
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/id"
+                },
+                "name": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "definition": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "value": {
+                    "$ref": "#/definitions/value"
+                },
+                "note": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "section": {
+                    "type": "string"
+                },
+                "cardinality": {
+                    "$ref": "#/definitions/cardinality"
+                },
+                "requirement": {
+                    "$ref": "#/definitions/requirements"
+                }
+            }
+        },
+        "item_group": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "name",
+                "cardinality",
+                "children"
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/id"
+                },
+                "name": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "definition": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "value": {
+                    "$ref": "#/definitions/value"
+                },
+                "note": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "section": {
+                    "type": "string"
+                },
+                "cardinality": {
+                    "$ref": "#/definitions/cardinality"
+                },
+                "requirement": {
+                    "$ref": "#/definitions/requirements"
+                },
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/item"
+                    }
+                }
+            }
+        },
+        "include": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "include": {
+                    "type": "string"
+                }
+            }
+        },
+        "id": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "number"
+                }
+            ]
+        },
+        "cardinality": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[A-Z]+$"
+                },
+                {
+                    "type": "string",
+                    "enum": [
+                        "0..1",
+                        "1..1",
+                        "0..n",
+                        "1..n"
+                    ]
+                },
+                {
+                    "type": "string",
+                    "pattern": "^[\\d]+\\.\\.[\\dn]+$"
+                }
+            ]
+        },
+        "requirements": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/requirement"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/requirement"
+                    }
+                }
+            ]
+        },
+        "requirement": {
+            "type": "string"
+        },
+        "value": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "datatype"
+            ],
+            "properties": {
+                "datatype": {
+                    "type": "string"
+                },
+                "default": {
+                    "$ref": "#/definitions/some_value"
+                },
+                "example": {
+                    "$ref": "#/definitions/some_value"
+                },
+                "fixed": {
+                    "$ref": "#/definitions/some_value"
+                },
+                "codelist": {
+                    "$ref": "#/definitions/some_value_array"
+                },
+                "max_length": {
+                    "type": "integer"
+                },
+                "min_length": {
+                    "type": "integer"
+                },
+                "pattern": {
+                    "type": "string"
+                }
+            }
+        },
+        "some_value_array": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/some_value"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/some_value"
+                    }
+                }
+            ]
+        },
+        "some_value": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "boolean"
+                }
+            ]
+        },
+        "string_translatable": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "patternProperties": {
+                        "^.+$": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
