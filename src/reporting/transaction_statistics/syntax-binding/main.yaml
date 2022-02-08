@@ -7,7 +7,7 @@ metadata:
 content:
   element: xs:TransactionStatistics
   name: Transaction Statistics
-  description: 
+  description: This is the root element for a single Peppol Transaction Statistics Report.
   cardinality: 1..1
   reference: IBG-010
   children:
@@ -22,7 +22,9 @@ content:
       children:  
         - element: xs:ReportPeriodStart  ##element or term ???
           name: Report Period Start
-          description: A date indicating the start of the reporting period
+          description: The first date (inclusive) of the reporting period.
+            Usually the first day of the preceding month.
+            E.g. for the first report this may be a different date as well
           cardinality: 1..1
           reference: IBG-030
           value:
@@ -30,7 +32,8 @@ content:
             example: 2022-01-01
         - element: xs:ReportPeriodEnd  ##element or term ???
           name: Report Period End
-          description: A date indicating the End of the reporting period
+          description: The last date (inclusive) of the reporting period.
+            Usually the last day of the preceding month.
           cardinality: 1..1
           reference: IBG-040
           value:
@@ -38,7 +41,7 @@ content:
             example: 2022-01-31
         - element: xs:ReportPeppolStage  ##element or term ???
           name: Report Peppol Stage
-          description: code indicating the purpose of the message. Code is selected in a list (development, test, production ) 
+          description:  Allows to easily separate non-production reports from production reports. 
           cardinality: 1..1
           reference: IBG-050
           value:
@@ -46,7 +49,8 @@ content:
             example: development
         - term: xs:ReporterID
             name: Reporter ID
-            description: An identifier for the reporter.
+            description: The value of the Peppol AP Certificate Subject CN (Common Name) to uniquely
+              identify the Service Provider that is providing the data.
             cardinality: 1..1
             reference: IBG-060
             value:
@@ -97,7 +101,15 @@ content:
         children:  
           - element: xs:Incoming  ##element or term ???
             name: Incoming
-            description: Total number of documents received during the reporting period
+            description: Contains the number of exchanged datasets, in the current direction, that were executed
+              with the provided Service Provider. The identification key is the "CN" part of the
+              "Subject" field of the Peppol AP X.509 certificate of the other side.
+            Each Servicer Provider MUST occur at maximum once.
+            For outgoing datasets, the receiving Service Provider (C3) MUST be counted. The sending 
+              Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
+            For incoming datasets, the sending Service Provider (C2) MUST be counted. The receiving
+              Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
+            The sum of all exchange datasets per Service Provider MUST equal the TotalCount.
             cardinality: 1..1
             reference: IBG-110
             value:
@@ -105,7 +117,15 @@ content:
               example: 5
           - element: xs:Outgoing  ##element or term ???
             name: Outgoing
-            description: Total number of documents sent during the reporting period
+            description: Contains the number of exchanged datasets, in the current direction, that were executed
+              with the provided Service Provider. The identification key is the "CN" part of the
+              "Subject" field of the Peppol AP X.509 certificate of the other side.
+            Each Servicer Provider MUST occur at maximum once.
+            For outgoing datasets, the receiving Service Provider (C3) MUST be counted. The sending 
+              Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
+            For incoming datasets, the sending Service Provider (C2) MUST be counted. The receiving
+              Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
+            The sum of all exchange datasets per Service Provider MUST equal the TotalCount.
             cardinality: 1..1
             reference: IBG-120
             value:
@@ -137,7 +157,11 @@ content:
         children:  
           - element: xs:Incoming  ##element or term ???
             name: Incoming
-            description: Total number of documents received during the reporting period
+            description: Contains the number of exchanged datasets, in the current direction, that were executed
+              per the provided dataset type 
+              (like busdox-docid-qns::urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1).
+            Each dataset type MUST occur at maximum once.
+            The sum of all exchange datasets per dataset tye MUST equal the TotalCount.
             cardinality: 1..1
             reference: IBG-150
             value:
@@ -145,7 +169,11 @@ content:
               example: 5
           - element: xs:Outgoing  ##element or term ???
             name: Outgoing
-            description: Total number of documents sent during the reporting period
+            description: Contains the number of exchanged datasets, in the current direction, that were executed
+              per the provided dataset type 
+              (like busdox-docid-qns::urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1).
+            Each dataset type MUST occur at maximum once.
+            The sum of all exchange datasets per dataset tye MUST equal the TotalCount.
             cardinality: 1..1
             reference: IBG-160
             value:
@@ -177,7 +205,10 @@ content:
         children:  
           - element: xs:Incoming  ##element or term ???
             name: Incoming
-            description: Total number of documents received during the reporting period
+            description: Contains the number of exchanged datasets, in the current direction, that were executed
+              per the provided transport protocol (like peppol-transport-as4-v2_0).
+            Each transport protocol MUST occur at maximum once.
+            The sum of all exchange datasets per transport protocol MUST equal the TotalCount.
             cardinality: 1..1
             reference: IBG-190
             value:
@@ -185,7 +216,10 @@ content:
               example: 5
           - element: xs:Outgoing  ##element or term ???
             name: Outgoing
-            description: Total number of documents sent during the reporting period
+            description: Contains the number of exchanged datasets, in the current direction, that were executed
+              per the provided transport protocol (like peppol-transport-as4-v2_0).
+            Each transport protocol MUST occur at maximum once.
+            The sum of all exchange datasets per transport protocol MUST equal the TotalCount.
             cardinality: 1..1
             reference: IBG-200
             value:
@@ -211,17 +245,21 @@ content:
       children:  
         - element: xs:PerCountryExchange  ##element or term ???
           name: Per Country Exchange
-          description: A group
+          description: A group that defines the details on sender (C1) and receiver (C4) country code usage.
+            Since nothing can be deduced from the reporting metadata, the full combinations must be reported.
+            Each "SenderCountry/@countryCode" MUST be unique per parent element. 
+            This section can only be filled, after the necessary metadata is available in the Peppol Envelope.
           cardinality: 1..n
           reference: IBG-220
           attribute:
             - term: Sender
               name: Sender
-              description: The identification scheme identifier of the Sender country code.
+              description: Defines the count of datasets exchanged between the sender country ("@countryCode")
+                           and the receiver country ("ReceiverCountry/@id")
               usage: mandatory
               reference: IBG-220-1
               value:
-                codelist: The country code scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 3166 maintenance agency.
+                codelist: ISO-3166-1 Alpha-2 encoding.
                 example: AT
             - term: Receiver
               name: Receiver
@@ -229,12 +267,13 @@ content:
               usage: mandatory
               reference: IBG-220-2
               value:
-                codelist: The country code scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 3166 maintenance agency.
+                codelist: ISO-3166-1 Alpha-2 encoding.
                 example: FR
           children:  
             - term: xs:Incoming
                 name: Incoming
-                description: Number of transaction received
+                description: Contains the total number of exchanged message in the current direction.
+                              MUST be present, even if it is zero.
                 cardinality: 1..1
                 reference: IBG-230
                 value:
@@ -243,7 +282,8 @@ content:
                 attribute:
                   - term: Outgoing
                     name: Outgoing
-                    description: Number of transaction Sent
+                    description: Contains the total number of exchanged message in the current direction.
+                                  MUST be present, even if it is zero.
                     usage: mandatory
                     reference: IBG-230-1
                     value: text
