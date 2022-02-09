@@ -7,75 +7,48 @@ metadata:
 content:
   element: xs:TransactionStatistics
   name: Transaction Statistics
-  description: This is the root element for a single Peppol Transaction Statistics Report.
   cardinality: 1..1
   reference: IBG-010
   children:
-    - element: xs:Header  ##element or term ???
+    - element: xs:Header  ##element or element ???
       name: Header
-      description: A group of business terms providing information on the Transaction statistic report
       cardinality: 1..1
       reference: IBG-020
-      value:
-        type: group
-        example: 
       children:  
-        - element: xs:ReportPeriodStart  ##element or term ???
+        - element: xs:ReportPeriodStart  ##element or element ???
           name: Report Period Start
-          description: The first date (inclusive) of the reporting period.
-            Usually the first day of the preceding month.
-            E.g. for the first report this may be a different date as well
           cardinality: 1..1
           reference: IBG-030
-          value:
-            type: text   ## text or date ?
-            example: 2022-01-01
-        - element: xs:ReportPeriodEnd  ##element or term ???
+        - element: xs:ReportPeriodEnd  ##element or element ???
           name: Report Period End
-          description: The last date (inclusive) of the reporting period.
-            Usually the last day of the preceding month.
           cardinality: 1..1
           reference: IBG-040
-          value:
-            type: text   ## text or date ?
-            example: 2022-01-31
-        - element: xs:ReportPeppolStage  ##element or term ???
+        - element: xs:ReportPeppolStage  ##element or element ???
           name: Report Peppol Stage
-          description:  Allows to easily separate non-production reports from production reports. 
           cardinality: 1..1
           reference: IBG-050
-          value:
-            type: text   
-            example: development
-        - term: xs:ReporterID
-            name: Reporter ID
-            description: The value of the Peppol AP Certificate Subject CN (Common Name) to uniquely
-              identify the Service Provider that is providing the data.
-            cardinality: 1..1
-            reference: IBG-060
-            value:
-              type: Identifier
-              example: POP000360
-            attribute:
-              - term: schemeID
-                name: Scheme identifier
-                description: The identification scheme identifier of the Reporter object identifier.
-                usage: mandatory
-                reference: IBG-060-1
-                value:
-                  codelist: SubjectCN   # ref to a codelist ??
-                  example: POP000360
+        - element: xs:ReporterID
+          name: Reporter ID
+          cardinality: 1..1
+          reference: IBG-060
+          children:
+            - element: schemeID
+              name: Scheme identifier
+              reference: IBG-060-1
+              value:
+                codelist: SubjectCN   # ref to a codelist ??
+                example: POP000360
     children:
-    - element: xs:Total  ##element or term ???
+    - element: xs:Total  ##element or element ???
       name: Total
-      description: A group of business terms providing information on the Transaction statistic report
+      description: A group of business elements providing information on the Transaction statistic report
       cardinality: 1..1
       reference: IBG-070
       value:
         type: group
         example: 
       children:  
-        - element: xs:Incoming  ##element or term ???
+        - element: xs:Incoming  ##element or element ???
           name: Incoming
           description: A number providing the total of the incoming transaction for the reporting period
           cardinality: 1..1
@@ -83,7 +56,7 @@ content:
           value:
             type: text   
             example: 23
-        - element: xs:Outgoing  ##element or term ???
+        - element: xs:Outgoing  ##element or element ???
           name: Outgoing
           description: A number providing the total of the outgoing transaction for the reporting period
           cardinality: 1..1
@@ -93,13 +66,13 @@ content:
             example: 0
   
     children:  
-      - element: xs:PerServiceProvider  ##element or term ???
+      - element: xs:PerServiceProvider  ##element or element ???
         name: Per Service Provider
         description: A group
         cardinality: 1..n
         reference: IBG-100
         children:  
-          - element: xs:Incoming  ##element or term ???
+          - element: xs:Incoming  ##element or element ???
             name: Incoming
             description: Contains the number of exchanged datasets, in the current direction, that were executed
               with the provided Service Provider. The identification key is the "CN" part of the
@@ -115,7 +88,7 @@ content:
             value:
               type: text   
               example: 5
-          - element: xs:Outgoing  ##element or term ???
+          - element: xs:Outgoing  ##element or element ???
             name: Outgoing
             description: Contains the number of exchanged datasets, in the current direction, that were executed
               with the provided Service Provider. The identification key is the "CN" part of the
@@ -131,7 +104,7 @@ content:
             value:
               type: text   
               example: 0
-          - term: xs:ID
+          - element: xs:ID
               name: ID
               description: An identifier for the service provider.
               cardinality: 1..1
@@ -139,8 +112,8 @@ content:
               value:
                 type: Identifier
                 example: POP000360
-              attribute:
-                - term: schemeID
+              children:
+                - element: schemeID
                   name: Scheme identifier
                   description: The identification scheme identifier of the Service Provider object identifier.
                   usage: mandatory
@@ -149,13 +122,13 @@ content:
                     codelist: SubjectCN  # ref to a codelist ??
                     example: POP000001
     children:  
-      - element: xs:PerDatasetType  ##element or term ???
+      - element: xs:PerDatasetType  ##element or element ???
         name: Per Dataset Type
         description: A group
         cardinality: 1..n
         reference: IBG-140
         children:  
-          - element: xs:Incoming  ##element or term ???
+          - element: xs:Incoming  ##element or element ???
             name: Incoming
             description: Contains the number of exchanged datasets, in the current direction, that were executed
               per the provided dataset type 
@@ -167,7 +140,7 @@ content:
             value:
               type: text   
               example: 5
-          - element: xs:Outgoing  ##element or term ???
+          - element: xs:Outgoing  ##element or element ???
             name: Outgoing
             description: Contains the number of exchanged datasets, in the current direction, that were executed
               per the provided dataset type 
@@ -179,7 +152,7 @@ content:
             value:
               type: text   
               example: 0
-          - term: xs:ID
+          - element: xs:ID
               name: ID
               description: An identifier for the dataset.
               cardinality: 1..1
@@ -187,8 +160,8 @@ content:
               value:
                 type: Identifier
                 example: POP000360
-              attribute:
-                - term: schemeID
+              children:
+                - element: schemeID
                   name: Scheme identifier
                   description: The identification scheme identifier of the Dataset object identifier.
                   usage: mandatory
@@ -197,13 +170,13 @@ content:
                     codelist: busdox-docid-qns  # ref to a codelist ??
                     example: urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1
     children:  
-      - element: xs:PerTransportProtocol  ##element or term ???
+      - element: xs:PerTransportProtocol  ##element or element ???
         name: Per Transport Protocol
         description: A group
         cardinality: 1..1
         reference: IBG-180
         children:  
-          - element: xs:Incoming  ##element or term ???
+          - element: xs:Incoming  ##element or element ???
             name: Incoming
             description: Contains the number of exchanged datasets, in the current direction, that were executed
               per the provided transport protocol (like peppol-transport-as4-v2_0).
@@ -214,7 +187,7 @@ content:
             value:
               type: text   
               example: 5
-          - element: xs:Outgoing  ##element or term ???
+          - element: xs:Outgoing  ##element or element ???
             name: Outgoing
             description: Contains the number of exchanged datasets, in the current direction, that were executed
               per the provided transport protocol (like peppol-transport-as4-v2_0).
@@ -225,7 +198,7 @@ content:
             value:
               type: text   
               example: 0
-          - term: xs:ID
+          - element: xs:ID
               name: ID
               description: An identifier for the transport Protocol.
               cardinality: 1..1
@@ -233,8 +206,8 @@ content:
               value:
                 type: Identifier
                 example: POP000360
-              attribute:
-                - term: schemeID
+              children:
+                - element: schemeID
                   name: Scheme identifier
                   description: The identification scheme identifier of the transport Protocol object identifier.
                   usage: mandatory
@@ -243,7 +216,7 @@ content:
                     codelist: ???  # ref to a codelist ??
                     example: peppol-transport-as4-v2_0
       children:  
-        - element: xs:PerCountryExchange  ##element or term ???
+        - element: xs:PerCountryExchange  ##element or element ???
           name: Per Country Exchange
           description: A group that defines the details on sender (C1) and receiver (C4) country code usage.
             Since nothing can be deduced from the reporting metadata, the full combinations must be reported.
@@ -251,8 +224,8 @@ content:
             This section can only be filled, after the necessary metadata is available in the Peppol Envelope.
           cardinality: 1..n
           reference: IBG-220
-          attribute:
-            - term: Sender
+          children:
+            - element: Sender
               name: Sender
               description: Defines the count of datasets exchanged between the sender country ("@countryCode")
                            and the receiver country ("ReceiverCountry/@id")
@@ -261,7 +234,7 @@ content:
               value:
                 codelist: ISO-3166-1 Alpha-2 encoding.
                 example: AT
-            - term: Receiver
+            - element: Receiver
               name: Receiver
               description: The identification scheme identifier of the Receiver country code.
               usage: mandatory
@@ -270,7 +243,7 @@ content:
                 codelist: ISO-3166-1 Alpha-2 encoding.
                 example: FR
           children:  
-            - term: xs:Incoming
+            - element: xs:Incoming
                 name: Incoming
                 description: Contains the total number of exchanged message in the current direction.
                               MUST be present, even if it is zero.
@@ -279,8 +252,8 @@ content:
                 value:
                   type: text
                   example: 8
-                attribute:
-                  - term: Outgoing
+                children:
+                  - element: Outgoing
                     name: Outgoing
                     description: Contains the total number of exchanged message in the current direction.
                                   MUST be present, even if it is zero.
