@@ -30,7 +30,7 @@ content:
         value:
           datatype: text
       - id: ibg-060
-        name: ReporterID
+        name: Reporter Identifier
         definition: An identification of the reporting party.
         cardinality: 1..1
         value:

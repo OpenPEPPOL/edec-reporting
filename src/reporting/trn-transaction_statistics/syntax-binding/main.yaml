@@ -15,3 +15,10 @@ content:
           reference: IBG-030
         - element: xs:ReportPeriodEnd
           reference: IBG-040
+        - element: xs:ReportPeppolStage
+          reference: IBG-050
+        - element: xs:ReporterID
+          reference: IBG-060
+          children:
+           - element: xs:SchemeID
+             reference: ibg-060-1
