@@ -23,9 +23,9 @@ content:
            - element: xs:SchemeID
              reference: IBG-060-1
     - element: xs:Total
-      reference: IBG-070
+      reference: IBG-70
       children:  
         - element: xs:Incoming
-          reference: IBG-080
+          reference: IBG-80
         - element: xs:Outgoing
-          reference: IBG-090
+          reference: IBG-90
