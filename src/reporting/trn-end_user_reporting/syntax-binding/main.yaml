@@ -1,21 +1,82 @@
 metadata:
   namespaces:
-    ubl: urn:oasis:names:specification:ubl:schema:xsd:Invoice-2
-    cac: urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2
-    cbc: urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2
+    xmlns: urn:peppol:end-user-reporting:1.0
+    ## This is the schema for the Peppol Transaction Statistics Reporting
+    ##  This is based on the "Internal Regulations" document,
+    ##    chapter 4.4 "Service Provider Reporting on Transaction Statistics
 content:
-  element: ubl:Invoice
-  cardinality: 1..1
+  element: xs:EndUserReport
+  reference: IBG-010
   children:
-    - element: cbc:CustomizationID
-      ## The following are inherited from the semantic model referenced item (IBT-024) if no reference
-      ## exists, name and description should be added in this fle
+    - element: xs:Header
+      reference: IBG-020
+      children:  
+        - element: xs:ReportPeriodStart
+          reference: IBT-030
+        - element: xs:ReportPeriodEnd
+          reference: IBT-040
+        - element: xs:ReportPeppolStage
+          reference: IBT-050
+        - element: xs:ReporterID
+          reference: IBT-060
+          attribute: 
+           - element: SchemeID
+             reference: IBT-060-1
+    - element: xs:EndUser
+      reference: IBG-100
+      children:  
+        - element: xs:LegalID
+          reference: IBT-100-10
+          attribute: 
+          - element: SchemeID
+            reference: IBT-100-10-1
+        - element: xs:LegalName
+          reference: IBT-100-20
+        - element: xs:Country
+          reference: IBT-100-30
+    - element: xs:Dataset
+      reference: IBG-100-40
+      children:  
+        - element: xs:SendingDatasets
+          reference: IBG-110
+        - element: xs:DatasetID
+          reference: IBT-110-10
+          attribute: 
+          - element: SchemeID
+            reference: IBT-110-10-1
+        - element: xs:ReceivingDatasets
+          reference: IBG-120
+        - element: xs:DatasetID
+          reference: IBT-120-10
+          attribute: 
+          - element: SchemeID
+            reference: IBT-120-10-1
+    
+    - element: xs:Participants
+      reference: IBG-130
+      children:  
+        - element: xs:ParticipantID
+          reference: IBT-130-10
+          attribute: 
+          - element: SchemeID
+            reference: IBT-130-10-1
 
-      #name: Specification identifier
-      #description: An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.
+    - element: xs:Intermediaries
+      reference: IBG-140
+      children:  
+        - element: xs:Intermediaries
+          reference: IBG-140-10
+          children:
+            - element: xs:LegalID
+              reference: IBT-140-20
+              attribute: 
+              - element: SchemeID
+                reference: IBT-140-20-1
+            - element: xs:LegalName
+              reference: IBT-140-30
+            - element: xs:Country
+              reference: IBT-140-40
 
-      cardinality: 1..1
-      reference: IBT-024
-      value:
-        type: Identifier
-        example: urn:peppol:pint:billing-3.0@jp:peppol-1
+
+        
+    

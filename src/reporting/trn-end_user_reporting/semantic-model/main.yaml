@@ -80,7 +80,7 @@ content:
           value:
             datatype: text
           children:
-            - id: IBT-110
+            - id: IBG-110
               name: SendingDatasets
               definition: A group of business names providing information on the reporting period.
               cardinality: 1..1
@@ -100,7 +100,7 @@ content:
                     cardinality: 1..1
                     value:
                       datatype: text
-            - id: IBT-120
+            - id: IBG-120
               name: ReceivingDatasets
               definition: A group of business names providing information on the reporting period.
               cardinality: 1..1
@@ -145,7 +145,7 @@ content:
           value:
             datatype: text
           children:
-            - id: IBT-140-10
+            - id: IBG-140-10
               name: Innameediary
               definition: An unique identification of the PArticipant.
               cardinality: 1..1
