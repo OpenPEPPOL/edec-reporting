@@ -14,7 +14,7 @@ include::./settings.adoc[]
 :sectanchors:
 :sectnums:
 :CIUS: Core Invoice Usage Specification (CIUS)
-:title-logo-image: ./images/peppol.jpg
+:title-logo-image: 
 
 == {doctitle}
 
