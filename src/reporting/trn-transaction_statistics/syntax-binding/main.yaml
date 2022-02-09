@@ -6,26 +6,76 @@ metadata:
     ##    chapter 4.4 "Service Provider Reporting on Transaction Statistics
 content:
   element: xs:TransactionStatistics
-  reference: ibg-010
+  reference: IBG-010
   children:
     - element: xs:Header
       reference: IBG-020
       children:  
         - element: xs:ReportPeriodStart
-          reference: IBG-030
+          reference: IBT-030
         - element: xs:ReportPeriodEnd
-          reference: IBG-040
+          reference: IBT-040
         - element: xs:ReportPeppolStage
-          reference: IBG-050
+          reference: IBT-050
         - element: xs:ReporterID
-          reference: IBG-060
-          children:
-           - element: xs:SchemeID
-             reference: IBG-060-1
+          reference: IBT-060
+          attribute: 
+           - element: SchemeID
+             reference: IBT-060-1
     - element: xs:Total
       reference: IBG-70
       children:  
         - element: xs:Incoming
-          reference: IBG-80
+          reference: IBT-80
         - element: xs:Outgoing
-          reference: IBG-90
+          reference: IBT-90
+    - element: xs:PerServiceProvider
+      reference: IBG-100
+      children:  
+        - element: xs:Incoming
+          reference: IBT-110
+        - element: xs:Outgoing
+          reference: IBT-120
+        - element: xs:ID
+          reference: IBT-130
+          attribute: 
+           - element: SchemeID
+             reference: IBT-130-1
+    - element: xs:PerDatasetType
+      reference: IBG-140
+      children:  
+        - element: xs:Incoming
+          reference: IBT-150
+        - element: xs:Outgoing
+          reference: IBT-160
+        - element: xs:ID
+          reference: IBT-170
+          attribute: 
+           - element: SchemeID
+             reference: IBT-170-1
+    - element: xs:PerTransportProtocol
+      reference: IBG-180
+      children:  
+        - element: xs:Incoming
+          reference: IBT-190
+        - element: xs:Outgoing
+          reference: IBT-200
+        - element: xs:ID
+          reference: IBT-210
+          attribute: 
+           - element: SchemeID
+             reference: IBT-210-1
+    - element: xs:PerCountryExchange
+      reference: IBG-220
+      attribute: 
+       - element: Sender
+         reference: IBT-220-1
+       - element: Receiver
+         reference: IBT-220-2
+      children:
+        - element: xs:Incoming
+          reference: IBT-230
+        - element: xs:Outgoing
+          reference: IBT-240
+   
+

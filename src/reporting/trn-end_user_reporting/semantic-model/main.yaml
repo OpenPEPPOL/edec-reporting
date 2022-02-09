@@ -1,35 +1,35 @@
 content:
-  - id: ibg-010
+  - id: IBG-010
     name: EndUserReport
     definition: A group of business names providing information on end user reporting.
     cardinality: 1..n
     children:
-    - id: ibg-020
+    - id: IBG-020
       name: Header
       definition: A group of business names providing information on the business process and rules applicable to the End User Reporting document.
       cardinality: 1..1
       value:
         datatype: text
       children:
-        - id: ibg-030
+        - id: IBT-030
           name: ReportPeriodStart
           definition: The date starting the reporting period.
           cardinality: 1..1
           value:
             datatype: text
-        - id: ibg-040
+        - id: IBT-040
           name: ReportPeriodEnd
           definition: The date ending the reporting period.
           cardinality: 1..1
           value:
             datatype: text
-        - id: ibg-050
+        - id: IBT-050
           name: ReportPeppolStage
           definition: An indicator describing the purpose of the reporting message.
           cardinality: 1..1
           value:
             datatype: text
-        - id: ibg-060
+        - id: IBT-060
           name: ReporterID
           definition: An identification of the reporting party.
           cardinality: 1..1
@@ -37,141 +37,141 @@ content:
           value:
             datatype: text
           children:
-            - id: ibg-060-1
+            - id: IBT-060-1
               name: Scheme identifier
               definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
               cardinality: 1..1
               value:
                 datatype: text
-    - id: ibg-100
+    - id: IBG-100
       name: EndUser
       definition: A group of business names providing information on the business process and rules applicable to the End User Reporting document.
       cardinality: 1..n
       children:
-        - id: ibg-100-10
+        - id: IBT-100-10
           name: LegalID
           definition: An unique identification of the reporting party.
           cardinality: 1..1 
           value:
             datatype: text
           children:
-            - id: ibg-100-10-1
+            - id: IBT-100-10-1
               name: Scheme identifier
               definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
               cardinality: 1..1
               value:
                 datatype: text
-        - id: ibg-100-20
+        - id: IBT-100-20
           name: LegalName
           definition: The Legal name of the entity.
           cardinality: 1..1
           value:
             datatype: text
-        - id: ibg-10-30
+        - id: IBT-100-30
           name: Country
           definition: The country code  shall be chosen in the entries of the list published by the  ISO/IEC 3166 maintenance agency
           cardinality: 1..1
           value:
             datatype: text
-        - id: ibg-100-40
+        - id: IBG-100-40
           name: Dataset
           definition: A group of business names providing information on the reporting period.
           cardinality: 1..1
           value:
             datatype: text
           children:
-            - id: ibg-110
+            - id: IBT-110
               name: SendingDatasets
               definition: A group of business names providing information on the reporting period.
               cardinality: 1..1
               value:
                 datatype: text
               children:
-                - id: ibg-110-10
+                - id: IBT-110-10
                   name: DatasetID
                   definition: An unique identification of the reportingdataset.
                   cardinality: 1..n
                   value:
                     datatype: text
                   children:
-                  - id: ibg-110-10-1
+                  - id: IBT-110-10-1
                     name: Scheme identifier
                     definition: The identification scheme identifier shall be chosen from the entries of the list published by the xxxxxxxxxxxx maintenance agency.
                     cardinality: 1..1
                     value:
                       datatype: text
-            - id: ibg-120
+            - id: IBT-120
               name: ReceivingDatasets
               definition: A group of business names providing information on the reporting period.
               cardinality: 1..1
               value:
                 datatype: text
               children:
-                - id: ibg-120-10
+                - id: IBT-120-10
                   name: DatasetID
                   definition: An unique identification of the reportingdataset.
                   cardinality: 1..n
                   children:
-                  - id: ibg-120-10-1
+                  - id: IBT-120-10-1
                     name: Scheme identifier
                     definition: The identification scheme identifier shall be chosen from the entries of the list published by the xxxxxxxxxxxx maintenance agency.
                     cardinality: 1..1
                     value:
                       datatype: text
-        - id: ibg-130
+        - id: IBG-130
           name: Participants
           definition: A group of business names providing information on the reporting participants.
           cardinality: 1..n
           value:
             datatype: text
           children:
-            - id: ibg-130-10
+            - id: IBT-130-10
               name: ParticipantID
               definition: An unique identification of the PArticipant.
               cardinality: 1..1
               value:
                 datatype: text
               children:
-                - id: ibg-130-10-1
+                - id: IBT-130-10-1
                   name: Scheme identifier
                   definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO / IEC 6253 maintenance agency.
                   cardinality: 1..1
                   value:
                     datatype: text
-        - id: ibg-140
+        - id: IBG-140
           name: Intermediaries
           definition: A group of business names providing information on the reporting Innameediaries.
           cardinality: 1..n
           value:
             datatype: text
           children:
-            - id: ibg-140-10
+            - id: IBT-140-10
               name: Innameediary
               definition: An unique identification of the PArticipant.
               cardinality: 1..1
               value:
                 datatype: text
               children:
-                - id: ibg-140-20
+                - id: IBT-140-20
                   name: LegalID
                   definition: An unique identification of the Innameediary.
                   cardinality: 1..1
                   value:
                     datatype: text 
                   children:
-                    - id: ibg-140-20-1
+                    - id: IBT-140-20-1
                       name: Scheme identifier
                       definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO / IEC 6253 maintenance agency.
                       cardinality: 1..1
                       value:
                         datatype: text
-                - id: ibg-140-30
+                - id: IBT-140-30
                   name: LegalName
                   definition: The Legal name of the Innameediary.
                   cardinality: 1..1
                   value:
                     datatype: text
-                - id: ibg-140-40
+                - id: IBT-140-40
                   name: Country
                   definition: The country code  shall be chosen in the entries of the list published by the  ISO/IEC 3166 maintenance agency
                   cardinality: 1..1
