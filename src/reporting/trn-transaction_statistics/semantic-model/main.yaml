@@ -1,6 +1,6 @@
 content:
   - id: ibg-010
-    name: TransactionStatistics 
+    name: Transaction Statistics 
     definition: A group of business terms providing information on Transaction Statistics  reporting.
     cardinality: 1..n
     children:
@@ -12,19 +12,19 @@ content:
           datatype: text
       children:
       - id: ibg-030
-        name: ReportPeriodStart
+        name: Report Period Start
         definition: The date starting the reporting period.
         cardinality: 1..1
         value:
           datatype: text
       - id: ibg-040
-        name: ReportPeriodEnd
+        name: Report Period End
         definition: The date ending the reporting period.
         cardinality: 1..1
         value:
           datatype: text
       - id: ibg-050
-        name: ReportPeppolStage
+        name: Report Peppol Stage
         definition: An indicator describing the purpose of the reporting message.
         cardinality: 1..1
         value:

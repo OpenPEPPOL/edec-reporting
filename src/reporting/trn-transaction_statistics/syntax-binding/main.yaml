@@ -13,3 +13,5 @@ content:
       children:  
         - element: xs:ReportPeriodStart
           reference: IBG-030
+        - element: xs:ReportPeriodEnd
+          reference: IBG-040
