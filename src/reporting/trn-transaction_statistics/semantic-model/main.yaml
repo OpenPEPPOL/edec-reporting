@@ -50,38 +50,38 @@ content:
           datatype: text
         children:
           - id: ibg-80
-            name: Incoming
+            name: Total of Incoming Messages
             definition:  Total number of documents received during the reporting period.
             cardinality: 1..1
             value:
               datatype: text
           - id: ibg-90
-            name: Outgoing
+            name: Total of Outgoing Messages
             definition: Total number of documents sent during the reporting period
             cardinality: 1..1
             value:
               datatype: text
       - id: ibg-100
-        name: PerServiceProvider
+        name: Per Service Provider
         definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
         cardinality: 1..n
         value:
           datatype: text
         children:
           - id: ibg-110
-            name: Incoming
+            name: Total of Incoming Messages per Service Provider
             definition:  Number of documents received during the reporting period. Sum per SP must MAtch TotalCount
             cardinality: 1..1
             value:
               datatype: text
           - id: ibg-120
-            name: Outgoing
+            name: Total of Outgoing Messages per Service Provider
             definition: Number of documents sent during the reporting period
             cardinality: 1..1
             value:
               datatype: text
           - id: ibg-130
-            name: ID
+            name: Service Provider ID
             definition: An identification of the Provider party.
             cardinality: 1..1
             value:
@@ -94,26 +94,26 @@ content:
                 value:
                   datatype: text
           - id: ibg-140
-            name: PerDatasetType
+            name: Per Dataset Type
             definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
             cardinality: 1..n
             value:
               datatype: text
             children:
               - id: ibg-150
-                name: Incoming
+                name: Total of Incoming Messages per Dataset Type
                 definition:  Number of documents received during the reporting period. Sum per Dataset Type must attch TotalCount
                 cardinality: 1..1
                 value:
                   datatype: text
               - id: ibg-160
-                name: Outgoing
+                name: Total of Outgoing Messages per Dataset Type
                 definition: Number of documents sent during the reporting period
                 cardinality: 1..1
                 value:
                   datatype: text
               - id: ibg-170
-                name: ID
+                name: Provider Identifier
                 definition: An identification of the Provider party.
                 cardinality: 1..1
                 value:
@@ -126,24 +126,24 @@ content:
                     value:
                       datatype: text
           - id: ibg-180
-            name: PerTransportProtocol
+            name: Per Transport Protocol
             definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
             cardinality: 1..n
             children:
               - id: ibg-190
-                name: Incoming
+                name: Total of Incoming Messages per Transport Protocol
                 definition:  Number of documents received during the reporting period. Sum per Transport Protocol must match TotalCount
                 cardinality: 1..1
                 value:
                   datatype: text
               - id: ibg-200
-                name: Outgoing
+                name: Total of Outgoing Messages per Transport Protocol
                 definition: Number of documents sent during the reporting period
                 cardinality: 1..1
                 value:
                   datatype: text
               - id: ibg-210
-                name: ID
+                name: Provider Identifier
                 definition: An identification of the Provider party.
                 cardinality: 1..1
                 value:
@@ -156,7 +156,7 @@ content:
                     value:
                       datatype: text
           - id: ibg-220
-            name: PerCountryExchange
+            name: Per Country Exchange
             definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
             cardinality: 1..n
             children:
@@ -173,13 +173,13 @@ content:
               value:
                 datatype: text
             - id: ibg-230
-              name: Incoming
+              name: Total of Incoming Messages per ountry Exchange
               definition:  Number of documents received during the reporting period. Sum per Country Exchange must match TotalCount
               cardinality: 1..1
               value:
                 datatype: text
             - id: ibg-240
-              name: Outgoing
+              name: Total of Outgoing Messages per ountry Exchange
               definition: Number of documents sent during the reporting period
               cardinality: 1..1
               value:

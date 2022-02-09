@@ -22,3 +22,10 @@ content:
           children:
            - element: xs:SchemeID
              reference: ibg-060-1
+    - element: xs:Total
+      reference: IBG-070
+      children:  
+        - element: xs:Incoming
+          reference: IBG-080
+        - element: xs:Outgoing
+          reference: IBG-090
