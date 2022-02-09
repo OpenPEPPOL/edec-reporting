@@ -15,7 +15,7 @@ content:
           name: ReportPeriodStart
           definition: The first date (inclusive) of the reporting period.
             Usually the first day of the preceding month.
-            E.g. for the first report this may be a different date as well
+            E.g. for the first report this may be a different date as well.
           cardinality: 1..1
           value:
             datatype: text
@@ -72,7 +72,7 @@ content:
             datatype: text
         - id: IBT-100-30
           name: Country
-          definition: The country code  shall be chosen in the entries of the list published by the  ISO/IEC 3166 maintenance agency
+          definition: The country code  shall be chosen in the entries of the list published by the  ISO/IEC 3166 maintenance agency.
           cardinality: 1..1
           value:
             datatype: text
@@ -176,7 +176,7 @@ content:
                     datatype: text
                 - id: IBT-140-40
                   name: Country
-                  definition: The country code  shall be chosen in the entries of the list published by the  ISO/IEC 3166 maintenance agency
+                  definition: The country code  shall be chosen in the entries of the list published by the  ISO/IEC 3166 maintenance agency.
                   cardinality: 1..1
                   value:
                     datatype: text
