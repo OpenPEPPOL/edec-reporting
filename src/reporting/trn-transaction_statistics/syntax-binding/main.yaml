@@ -1,0 +1,15 @@
+metadata:
+  namespaces:
+    xmlns: urn:peppol:transaction-statistics:1.0
+    ## This is the schema for the Peppol Transaction Statistics Reporting
+    ##  This is based on the "Internal Regulations" document,
+    ##    chapter 4.4 "Service Provider Reporting on Transaction Statistics
+content:
+  element: xs:TransactionStatistics
+  reference: ibg-010
+  children:
+    - element: xs:Header
+      reference: IBG-020
+      children:  
+        - element: xs:ReportPeriodStart
+          reference: IBG-030
