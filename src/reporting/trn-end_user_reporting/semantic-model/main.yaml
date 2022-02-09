@@ -13,25 +13,28 @@ content:
       children:
         - id: IBT-030
           name: ReportPeriodStart
-          definition: The date starting the reporting period.
+          definition: The first date (inclusive) of the reporting period.
+            Usually the first day of the preceding month.
+            E.g. for the first report this may be a different date as well
           cardinality: 1..1
           value:
             datatype: text
         - id: IBT-040
           name: ReportPeriodEnd
-          definition: The date ending the reporting period.
+          definition: The last date (inclusive) of the reporting period.
+            Usually the last day of the preceding month.
           cardinality: 1..1
           value:
             datatype: text
         - id: IBT-050
           name: ReportPeppolStage
-          definition: An indicator describing the purpose of the reporting message.
+          definition: Allows to easily separate non-production reports from production reports. 
           cardinality: 1..1
           value:
             datatype: text
         - id: IBT-060
           name: ReporterID
-          definition: An identification of the reporting party.
+          definition: The value of the Peppol AP Certificate Subject CN (Common Name) to uniquely identify the Service Provider that is providing the data.
           cardinality: 1..1
           section: text
           value:
