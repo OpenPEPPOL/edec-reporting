@@ -1,0 +1,223 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$ref": "#/definitions/document",
+    "definitions": {
+        "document": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/item"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/item"
+                    }
+                }
+            ]
+        },
+        "item": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/item_element"
+                },
+                {
+                    "$ref": "#/definitions/item_group"
+                },
+                {
+                    "$ref": "#/definitions/include"
+                }
+            ]
+        },
+        "item_element": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "term",
+                "cardinality",
+                "type"
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/id"
+                },
+                "term": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "definition": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "note": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "section": {
+                    "type": "string"
+                },
+                "cardinality": {
+                    "$ref": "#/definitions/cardinality"
+                },
+                "requirement": {
+                    "$ref": "#/definitions/requirements"
+                },
+                "type": {
+                    "$ref": "#/definitions/type"
+                },
+                "attribute": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/item_attribute"
+                    }
+                }
+            }
+        },
+        "item_attribute": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "term",
+                "cardinality",
+                "type"
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/id"
+                },
+                "term": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "definition": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "note": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "section": {
+                    "type": "string"
+                },
+                "cardinality": {
+                    "$ref": "#/definitions/cardinality"
+                },
+                "requirement": {
+                    "$ref": "#/definitions/requirements"
+                },
+                "type": {
+                    "$ref": "#/definitions/type"
+                }
+            }
+        },
+        "item_group": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "term",
+                "cardinality",
+                "children"
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/id"
+                },
+                "term": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "definition": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "note": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "section": {
+                    "type": "string"
+                },
+                "cardinality": {
+                    "$ref": "#/definitions/cardinality"
+                },
+                "requirement": {
+                    "$ref": "#/definitions/requirements"
+                },
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/item"
+                    }
+                }
+            }
+        },
+        "include": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "include": {
+                    "type": "string"
+                }
+            }
+        },
+        "id": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "number"
+                }
+            ]
+        },
+        "cardinality": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[A-Z]+$"
+                },
+                {
+                    "type": "string",
+                    "enum": [
+                        "0..1",
+                        "1..1",
+                        "0..n",
+                        "1..n"
+                    ]
+                },
+                {
+                    "type": "string",
+                    "pattern": "^[\\d]+\\.\\.[\\dn]+$"
+                }
+            ]
+        },
+        "type": {
+            "type": "string"
+        },
+        "requirements": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/requirement"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/requirement"
+                    }
+                }
+            ]
+        },
+        "requirement": {
+            "type": "string"
+        },
+        "string_translatable": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "patternProperties": {
+                        "^.+$": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

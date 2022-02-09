@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$ref": "#/definitions/document",
+    "definitions": {
+        "document": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "metadata": {
+                    "$ref": "#/definitions/metadata"
+                },
+                "content": {
+                    "$ref": "semantic-model-content.json"
+                }
+            }
+        },
+        "metadata": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {}
+        },
+        "string_translatable": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "patternProperties": {
+                        "^.+$": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

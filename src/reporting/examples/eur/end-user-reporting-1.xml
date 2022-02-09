@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EndUserReport xmlns="urn:peppol:end-user-reporting:1.0">
+  <Header>
+    <ReportPeriodStart>2022-01-01</ReportPeriodStart>
+    <ReportPeriodEnd>2022-01-31</ReportPeriodEnd>
+    <ReportPeppolStage>development</ReportPeppolStage>
+    <ReporterID SchemeID="SubjectCN">POP000360</ReporterID>
+  </Header>
+  <EndUser>
+    <LegalID SchemeID="orgnr">ID12345</LegalID>
+    <LegalName>Acme Inc.</LegalName>
+    <Country>AT</Country>
+    
+    <Datasets>
+      <SendingDatasets>
+        <DatasetID SchemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</DatasetID>
+        <DatasetID SchemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</DatasetID>
+      </SendingDatasets>
+      <ReceivingDatasets>
+        <DatasetID SchemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</DatasetID>
+        <DatasetID SchemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</DatasetID>
+        <DatasetID SchemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</DatasetID>
+      </ReceivingDatasets>    
+    </Datasets>
+
+    <Participants>
+      <ParticipantID SchemeID="iso6523-actorid-upis">9999:test1</ParticipantID>
+    </Participants>    
+  </EndUser>
+  <EndUser>
+    <LegalID SchemeID="orgnr">ID12346</LegalID>
+    <LegalName>FooBar Ltd.</LegalName>
+    <Country>NL</Country>
+    
+    <Datasets>
+      <SendingDatasets>
+        <DatasetID SchemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</DatasetID>
+        <DatasetID SchemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</DatasetID>
+      </SendingDatasets>
+      <ReceivingDatasets>
+        <DatasetID SchemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</DatasetID>
+      </ReceivingDatasets>
+    </Datasets>  
+          
+    <Participants>
+      <ParticipantID SchemeID="iso6523-actorid-upis">9999:test2</ParticipantID>
+      <ParticipantID SchemeID="iso6523-actorid-upis">9999:test3</ParticipantID>
+    </Participants>  
+  </EndUser>
+  <EndUser>
+    <LegalID SchemeID="orgnr">ID12347</LegalID>
+    <LegalName>Tataa adventure.</LegalName>
+    <Country>NL</Country>
+    
+    <Datasets>
+      <ReceivingDatasets>
+        <DatasetID SchemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</DatasetID>
+      </ReceivingDatasets>
+    </Datasets>    
+    
+    <Participants>
+      <ParticipantID SchemeID="iso6523-actorid-upis">9999:test4</ParticipantID>
+      <ParticipantID SchemeID="iso6523-actorid-upis">9999:test5</ParticipantID>
+    </Participants>  
+
+    <Intermediaries>
+      <Intermediary>
+        <LegalID SchemeID="orgnr">987654321</LegalID>
+        <LegalName>Inter 1</LegalName>
+        <Country>BE</Country>
+      </Intermediary>
+      <Intermediary>
+        <LegalID SchemeID="sthgelse">987654322</LegalID>
+        <LegalName>Inter 2</LegalName>
+        <Country>LU</Country>
+      </Intermediary>
+    </Intermediaries>    
+  </EndUser>
+</EndUserReport>

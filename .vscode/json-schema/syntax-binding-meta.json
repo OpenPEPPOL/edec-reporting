@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$ref": "#/definitions/document",
+    "definitions": {
+        "document": {
+            "type": "object",
+            "patternProperties": {
+                "^[^ ]+$": {
+                    "$ref": "#/definitions/meta"
+                }
+            }
+        },
+        "meta": {
+            "type": "object",
+            "properties": {
+                "term": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}
