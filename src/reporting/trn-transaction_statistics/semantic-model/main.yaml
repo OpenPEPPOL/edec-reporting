@@ -29,7 +29,6 @@ content:
         cardinality: 1..1
         value:
           datatype: text
-        
       - id: ibg-060
         name: ReporterID
         definition: An identification of the reporting party.
@@ -43,7 +42,6 @@ content:
             cardinality: 1..1
             value:
               datatype: text
-
       - id: ibg-70
         name: Total
         definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
@@ -57,14 +55,12 @@ content:
             cardinality: 1..1
             value:
               datatype: text
-
           - id: ibg-90
             name: Outgoing
             definition: Total number of documents sent during the reporting period
             cardinality: 1..1
             value:
               datatype: text
-
       - id: ibg-100
         name: PerServiceProvider
         definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
@@ -78,14 +74,12 @@ content:
             cardinality: 1..1
             value:
               datatype: text
-
           - id: ibg-120
             name: Outgoing
             definition: Number of documents sent during the reporting period
             cardinality: 1..1
             value:
               datatype: text
-
           - id: ibg-130
             name: ID
             definition: An identification of the Provider party.
@@ -131,7 +125,6 @@ content:
                     cardinality: 1..1
                     value:
                       datatype: text
-          
           - id: ibg-180
             name: PerTransportProtocol
             definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
@@ -149,7 +142,6 @@ content:
                 cardinality: 1..1
                 value:
                   datatype: text
-
               - id: ibg-210
                 name: ID
                 definition: An identification of the Provider party.
