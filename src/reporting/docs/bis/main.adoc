@@ -1,4 +1,4 @@
-# peppol
+# Peppol Reporting
 Philippe Negro <p.negro@nleyes.com>
 
 include::./settings.adoc[]
@@ -14,7 +14,7 @@ include::./settings.adoc[]
 :sectanchors:
 :sectnums:
 :CIUS: Core Invoice Usage Specification (CIUS)
-image:./images/peppol.png[pdfwidth=3.5in,align=center]
+image::./peppol.png[pdfwidth=3.5in,align=center]
 == {doctitle}
 
 {name-op-en}

@@ -6,6 +6,7 @@ The diagram below shows the roles involved in the reporting transactions.
 
 image::./Proposedprocess.png[Proposed process, align="center"]
 
+
 === Parties
 
 Customer::
