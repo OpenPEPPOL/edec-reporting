@@ -4,7 +4,7 @@
 Peppol Central Reporting platform (CRP) collects statistics that is sent by the Peppol Service Providers and aggregates the collected data into reports that are submitted to OpenPeppol and later also the Peppol Authorities.
 The diagram below shows the roles involved in the reporting transactions. 
 
-image::../images/Proposedprocess.png[Proposed process, align="center"]
+image::./images/Proposedprocess.png[Proposed process, align="center"]
 
 
 === Parties
