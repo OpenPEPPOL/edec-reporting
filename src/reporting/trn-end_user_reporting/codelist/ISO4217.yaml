@@ -2,7 +2,7 @@ title:
   en: Currency codes
   nb: Landkoder
   nn: Landkoder
-identifier: ISO4167-2015
+identifier: ISO4217-2015
 agency: ISO
 language: en
 translations:
@@ -1208,7 +1208,7 @@ codes:
     en: Spanish Peseta
 - id: ESB
   name:
-    en: """A"" Account (convertible Peseta Account)"
+    en: Account (convertible Peseta Account)
 - id: ESP
   name:
     en: Spanish Peseta
