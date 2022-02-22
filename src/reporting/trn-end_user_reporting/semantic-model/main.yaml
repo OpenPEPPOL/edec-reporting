@@ -149,15 +149,15 @@ content:
             datatype: text
           children:
             - id: IBG-140-10
-              name: Innameediary
-              definition: An unique identification of the PArticipant.
+              name: Intermediary
+              definition: An unique identification of the Participant.
               cardinality: 1..1
               value:
                 datatype: text
               children:
                 - id: IBT-140-20
                   name: LegalID
-                  definition: An unique identification of the Innameediary.
+                  definition: An unique identification of the Intermediary.
                   cardinality: 1..1
                   value:
                     datatype: text 
@@ -170,7 +170,7 @@ content:
                         datatype: text
                 - id: IBT-140-30
                   name: LegalName
-                  definition: The Legal name of the Innameediary.
+                  definition: The Legal name of the Intermediary.
                   cardinality: 1..1
                   value:
                     datatype: text
