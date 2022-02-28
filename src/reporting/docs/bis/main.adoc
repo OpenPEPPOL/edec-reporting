@@ -1,5 +1,5 @@
 # Peppol Reporting
-Philippe Negro <p.negro@nleyes.com>
+Draft <p.negro@nleyes.com>
 
 include::./settings.adoc[]
 
@@ -22,11 +22,11 @@ v{version}
 
 == Link to main site of documentation
 
-/**  link:/poacc/billing/[Main documentation site]*/
+/**  link:/reporting/billing/[Main documentation site]*/
 
 :leveloffset: +1
 
-/** include::./doc-section/introduction.adoc[]*/
+/** include:./doc-section/introduction.adoc[]*/
 
 include::./doc-section/business-processes.adoc[]
 
