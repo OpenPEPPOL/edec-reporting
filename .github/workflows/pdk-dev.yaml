@@ -3,7 +3,7 @@ name: PDK-Dev
 on:
   push:
     branches:
-      - develop
+      - Develop
 
 jobs:
   build:
