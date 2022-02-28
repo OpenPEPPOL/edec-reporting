@@ -1,4 +1,12 @@
 = Business processes
+The functionality to be provided by an SMP includes at least the following:
+•	Support the Peppol SMP specification in the current version
+•	Support for providing BusinessCards to the Peppol Directory
+The following functionality is not absolutely mandatory but would be beneficial for future extensions and operational ease of use:
+•	Support an API to manage the provided data in an automated way
+•	Be able to support other SMP specifications, like the OASIS SMP specifications, in case a migration will take place
+
+
 
 == Parties and roles
 Peppol Central Reporting platform (CRP) collects statistics that is sent by the Peppol Service Providers and aggregates the collected data into reports that are submitted to OpenPeppol and later also the Peppol Authorities.
