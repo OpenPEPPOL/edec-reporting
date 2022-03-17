@@ -13,7 +13,7 @@ The purpose of this document is to describe the use of the End User Reporting an
 
 .Statement of copyright
 ****
-//**This PEPPOL Business Interoperability Specification (PEPPOL BIS) document is a Core Invoice Usage Specification (CIUS) based on CEN/EN 16931:2017. The restrictions on CEN/EN 16931:2017 implemented in this PEPPOL BIS appear from the conformance statement provided in appendix A.*/
+//**This PEPPOL Business Interoperability Specification (PEPPOL BIS) document  is a Core Invoice Usage Specification (CIUS) based on CEN/EN 16931:2017. The restrictions on CEN/EN 16931:2017 implemented in this PEPPOL BIS appear from the conformance statement provided in appendix A.*/
 
 //**The copyright of CEN/EN 16931:2107 is owned by CEN and its members - the European National Standards Bodies. A copy of CEN/EN 16931-1:2017 may be obtained free of charge from any CEN member.*/
 
@@ -22,19 +22,19 @@ OpenPEPPOL AISBL holds the copyright of this PEPPOL BIS, developed and published
 This PEPPOL BIS document may not be modified, re-distribute, sold or repackaged in any other way without the prior consent of OpenPEPPOL AISBL.
 ****
 
-== Audience
+== End UserReporting
 
-The audience for this document is organisations wishing to be PEPPOL enabled for exchanging electronic invoices, and/or their ICT-suppliers. These organisations may be:
+=== Process Overview
 
-     * Service providers
-     * Contracting Authorities (CA)
-     * Economic Operators (EO)
-     * Software Developers
+The following diagram provides an overview of the key steps when Service Providers are reporting monthly End User Data. The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
 
-More specifically, roles addressed are the following:
+Step	Description	Responsibility
+    1	Lodge End User Report 	Data is collected, collated, and the report is lodged to the OpenPeppol Coordinating Authority. 	Service Providers
+    2     	Send reminder	Any Service Provider that does not send in the End User Report will be automatically reminded.
+OpenPeppol Operating Office
+    3	Receive and Process Data	The Peppol Reporting Platform will receive the structured and standardized End User data and aggregate these. 	OpenPeppol Operating Office
+    4	Provide access to PAs	PAs will be able to access the Peppol Reporting Platform to obtain statistical End User data relevant to their jurisdictions.	OpenPeppol Operating Office
 
-    * ICT Architects
-    * ICT Developers
-    * Business Experts
+
 
 For further information on PEPPOL/OpenPEPPOL, please see {common}
