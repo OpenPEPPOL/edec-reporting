@@ -38,7 +38,7 @@ v{version}
             and incidents, non-compliance, etc.) are managed by the OpenPeppol Operating Office as part of its operations.
 
 
-/**  link:/reporting/billing/[Main documentation site]*/
+/**  link:/reporting/EndUserReporting/[Main documentation site]*/
 
 :leveloffset: +1
 
