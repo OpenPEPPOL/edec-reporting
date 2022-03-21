@@ -22,18 +22,11 @@ OpenPeppol AISBL holds the copyright of this PEPPOL BIS, developed and published
 This PEPPOL BIS document may not be modified, re-distribute, sold or repackaged in any other way without the prior consent of OpenPeppol AISBL.
 ****
 
-== End UserReporting
+== End User Reporting
 
 === Process Overview
 
 The following diagram provides an overview of the key steps when Service Providers are reporting monthly End User Data. The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
-
-Step	Description	Responsibility
-    1	Lodge End User Report 	Data is collected, collated, and the report is lodged to the OpenPeppol Coordinating Authority. 	Service Providers
-    2     	Send reminder	Any Service Provider that does not send in the End User Report will be automatically reminded.
-OpenPeppol Operating Office
-    3	Receive and Process Data	The Peppol Reporting Platform will receive the structured and standardized End User data and aggregate these. 	OpenPeppol Operating Office
-    4	Provide access to PAs	PAs will be able to access the Peppol Reporting Platform to obtain statistical End User data relevant to their jurisdictions.	OpenPeppol Operating Office
 
 image::./images/TXStatProcessOverview.jpg[reporting process, align="center"]
 
