@@ -74,8 +74,8 @@ content:
         children:
           - id: IBT-110
             name: Total of Incoming Messages per Service Provider
-            definition:  Contains the number of exchanged datasets, in the current direction, that were executed
-              with the provided Service Provider. The identification key is the "CN" part of the
+            definition:  Contains the number of exchanged datasets, in the current direction, that were executed 
+             with the provided Service Provider. The identification key is the "CN" part of the
               "Subject" field of the Peppol AP X.509 certificate of the other side.
               Each Servicer Provider MUST occur at maximum once.
               For outgoing datasets, the receiving Service Provider (C3) MUST be counted. The sending 
