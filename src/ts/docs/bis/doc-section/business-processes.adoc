@@ -6,16 +6,6 @@ Statistical reporting of production data helps the Peppol Coordinating Authority
 The reporting requirements towards SPs are divided into two areas: reporting about End User data and reporting about Transaction Statistics. This operational procedure will explain and outline the operational procedures for each of these reporting areas.
 The policy on reporting is stated in Internal Regulations for Use of the Peppol Network.
 
-=== End User Reporting
-
-==== Process Overview
-
-The following diagram provides an overview of the key steps when Service Providers are reporting monthly transactions Data. The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
-
-image::./images/TXStatProcessOverview.png[process, align="center"]
-
-== Procedure steps
-
 == Transaction Statistics reporting
 
 === Process Overview

@@ -11,16 +11,16 @@ This https://peppol.eu/?rel=undefined[Peppol] Reporting provides a set of specif
 
 The purpose of this document is to describe the use of the End User Reporting and Transaction statistics messages in Peppol, and to facilitate an efficient implementation and increased use of electronic collaboration regarding the billing process based on these formats.
 
-.Statement of copyright
-****
+//*.Statement of copyright
+//*****
 //**This Peppol Business Interoperability Specification (Peppol BIS) document  is a Core Invoice Usage Specification (CIUS) based on CEN/EN 16931:2017. The restrictions on CEN/EN 16931:2017 implemented in this Peppol BIS appear from the conformance statement provided in appendix A.*/
 
 //**The copyright of CEN/EN 16931:2107 is owned by CEN and its members - the European National Standards Bodies. A copy of CEN/EN 16931-1:2017 may be obtained free of charge from any CEN member.*/
 
-OpenPeppol AISBL holds the copyright of this Peppol BIS, developed and published subject to the conditions of the agreement with the European Commission  allowing derivate works to be developed and distributed with no additional licensing requirements. 
+//*OpenPeppol AISBL holds the copyright of this Peppol BIS, developed and published subject to the conditions of the agreement with the European Commission  allowing derivate works to be developed and distributed with no additional licensing requirements. 
 
-This Peppol BIS document may not be modified, re-distribute, sold or repackaged in any other way without the prior consent of OpenPeppol AISBL.
-****
+//*This Peppol BIS document may not be modified, re-distribute, sold or repackaged in any other way without the prior consent of OpenPeppol AISBL.
+//*****
 
 //** */== End User Reporting
 
@@ -30,4 +30,4 @@ This Peppol BIS document may not be modified, re-distribute, sold or repackaged 
 
 //**image::./images/process.png[reporting process, align="center"]*/
 
-For further information on Peppol/OpenPeppol, please see 
+For further information on Peppol/OpenPeppol, please see https://peppol.eu/about-openpeppol[OpenPeppol AISBL]

@@ -58,11 +58,11 @@ include::./doc-section/introduction.adoc[Introduction]
 
 include::./doc-section/business-processes.adoc[]
 
-/** include::./doc-section/business-info.adoc[]*/
+//** include::./doc-section/business-info.adoc[]*/
 
 
-/**include::./doc-section/rules.adoc[]*/
+//**include::./doc-section/rules.adoc[]*/
 
-/**include::./doc-section/technical.adoc[]*/
+//**include::./doc-section/technical.adoc[]*/
 
 :leveloffset: -1
