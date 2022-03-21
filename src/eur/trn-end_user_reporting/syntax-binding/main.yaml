@@ -19,9 +19,9 @@ content:
           reference: IBT-050
         - element: xd:ReporterID
           reference: IBT-060
-          attribute: 
-           - element: SchemeID
-             reference: IBT-060-1
+#          attribute: 
+#           - element: SchemeID
+#             reference: IBT-060-1
     - element: xd:EndUser
       reference: IBG-100
       children:  
