@@ -6,5 +6,5 @@
 :snippet-dir: ../rules/snippets
 :doctype: book
 
-:name-op-en: OpenPEPPOL AISBL, Coordinating Community
+:name-op-en: OpenPeppol AISBL, Coordinating Community
 

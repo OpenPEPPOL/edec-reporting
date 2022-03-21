@@ -17,9 +17,9 @@ The purpose of this document is to describe the use of the End User Reporting an
 
 //**The copyright of CEN/EN 16931:2107 is owned by CEN and its members - the European National Standards Bodies. A copy of CEN/EN 16931-1:2017 may be obtained free of charge from any CEN member.*/
 
-OpenPEPPOL AISBL holds the copyright of this PEPPOL BIS, developed and published subject to the conditions of the agreement between the European Commission and CEN allowing derivate works to be developed and distributed with no additional licensing requirements. CEN and the National  Standards Bodies bears no liability from the content and implementation of this PEPPOL BIS.
+OpenPeppol AISBL holds the copyright of this PEPPOL BIS, developed and published subject to the conditions of the agreement between the European Commission and CEN allowing derivate works to be developed and distributed with no additional licensing requirements. CEN and the National  Standards Bodies bears no liability from the content and implementation of this PEPPOL BIS.
 
-This PEPPOL BIS document may not be modified, re-distribute, sold or repackaged in any other way without the prior consent of OpenPEPPOL AISBL.
+This PEPPOL BIS document may not be modified, re-distribute, sold or repackaged in any other way without the prior consent of OpenPeppol AISBL.
 ****
 
 == End UserReporting
@@ -37,4 +37,4 @@ OpenPeppol Operating Office
 
 image::./images/TXStatProcessOverview.jpg[reporting process, align="center"]
 
-For further information on PEPPOL/OpenPEPPOL, please see {common}
+For further information on Peppol/OpenPeppol, please see {common}
