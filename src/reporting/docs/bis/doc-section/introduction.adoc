@@ -2,7 +2,7 @@
 
 Statistical reporting of production data helps the Peppol Coordinating Authority and PAs to monitor the operations of the Peppol Network and identify and manage risks and issues within the network.
 The reporting requirements towards SPs are divided into two areas: reporting about End User data and reporting about Transaction Statistics. This operational procedure will explain and outline the operational procedures for each of these reporting areas.
-The policy on reporting is stated in Internal Regulations for Use of the Peppol Network (chapter 4).
+The policy on reporting is stated in Internal Regulations for Use of the Peppol Network.
 
 
 == Preface
@@ -35,6 +35,6 @@ OpenPeppol Operating Office
     3	Receive and Process Data	The Peppol Reporting Platform will receive the structured and standardized End User data and aggregate these. 	OpenPeppol Operating Office
     4	Provide access to PAs	PAs will be able to access the Peppol Reporting Platform to obtain statistical End User data relevant to their jurisdictions.	OpenPeppol Operating Office
 
-
+image::./images/TXStatProcessOverview.jpg[reporting process, align="center"]
 
 For further information on PEPPOL/OpenPEPPOL, please see {common}

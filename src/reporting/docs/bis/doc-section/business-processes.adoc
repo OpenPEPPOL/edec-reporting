@@ -12,7 +12,7 @@ The policy on reporting is stated in Internal Regulations for Use of the Peppol 
 
 The following diagram provides an overview of the key steps when Service Providers are reporting monthly End User Data. The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
 
-image::../images/process.png[process, align="center"]
+image::./images/process.png[process, align="center"]
 
 == Procedure steps
 
@@ -47,7 +47,7 @@ The OO will:
 
 The following diagram provides an overview of the key steps when Service Providers are reporting monthly Transaction Statistics. The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
 
-image::../images/TXStatProcessOverview.png[process, align="center"]
+image::./images/TXStatProcessOverview.png[process, align="center"]
 
 == Procedure steps
 
