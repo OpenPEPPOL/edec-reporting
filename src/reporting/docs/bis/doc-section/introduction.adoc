@@ -28,6 +28,6 @@ This PEPPOL BIS document may not be modified, re-distribute, sold or repackaged 
 
 The following diagram provides an overview of the key steps when Service Providers are reporting monthly End User Data. The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
 
-image::./images/process.jpg[reporting process, align="center"]
+image::./images/process.png[reporting process, align="center"]
 
 For further information on Peppol/OpenPeppol, please see {common}
