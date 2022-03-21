@@ -22,26 +22,26 @@ v{version}
 
 This document sets out the processes and procedures for reporting data in the Peppol environment. 
     
-This includes:
+*This includes:*
 
-* *Service Provider (SP)* 
+* Service Provider (SP) 
    - how SPs are to submit reports on their End Users and statistical reports on transactions to the Peppol Coordinating Authority. 
 
-* *Peppol Coordinating Authority reports*
+* Peppol Coordinating Authority reports
    - how the Peppol Coordinating Authority will make consolidated statistical reports available for public consumption.
 
 *Out of scope:*
 
-* *Peppol Authority (PA)*
+* Peppol Authority (PA)
    - how PAs can access and download the information from the Peppol Coordinating Authority.
 
-* *PA usage*
+* PA usage
    - how PAs will use and share statistical information/reports is managed by each PA.
 
-* *Local or regional domains*
+* Local or regional domains
    - reporting of information for activities within local or regional domains is the responsibility of the PAs owner of those domains. Local and regional domains are required to keep the Peppol Coordinating Authority informed of its activities.
 
-* *Operational reports*
+* Operational reports
    - Management reports relating to workloads and workflow (e.g. change requests, extended use requests, issues and incidents, non-compliance, etc.) are managed by the OpenPeppol Operating Office as part of its operations.
 
 == Link to main site of documentation
