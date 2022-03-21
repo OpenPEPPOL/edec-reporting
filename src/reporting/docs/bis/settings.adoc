@@ -1,0 +1,10 @@
+:lang: en
+
+:doctitle: Peppol Model for Reporting
+:version: 0.1.2
+:shared-dir: ../shared
+:snippet-dir: ../rules/snippets
+:doctype: book
+
+:name-op-en: OpenPeppol AISBL, Coordinating Community
+
