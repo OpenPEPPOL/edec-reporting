@@ -1,8 +1,0 @@
-title: Main Business Rules
-description: The Main Business Rules
-prefix: BR
-scope:
-  - description: The header must be a single group containing the necessary information about the message
-    term: IBG-020
-    requirement: 234234234
-    context: The context
