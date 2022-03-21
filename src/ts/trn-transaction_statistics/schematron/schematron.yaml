@@ -1,0 +1,16 @@
+# This file is auto generated
+
+title: Generated Business rules for Transaction statistics
+description: Generated yaml rules
+namespace:
+  ts: urn:peppol:transaction-statistics:1.0
+
+pattern:
+- id: Model
+  rule:
+  - context: "/ts:TransactionStatistics/ts:Header"
+    assert:
+    - id: ts-br-01
+      flag: fatal
+      test: "exists(.)"
+      message: "Message"

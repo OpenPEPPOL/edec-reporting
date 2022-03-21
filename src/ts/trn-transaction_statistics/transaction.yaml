@@ -1,0 +1,11 @@
+title: Transaction-Statistics
+
+hugo:
+  weight: 1
+
+validation:
+  # xsd is for verifying XSD conformance
+  xsd: resources/xsd/peppol-transaction-statistics-reporting-1.0-DRAFT.xsd
+  schematron:
+   - schematron/schematron.yaml
+   - schematron/schematron-native.sch
