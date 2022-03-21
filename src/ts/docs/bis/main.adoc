@@ -1,5 +1,5 @@
 # Peppol Reporting
-Draft <p.negro@nleyes.com>
+Draft 
 
 include::./settings.adoc[]
 
