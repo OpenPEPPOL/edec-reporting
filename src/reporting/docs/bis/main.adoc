@@ -27,13 +27,13 @@ This includes:
 * *Service Provider (SP)* 
    - how SPs are to submit reports on their End Users and statistical reports on transactions to the Peppol Coordinating Authority. 
 
-* *Peppol Authority (PA)*
-   - how PAs can access and download the information from the Peppol Coordinating Authority.
-
 * *Peppol Coordinating Authority reports*
    - how the Peppol Coordinating Authority will make consolidated statistical reports available for public consumption.
 
 *Out of scope:*
+
+* *Peppol Authority (PA)*
+   - how PAs can access and download the information from the Peppol Coordinating Authority.
 
 * *PA usage*
    - how PAs will use and share statistical information/reports is managed by each PA.
