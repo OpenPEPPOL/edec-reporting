@@ -1,4 +1,4 @@
-# Peppol Reporting
+# Transaction-Statistics Reporting
 Draft 
 
 include::./settings.adoc[]

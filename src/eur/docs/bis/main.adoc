@@ -1,4 +1,4 @@
-# Peppol End User Reporting
+# End User Reporting
 Draft 
 
 include::./settings.adoc[]
