@@ -1,5 +1,0 @@
-ubl:
-  url: http://docs.oasis-open.org/ubl/os-UBL-{version}/UBL-{version}.zip
-  path: xsd
-  properties:
-    version: 2.1

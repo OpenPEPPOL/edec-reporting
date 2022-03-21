@@ -1,0 +1,33 @@
+= Introduction
+
+Statistical reporting of production data helps the Peppol Coordinating Authority and PAs to monitor the operations of the Peppol Network and identify and manage risks and issues within the network.
+The reporting requirements towards SPs are divided into two areas: reporting about End User data and reporting about Transaction Statistics. This operational procedure will explain and outline the operational procedures for each of these reporting areas.
+The policy on reporting is stated in Internal Regulations for Use of the Peppol Network.
+
+
+== Preface
+
+This https://peppol.eu/?rel=undefined[Peppol] Reporting provides a set of specifications for implementing a Peppol business process. The document is concerned with clarifying requirements for ensuring interoperability of pan-European Public eProcurement and provides guidelines for the support and implementation of these requirements.
+
+The purpose of this document is to describe the use of the End User Reporting and Transaction statistics messages in Peppol, and to facilitate an efficient implementation and increased use of electronic collaboration regarding the billing process based on these formats.
+
+//*.Statement of copyright
+//*****
+//**This Peppol Business Interoperability Specification (Peppol BIS) document  is a Core Invoice Usage Specification (CIUS) based on CEN/EN 16931:2017. The restrictions on CEN/EN 16931:2017 implemented in this Peppol BIS appear from the conformance statement provided in appendix A.*/
+
+//**The copyright of CEN/EN 16931:2107 is owned by CEN and its members - the European National Standards Bodies. A copy of CEN/EN 16931-1:2017 may be obtained free of charge from any CEN member.*/
+
+//*OpenPeppol AISBL holds the copyright of this Peppol BIS, developed and published subject to the conditions of the agreement with the European Commission  allowing derivate works to be developed and distributed with no additional licensing requirements. 
+
+//*This Peppol BIS document may not be modified, re-distribute, sold or repackaged in any other way without the prior consent of OpenPeppol AISBL.
+//*****
+
+//** */== End User Reporting
+
+//** */=== Process Overview
+
+//**The following diagram provides an overview of the key steps when Service Providers are reporting monthly End User Data. The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
+
+//**image::./images/process.png[reporting process, align="center"]*/
+
+For further information on Peppol/OpenPeppol, please see https://peppol.eu/about-openpeppol[OpenPeppol AISBL]

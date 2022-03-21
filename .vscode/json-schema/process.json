@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$ref": "#/definitions/document",
+    "definitions": {
+        "document": {
+            "additionalProperties": false,
+            "properties": {
+                "hugo": {
+                    "type": "object",
+                    "title": "Hugo configuration"
+                },
+                "title": {
+                    "title": "Process title",
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "description": {
+                    "title": "Process description",
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "version": {
+                    "type": "string",
+                    "title": "Process version"
+                },
+                "docs": {
+                    "patternProperties": {
+                        "^.*$": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "features": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "asciidoctor-pdf": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "draft",
+                        "active",
+                        "legacy",
+                        "disabled"
+                    ]
+                }
+            }
+        },
+        "string_translatable": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "patternProperties": {
+                        "^.+$": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

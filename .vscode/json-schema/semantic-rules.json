@@ -1,0 +1,108 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$ref": "#/definitions/document",
+    "definitions": {
+        "document": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "title"
+            ],
+            "properties": {
+                "prefix": {
+                    "type": "string"
+                },
+                "title": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "description": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "scope": {
+                    "$ref": "#/definitions/rules"
+                },
+                "outside": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/string_translatable"
+                    }
+                }
+            }
+        },
+        "rules": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/string_translatable"
+                    },
+                    {
+                        "$ref": "#/definitions/rule"
+                    }
+                ]
+            }
+        },
+        "rule": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "description"
+            ],
+            "properties": {
+                "id": {
+                    "oneOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "description": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "context": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "term": {
+                    "$ref": "#/definitions/references"
+                },
+                "requirement": {
+                    "$ref": "#/definitions/references"
+                }
+            }
+        },
+        "references": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/reference"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/reference"
+                    }
+                }
+            ]
+        },
+        "reference": {
+            "type": "string"
+        },
+        "string_translatable": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "patternProperties": {
+                        "^.{2,5}$": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

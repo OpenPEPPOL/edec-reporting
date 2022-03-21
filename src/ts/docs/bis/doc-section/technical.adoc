@@ -1,0 +1,5 @@
+= Technical details
+Following section provide techncal details.
+
+include::./technical/datatypes/index.adoc[]
+include::./technical/namespace.adoc[]

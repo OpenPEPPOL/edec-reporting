@@ -1,0 +1,266 @@
+metadata:
+  namespaces:
+    xmlns: urn:peppol:transaction-statistics:1.0
+    ## This is the schema for the Peppol Transaction Statistics Reporting
+    ##  This is based on the "Internal Regulations" document,
+    ##    chapter 4.4 "Service Provider Reporting on Transaction Statistics
+content:
+  element: xs:TransactionStatistics
+  name: Transaction Statistics
+  cardinality: 1..1
+  reference: IBG-010
+  children:
+    - element: xs:Header  ##element or element ???
+      name: Header
+      cardinality: 1..1
+      reference: IBG-020
+      children:  
+        - element: xs:ReportPeriodStart  ##element or element ???
+          name: Report Period Start
+          cardinality: 1..1
+          reference: IBG-030
+        - element: xs:ReportPeriodEnd  ##element or element ???
+          name: Report Period End
+          cardinality: 1..1
+          reference: IBG-040
+        - element: xs:ReportPeppolStage  ##element or element ???
+          name: Report Peppol Stage
+          cardinality: 1..1
+          reference: IBG-050
+        - element: xs:ReporterID
+          name: Reporter ID
+          cardinality: 1..1
+          reference: IBG-060
+          children:
+            - element: schemeID
+              name: Scheme identifier
+              reference: IBG-060-1
+              value:
+                codelist: SubjectCN   # ref to a codelist ??
+                example: POP000360
+    children:
+    - element: xs:Total  ##element or element ???
+      name: Total
+      description: A group of business elements providing information on the Transaction statistic report
+      cardinality: 1..1
+      reference: IBG-070
+      value:
+        type: group
+        example: 
+      children:  
+        - element: xs:Incoming  ##element or element ???
+          name: Incoming
+          description: A number providing the total of the incoming transaction for the reporting period
+          cardinality: 1..1
+          reference: IBG-080
+          value:
+            type: text   
+            example: 23
+        - element: xs:Outgoing  ##element or element ???
+          name: Outgoing
+          description: A number providing the total of the outgoing transaction for the reporting period
+          cardinality: 1..1
+          reference: IBG-090
+          value:
+            type: text   
+            example: 0
+  
+    children:  
+      - element: xs:PerServiceProvider  ##element or element ???
+        name: Per Service Provider
+        description: A group
+        cardinality: 1..n
+        reference: IBG-100
+        children:  
+          - element: xs:Incoming  ##element or element ???
+            name: Incoming
+            description: Contains the number of exchanged datasets, in the current direction, that were executed
+              with the provided Service Provider. The identification key is the "CN" part of the
+              "Subject" field of the Peppol AP X.509 certificate of the other side.
+            Each Servicer Provider MUST occur at maximum once.
+            For outgoing datasets, the receiving Service Provider (C3) MUST be counted. The sending 
+              Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
+            For incoming datasets, the sending Service Provider (C2) MUST be counted. The receiving
+              Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
+            The sum of all exchange datasets per Service Provider MUST equal the TotalCount.
+            cardinality: 1..1
+            reference: IBG-110
+            value:
+              type: text   
+              example: 5
+          - element: xs:Outgoing  ##element or element ???
+            name: Outgoing
+            description: Contains the number of exchanged datasets, in the current direction, that were executed
+              with the provided Service Provider. The identification key is the "CN" part of the
+              "Subject" field of the Peppol AP X.509 certificate of the other side.
+            Each Servicer Provider MUST occur at maximum once.
+            For outgoing datasets, the receiving Service Provider (C3) MUST be counted. The sending 
+              Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
+            For incoming datasets, the sending Service Provider (C2) MUST be counted. The receiving
+              Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
+            The sum of all exchange datasets per Service Provider MUST equal the TotalCount.
+            cardinality: 1..1
+            reference: IBG-120
+            value:
+              type: text   
+              example: 0
+          - element: xs:ID
+              name: ID
+              description: An identifier for the service provider.
+              cardinality: 1..1
+              reference: IBG-130
+              value:
+                type: Identifier
+                example: POP000360
+              children:
+                - element: schemeID
+                  name: Scheme identifier
+                  description: The identification scheme identifier of the Service Provider object identifier.
+                  usage: mandatory
+                  reference: IBG-130-1
+                  value:
+                    codelist: SubjectCN  # ref to a codelist ??
+                    example: POP000001
+    children:  
+      - element: xs:PerDatasetType  ##element or element ???
+        name: Per Dataset Type
+        description: A group
+        cardinality: 1..n
+        reference: IBG-140
+        children:  
+          - element: xs:Incoming  ##element or element ???
+            name: Incoming
+            description: Contains the number of exchanged datasets, in the current direction, that were executed
+              per the provided dataset type 
+              (like busdox-docid-qns::urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1).
+            Each dataset type MUST occur at maximum once.
+            The sum of all exchange datasets per dataset tye MUST equal the TotalCount.
+            cardinality: 1..1
+            reference: IBG-150
+            value:
+              type: text   
+              example: 5
+          - element: xs:Outgoing  ##element or element ???
+            name: Outgoing
+            description: Contains the number of exchanged datasets, in the current direction, that were executed
+              per the provided dataset type 
+              (like busdox-docid-qns::urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1).
+            Each dataset type MUST occur at maximum once.
+            The sum of all exchange datasets per dataset tye MUST equal the TotalCount.
+            cardinality: 1..1
+            reference: IBG-160
+            value:
+              type: text   
+              example: 0
+          - element: xs:ID
+              name: ID
+              description: An identifier for the dataset.
+              cardinality: 1..1
+              reference: IBG-170
+              value:
+                type: Identifier
+                example: POP000360
+              children:
+                - element: schemeID
+                  name: Scheme identifier
+                  description: The identification scheme identifier of the Dataset object identifier.
+                  usage: mandatory
+                  reference: IBG-170-1
+                  value:
+                    codelist: busdox-docid-qns  # ref to a codelist ??
+                    example: urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1
+    children:  
+      - element: xs:PerTransportProtocol  ##element or element ???
+        name: Per Transport Protocol
+        description: A group
+        cardinality: 1..1
+        reference: IBG-180
+        children:  
+          - element: xs:Incoming  ##element or element ???
+            name: Incoming
+            description: Contains the number of exchanged datasets, in the current direction, that were executed
+              per the provided transport protocol (like peppol-transport-as4-v2_0).
+            Each transport protocol MUST occur at maximum once.
+            The sum of all exchange datasets per transport protocol MUST equal the TotalCount.
+            cardinality: 1..1
+            reference: IBG-190
+            value:
+              type: text   
+              example: 5
+          - element: xs:Outgoing  ##element or element ???
+            name: Outgoing
+            description: Contains the number of exchanged datasets, in the current direction, that were executed
+              per the provided transport protocol (like peppol-transport-as4-v2_0).
+            Each transport protocol MUST occur at maximum once.
+            The sum of all exchange datasets per transport protocol MUST equal the TotalCount.
+            cardinality: 1..1
+            reference: IBG-200
+            value:
+              type: text   
+              example: 0
+          - element: xs:ID
+              name: ID
+              description: An identifier for the transport Protocol.
+              cardinality: 1..1
+              reference: IBG-210
+              value:
+                type: Identifier
+                example: POP000360
+              children:
+                - element: schemeID
+                  name: Scheme identifier
+                  description: The identification scheme identifier of the transport Protocol object identifier.
+                  usage: mandatory
+                  reference: IBG-210-1
+                  value:
+                    codelist: ???  # ref to a codelist ??
+                    example: peppol-transport-as4-v2_0
+      children:  
+        - element: xs:PerCountryExchange  ##element or element ???
+          name: Per Country Exchange
+          description: A group that defines the details on sender (C1) and receiver (C4) country code usage.
+            Since nothing can be deduced from the reporting metadata, the full combinations must be reported.
+            Each "SenderCountry/@countryCode" MUST be unique per parent element. 
+            This section can only be filled, after the necessary metadata is available in the Peppol Envelope.
+          cardinality: 1..n
+          reference: IBG-220
+          children:
+            - element: Sender
+              name: Sender
+              description: Defines the count of datasets exchanged between the sender country ("@countryCode")
+                           and the receiver country ("ReceiverCountry/@id")
+              usage: mandatory
+              reference: IBG-220-1
+              value:
+                codelist: ISO-3166-1 Alpha-2 encoding.
+                example: AT
+            - element: Receiver
+              name: Receiver
+              description: The identification scheme identifier of the Receiver country code.
+              usage: mandatory
+              reference: IBG-220-2
+              value:
+                codelist: ISO-3166-1 Alpha-2 encoding.
+                example: FR
+          children:  
+            - element: xs:Incoming
+                name: Incoming
+                description: Contains the total number of exchanged message in the current direction.
+                              MUST be present, even if it is zero.
+                cardinality: 1..1
+                reference: IBG-230
+                value:
+                  type: text
+                  example: 8
+                children:
+                  - element: Outgoing
+                    name: Outgoing
+                    description: Contains the total number of exchanged message in the current direction.
+                                  MUST be present, even if it is zero.
+                    usage: mandatory
+                    reference: IBG-230-1
+                    value: text
+                      codelist: 
+                      example: 0
+          
+        
