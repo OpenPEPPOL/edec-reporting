@@ -1,4 +1,5 @@
 .DS_Store/
+.idea/
 .pdk/
 src/_library/
 target/
@@ -6,4 +7,3 @@ generated/
 
 *.iml
 .project
-.idea/
