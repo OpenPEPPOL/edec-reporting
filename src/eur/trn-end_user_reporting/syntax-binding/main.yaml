@@ -19,64 +19,58 @@ content:
           reference: IBT-050
         - element: xd:ReporterID
           reference: IBT-060
-          attribute: 
-           - element: SchemeID
-             reference: IBT-060-1
+#          attribute: 
+#           - element: SchemeID
+#             reference: IBT-060-1
     - element: xd:EndUser
       reference: IBG-100
       children:  
         - element: xd:LegalID
           reference: IBT-100-10
-          attribute: 
-          - element: SchemeID
-            reference: IBT-100-10-1
+#          attribute: 
+#          - element: SchemeID
+#            reference: IBT-100-10-1
         - element: xd:LegalName
           reference: IBT-100-20
         - element: xd:Country
           reference: IBT-100-30
-    - element: xd:Dataset
-      reference: IBG-100-40
-      children:  
-        - element: xd:SendingDatasets
-          reference: IBG-110
-        - element: xd:DatasetID
+#    - element: xd:Dataset
+#      reference: IBG-100-40
+#      children:  
+#        - element: xd:SendingDatasets
+#          reference: IBG-110
+        - element: xd:SendingDatasetID
           reference: IBT-110-10
-          attribute: 
+          attribute:
           - element: SchemeID
             reference: IBT-110-10-1
-        - element: xd:ReceivingDatasets
-          reference: IBG-120
-        - element: xd:DatasetID
+#        - element: xd:ReceivingDatasets
+#          reference: IBG-120
+        - element: xd:ReceivingDatasetID
           reference: IBT-120-10
-          attribute: 
+          attribute:
           - element: SchemeID
             reference: IBT-120-10-1
-    
-    - element: xd:Participants
-      reference: IBG-130
-      children:  
+#    - element: xd:Participants
+#      reference: IBG-130
+#      children:  
         - element: xd:ParticipantID
           reference: IBT-130-10
-          attribute: 
+          attribute:
           - element: SchemeID
             reference: IBT-130-10-1
-
-    - element: xd:Intermediaries
-      reference: IBG-140
-      children:  
-        - element: xd:Intermediaries
+#    - element: xd:Intermediaries
+#      reference: IBG-140
+#      children:  
+        - element: xd:Intermediary
           reference: IBG-140-10
           children:
             - element: xd:LegalID
               reference: IBT-140-20
-              attribute: 
-              - element: SchemeID
-                reference: IBT-140-20-1
+#              attribute: 
+#              - element: SchemeID
+#                reference: IBT-140-20-1
             - element: xd:LegalName
               reference: IBT-140-30
             - element: xd:Country
               reference: IBT-140-40
-
-
-        
-    
