@@ -1,7 +1,7 @@
 # This file is auto generated
 
-title: Aligned validation rules for Japan
-description: These are rules that apply to invoices that are issued according to the Japanese invoice specification. These rules are part of the alignment of PINT to Japanese business and legal requirements. The rules only affect aligned business terms and do not conflict with any of the shared PINT rules.
+title: Rules
+description: These are rules that apply to End User Reporting.
 namespace:
   ext: urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2
   cbc: urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2
