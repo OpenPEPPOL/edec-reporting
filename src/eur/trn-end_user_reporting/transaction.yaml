@@ -8,6 +8,6 @@ features:
   
 validation:
   # xsd is for verifying XSD conformance
-  xsd: resources/peppol-end-user-reporting-1.0-DRAFT.xsd
+  xsd: resources/xsd/peppol-end-user-reporting-1.0.xsd
   schematron:
     - schematron/schematron.yaml
