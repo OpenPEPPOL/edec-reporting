@@ -8,6 +8,6 @@ features:
   
 validation:
   # xsd is for verifying XSD conformance
-#  xsd: ../resources/xsd/maindoc/UBL-Invoice-2.1.xsd
+  xsd: resources/peppol-end-user-reporting-1.0-DRAFT.xsd
   schematron:
     - schematron/schematron.yaml
