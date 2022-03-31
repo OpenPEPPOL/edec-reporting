@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="urn:peppol:end-user-reporting:1.0" 
+<xs:schema xmlns="urn:fdc:peppol:end-user-reporting:1.0" 
            xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-           targetNamespace="urn:peppol:end-user-reporting:1.0" 
+           targetNamespace="urn:fdc:peppol:end-user-reporting:1.0" 
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
   <xs:annotation>
@@ -14,7 +14,7 @@
          Philip Helger
 
        History: 
-         2022-03-30, Philip Helger
+         2022-03-31, Philip Helger
            initial version
     </xs:documentation>
   </xs:annotation>
