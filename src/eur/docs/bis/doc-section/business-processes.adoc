@@ -112,11 +112,17 @@ The OO will:
 
 PEPPOL has defined a https://peppol.eu/downloads/the-peppol-edelivery-network-specifications/[PEPPOL Policy for identifiers], policy 8 that specifies how to use identifiers in both its transport infrastructure and within the documents exchanged across that infrastructure. It also introduces principles for any identifiers used in the PEPPOL environment. The policies that apply to this BIS are the following:
 
-=== Profiles and messages
+=== Process and messages
 
-All messages contains ProfileID and CustomizationID. ProfileID identifies what business process a given message is part of, and CustomizationID identifies the kind of message and the rules applied.
+All messages contains ProcessID and CustomizationID. PrpocessID identifies what business process a given message is part of, and CustomizationID identifies the kind of message and the rules applied.
 
 Profiles are connected to one business process, and may contain multiple document types. Valid document instances shall contain corresponding ProfileID and CustomizationID.
 
 CustomizationID is a string without spaces. The list below contains spaces in CustomizationID to make them easier to read. Make sure to remove any spaces before use.
 
+=== Customization and Process identifiers
+
+In the table below you will find the values to be used as the specification identifier and the business process type for this profile
+
+|Type|Element cbc:CustomizationID | Element  cbc:Process|
+|Messsage level Response (Trdm071)| urn:fdc:peppol.eu:oo:trns:end-user-report:1 |urn:fdc:peppol.eu:oo:bis:reporting:1|
