@@ -112,3 +112,14 @@ include::./technical/datatypes/index.adoc[]
 
 
 :leveloffset: -1
+
+= Codelists
+
+Semantic data types are used to bridge the gap between the semantic concepts expressed by the information elements and the technical implementation.
+The semantic data types define the allowed value domain for the content, and any additional information components (attributes) needed in order to ensure its precise interpretation.
+
+:leveloffset: +1
+
+include::./technical/codelists/index.adoc[]
+
+:leveloffset: -1
