@@ -1,0 +1,30 @@
+= Header
+
+== Report Start Date
+
+The element `ReportPeriodStart` MUST contain the start date  of the reporting period.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-1.xml[tags=startdate]
+----
+
+
+== Report end date
+The element `ReportPeriodEnd` MUST contain the end date of the reporting period.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-1.xml[tags=eindate]
+----
+
+== Reporter ID
+The element `ReporterID` MUST contain the party identification of the sender of the reporting.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet/snippet-1.xml[tags=sender]
+----

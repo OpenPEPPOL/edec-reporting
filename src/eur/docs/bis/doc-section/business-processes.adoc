@@ -158,3 +158,9 @@ The semantic data types define the allowed value domain for the content, and any
 include::./technical/codelists/index.adoc[]
 
 :leveloffset: -1
+
+:leveloffset: +1
+
+include::./technical/description/index.adoc[]
+
+:leveloffset: -1

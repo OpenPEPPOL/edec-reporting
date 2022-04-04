@@ -1,0 +1,38 @@
+= EndUser
+
+== Legal ID
+The element `LegalID` MUST contain the Legal Identifier of the reporting organisation.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-2.xml[tags=LegalID]
+----
+
+
+== Legal Name
+The element `LegalName` MUST contain the Legal Name of the reporting organisation.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-2.xml[tags=LegalName]
+----
+
+== Country
+The element `Country` MUST contain the country of origin the reporting organisation.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet/snippet-2.xml[tags=Country]
+----
+
+== SendingDatasets
+The element `SendingDatasets` MUST contain the list of the datasets included in the report.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet/snippet-2.xml[tags=SendingDatasets]
+----

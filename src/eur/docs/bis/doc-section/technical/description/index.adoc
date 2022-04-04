@@ -1,0 +1,17 @@
+[[descriptions]]
+= Description of selected parts of the End User reporting message
+
+
+:leveloffset: +1
+
+include::header.adoc[]
+
+include::endusers.adoc[]
+
+include::datasets.adoc[]
+
+include::participants.adoc[]
+
+include::intermediaries.adoc[]
+
+:leveloffset: -1

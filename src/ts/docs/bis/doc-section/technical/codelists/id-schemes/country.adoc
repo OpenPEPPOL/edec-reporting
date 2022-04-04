@@ -5,5 +5,5 @@ h| Document location
 | `cac:CountryCode/cbc:IdentificationCode` +
 `cac:OriginCountry/cbc:IdentificationCode` +
 h| Source codelist
-| {ISO3166}
+| https://docs.peppol.eu/poacc/upgrade-3/codelist/ISO3166/[ISO3166]
 |===
