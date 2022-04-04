@@ -23,7 +23,7 @@ SPs will:
 1.	Collect relevant data, taking care with the accuracy and validity of this data.
 2.	Report this data in accordance to this document. This interface allows for a standardized and structured dataset from where the Peppol Coordinating Authority can automate processing and aggregation of the data upon receival in the Peppol Reporting Platform.
 3.	Ensure all data for a month is reported within 10 calendar days following the end of the month.
-4.	Transmit the Peppol End User Report BIS to the Peppol Coordinating Authority in accordance with the Peppol End User Report specification.
+4.	Transmit the Peppol End User Report BIS to the Peppol Coordinating Authority in accordance with this specification.
 
 === Send Reminders
 
@@ -44,7 +44,7 @@ image::./images/ReminderTimeLine.png[Timeline, align="center"]
 The OO will:
 
 1.	Receive End User Reports from Service Providers in accordance with the Peppol End User Report specification.
-2.	Process the received data inside the Peppol Reporting Platform by aggregating and dividing the data into reports and data sheets for each jurisdiction/Peppol Authority for whom the End User data is relevant.
+2.	Process the received data inside the Peppol Reporting Platform by aggregating and dividing the data into reports for each jurisdiction/Peppol Authority for whom the End User data is relevant.
 
 //** */== Transaction Statistics reporting
 
@@ -93,7 +93,7 @@ The OO will:
 //**1.	Process the consolidated data by applying agreed rules for report generation.
 //**2.	Analyse the statistical information for any immediate trends and possible issues.
 //**3.	Create a statistical report to be submitted to the MC. Further details which are *not for publication* can be provided to the MC. MC members are bound by confidentiality agreements.
-//**4.	Create statistical reports and data sheets for the PAs. 
+//**4.	Create statistical reports for the PAs. 
 
 //**=== Provide access to PAs
 
