@@ -124,5 +124,14 @@ CustomizationID is a string without spaces. The list below contains spaces in Cu
 
 In the table below you will find the values to be used as the specification identifier and the business process type for this profile
 
-|Type|Element cbc:CustomizationID | Element  cbc:Process|
-|Messsage level Response (Trdm071)| urn:fdc:peppol.eu:oo:trns:end-user-report:1 |urn:fdc:peppol.eu:oo:bis:reporting:1|
+[cols="1s,3,3",options="header"]
+|====
+|Type
+|Element 
+|Element
+
+|Message Level Response
+|urn:fdc:peppol.eu:oo:trns:end-user-report:1
+|urn:fdc:peppol.eu:oo:bis:reporting:1
+
+|====
