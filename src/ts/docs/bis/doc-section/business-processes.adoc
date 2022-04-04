@@ -100,3 +100,15 @@ In the table below you will find the values to be used as the specification iden
 |urn:fdc:peppol.eu:oo:bis:reporting:1
 
 |====
+
+= Semantic datatypes
+
+Semantic data types are used to bridge the gap between the semantic concepts expressed by the information elements and the technical implementation.
+The semantic data types define the allowed value domain for the content, and any additional information components (attributes) needed in order to ensure its precise interpretation.
+
+:leveloffset: +1
+
+include::./technical/datatypes/index.adoc[]
+
+
+:leveloffset: -1
