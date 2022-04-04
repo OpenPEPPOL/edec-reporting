@@ -13,6 +13,11 @@
     <!-- tag::Country[] -->
       <fdc:Country>AT</fdc:Country>
     <!-- end::Country[] -->
+
+    <!-- tag::Territory[] -->
+      <fdc:Territory>Lower Austria</fdc:Territory>
+    <!-- end::Territory[] -->
+
    <Datasets> 
    <!-- tag::SendingDatasets[] -->
       <SendingDatasets>

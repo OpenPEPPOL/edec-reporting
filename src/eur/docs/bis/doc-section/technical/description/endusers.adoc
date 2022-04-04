@@ -38,6 +38,15 @@ This type is used to represent ISO-3166 country codes in Alpha-2 Mode.
 include::./snippet/snippet-2.xml[tags=Country]
 ----
 
+== Territory
+The element `Territory` MUST contain the Territory of the End User's legal address.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet/snippet-2.xml[tags=Country]
+----
+
 == SendingDatasets
 The element `SendingDatasets` MUST contain the list of the datasets included in the report.
  End User's capability to send Peppol Dataset Types (Document Type ID).
