@@ -1,0 +1,10 @@
+
+
+[cols="1,4"]
+|===
+h| Document type
+| `cbc:ReportingTypeCode`
+h| Source codelist
+|
+ link:http://www.unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred1001.htm[Subset of UN/CEFACT code list 1001, D.16B to be updated with the correct one]
+|===
