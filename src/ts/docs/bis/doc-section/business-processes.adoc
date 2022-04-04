@@ -21,7 +21,7 @@ image::./images/TXStatProcessOverview.png[process, align="center"]
 Service Providers will:
 
 1.	Collect relevant data, taking care of the accuracy and validity of this data. Data is to be reported and grouped according to the requirements of the Transaction Statistics Report specification.
-2.	Report this data in accordance with the Transaction Statistics Report specification. This interface allows for a standardized and structured dataset from where the Peppol Coordinating Authority can automate the handling of the data upon receival in the Peppol Reporting Platform.
+2.	Report this data in accordance with this document. This interface allows for a standardized and structured dataset from where the Peppol Coordinating Authority can automate the handling of the data upon receival in the Peppol Reporting Platform.
 3.	Ensure all data for a month is reported within 10 business days following the end of the month.
 4.	Transmit the Transaction Statistics Report to the Peppol Coordinating Authority in accordance with the Transaction Statistics Report specification.
 

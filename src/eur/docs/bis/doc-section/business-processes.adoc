@@ -21,7 +21,7 @@ image::./images/process.png[process, align="center"]
 SPs will:
 
 1.	Collect relevant data, taking care with the accuracy and validity of this data.
-2.	Report this data in accordance with the Peppol End User Report specification. This interface allows for a standardized and structured dataset from where the Peppol Coordinating Authority can automate processing and aggregation of the data upon receival in the Peppol Reporting Platform.
+2.	Report this data in accordance to this document. This interface allows for a standardized and structured dataset from where the Peppol Coordinating Authority can automate processing and aggregation of the data upon receival in the Peppol Reporting Platform.
 3.	Ensure all data for a month is reported within 10 calendar days following the end of the month.
 4.	Transmit the Peppol End User Report BIS to the Peppol Coordinating Authority in accordance with the Peppol End User Report specification.
 
