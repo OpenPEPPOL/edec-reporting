@@ -1,8 +1,7 @@
-
 = Party identifiers
 
 Party identifiers (`cac:PartyIdentification/cbc:ID`) and party legal registration identifier (`cac:PartyLegalEntity/cbc:CompanyID`) has an optional scheme identifier attribute (`@schemeID`).
-If used, the value shall be chosen from the code list  {codelist-ICD}
+If used, the value shall be chosen from the code list  https://docs.peppol.eu/poacc/upgrade-3/codelist/ICD/[codelist-ICD]
 
 
 .Examples of usage in `cac:PartyIdentification`
@@ -12,4 +11,4 @@ If used, the value shall be chosen from the code list  {codelist-ICD}
 	<cbc:ID schemeID="0088">5790000435968</cbc:ID> <1>
 </cac:PartyIdentification>
 ----
-<1> schemeID attribute is optional, but when used, the codes must be from {codelist-ICD}
+<1> schemeID attribute is optional, but when used, the codes must be from https://docs.peppol.eu/poacc/upgrade-3/codelist/ICD/[codelist-ICD]
