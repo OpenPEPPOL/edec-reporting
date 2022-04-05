@@ -46,6 +46,24 @@
    </Participants>
 <!-- end::ParticipantID[] -->
 
+<!-- tag::Intermediary[] -->
+    <Intermediary>
+        <fdc:LegalID SchemeID="sthgelse">987654322</LegalID>
+        <fdc:LegalName>Inter 2</LegalName>
+        <fdc:Country>LU</Country>
+    </Intermediary>
+<!-- end::Intermediary[] -->
 
+<!-- tag::IntermediaryLegalID[] -->
+    <fdc:LegalID schemeID="orgnr">ID12345</fdc:LegalID>
    
+   <!-- end::IntermediaryLegalID[] -->
+
+   <!-- tag::IntermediaryLegalName[] -->
+    <fdc:LegalName>Acme Inc.</fdc:LegalName>
+   <!-- end::IntermediaryLegalName[] -->
+
+    <!-- tag::IntermediaryCountry[] -->
+      <fdc:Country>AT</fdc:Country>
+    <!-- end::IntermediaryCountry[] -->
 </EndUserReport>
