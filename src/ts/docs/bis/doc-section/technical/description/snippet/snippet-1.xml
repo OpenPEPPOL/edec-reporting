@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EndUserReport xmlns="urn:fdc:peppol.eu:oo:trns:end-user-report:1">
+                     
+<CustomizationID schemeID="str1234">str1234</CustomizationID>
+    
+   <Header> 
+    <!-- tag::Header[] -->
+    <Header>
+        <ReportPeriodStart>2012-12-13</ReportPeriodStart>
+        <ReportPeriodEnd>2012-12-13</ReportPeriodEnd>
+        <ReporterID schemeID="str1234">str1234</ReporterID>
+    </Header>
+    <!-- end::Header[] -->   
+
+
+   <!-- tag::ReportPeriodStart[] -->
+    
+    <fdc:ReportPeriodStart>2016-08-15</fdc:ReportPeriodStart>
+   <!-- end::ReportPeriodStart[] -->
+
+   <!-- tag::ReportPeriodEnd[] -->
+    
+    <fdc:ReportPeriodEnd>2016-08-15</fdc:ReportPeriodEnd>
+   <!-- end::ReportPeriodEnd[] -->
+
+
+    <!-- tag::sendReporterIDer[] -->
+   
+        <fdc:ReporterID schemeID="0192">987654325</fdc:ReporterID>
+   
+    <!-- end::ReporterID[] -->
+
+   </Header>
+   
+</EndUserReport>
