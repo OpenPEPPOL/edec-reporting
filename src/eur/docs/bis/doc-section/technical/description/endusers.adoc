@@ -47,6 +47,15 @@ The element `Territory` MUST contain the Territory of the End User's legal addre
 include::./snippet/snippet-2.xml[tags=Country]
 ----
 
+== ReceivingDatasets
+The element `ReceivingDatasets` MUST contain the list of the datasets included in the report.
+ End User's capability to send Peppol Dataset Types (Document Type ID).
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet/snippet-2.xml[tags=ReceivingDatasets]
+----
+
 == SendingDatasets
 The element `SendingDatasets` MUST contain the list of the datasets included in the report.
  End User's capability to send Peppol Dataset Types (Document Type ID).
