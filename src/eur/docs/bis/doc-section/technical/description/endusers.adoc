@@ -64,3 +64,12 @@ The element `SendingDatasets` MUST contain the list of the datasets included in 
 ----
 include::./snippet/snippet-2.xml[tags=SendingDatasets]
 ----
+
+== ParticipantID
+The element `ParticipantID` MUST contain the list of the datasets included in the report.
+ End User's capability to send Peppol Dataset Types (Document Type ID).
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet/snippet-2.xml[tags=ParticipantID]
+----
