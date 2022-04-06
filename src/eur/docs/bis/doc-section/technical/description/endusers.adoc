@@ -1,7 +1,7 @@
 = EndUser
 Defines the data for a single end user.
 
-== Legal ID
+== EndUser/Legal ID
 The element `LegalID` MUST contain the Legal Identifier of the reporting organisation.
 Legal identifier of the End User in the jurisdiction within which it is legally based, 
 and legal identifier Type (e.g., VAT number, company registration number).
@@ -19,7 +19,7 @@ include::./snippet//snippet-2.xml[tags=LegalID]
 ----
 
 
-== Legal Name
+== EndUser/Legal Name
 The element `LegalName` MUST contain the Legal Name of the reporting organisation.
 Legal name of the End User, in the jurisdiction within which it is legally based.
 .Example:
@@ -28,9 +28,9 @@ Legal name of the End User, in the jurisdiction within which it is legally based
 include::./snippet//snippet-2.xml[tags=LegalName]
 ----
 
-== Country
+== EndUser/Country
 The element `Country` MUST contain the country of the End User's legal address only.
-This type is used to represent ISO-3166 country codes in Alpha-2 Mode.
+This type is used to represent link:/eur/end_user_reporting/codelist/ISO3166/index.html[ISO-3166 country codes] in Alpha-2 Mode.
 
 .Example:
 [source, xml, indent=0]
@@ -38,7 +38,7 @@ This type is used to represent ISO-3166 country codes in Alpha-2 Mode.
 include::./snippet/snippet-2.xml[tags=Country]
 ----
 
-== Territory
+== EndUser/Territory
 The element `Territory` MUST contain the Territory of the End User's legal address.
 
 .Example:
@@ -47,7 +47,7 @@ The element `Territory` MUST contain the Territory of the End User's legal addre
 include::./snippet/snippet-2.xml[tags=Country]
 ----
 
-== ReceivingDatasets
+== EndUser/ReceivingDatasets
 The element `ReceivingDatasets` MUST contain the list of the datasets included in the report.
  End User's capability to send Peppol Dataset Types (Document Type ID).
 .Example:
@@ -56,7 +56,7 @@ The element `ReceivingDatasets` MUST contain the list of the datasets included i
 include::./snippet/snippet-2.xml[tags=ReceivingDatasets]
 ----
 
-== SendingDatasets
+== EndUser/SendingDatasets
 The element `SendingDatasets` MUST contain the list of the datasets included in the report.
  End User's capability to send Peppol Dataset Types (Document Type ID).
 .Example:
@@ -65,7 +65,7 @@ The element `SendingDatasets` MUST contain the list of the datasets included in 
 include::./snippet/snippet-2.xml[tags=SendingDatasets]
 ----
 
-== ParticipantID
+== EndUser/ParticipantID
 The element `ParticipantID` MUST contain the Participant ID.
 
 .Example:
@@ -74,7 +74,7 @@ The element `ParticipantID` MUST contain the Participant ID.
 include::./snippet/snippet-2.xml[tags=ParticipantID]
 ----
 
-== Intermediary
+== EndUser/Intermediary
 The element `Intermediary` .
  Must contain the Intermediary informations
 .Example:
@@ -83,7 +83,7 @@ The element `Intermediary` .
 include::./snippet/snippet-2.xml[tags=Intermediary]
 ----
 
-== Intermediary.Legal ID
+== EndUser/Intermediary/Legal ID
 The element `LegalID` MUST contain the Legal Identifier of the intermediary organisation.
 
 .Example:
@@ -93,7 +93,7 @@ include::./snippet//snippet-2.xml[tags=IntermediaryLegalID]
 ----
 
 
-== Intermediary.Legal Name
+== EndUser/Intermediary.\/Legal Name
 The element `LegalName` MUST contain the Legal Name of the reporting organisation.
 Legal name of the End User, in the jurisdiction within which it is legally based.
 .Example:
@@ -102,7 +102,7 @@ Legal name of the End User, in the jurisdiction within which it is legally based
 include::./snippet//snippet-2.xml[tags=IntermediaryLegalName]
 ----
 
-== Intermediary.Country
+== EndUser/Intermediary/Country
 The element `Country` MUST contain the country of the End User's legal address only.
 This type is used to represent ISO-3166 country codes in Alpha-2 Mode.
 
