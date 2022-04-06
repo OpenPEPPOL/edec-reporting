@@ -26,7 +26,7 @@ SPs will:
 
 The OpenPeppol Operating Office (OO) will:
 
-1.	Automatically check which providers have not submitted their End User Report. This check will be triggered inside the Peppol Reporting Platform.
+1.	Automatically check which providers have not submitted their End User Report. This check will be triggered automatically.
 2.	Prompt any SPs that have not submitted the End User Report.
 3.	Prompt the PA of the SP if a SP fails to submit the End User Report in due time after reminders are sent. The PA of the SP will be informed to handle this as a non-compliance issue.
 4.	Failure by SPs to provide full and complete reports can be managed in accordance with the https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B3.-Operational-Procedures[Non-compliance Operational Procedure].
