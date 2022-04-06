@@ -1,223 +1,124 @@
 content:
-  - id: IBG-010
-    name: Transaction Statistics 
-    definition: A group of business terms providing information on Transaction Statistics reporting. This is the root element for a single Peppol Transaction Statistics Report.
-    cardinality: 1..n
+  - id: IBT-001
+    name: Customization ID
+    definition: Identifies a customization of this format for a specific use.
+    cardinality: 1..1
+    datatype:
+      value: Identifier
+
+  - id: IBG-1
+    name: Report Header
+    definition: Transaction Statistics header metadata.
+    cardinality: 1..1
     children:
-    - id: IBG-020 
-      name: Header
-      definition: A group of business terms providing information on the Transaction statistic report
-      cardinality: 1..1
-      value:
-          datatype: text
-      children:
-      - id: IBT-030
-        name: Report Period Start
+      - id: IBT-002
+        name: Report period start date
         definition: The first date (inclusive) of the reporting period.
-            Usually the first day of the preceding month.
-            E.g. for the first report this may be a different date as well.
+          Usually the first day of the preceding month.
+          E.g. for the first report this may be a different date as well.
         cardinality: 1..1
-        value:
-          datatype: text
-      - id: IBT-040
-        name: Report Period End
+        datatype:
+          value: Date
+        
+      - id: IBT-003
+        name: Report period end date
         definition: The last date (inclusive) of the reporting period.
-            Usually the last day of the preceding month.
+          Usually the last day of the preceding month.
         cardinality: 1..1
-        value:
-          datatype: text
-      - id: IBT-050
-        name: Report Peppol Stage
-        definition: Allows to easily separate non-production reports from production reports.
+        datatype:
+          value: Date
+
+      - id: IBT-004
+        name: Reporter identification
+        definition: The unique identification of the Service Provider that 
+          is providing the data.
         cardinality: 1..1
-        value:
-          datatype: text
-      - id: IBT-060
-        name: Reporter Identifier
-        definition: The value of the Peppol AP Certificate Subject CN (Common Name) to uniquely
-              identify the Service Provider that is providing the data.
+        datatype:
+          value: Identifier
+        
+      - id: IBT-005
+        name: Reporter identification scheme
+        definition: This value must follow the "ReporterIDScheme" code list.
+          Currently onl "CertSubjectCN" for the Peppol AP Certificate 
+          Subject CN (Common Name) is supported.
         cardinality: 1..1
-        value:
-          datatype: text
-        children:
-          - id: IBT-060-1
-            name: Scheme identifier
-            definition: The identification scheme identifier of the Reporter object identifier.
-            cardinality: 1..1
-            value:
-              datatype: text
-      - id: IBG-70
-        name: Total
-        definition: A group of business terms providing information on the Transaction statistic report
+        datatype:
+          value: Identifier
+
+  - id: IBG-2
+    name: Total values
+    definition: Contains the actual total of exchanged Datasets
+    cardinality: 1..1
+    children:
+
+      - id: IBT-006
+        name: Incoming total
+        definition: The total number of received Datasets in the reporting period
         cardinality: 1..1
-        value:
-          datatype: text
-        children:
-          - id: IBT-80
-            name: Total of Incoming Messages
-            definition:  A number providing the total of the incoming transaction for the reporting period
-            cardinality: 1..1
-            value:
-              datatype: text
-          - id: IBT-90
-            name: Total of Outgoing Messages
-            definition: A number providing the total of the outgoing transaction for the reporting period
-            cardinality: 1..1
-            value:
-              datatype: text
-      - id: IBG-100
-        name: Per Service Provider
-        definition:  A group of business terms providing information on the Transaction statistic report
+        datatype:
+          value: Count
+
+      - id: IBT-007
+        name: Outgoing total
+        definition: The total number of sent Datasets in the reporting period
+        cardinality: 1..1
+        datatype:
+          value: Count
+
+  - id: IBG-3
+    name: Subtotal values
+    definition: Contains the number of exchanged datasets for different aggregations.
+       The "type" attribute of this element defines the expected content.
+    cardinality: 0..n
+    children:
+
+      - id: IBT-008
+        name: Subtotal type
+        definition: Defines the expected Key elements and their meta schemes.
+          The codelist for this field is "SubtotalType"
+        cardinality: 1..1
+        datatype:
+          value: Identifier
+          
+      - id: IBG-4
+        name: Subtotal key
+        definition: Defines the keys, depending on the chosen Subtotal Type
         cardinality: 1..n
-        value:
-          datatype: text
         children:
-          - id: IBT-110
-            name: Total of Incoming Messages per Service Provider
-            definition:  Contains the number of exchanged datasets, in the current direction, that were executed 
-             with the provided Service Provider. The identification key is the "CN" part of the
-              "Subject" field of the Peppol AP X.509 certificate of the other side.
-              Each Servicer Provider MUST occur at maximum once.
-              For outgoing datasets, the receiving Service Provider (C3) MUST be counted. The sending 
-                Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
-              For incoming datasets, the sending Service Provider (C2) MUST be counted. The receiving
-                Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
-              The sum of all exchange datasets per Service Provider MUST equal the TotalCount.
+          
+          - id: IBT-009
+            name: Meta scheme identifier
+            definition: Defines the meta scheme identifier of this subtotal key
+              Must follow the "SubtotalKeyMetaScheme" code list
             cardinality: 1..1
-            value:
-              datatype: text
-          - id: IBT-120
-            name: Total of Outgoing Messages per Service Provider
-            definition: Contains the number of exchanged datasets, in the current direction, that were executed
-              with the provided Service Provider. The identification key is the "CN" part of the
-              "Subject" field of the Peppol AP X.509 certificate of the other side.
-              Each Servicer Provider MUST occur at maximum once.
-              For outgoing datasets, the receiving Service Provider (C3) MUST be counted. The sending 
-                Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
-              For incoming datasets, the sending Service Provider (C2) MUST be counted. The receiving
-                Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
-              The sum of all exchange datasets per Service Provider MUST equal the TotalCount.
+            datatype:
+              value: Identifier
+              
+          - id: IBT-010
+            name: Scheme identifier
+            definition: Defines the scheme identifier, depending on the Meta scheme
+              identifier.
             cardinality: 1..1
-            value:
-              datatype: text
-          - id: IBT-130
-            name: Service Provider ID
-            definition: An identifier for the service provider.
+            datatype:
+              value: Identifier
+              
+          - id: IBT-011
+            name: Identifier value
+            definition: Defines the main identifier value following the Scheme identifier.
             cardinality: 1..1
-            value:
-              datatype: text
-            children:
-              - id: IBT-130-1
-                name: Scheme identifier
-                definition: The identification scheme identifier of the Service Provider object identifier.
-                cardinality: 1..1
-                value:
-                  datatype: text
-          - id: IBG-140
-            name: Per Dataset Type
-            definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
-            cardinality: 1..n
-            value:
-              datatype: text
-            children:
-              - id: IBT-150
-                name: Total of Incoming Messages per Dataset Type
-                definition:  Contains the number of exchanged datasets, in the current direction, that were executed
-                  per the provided dataset type (like busdox-docid-qns::urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1).
-                  Each dataset type MUST occur at maximum once.
-                  The sum of all exchange datasets per dataset tye MUST equal the TotalCount.
-                cardinality: 1..1
-                value:
-                  datatype: text
-              - id: IBT-160
-                name: Total of Outgoing Messages per Dataset Type
-                definition: Contains the number of exchanged datasets, in the current direction, that were executed
-                  per the provided dataset type (like busdox-docid-qns::urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1).
-                  Each dataset type MUST occur at maximum once.
-                  The sum of all exchange datasets per dataset tye MUST equal the TotalCount.
-                cardinality: 1..1
-                value:
-                  datatype: text
-              - id: IBT-170
-                name: Dataset Identifier
-                definition: An identifier for the dataset.
-                cardinality: 1..1
-                value:
-                  datatype: text              
-                children:
-                  - id: IBT-170-1
-                    name: Scheme identifier
-                    definition: The identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
-                    cardinality: 1..1
-                    value:
-                      datatype: text
-          - id: IBG-180
-            name: Per Transport Protocol
-            definition: A group of business terms providing information on the business process and rules applicable to the Transaction Statistics  Reporting document.
-            cardinality: 1..n
-            children:
-              - id: IBT-190
-                name: Total of Incoming Messages per Transport Protocol
-                definition:  Contains the number of exchanged datasets, in the current direction, that were executed
-                    per the provided transport protocol (like peppol-transport-as4-v2_0).
-                    Each transport protocol MUST occur at maximum once.
-                    The sum of all exchange datasets per transport protocol MUST equal the TotalCount.
-                cardinality: 1..1
-                value:
-                  datatype: text
-              - id: IBT-200
-                name: Total of Outgoing Messages per Transport Protocol
-                definition: Contains the number of exchanged datasets, in the current direction, that were executed
-                    per the provided transport protocol (like peppol-transport-as4-v2_0).
-                    Each transport protocol MUST occur at maximum once.
-                    The sum of all exchange datasets per transport protocol MUST equal the TotalCount.
-                cardinality: 1..1
-                value:
-                  datatype: text
-              - id: IBT-210
-                name: Transport Protocol Identifier
-                definition: An identifier for the transport Protocol
-                cardinality: 1..1
-                value:
-                  datatype: text
-                children:
-                  - id: IBT-210-1
-                    name: Scheme identifier
-                    definition: TThe identification scheme identifier of the transport Protocol object identifier.
-                    cardinality: 1..1
-                    value:
-                      datatype: text
-          - id: IBG-220
-            name: Per Country Exchange
-            definition: A group that defines the details on sender (C1) and receiver (C4) country code usage.
-                Since nothing can be deduced from the reporting metadata, the full combinations must be reported.
-                Each "SenderCountry/@countryCode" MUST be unique per parent element. 
-                This section can only be filled, after the necessary metadata is available in the Peppol Envelope.
-            cardinality: 1..n
-            children:
-            - id: IBT-220-1
-              name: Sender
-              definition: The country code scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 3166 maintenance agency.
-              cardinality: 1..1
-              value:
-                datatype: text
-            - id: IBT-220-2
-              name: Receiver
-              definition: The country code scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 3166 maintenance agency.
-              cardinality: 1..1
-              value:
-                datatype: text
-            - id: IBT-230
-              name: Total of Incoming Messages per ountry Exchange
-              definition:  Contains the total number of exchanged message in the current direction.
-                          MUST be present, even if it is zero.
-              cardinality: 1..1
-              value:
-                datatype: text
-            - id: IBT-240
-              name: Total of Outgoing Messages per ountry Exchange
-              definition: Contains the total number of exchanged message in the current direction.
-                          MUST be present, even if it is zero.
-              cardinality: 1..1
-              value:
-                datatype: text
+            datatype:
+              value: Identifier
+
+      - id: IBT-012
+        name: Incoming subtotal
+        definition: The number of received Datasets in the reporting period matching this subtotal
+        cardinality: 1..1
+        datatype:
+          value: Count
+
+      - id: IBT-013
+        name: Outgoing subtotal
+        definition: The total number of sent Datasets in the reporting period matching this subtotal
+        cardinality: 1..1
+        datatype:
+          value: Count
