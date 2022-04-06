@@ -26,7 +26,7 @@ This document sets out the processes and procedures for reporting End User data 
 *Target Audience:*
 
 * Service Provider (SP) 
-   - how SPs are to submit reports on their End Users and statistical reports on transactions to the Peppol Coordinating Authority. 
+   - how SPs are to submit reports on their End Users on transactions to the Peppol Coordinating Authority. 
 
 * Peppol Coordinating Authority reports
    - how the Peppol Coordinating Authority will make consolidated statistical reports available for public consumption.
