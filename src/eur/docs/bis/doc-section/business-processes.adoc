@@ -126,10 +126,10 @@ In the table below you will find the values to be used as the specification iden
 [cols="1s,3,3",options="header"]
 |====
 |Type
-|Element 
-|Element
+|Element CustomizationID
+|Process ID
 
-|Message Level Response
+|End User report
 |urn:fdc:peppol.eu:oo:trns:end-user-report:1
 |urn:fdc:peppol.eu:oo:bis:reporting:1
 
