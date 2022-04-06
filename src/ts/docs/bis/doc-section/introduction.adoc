@@ -14,6 +14,8 @@ The purpose of this document is to describe the use of the Transaction Statistic
 * Curent statutes of OpenPeppol AISBL
     https://openpeppol.atlassian.net/wiki/download/attachments/2756772071/OpenPEPPOL10th-General-Assembly-2018_-Revised-Statutes-%E2%80%93-As-of-October-30th-2018_EN.pdf?api=v2
 
+* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B3.-Operational-Procedures[Non-compliance Operational Procedure].
+
 //*.Statement of copyright
 //*****
 //**This Peppol Business Interoperability Specification (Peppol BIS) document  is a Core Invoice Usage Specification (CIUS) based on CEN/EN 16931:2017. The restrictions on CEN/EN 16931:2017 implemented in this Peppol BIS appear from the conformance statement provided in appendix A.*/
