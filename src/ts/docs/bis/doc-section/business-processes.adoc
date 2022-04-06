@@ -1,10 +1,7 @@
 = Business processes
 
-== Introduction
+//*== Introduction
 
-Statistical reporting of production data helps the Peppol Coordinating Authority and PAs to monitor the operations of the Peppol Network and identify and manage risks and issues within the network.
-The reporting requirements towards SPs are divided into two areas: reporting about End User data and reporting about Transaction Statistics. This operational procedure will explain and outline the operational procedures for each of these reporting areas.
-The policy on reporting is stated in https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B2.-Internal-Regulations-on-the-Use-of-the-Peppol-Network[Internal Regulations for Use of the Peppol Network].
 
 == Transaction Statistics reporting
 
@@ -101,7 +98,7 @@ In the table below you will find the values to be used as the specification iden
 
 |====
 
-= Semantic datatypes
+== Semantic datatypes
 
 Semantic data types are used to bridge the gap between the semantic concepts expressed by the information elements and the technical implementation.
 The semantic data types define the allowed value domain for the content, and any additional information components (attributes) needed in order to ensure its precise interpretation.
@@ -113,7 +110,7 @@ include::./technical/datatypes/index.adoc[]
 
 :leveloffset: -1
 
-= Codelists
+== Codelists
 
 Semantic data types are used to bridge the gap between the semantic concepts expressed by the information elements and the technical implementation.
 The semantic data types define the allowed value domain for the content, and any additional information components (attributes) needed in order to ensure its precise interpretation.
