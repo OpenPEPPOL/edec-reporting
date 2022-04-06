@@ -4,7 +4,6 @@ End User reporting of production data helps the Peppol Coordinating Authority an
 The reporting requirements towards SPs are divided into two areas: reporting about End User data and reporting about Transaction Statistics. This operational procedure will explain and outline the operational procedures for the End User Reporting.
 The policy on reporting is stated in Internal Regulations for Use of the Peppol Network.
 
-
 == Preface
 
 //*This https://peppol.eu/?rel=undefined[Peppol] Reporting provides a set of specifications for implementing a Peppol business process. The document is concerned with clarifying requirements for ensuring interoperability of pan-European Public eProcurement and provides guidelines for the support and implementation of these requirements.
