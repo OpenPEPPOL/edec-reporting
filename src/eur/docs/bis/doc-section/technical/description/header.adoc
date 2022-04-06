@@ -1,4 +1,17 @@
-= Header
+
+
+
+== Header
+
+The element `Header` contains the reporting periode start date, reporting period end date 
+and the Id of the reporting organization.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-1.xml[tags=Header]
+----
+
 
 == Report Start Date
 

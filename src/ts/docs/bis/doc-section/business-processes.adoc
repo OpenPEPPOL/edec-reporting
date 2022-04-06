@@ -78,7 +78,7 @@ PEPPOL has defined a https://peppol.eu/downloads/the-peppol-edelivery-network-sp
 
 === Process and messages
 
-All messages contains ProcessID and CustomizationID. PrpocessID identifies what business process a given message is part of, and CustomizationID identifies the kind of message and the rules applied.
+All messages contains ProcessID and CustomizationID. ProcessID identifies what business process a given message is part of, and CustomizationID identifies the kind of message and the rules applied.
 
 Profiles are connected to one business process, and may contain multiple document types. Valid document instances shall contain corresponding ProfileID and CustomizationID.
 

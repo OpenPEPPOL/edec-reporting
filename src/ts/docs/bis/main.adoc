@@ -1,5 +1,5 @@
 # Transaction-Statistics Reporting
-Draft 
+Version 1.0-DRAFT
 
 include::./settings.adoc[]
 

@@ -1,5 +1,5 @@
 # End User Reporting
-OpenPeppol AISBL, Coordinating Community v0.1.2
+Version 1.0-DRAFT
 
 include::./settings.adoc[]
 
