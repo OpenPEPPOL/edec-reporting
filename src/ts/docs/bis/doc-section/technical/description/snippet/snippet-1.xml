@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EndUserReport xmlns="urn:fdc:peppol.eu:oo:trns:end-user-report:1">
-                     
-<CustomizationID schemeID="str1234">str1234</CustomizationID>
-    
-   <Header> 
+<TransactionStatistics xmlns="urn:fdc:peppol.eu:oo:trns:transaction-statistics:1">
+
+<!-- tag::TransactionStatistics[] -->                     
+   <TransactionStatistics>
+        <CustomizationID schemeID="str1234">str1234</CustomizationID>
+        <Header>
+            <ReportPeriodStart>2012-12-13</ReportPeriodStart>
+            <ReportPeriodEnd>2012-12-13</ReportPeriodEnd>
+            <ReporterID schemeID="str1234">str1234</ReporterID>
+        </Header>
+        <Total>
+            <Incoming>33</Incoming>
+            <Outgoing>33</Outgoing>
+        </Total>
+        <Subtotal type="???">
+            <Key metaSchemeID="SP" schemeID="str1234">str1234</Key>
+            <Incoming>33</Incoming>
+            <Outgoing>33</Outgoing>
+        </Subtotal>
+   </TransactionStatistics>
+<!-- end::TransactionStatistics[] --> 
+
+<!-- tag::CustomizationID[] -->                     
+    <fdc:CustomizationID schemeID="str1234">str1234</fdc:CustomizationID>
+<!-- end::CustomizationID[] --> 
+
+   <fdc:Header> 
     <!-- tag::Header[] -->
-    <Header>
-        <ReportPeriodStart>2012-12-13</ReportPeriodStart>
-        <ReportPeriodEnd>2012-12-13</ReportPeriodEnd>
-        <ReporterID schemeID="str1234">str1234</ReporterID>
-    </Header>
+    <fdc:Header>
+        <fdc:ReportPeriodStart>2012-12-13</fdc:ReportPeriodStart>
+        <fdc:ReportPeriodEnd>2012-12-13</fdc:ReportPeriodEnd>
+        <fdc:ReporterID schemeID="str1234">str1234</fdc:ReporterID>
+    </fdc:Header>
     <!-- end::Header[] -->   
 
 

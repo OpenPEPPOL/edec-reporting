@@ -1,4 +1,18 @@
-= CustomizationID
+
+= TransactionStatistics
+
+The element `TransactionStatistics` is the root element for a single Peppol Transaction Statistics Report.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-1.xml[tags=TransactionStatistics]
+----
+
+
+
+
+== CustomizationID
 
 The element `CustomizationID`  Identifies a customization of this format for a specific use.
 
@@ -9,7 +23,7 @@ include::./snippet//snippet-1.xml[tags=CustomizationID]
 ----
 
 
-= Header
+== Header
 
 The element `Header` contains the reporting periode start date, reporting period end date 
 and the Id of the reporting organization.
@@ -21,7 +35,7 @@ include::./snippet//snippet-1.xml[tags=Header]
 ----
 
 
-== Report Start Date
+=== Report Start Date
 
 The element `ReportPeriodStart` MUST contain the start date (inclusive) of the reporting period.
             Usually the first day of the preceding month.
@@ -34,7 +48,7 @@ include::./snippet//snippet-1.xml[tags=ReportPeriodStart]
 ----
 
 
-== Report end date
+=== Report end date
 The element `ReportPeriodEnd` MUST contain the The last date (inclusive) of the reporting period.
             Usually the last day of the preceding month.
 
@@ -44,7 +58,7 @@ The element `ReportPeriodEnd` MUST contain the The last date (inclusive) of the 
 include::./snippet//snippet-1.xml[tags=eindReportPeriodEnd
 ----
 
-== Reporter ID
+=== Reporter ID
 The element `ReporterID` MUST contain The unique identification of the Service Provider that is providing the data.
             If the "schemeID" attribute is set to "CertSubjectCN" than the value must be
               the Peppol AP Certificate Subject CN (Common Name).
@@ -56,7 +70,7 @@ The element `ReporterID` MUST contain The unique identification of the Service P
 include::./snippet/snippet-1.xml[tags=ReporterID]
 ----
 
-= Total
+== Total
 
 The element `Total` contains the total number of exchanged datasets.
 
@@ -66,7 +80,7 @@ The element `Total` contains the total number of exchanged datasets.
 include::./snippet//snippet-2.xml[tags=Total]
 ----
 
-== Incoming
+=== Incoming
 
 The element `Incoming` MUST contain the number of incoming/received datasets.
 
@@ -76,7 +90,7 @@ The element `Incoming` MUST contain the number of incoming/received datasets.
 include::./snippet//snippet-2.xml[tags=Incoming]
 ----
 
-== Outgoing
+=== Outgoing
 
 The element `Outgoing` MUST contain the number of outgoing/sent datasets
 
@@ -86,9 +100,10 @@ The element `Outgoing` MUST contain the number of outgoing/sent datasets
 include::./snippet//snippet-2.xml[tags=Outgoing]
 ----
 
-= Subtotal
+== Subtotal
 
 The element `Subtotal` contains the total number of exchanged datasets.
+The sum of subtotals must match the total.
 
 .Example:
 [source, xml, indent=0]
@@ -96,15 +111,17 @@ The element `Subtotal` contains the total number of exchanged datasets.
 include::./snippet//snippet-2.xml[tags=Subtotal]
 ----
 
-== Key
+=== Key
 
 The element `Key` MUST contain a key type with mandatory "metaSchemeID" and "schemeID" attributes and a value
-Meta ID scheme. Proposed values are:
-                * SP - Service Provider
-                * DT - Dataset Type
-                * TP - Transport Profile
-                * CC - Country Code
-              This list is extensible for future use cases and hence not checked by XSD.
+Meta ID scheme. Proposed values are: +
+
+* SP - Service Provider +
+* DT - Dataset Type +
+* TP - Transport Profile +
+* CC - Country Code +
+
+This list is extensible for future use cases and hence not checked by XSD.
 
 .Example:
 [source, xml, indent=0]
@@ -113,7 +130,7 @@ include::./snippet//snippet-2.xml[tags=Key]
 ----
 
 
-== Incoming
+=== Incoming
 
 The element `Incoming` MUST contain the number of incoming/received datasets for the specified subtotal type.
 
@@ -123,7 +140,7 @@ The element `Incoming` MUST contain the number of incoming/received datasets for
 include::./snippet//snippet-2.xml[tags=SubtIncoming]
 ----
 
-== Outgoing
+=== Outgoing
 
 The element `Outgoing` MUST contain the number of outgoing/sent datasets for the specified subtotal type
 

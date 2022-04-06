@@ -164,3 +164,9 @@ include::./technical/codelists/index.adoc[]
 include::./technical/description/index.adoc[]
 
 :leveloffset: -1
+
+:leveloffset: +1
+
+include::./technical/businessrules/index.adoc[]
+
+:leveloffset: -1

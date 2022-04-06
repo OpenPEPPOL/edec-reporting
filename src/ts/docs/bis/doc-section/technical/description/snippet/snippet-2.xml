@@ -29,6 +29,10 @@
       </Subtotal>
     <!-- end::Subtotal[] -->
 
+    <!-- tag::Key[] -->
+          <Key metaSchemeID="CC" schemeID="str1234">AT</Key>
+   <!-- end::Key[] -->
+
     <!-- tag::SubtIncoming[] -->
           <fdc:Incoming>33</fdc:Incoming>
    <!-- end::SubtIncoming[] -->

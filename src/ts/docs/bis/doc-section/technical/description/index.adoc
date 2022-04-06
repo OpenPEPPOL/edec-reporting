@@ -6,12 +6,6 @@
 
 include::header.adoc[]
 
-include::IncomingOutgoing.adoc[]
 
-include::SubtotalKey.adoc[]
-
-include::Subtotal.adoc[]
-
-include::TransactionStatistics.adoc[]
 
 :leveloffset: -1

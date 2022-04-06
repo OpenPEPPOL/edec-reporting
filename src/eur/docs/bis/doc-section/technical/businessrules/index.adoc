@@ -1,0 +1,134 @@
+[[process-requirements]]
+= End User Reporting process rules
+
+
+
+.Business rules
+[cols="1h,1,5",options="header"]
+|====
+
+|RuleID
+|Scope
+|Requirement (depending, as applicable, on the respective business case)
+
+|BR-EUR-01
+|Data Gathering
+|The "reporting period" starts with the first day of every month at 00:00:00 UTC (inclusive) and ends with the last day of said month at 23:59:59 UTC (inclusive)
+
+|BR-EUR-02
+|Data Gathering
+|If a Service Provider initiates its Peppol activities during a reporting period, this particular reporting period starts for this Service Provider at the initiation point in time.
+
+|BR-EUR-03
+|Data Gathering
+|If a Service Provider ends its Peppol activities during a reporting period, this particular reporting period ends for this Service Provider at the ending point in time. The report must be send anyway.
+
+|BR-EUR-04
+|Data Gathering
+|Only Service Providers offering the exchange of Dataset Types must fill out and transmit an End User Report
+
+|BR-EUR-05
+|Data Gathering
+|Data for test and production must be gathered separately
+
+|BR-EUR-06
+|Data Gathering
+|Only End Users that were the source of a dataset send via Peppol (C1) or the receiver of a dataset sent via Peppol (C4) within the reporting period must be part of the End User Report
+
+|BR-EUR-07
+|End User Details
+|A legal identifier of the particular End User must be provided
+
+|BR-EUR-08
+|End User Details
+|The type of the legal identifier of the particular End User must be provided
+
+|BR-EUR-09
+|End User Details
+|The country of the particular End User must be provided
+
+|BR-EUR-10
+|End User Details
+|The territory of the particular End User may be provided
+
+|BR-EUR-11
+|End User Details
+|All dataset types the particular End User was sending in the reporting period must be provided
+
+|BR-EUR-12
+|End User Details
+|All dataset types the particular End User was receiving in the reporting period must be provided
+
+|BR-EUR-13
+|End User Details
+|All Peppol participant identifiers used by the particular End User must be provided
+
+|BR-EUR-14
+|End User Details
+|Zero, one or more Intermediaries may be provided per particular End User
+
+|BR-EUR-15
+|Intermediary Details
+|A legal identifier of the particular Intermediary must be provided
+
+|BR-EUR-16
+|Intermediary Details
+|The type of the legal identifier of the particular Intermediary must be provided
+
+|BR-EUR-17
+|Intermediary Details
+|The country of the particular Intermediary must be provided
+
+|BR-EUR-18
+|Intermediary Details
+|The territory of the particular Intermediary may be provided
+
+|BR-EUR-19
+|Transmission
+|An End User Report must be transmitted once per month ("reporting period")
+
+|BR-EUR-20
+|Transmission
+|Only End User Reports on the Production stage must be transmitted
+
+|BR-EUR-21
+|Transmission
+|An End User Report must be transmitted within 10 days (inclusive) after the end of the previous reporting period
+
+|BR-EUR-22
+|Transmission
+|Each End User must not be contained more than once in a report
+
+|BR-EUR-23
+|Transmission
+|The data of each End User must be reported separately
+
+|BR-EUR-24
+|Transmission
+|The report must be transmitted, even if no Peppol transactions happened
+
+|BR-EUR-25
+|Transmission
+|In case the report of one Service Provider is received multiple times, only the latest received document will be evaluated
+
+|BR-EUR-26
+|Transmission
+|The begin and end date of the reporting period must be part of the transmission data
+
+|BR-EUR-27
+|Transmission
+|An identifier uniquely identifying the reporting Service Provider must be part of the transmission data
+
+|BR-EUR-28
+|Network
+|End User Reports must be transmitted via the Peppol eDelivery Network
+
+|BR-EUR-29
+|Network
+|End User Reports must only be transmitted to the Peppol Participant iD XXXXX
+
+|BR-EUR-30
+|Network
+|Only OpenPeppol is allowed to receive End User Reports
+
+|====
