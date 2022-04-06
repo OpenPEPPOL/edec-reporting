@@ -1,0 +1,147 @@
+[[process-requirements]]
+= Transaction statistics process rules
+
+
+
+.Business rules
+[cols="1h,1,5",options="header"]
+|====
+
+|RuleID
+|Scope
+|Requirement (depending, as applicable, on the respective business case)
+
+|BR-TS-01
+|Data Gathering
+|The "reporting period" starts with the first day of every month at 00:00:00 UTC (inclusive) and ends with the last day of said month at 23:59:59 UTC (inclusive)
+
+|BR-TS-02
+|Data Gathering
+|If a Service Provider initiates its Peppol activities during a reporting period, this particular reporting period starts for this Service Provider at the initiation point in time.
+
+|BR-TS-03
+|Data Gathering
+|If a Service Provider ends its Peppol activities during a reporting period, this particular reporting period ends for this Service Provider at the ending point in time. The report must be send anyway.
+
+|BR-TS-04
+|Data Gathering
+|Only Service Providers offering the exchange of Dataset Types must fill out and transmit Transaction Statistics
+
+|BR-TS-05
+|Data Gathering
+|Data for test and production must be gathered separately
+
+|BR-TS-06
+|Data Gathering
+|All outgoing datasets to which a positive transport level acknowledgment was received must be counted ("outgoing countable dataset")
+
+|BR-TS-07
+|Data Gathering
+|All incoming datasets to which a positivie transport level acknowledgement was sent must be be counted ("incoming countable dataset")
+
+|BR-TS-08
+|Data Gathering
+|Duplicate transmissions must not be counted
+
+|BR-TS-09
+|Data Gathering
+|The exchange date in UTC timezone of every countable dataset must be gathered
+
+|BR-TS-10
+|Data Gathering
+|The direction of exchange of every countable dataset must be gathered
+
+|BR-TS-11
+|Data Gathering
+|The unique identifier of the Sending Service Provider must be gathered for every incoming countable dataset
+
+|BR-TS-12
+|Data Gathering
+|The unique identifier of the Receiving Service Provider must be gathered for every outgoing countable dataset
+
+|BR-TS-13
+|Data Gathering
+|The Dataset Type (Document Type ID) of every countable dataset must be gathered
+
+|BR-TS-14
+|Data Gathering
+|The Transport Protocol ID of every countable dataset must be gathered
+
+|BR-TS-15
+|Data Gathering
+|The Country Code of every C1 of every countable dataset must be gathered
+
+|BR-TS-16
+|Data Gathering
+|The Country Code of every C4 of every countable dataset must be gathered
+
+|BR-TS-17
+|Aggregation
+|All data gathered within the reporting period must be aggregated by the Service Provider ("gathered datasets")
+
+|BR-TS-18
+|Aggregation
+|Data gathered from different Access Point nodes sharing the same Peppol certificate must be provided together
+
+|BR-TS-19
+|Aggregation
+|Per direction the overall count of all gathered datasets must be provided
+
+|BR-TS-20
+|Aggregation
+|Each gathered Sending Service Provider and its respective usage count must be provided
+
+|BR-TS-21
+|Aggregation
+|Each gathered Receiving Service Provider and its respective usage count must be provided
+
+|BR-TS-22
+|Aggregation
+|Per direction each gathered Dataset Type and its respective usage count must be provided
+
+|BR-TS-23
+|Aggregation
+|Per direction each gathered Transport Protocol and its respective usage count must be provided
+
+|BR-TS-24
+|Aggregation
+|Per direction each gathered combination of Sender Country and Receiver Country and its respective usage count must be provided
+
+|BR-TS-25
+|Transmission
+|Transaction Statistics must be transmitted once per month ("reporting period")
+
+|BR-TS-26
+|Transmission
+|Only Transaction Statistics on the Production stage must be transmitted
+
+|BR-TS-27
+|Transmission
+|Transaction Statistics must be transmitted within 10 days (inclusive) after the end of the previous reporting period
+
+|BR-TS-28
+|Transmission
+|The report must be transmitted, even if no Peppol transactions happened
+
+|BR-TS-29
+|Transmission
+|In case the report of one Service Provider is received multiple times, only the latest received document will be evaluated
+
+|BR-TS-30
+|Transmission
+|The begin and end date of the reporting period must be part of the transmission data
+
+|BR-TS-31
+|Transmission
+|An identifier uniquely identifying the reporting Service Provider must be part of the transmission data
+
+|BR-TS-32
+|Network
+|Transaction Statistics must be transmitted via the Peppol eDelivery Network
+
+|BR-TS-33
+|Network
+|Transaction Statistics must be transmitted to the Peppol Participant iD XXXXX
+
+
+|====
