@@ -1,5 +1,5 @@
 # End User Reporting
-Draft 
+OpenPeppol AISBL, Coordinating Community v0.1.2
 
 include::./settings.adoc[]
 
@@ -23,7 +23,7 @@ v{version}
 This document sets out the processes and procedures for reporting End User data in the Peppol environment.
 
     
-*Parties involved:*
+*Target Audience:*
 
 * Service Provider (SP) 
    - how SPs are to submit reports on their End Users and statistical reports on transactions to the Peppol Coordinating Authority. 

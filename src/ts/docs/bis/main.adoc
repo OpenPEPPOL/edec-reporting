@@ -22,7 +22,7 @@ v{version}
 
 This document sets out the processes and procedures for Transaction Statistics reporting data in the Peppol environment. 
     
-*Parties involved:*
+*Target Audience:*
 
 * Service Provider (SP) 
    - how SPs are to submit reports on their End Users and statistical reports on transactions to the Peppol Coordinating Authority. 
