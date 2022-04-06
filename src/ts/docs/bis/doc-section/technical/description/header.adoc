@@ -55,3 +55,80 @@ The element `ReporterID` MUST contain The unique identification of the Service P
 ----
 include::./snippet/snippet-1.xml[tags=ReporterID]
 ----
+
+= Total
+
+The element `Total` contains the total number of exchanged datasets.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-2.xml[tags=Total]
+----
+
+== Incoming
+
+The element `Incoming` MUST contain the number of incoming/received datasets.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-2.xml[tags=Incoming]
+----
+
+== Outgoing
+
+The element `Outgoing` MUST contain the number of outgoing/sent datasets
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-2.xml[tags=Outgoing]
+----
+
+= Subtotal
+
+The element `Subtotal` contains the total number of exchanged datasets.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-2.xml[tags=Subtotal]
+----
+
+== Key
+
+The element `Key` MUST contain a key type with mandatory "metaSchemeID" and "schemeID" attributes and a value
+Meta ID scheme. Proposed values are:
+                * SP - Service Provider
+                * DT - Dataset Type
+                * TP - Transport Profile
+                * CC - Country Code
+              This list is extensible for future use cases and hence not checked by XSD.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-2.xml[tags=Key]
+----
+
+
+== Incoming
+
+The element `Incoming` MUST contain the number of incoming/received datasets for the specified subtotal type.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-2.xml[tags=SubtIncoming]
+----
+
+== Outgoing
+
+The element `Outgoing` MUST contain the number of outgoing/sent datasets for the specified subtotal type
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet//snippet-2.xml[tags=SubtOutgoing]
+----
