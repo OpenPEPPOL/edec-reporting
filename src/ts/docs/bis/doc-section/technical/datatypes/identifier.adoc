@@ -4,7 +4,7 @@
 Identifiers (IDs) are keys that are issued by the sender or recipient of a document or by a third party.
 
 ====
-IMPORTANT: The use of the attributes is specified for each information element.
+IMPORTANT : The use of the attributes is specified for each information element.
 ====
 
 [cols="1s,1,1,1", options="header"]
