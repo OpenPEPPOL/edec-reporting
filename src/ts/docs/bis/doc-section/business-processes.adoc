@@ -27,11 +27,13 @@ Service Providers will:
 The OpenPeppol Operating Office (OO) will:
 1.	Automatically check which providers have not submitted their Transaction Statistics Report. This check will be triggered automatically.
 2.	Prompt any SPs that have not submitted the Transaction Statistics Report.
+.. Prompting will be done by email and not by eDelivery
+.. Define that in due time is supposed to be 5 days, giving it a total of 15 days
 3.	Prompt the PA of the SP if a SP fails to submit the Transaction Statistics Report in due time after reminders are sent. Their PA will be informed to handle this as a non-compliance issue.
 4.	Failure by SPs to provide full and complete reports can be managed in accordance with the https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents[Non-compliance Operational Procedure].
 
-* Prompting will be done by email and not by eDelivery
-* Define that in due time is supposed to be 5 days, giving it a total of 15 days
+//* Prompting will be done by email and not by eDelivery
+//* Define that in due time is supposed to be 5 days, giving it a total of 15 days
 
 image::./images/ReminderTimeLine.png[Timeline, align="center"]
 
