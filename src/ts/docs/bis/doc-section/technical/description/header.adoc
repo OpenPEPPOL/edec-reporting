@@ -42,6 +42,7 @@ The element `ReportPeriodEnd` MUST contain the The last date (inclusive) of the 
 [source, xml, indent=0]
 ----
 include::./snippet//snippet-1.xml[tags=eindReportPeriodEnd
+----
 
 == Reporter ID
 The element `ReporterID` MUST contain The unique identification of the Service Provider that is providing the data.
