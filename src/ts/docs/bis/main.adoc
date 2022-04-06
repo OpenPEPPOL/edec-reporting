@@ -20,9 +20,9 @@ image::./images/peppol.png[pdfwidth=3.5in,align=center]
 {name-op-en}
 v{version}
 
-This document sets out the processes and procedures for reporting data in the Peppol environment. 
+This document sets out the processes and procedures for Transaction Statistics reporting data in the Peppol environment. 
     
-*This includes:*
+*Parties involved:*
 
 * Service Provider (SP) 
    - how SPs are to submit reports on their End Users and statistical reports on transactions to the Peppol Coordinating Authority. 
