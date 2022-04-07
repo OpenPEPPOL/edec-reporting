@@ -37,11 +37,11 @@ The OpenPeppol Operating Office (OO) will:
 
 image::./images/ReminderTimeLine.png[Timeline, align="center"]
 
-//=== Receive and Compound data
+=== Receive and Compound data
 
-//The OpenPeppol Operating Office (OO) will:
-//1.	Receive Transaction Statistics Reports from Service Providers in accordance with the Transaction Statistics Report specification.
-//2.	Compound all the data inside the Peppol Reporting Platform preparing it for consolidation.
+The OpenPeppol Operating Office (OO) will:
+1.	Receive Transaction Statistics Reports from Service Providers in accordance with the Transaction Statistics Report specification.
+2.	Process the received data to generate reports for different jurisdictions and/or Peppol Authorities.
 
 
 === Consolidate data to a common data pool
