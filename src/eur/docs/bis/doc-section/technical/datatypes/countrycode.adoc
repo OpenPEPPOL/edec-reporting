@@ -2,7 +2,7 @@
 
 
 Country Code Types are identifiers designed to identify countries according
-the ISO 3166 standard.
+the https://docs.peppol.eu/poacc/upgrade-3/codelist/ISO3166/[ISO3166] standard.
 
 
 .Document Reference. Type
