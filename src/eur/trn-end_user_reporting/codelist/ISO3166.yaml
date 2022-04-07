@@ -522,7 +522,7 @@ codes:
 - id: NL
   name:
     en: Netherlands
-- id: 'NO'
+- id: NO
   name:
     en: Norway
     nb: Norge
@@ -776,6 +776,9 @@ codes:
   name:
     en: Zimbabwe
 - id: 1A
+  name:
+    en: Kosovo
+- id: XK
   name:
     en: Kosovo
 - id: XI
