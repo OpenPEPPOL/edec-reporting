@@ -3,8 +3,8 @@ content:
     name: Customization ID
     definition: Identifies a customization of this format for a specific use.
     cardinality: 1..1
-    datatype:
-      value: Identifier
+    value:
+      datatype: Identifier
 
   - id: IBG-1
     name: Report Header
@@ -17,24 +17,24 @@ content:
           Usually the first day of the preceding month.
           E.g. for the first report this may be a different date as well.
         cardinality: 1..1
-        datatype:
-          value: Date
+        value:
+          datatype: Date
         
       - id: IBT-003
         name: Report period end date
         definition: The last date (inclusive) of the reporting period.
           Usually the last day of the preceding month.
         cardinality: 1..1
-        datatype:
-          value: Date
+        value:
+          datatype: Date
 
       - id: IBT-004
         name: Reporter identification
         definition: The unique identification of the Service Provider that 
           is providing the data.
         cardinality: 1..1
-        datatype:
-          value: Identifier
+        value:
+          datatype: Identifier
         
       - id: IBT-005
         name: Reporter identification scheme
@@ -42,8 +42,8 @@ content:
           Currently onl "CertSubjectCN" for the Peppol AP Certificate 
           Subject CN (Common Name) is supported.
         cardinality: 1..1
-        datatype:
-          value: Code
+        value:
+          datatype: Code
           codelist: ReporterIDScheme
 
   - id: IBG-2
@@ -56,15 +56,15 @@ content:
         name: Incoming total
         definition: The total number of received Datasets in the reporting period
         cardinality: 1..1
-        datatype:
-          value: Count
+        value:
+          datatype: Count
 
       - id: IBT-007
         name: Outgoing total
         definition: The total number of sent Datasets in the reporting period
         cardinality: 1..1
-        datatype:
-          value: Count
+        value:
+          datatype: Count
 
   - id: IBG-3
     name: Subtotal values
@@ -78,8 +78,8 @@ content:
         definition: Defines the expected Key elements and their meta schemes.
           The codelist for this field is "SubtotalType"
         cardinality: 1..1
-        datatype:
-          value: Code
+        value:
+          datatype: Code
           codelist: SubtotalType
           
         # Note: IBG-4 is not referenced from the syntax model and that is fine          
@@ -103,26 +103,26 @@ content:
             definition: Defines the scheme identifier, depending on the Meta scheme
               identifier.
             cardinality: 1..1
-            datatype:
-              value: Identifier
+            value:
+              datatype: Identifier
               
           - id: IBT-011
             name: Identifier value
             definition: Defines the main identifier value following the Scheme identifier.
             cardinality: 1..1
-            datatype:
-              value: Identifier
+            value:
+              datatype: Identifier
 
       - id: IBT-012
         name: Incoming subtotal
         definition: The number of received Datasets in the reporting period matching this subtotal
         cardinality: 1..1
-        datatype:
-          value: Count
+        value:
+          datatype: Count
 
       - id: IBT-013
         name: Outgoing subtotal
         definition: The total number of sent Datasets in the reporting period matching this subtotal
         cardinality: 1..1
-        datatype:
-          value: Count
+        value:
+          datatype: Count
