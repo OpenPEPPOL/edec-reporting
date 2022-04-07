@@ -67,7 +67,7 @@ The OpenPeppol Operating Office (OO) will:
 
 The OpenPeppol Operating Office (OO) will:
 1.	Publish the statistical report to a publicly accessible location.
-Information included in statistical reports is aggregated data and does not identify any end user or service provider or their individualised information or data.
+Information included in statistical reports is aggregated data and does not identify any End User or Service Provider or their individualised information or data.
 2.	Notify all OpenPeppol Members.
 The notification will include a link to the published report.
 
