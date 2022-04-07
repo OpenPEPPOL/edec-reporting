@@ -1,6 +1,6 @@
 metadata:
   namespaces:
-    eur: urn:peppol:end-user-reporting:1.0
+    eur: urn:fdc:peppol:end-user-reporting:1.0
     ## This is the XML schema for the Peppol End User Reporting.
     ## This is based on the "Internal Regulations" document,
     ##   chapter 4.3 "Service Provider Reporting about End Users"
