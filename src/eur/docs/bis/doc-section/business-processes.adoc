@@ -38,12 +38,12 @@ The OpenPeppol Operating Office (OO) will:
 
 image::./images/ReminderTimeLine.png[Timeline, align="center"]
 
-=== Receive and Process Data
+//=== Receive and Process Data
 
-The OO will:
+//The OO will:
 
-1.	Receive End User Reports from Service Providers in accordance with the Peppol End User Report specification.
-2.	Process the received data inside the Peppol Reporting Platform by aggregating and dividing the data into reports for each jurisdiction/Peppol Authority for whom the End User data is relevant.
+//1.	Receive End User Reports from Service Providers in accordance with the Peppol End User Report specification.
+//2.	Process the received data inside the Peppol Reporting Platform by aggregating and dividing the data into reports for each jurisdiction/Peppol Authority for whom the //End User data is relevant.
 
 //** */== Transaction Statistics reporting
 

@@ -32,6 +32,8 @@ This document sets out the processes and procedures for Transaction Statistics r
 
 *Out of scope:*
 
+// extend 
+
 * Peppol Authority (PA)
    - how PAs can access and download the information from the Peppol Coordinating Authority.
 
