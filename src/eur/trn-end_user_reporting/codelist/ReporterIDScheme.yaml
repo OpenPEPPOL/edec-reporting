@@ -1,0 +1,12 @@
+title:
+  en: Reporter ID Scheme
+identifier: Peppol:ReporterIDScheme
+agency: OpenPeppol OO
+language: en
+version:
+  identifier: 2022-01
+  status: draft
+codes:
+- id: CertSubjectCN
+  name:
+    en: Peppol AP Certificate Subject CN (Common Name)
