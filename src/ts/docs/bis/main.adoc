@@ -44,9 +44,9 @@ This document sets out the processes and procedures for Transaction Statistics r
 * Operational reports
    - Management reports relating to workloads and workflow (e.g. change requests, extended use requests, issues and incidents, non-compliance, etc.) are managed by the OpenPeppol Operating Office as part of its operations.
 
-== Link to main site of documentation
+//== Link to main site of documentation
 
-https://docs.peppol.eu/poacc/billing/3.0/[Main documentation site]  (to be changed to reporting main doc site when existing)
+//https://docs.peppol.eu/poacc/billing/3.0/[Main documentation site]  (to be changed to reporting main doc site when existing)
 
 
 /**link:/reporting/EndUserReporting/[Main documentation site]*/
