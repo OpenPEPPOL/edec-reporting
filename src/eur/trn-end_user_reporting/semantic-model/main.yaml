@@ -43,7 +43,8 @@ content:
           Subject CN (Common Name) is supported.
         cardinality: 1..1
         datatype:
-          value: Identifier
+          value: Code
+          codelist: ReporterIDScheme
 
   - id: IBG-2
     name: Single End User information
@@ -76,7 +77,8 @@ content:
           list published by the  ISO/IEC 3166 maintenance agency.
         cardinality: 1..1
         datatype:
-          value: Country
+          value: Code
+          codelist: ISO3166
         
       - id: IBT-009
         name: Territory
@@ -135,7 +137,8 @@ content:
               list published by the  ISO/IEC 3166 maintenance agency.
             cardinality: 1..1
             datatype:
-              value: Country
+              value: Code
+              codelist: ISO3166
         
           - id: IBT-016
             name: Intermediary territory
