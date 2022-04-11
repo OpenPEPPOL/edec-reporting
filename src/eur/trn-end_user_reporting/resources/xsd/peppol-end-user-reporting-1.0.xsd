@@ -14,7 +14,7 @@
          Philip Helger
 
        History: 
-         2022-03-31, Philip Helger
+         2022-04-07, Philip Helger
            initial version
     </xs:documentation>
   </xs:annotation>
@@ -210,6 +210,13 @@
         <xs:annotation>
           <xs:documentation>
             Identifies a customization of this format for a specific use.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProfileID" type="IDType">
+        <xs:annotation>
+          <xs:documentation>
+            Identifies the business process context in which the transaction appears.
           </xs:documentation>
         </xs:annotation>
       </xs:element>

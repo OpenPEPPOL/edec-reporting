@@ -46,8 +46,8 @@ content:
     children:  
     - element: ts:Key
       reference: 
-      - IBG-4
       - IBT-011
+      - IBG-4
       attribute:
       - element: metaSchemeID
         reference: IBT-009
