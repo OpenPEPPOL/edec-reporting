@@ -1,0 +1,87 @@
+include::./settings.adoc[]
+
+:icons: font
+:stem:
+:toc: left
+:hugo-weight: 1
+:toclevels: 2
+:source-highlighter: coderay
+:source-language: xml
+:sectanchors:
+:sectnums:
+image::./images/peppol.png[pdfwidth=3.5in,align=center]
+
+= {doctitle}
+
+{name-op-en}
+v{version}
+
+:leveloffset: +1
+
+= Introduction
+
+This document sets out the processes and procedures for reporting End User data in the Peppol environment.
+
+== Scope
+
+NOTE: Add what is in scope explicitly it can be just a paragraph
+
+== Audience
+
+* Service Provider (SP)
+- how SPs are to submit reports on their End Users on transactions to the Peppol Coordinating Authority.
+
+More specifically, roles addressed are the following:
+
+* ICT Architects
+* ICT Developers
+* Business Experts
+
+= Document Structure
+
+NOTE: What is expected in Chapter 1, 2 etc.
+
+= Reporting Business Process
+
+== Parties and Roles
+
+NOTE: add the main parties of the *Business Process*. The party is the service provider on the role of reporter and the Peppol OO as the reprot receiver
+
+== End-User Reporting Process
+
+NOTE: Consolidated Diagram and process overview
+
+=== Data Gathering
+NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Gathering
+
+=== Data Aggregation
+
+NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Aggregation
+
+=== Data Transmission
+NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
+
+= Business Information
+
+NOTE: Description of the details on the semantic model of the Message. Header, Reporting Period (Previous Section 3)
+
+= Rules
+
+NOTE: Technical Business rules that concern the *information of the Message*
+
+= Technical Details
+
+NOTE: Technical information on semantic and syntax binding. Data Types, Identifiers, schema
+
+== Primitive Datatypes
+
+NOTE: ISO 15000, Annex A (see PINT) of primitive types used in the syntax binding.
+
+== Semantic Datatypes
+
+NOTE: Richer definition of types, based on primitive times and optionally external rules.
+
+= BIS Identifiers
+
+
+:leveloffset: -1
