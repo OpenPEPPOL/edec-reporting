@@ -19,23 +19,13 @@ content:
     cardinality: 1..1
     children:
       - id: IBT-003
-        name: Report period start date
-        definition: The first date (inclusive) of the reporting period.
-          Usually the first day of the preceding month.
-          E.g. for the first report this may be a different date as well.
+        name: Report period
+        definition: The year and month the data in this report refers to.
         cardinality: 1..1
         value:
-          datatype: Date
-        
-      - id: IBT-004
-        name: Report period end date
-        definition: The last date (inclusive) of the reporting period.
-          Usually the last day of the preceding month.
-        cardinality: 1..1
-        value:
-          datatype: Date
+          datatype: MonthYear
 
-      - id: IBT-005
+      - id: IBT-004
         name: Reporter identification
         definition: The unique identification of the Service Provider that 
           is providing the data.
@@ -43,11 +33,11 @@ content:
         value:
           datatype: Identifier
         
-      - id: IBT-006
+      - id: IBT-005
         name: Reporter identification scheme
         definition: This value must follow the "ReporterIDScheme" code list.
-          Currently onl "CertSubjectCN" for the Peppol AP Certificate 
-          Subject CN (Common Name) is supported.
+          Currently only "CertSubjectCN" for the Peppol AP Certificate 
+            Subject CN (Common Name) is supported.
         cardinality: 1..1
         value:
           datatype: Code
@@ -58,7 +48,7 @@ content:
     definition: Contains the reporting details of a single End User
     cardinality: 0..n
     children:
-      - id: IBT-007
+      - id: IBT-006
         name: Legal identifier
         definition: Legal identifier of the End User in the jurisdiction 
             within which it is legally based, and legal identifier Type 
@@ -70,7 +60,7 @@ content:
         value:
           datatype: Identifier
         
-      - id: IBT-008
+      - id: IBT-007
         name: Legal name
         definition: Legal name of the End User, in the jurisdiction within 
           which it is legally based.
@@ -78,7 +68,7 @@ content:
         value:
           datatype: Text
         
-      - id: IBT-009
+      - id: IBT-008
         name: Country code
         definition: The country code shall be chosen in the entries of the 
           list published by the  ISO/IEC 3166 maintenance agency.
@@ -87,28 +77,28 @@ content:
           datatype: Code
           codelist: ISO3166
         
-      - id: IBT-010
+      - id: IBT-009
         name: Territory
         definition: Territory of the End User's legal address.
         cardinality: 0..1
         value:
           datatype: Text
         
-      - id: IBT-011
+      - id: IBT-010
         name: Sending Dataset ID
         definition: End User's capability to send Peppol Dataset Types (Document Type ID).
         cardinality: 0..n
         value:
           datatype: Identifier
 
-      - id: IBT-012
+      - id: IBT-011
         name: Receiving Dataset ID
         definition: End User's capability to receive Peppol Dataset Types (Document Type ID).
         cardinality: 0..n
         value:
           datatype: Identifier
 
-      - id: IBT-013
+      - id: IBT-012
         name: Participant ID
         definition: All identifiers used in the Peppol Network by the End User, 
           related only to the Peppol Services which that particular Service Providers 
@@ -124,21 +114,21 @@ content:
           End User as described in the SP Agreement clause 9.2
         cardinality: 0..n
         children:
-          - id: IBT-014
+          - id: IBT-013
             name: Intermediary legal ID
             definition: Legal identifier of the Intermediary.
             cardinality: 1..1
             value:
               datatype: Identifier
             
-          - id: IBT-015
+          - id: IBT-014
             name: Intermediary legal name
             definition: The Legal name of the Intermediary.
             cardinality: 1..1
             value:
               datatype: Text
               
-          - id: IBT-016
+          - id: IBT-015
             name: Intermediary country code
             definition: The country code shall be chosen in the entries of the 
               list published by the  ISO/IEC 3166 maintenance agency.
@@ -147,7 +137,7 @@ content:
               datatype: Code
               codelist: ISO3166
         
-          - id: IBT-017
+          - id: IBT-016
             name: Intermediary territory
             definition: Territory of the intermediary's legal address.
             cardinality: 0..1

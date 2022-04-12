@@ -19,47 +19,44 @@ content:
     reference: IBG-1
     children:  
     
-    - element: ts:ReportPeriodStart
+    - element: ts:ReportPeriod
       reference: IBT-003
 
-    - element: ts:ReportPeriodEnd
-      reference: IBT-004
-
     - element: ts:ReporterID
-      reference: IBT-005
+      reference: IBT-004
       attribute:
       - element: schemeID
-        reference: IBT-006
+        reference: IBT-005
 
   - element: ts:Total
     reference: IBG-2
     children:  
       - element: ts:Incoming
-        reference: IBT-007
+        reference: IBT-006
         
       - element: ts:Outgoing
-        reference: IBT-008
+        reference: IBT-007
 
   - element: ts:Subtotal
     reference: IBG-3
     attribute:
     - element: type
-      reference: IBT-009
+      reference: IBT-008
 
     children:  
     - element: ts:Key
       reference: 
-      - IBT-012
+      - IBT-011
       - IBG-4
       attribute:
       - element: metaSchemeID
-        reference: IBT-010
+        reference: IBT-009
 
       - element: schemeID
-        reference: IBT-011
+        reference: IBT-010
       
     - element: ts:Incoming
-      reference: IBT-013
+      reference: IBT-012
       
     - element: ts:Outgoing
-      reference: IBT-014
+      reference: IBT-013

@@ -19,23 +19,13 @@ content:
     cardinality: 1..1
     children:
       - id: IBT-003
-        name: Report period start date
-        definition: The first date (inclusive) of the reporting period.
-          Usually the first day of the preceding month.
-          E.g. for the first report this may be a different date as well.
-        cardinality: 1..1
-        value:
-          datatype: Date
-        
-      - id: IBT-004
-        name: Report period end date
-        definition: The last date (inclusive) of the reporting period.
-          Usually the last day of the preceding month.
+        name: Report period
+        definition: The year and month the data in this report refers to.
         cardinality: 1..1
         value:
           datatype: Date
 
-      - id: IBT-005
+      - id: IBT-004
         name: Reporter identification
         definition: The unique identification of the Service Provider that 
           is providing the data.
@@ -43,11 +33,11 @@ content:
         value:
           datatype: Identifier
         
-      - id: IBT-006
+      - id: IBT-005
         name: Reporter identification scheme
         definition: This value must follow the "ReporterIDScheme" code list.
-          Currently onl "CertSubjectCN" for the Peppol AP Certificate 
-          Subject CN (Common Name) is supported.
+          Currently only "CertSubjectCN" for the Peppol AP Certificate 
+            Subject CN (Common Name) is supported.
         cardinality: 1..1
         value:
           datatype: Code
@@ -59,14 +49,14 @@ content:
     cardinality: 1..1
     children:
 
-      - id: IBT-007
+      - id: IBT-006
         name: Incoming total
         definition: The total number of received Datasets in the reporting period
         cardinality: 1..1
         value:
           datatype: Count
 
-      - id: IBT-008
+      - id: IBT-007
         name: Outgoing total
         definition: The total number of sent Datasets in the reporting period
         cardinality: 1..1
@@ -80,7 +70,7 @@ content:
     cardinality: 0..n
     children:
 
-      - id: IBT-009
+      - id: IBT-008
         name: Subtotal type
         definition: Defines the expected Key elements and their meta schemes.
           The codelist for this field is "SubtotalType"
@@ -96,7 +86,7 @@ content:
         cardinality: 1..n
         children:
           
-          - id: IBT-010
+          - id: IBT-009
             name: Meta scheme identifier
             definition: Defines the meta scheme identifier of this subtotal key
               Must follow the "SubtotalKeyMetaScheme" code list
@@ -105,7 +95,7 @@ content:
               datatype: Code
               codelist: SubtotalKeyMetaScheme
               
-          - id: IBT-011
+          - id: IBT-010
             name: Scheme identifier
             definition: Defines the scheme identifier, depending on the Meta scheme
               identifier.
@@ -113,21 +103,21 @@ content:
             value:
               datatype: Identifier
               
-          - id: IBT-012
+          - id: IBT-011
             name: Identifier value
             definition: Defines the main identifier value following the Scheme identifier.
             cardinality: 1..1
             value:
               datatype: Identifier
 
-      - id: IBT-013
+      - id: IBT-012
         name: Incoming subtotal
         definition: The number of received Datasets in the reporting period matching this subtotal
         cardinality: 1..1
         value:
           datatype: Count
 
-      - id: IBT-014
+      - id: IBT-013
         name: Outgoing subtotal
         definition: The total number of sent Datasets in the reporting period matching this subtotal
         cardinality: 1..1
