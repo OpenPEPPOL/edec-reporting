@@ -67,7 +67,8 @@ NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Tra
 
 = Business Information
 
-NOTE: Description of the details on the semantic model of the Message. Header, Reporting Period (Previous Section 3)
+NOTE: Description of the details on the semantic model of the Message. Header, Reporting Period (Previous Section 3). Link to the processes
+
 
 = Rules
 
