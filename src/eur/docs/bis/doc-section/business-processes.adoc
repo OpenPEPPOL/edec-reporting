@@ -43,7 +43,7 @@ image::./images/ReminderTimeLine.png[Timeline, align="center"]
 The OO will:
 
 1.	Receive End User Reports from Service Providers in accordance with the Peppol End User Report specification.
-2.	Process the received data inside the Peppol Reporting Platform by aggregating and dividing the data into reports for each jurisdiction/Peppol Authority for whom the End User data is relevant.
+2.	Process the received data to generate reports for different jurisdictions and/or Peppol Authorities.
 
 //** */== Transaction Statistics reporting
 
@@ -144,13 +144,8 @@ The semantic data types define the allowed value domain for the content, and any
 
 include::./technical/datatypes/index.adoc[]
 
-
 :leveloffset: -1
 
-== Code lists
-
-Semantic data types are used to bridge the gap between the semantic concepts expressed by the information elements and the technical implementation.
-The semantic data types define the allowed value domain for the content, and any additional information components (attributes) needed in order to ensure its precise interpretation.
 
 :leveloffset: +1
 

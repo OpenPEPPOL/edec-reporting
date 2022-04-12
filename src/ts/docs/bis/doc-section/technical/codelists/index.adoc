@@ -3,13 +3,13 @@
 
 :leveloffset: +1
 
-= Code lists for coded elements
+//= Code lists for coded elements
 
-Mandatory code list
+//Mandatory code list
 
-Any element with the semantic data type = *code*, can mandate the use of a specific code list (or a fixed value). The applicable code lists can be found in the {link-codelist}. In this section, you can find the valid codes, their names and description, and also links to where the same code list is used elsewhere in the transaction, or in other PEPPOL BIS v3. documents.
+//Any element with the semantic data type = *code*, can mandate the use of a specific code list (or a fixed value). The applicable code lists can be found in the {link-codelist}. In this section, you can find the valid codes, their names and description, and also links to where the same code list is used elsewhere in the transaction, or in other PEPPOL BIS v3. documents.
 
-= Code list for Country Codes
+= Country Codes
 
 Mandatory code list
 
@@ -19,9 +19,9 @@ include::id-schemes/country.adoc[]
 
 :leveloffset: -2
 
-= Code list for document type identifiers
+//= Code list for document type identifiers
 
-Optional code lists (warnings only):
+//Optional code lists (warnings only):
 
 :leveloffset: +1
 
