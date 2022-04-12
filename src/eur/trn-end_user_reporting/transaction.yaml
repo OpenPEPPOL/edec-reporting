@@ -10,4 +10,4 @@ validation:
   # xsd is for verifying XSD conformance
   xsd: resources/xsd/peppol-end-user-reporting-1.0.xsd
   schematron:
-    - schematron/schematron.yaml
+    - schematron/peppol-end-user-reporting-1.0.sch
