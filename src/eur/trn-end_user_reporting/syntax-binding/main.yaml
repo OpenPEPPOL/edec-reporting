@@ -13,29 +13,32 @@ content:
   - element: eur:CustomizationID
     reference: IBT-001
 
+  - element: eur:ProfileID
+    reference: IBT-002
+
   - element: eur:Header
     reference: IBG-1
     children:  
 
     - element: eur:ReportPeriodStart
-      reference: IBT-002
-
-    - element: eur:ReportPeriodEnd
       reference: IBT-003
 
-    - element: eur:ReporterID
+    - element: eur:ReportPeriodEnd
       reference: IBT-004
+
+    - element: eur:ReporterID
+      reference: IBT-005
       attribute: 
       
       - element: schemeID
-        reference: IBT-005
+        reference: IBT-006
 
   - element: eur:EndUser
     reference: IBG-2
     children:  
 
     - element: eur:LegalID
-      reference: IBT-006
+      reference: IBT-007
       attribute: 
       
       - element: schemeID
@@ -47,26 +50,15 @@ content:
         type: Identifier
 
     - element: eur:LegalName
-      reference: IBT-007
-
-    - element: eur:Country
       reference: IBT-008
 
-    - element: eur:Territory
+    - element: eur:Country
       reference: IBT-009
 
-    - element: eur:SendingDatasetID
+    - element: eur:Territory
       reference: IBT-010
-      attribute:
-      
-      - element: schemeID
-        name: Scheme identifier
-        definition: The Dataset / Document Type Identfier scheme value
-          like "busdox-docid-qns"  
-        cardinality: 1..1
-        type: Identifier
 
-    - element: eur:ReceivingDatasetID
+    - element: eur:SendingDatasetID
       reference: IBT-011
       attribute:
       
@@ -77,8 +69,19 @@ content:
         cardinality: 1..1
         type: Identifier
 
-    - element: eur:ParticipantID
+    - element: eur:ReceivingDatasetID
       reference: IBT-012
+      attribute:
+      
+      - element: schemeID
+        name: Scheme identifier
+        definition: The Dataset / Document Type Identfier scheme value
+          like "busdox-docid-qns"  
+        cardinality: 1..1
+        type: Identifier
+
+    - element: eur:ParticipantID
+      reference: IBT-013
       attribute:
       
       - element: schemeID
@@ -93,7 +96,7 @@ content:
       children:
 
       - element: eur:LegalID
-        reference: IBT-013
+        reference: IBT-014
         attribute: 
         
         - element: schemeID
@@ -105,10 +108,10 @@ content:
           type: Identifier
 
       - element: eur:LegalName
-        reference: IBT-014
-        
-      - element: eur:Country
         reference: IBT-015
         
-      - element: eur:Territory
+      - element: eur:Country
         reference: IBT-016
+        
+      - element: eur:Territory
+        reference: IBT-017

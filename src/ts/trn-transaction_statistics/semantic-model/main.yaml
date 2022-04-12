@@ -1,7 +1,14 @@
 content:
   - id: IBT-001
-    name: Customization ID
-    definition: Identifies a customization of this format for a specific use.
+    name: Specification identifier
+    definition: An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.
+    cardinality: 1..1
+    value:
+      datatype: Identifier
+
+  - id: IBT-002
+    name: Business process type
+    definition: Identifies the business process context in which the transaction appears, to enable the receiver to process the document in an appropriate way.
     cardinality: 1..1
     value:
       datatype: Identifier
@@ -11,7 +18,7 @@ content:
     definition: Transaction Statistics header metadata.
     cardinality: 1..1
     children:
-      - id: IBT-002
+      - id: IBT-003
         name: Report period start date
         definition: The first date (inclusive) of the reporting period.
           Usually the first day of the preceding month.
@@ -20,7 +27,7 @@ content:
         value:
           datatype: Date
         
-      - id: IBT-003
+      - id: IBT-004
         name: Report period end date
         definition: The last date (inclusive) of the reporting period.
           Usually the last day of the preceding month.
@@ -28,7 +35,7 @@ content:
         value:
           datatype: Date
 
-      - id: IBT-004
+      - id: IBT-005
         name: Reporter identification
         definition: The unique identification of the Service Provider that 
           is providing the data.
@@ -36,7 +43,7 @@ content:
         value:
           datatype: Identifier
         
-      - id: IBT-005
+      - id: IBT-006
         name: Reporter identification scheme
         definition: This value must follow the "ReporterIDScheme" code list.
           Currently onl "CertSubjectCN" for the Peppol AP Certificate 
@@ -52,14 +59,14 @@ content:
     cardinality: 1..1
     children:
 
-      - id: IBT-006
+      - id: IBT-007
         name: Incoming total
         definition: The total number of received Datasets in the reporting period
         cardinality: 1..1
         value:
           datatype: Count
 
-      - id: IBT-007
+      - id: IBT-008
         name: Outgoing total
         definition: The total number of sent Datasets in the reporting period
         cardinality: 1..1
@@ -73,7 +80,7 @@ content:
     cardinality: 0..n
     children:
 
-      - id: IBT-008
+      - id: IBT-009
         name: Subtotal type
         definition: Defines the expected Key elements and their meta schemes.
           The codelist for this field is "SubtotalType"
@@ -89,7 +96,7 @@ content:
         cardinality: 1..n
         children:
           
-          - id: IBT-009
+          - id: IBT-010
             name: Meta scheme identifier
             definition: Defines the meta scheme identifier of this subtotal key
               Must follow the "SubtotalKeyMetaScheme" code list
@@ -98,7 +105,7 @@ content:
               datatype: Code
               codelist: SubtotalKeyMetaScheme
               
-          - id: IBT-010
+          - id: IBT-011
             name: Scheme identifier
             definition: Defines the scheme identifier, depending on the Meta scheme
               identifier.
@@ -106,21 +113,21 @@ content:
             value:
               datatype: Identifier
               
-          - id: IBT-011
+          - id: IBT-012
             name: Identifier value
             definition: Defines the main identifier value following the Scheme identifier.
             cardinality: 1..1
             value:
               datatype: Identifier
 
-      - id: IBT-012
+      - id: IBT-013
         name: Incoming subtotal
         definition: The number of received Datasets in the reporting period matching this subtotal
         cardinality: 1..1
         value:
           datatype: Count
 
-      - id: IBT-013
+      - id: IBT-014
         name: Outgoing subtotal
         definition: The total number of sent Datasets in the reporting period matching this subtotal
         cardinality: 1..1
