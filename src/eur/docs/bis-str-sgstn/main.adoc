@@ -37,6 +37,10 @@ More specifically, roles addressed are the following:
 * ICT Developers
 * Business Experts
 
+== References
+
+
+
 = Document Structure
 
 NOTE: What is expected in Chapter 1, 2 etc.
@@ -69,6 +73,8 @@ NOTE: Description of the details on the semantic model of the Message. Header, R
 
 NOTE: Technical Business rules that concern the *information of the Message*
 
+== Calculations
+
 = Technical Details
 
 NOTE: Technical information on semantic and syntax binding. Data Types, Identifiers, schema
@@ -81,7 +87,9 @@ NOTE: ISO 15000, Annex A (see PINT) of primitive types used in the syntax bindin
 
 NOTE: Richer definition of types, based on primitive times and optionally external rules.
 
-= BIS Identifiers
+== Code lists
+
+== BIS Identifiers
 
 
 :leveloffset: -1
