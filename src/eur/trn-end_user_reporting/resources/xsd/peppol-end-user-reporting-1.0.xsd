@@ -14,7 +14,7 @@
          Philip Helger
 
        History: 
-         2022-04-07, Philip Helger
+         2022-04-12, Philip Helger
            initial version
     </xs:documentation>
   </xs:annotation>
@@ -43,20 +43,10 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="ReportPeriodStart" type="xs:date">
+      <xs:element name="ReportPeriod" type="xs:gYearMonth">
         <xs:annotation>
           <xs:documentation>
-            The first date (inclusive) of the reporting period.
-            Usually the first day of the preceding month.
-            E.g. for the first report this may be a different date as well 
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ReportPeriodEnd" type="xs:date">
-        <xs:annotation>
-          <xs:documentation>
-            The last date (inclusive) of the reporting period.
-            Usually the last day of the preceding month.
+            The year and month of the data, this report refers to. 
           </xs:documentation>
         </xs:annotation>
       </xs:element>
