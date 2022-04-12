@@ -27,7 +27,7 @@ content:
         value:
           datatype: Date
         
-      - id: IBT-003
+      - id: IBT-004
         name: Report period end date
         definition: The last date (inclusive) of the reporting period.
           Usually the last day of the preceding month.
