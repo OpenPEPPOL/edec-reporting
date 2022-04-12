@@ -42,9 +42,9 @@
       <assert id="BR-TS-12" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerSP']/ts:Outgoing) = ts:Total/ts:Outgoing"
         >[BR-TS-12] The sum of all subtotal aggregated per Service Provider ID outgoing MUST match the total outgoing count</assert>
       <!-- Uniqueness check per Key -->
-      <assert id="BR-TS-13" flag="fatal" test="every $x in (ts:Subtotal[@type='PerSP']) satisfies 
-                                                 count(ts:Subtotal[@type='PerSP'][concat(normalize-space(ts:Key/@schemeID),'::',normalize-space(ts:Key)) = 
-                                                                                  concat(normalize-space($x/ts:Key/@schemeID),'::',normalize-space($x/ts:Key))]) = 1"
+      <assert id="BR-TS-13" flag="fatal" test="every $x in (ts:Subtotal[@type='PerSP']/ts:Key) satisfies 
+                                                 count(ts:Subtotal[@type='PerSP']/ts:Key[concat(normalize-space(@schemeID),'::',normalize-space(.)) = 
+                                                                                         concat(normalize-space($x/@schemeID),'::',normalize-space($x))]) = 1"
         >[BR-TS-13] Each Service Provider ID MUST occur only once.</assert>
 
       <!-- Check Subtotal existence -->  
@@ -56,9 +56,9 @@
       <assert id="BR-TS-16" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerDatasetType']/ts:Outgoing) = ts:Total/ts:Outgoing"
         >[BR-TS-16] The sum of all subtotal aggregated per Dataset Type ID outgoing MUST match the total outgoing count</assert>
       <!-- Uniqueness check per Key -->
-      <assert id="BR-TS-17" flag="fatal" test="every $x in (ts:Subtotal[@type='PerDatasetType']) satisfies 
-                                                 count(ts:Subtotal[@type='PerDatasetType'][concat(normalize-space(ts:Key/@schemeID),'::',normalize-space(ts:Key)) = 
-                                                                                           concat(normalize-space($x/ts:Key/@schemeID),'::',normalize-space($x/ts:Key))]) = 1"
+      <assert id="BR-TS-17" flag="fatal" test="every $x in (ts:Subtotal[@type='PerDatasetType']/ts:Key) satisfies 
+                                                 count(ts:Subtotal[@type='PerDatasetType']/ts:Key[concat(normalize-space(@schemeID),'::',normalize-space(.)) = 
+                                                                                                  concat(normalize-space($x/@schemeID),'::',normalize-space($x))]) = 1"
         >[BR-TS-17] Each Dataset Type ID MUST occur only once.</assert>
 
       <!-- Check Subtotal existence -->  
@@ -70,9 +70,9 @@
       <assert id="BR-TS-20" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerTP']/ts:Outgoing) = ts:Total/ts:Outgoing"
         >[BR-TS-20] The sum of all subtotal aggregated per Transport Protocol ID outgoing MUST match the total outgoing count</assert>
       <!-- Uniqueness check per Key -->
-      <assert id="BR-TS-21" flag="fatal" test="every $x in (ts:Subtotal[@type='PerTP']) satisfies 
-                                                 count(ts:Subtotal[@type='PerTP'][concat(normalize-space(ts:Key/@schemeID),'::',normalize-space(ts:Key)) = 
-                                                                                  concat(normalize-space($x/ts:Key/@schemeID),'::',normalize-space($x/ts:Key))]) = 1"
+      <assert id="BR-TS-21" flag="fatal" test="every $x in (ts:Subtotal[@type='PerTP']/ts:Key) satisfies 
+                                                 count(ts:Subtotal[@type='PerTP']/ts:Key[concat(normalize-space(@schemeID),'::',normalize-space(.)) = 
+                                                                                         concat(normalize-space($x/@schemeID),'::',normalize-space($x))]) = 1"
         >[BR-TS-21] Each Transport Protocol ID MUST occur only once.</assert>
 
       <!-- Check Subtotal existence -->  
@@ -129,36 +129,38 @@
         >[TR-TS-05] The subtotal per Transport Protocol ID MUST have one Key element</assert>
       <assert id="TR-TS-06" flag="fatal" test="ts:Key[@metaSchemeID='TP']"
         >[TR-TS-06] The subtotal per Transport Protocol ID MUST have a Key element with the meta scheme ID 'TP'</assert>
+      <assert id="TR-TS-07" flag="fatal" test="ts:Key[@schemeID='Peppol']"
+        >[TR-TS-07] The subtotal per Transport Protocol ID MUST have a Key element with the scheme ID 'Peppol'</assert>
     </rule>
     
     <!-- Per Country to Country aggregation -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal[@type='PerCountryToCountry']">
-      <assert id="TR-TS-07" flag="fatal" test="count(ts:Key) = 2"
-        >[TR-TS-07] The subtotal per Country to Country MUST have two Key elements</assert>
-      <assert id="TR-TS-08" flag="fatal" test="count(ts:Key[@metaSchemeID='CC']) = 2"
-        >[TR-TS-08] The subtotal per Country to Country MUST have two Key elements with the meta scheme ID 'CC'</assert>
-      <assert id="TR-TS-09" flag="fatal" test="count(ts:Key[@schemeID='SenderCountry']) = 1"
-        >[TR-TS-09] The subtotal per Country to Country MUST have one Key element with the scheme ID 'SenderCountry'</assert>
-      <assert id="TR-TS-10" flag="fatal" test="count(ts:Key[@schemeID='ReceiverCountry']) = 1"
-        >[TR-TS-10] The subtotal per Country to Country MUST have one Key element with the scheme ID 'ReceiverCountry'</assert>
+      <assert id="TR-TS-08" flag="fatal" test="count(ts:Key) = 2"
+        >[TR-TS-08] The subtotal per Country to Country MUST have two Key elements</assert>
+      <assert id="TR-TS-09" flag="fatal" test="count(ts:Key[@metaSchemeID='CC']) = 2"
+        >[TR-TS-09] The subtotal per Country to Country MUST have two Key elements with the meta scheme ID 'CC'</assert>
+      <assert id="TR-TS-10" flag="fatal" test="count(ts:Key[@schemeID='SenderCountry']) = 1"
+        >[TR-TS-10] The subtotal per Country to Country MUST have one Key element with the scheme ID 'SenderCountry'</assert>
+      <assert id="TR-TS-11" flag="fatal" test="count(ts:Key[@schemeID='ReceiverCountry']) = 1"
+        >[TR-TS-11] The subtotal per Country to Country MUST have one Key element with the scheme ID 'ReceiverCountry'</assert>
     </rule>
 
     <!-- After all the specific Subtotals -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal">
-      <assert id="TR-TS-11" flag="fatal" test="not(contains(normalize-space(@type), ' ')) and 
+      <assert id="TR-TS-12" flag="fatal" test="not(contains(normalize-space(@type), ' ')) and 
                                                 contains($cl_subtotalType, concat(' ', normalize-space(@type), ' '))"
-        >[TR-TS-11] The Subtotal type (<value-of select="normalize-space(@type)" />) MUST be coded according to the code list</assert>
+        >[TR-TS-12] The Subtotal type (<value-of select="normalize-space(@type)" />) MUST be coded according to the code list</assert>
     </rule>
     
     <!-- Test on Key elements -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal/ts:Key[@schemeID='CertSubjectCN']">
-      <assert id="TR-TS-12" flag="fatal" test="matches(normalize-space(.), $re_seatid)"
-        >[TR-TS-12] The layout of the certificate subject CN (<value-of select="normalize-space(.)" />) is not a valid Peppol Seat ID</assert>
+      <assert id="TR-TS-13" flag="fatal" test="matches(normalize-space(.), $re_seatid)"
+        >[TR-TS-13] The layout of the certificate subject CN (<value-of select="normalize-space(.)" />) is not a valid Peppol Seat ID</assert>
     </rule>
     <rule context="/ts:TransactionStatistics/ts:Subtotal/ts:Key[@schemeID='SenderCountry' or @schemeID='ReceiverCountry']">
-      <assert id="TR-TS-13" flag="fatal" test="not(contains(normalize-space(.), ' ')) and 
+      <assert id="TR-TS-14" flag="fatal" test="not(contains(normalize-space(.), ' ')) and 
                                                contains($cl_iso3166, concat(' ', normalize-space(.), ' '))"
-        >[TR-TS-13] The country code MUST be coded with ISO code ISO 3166-1 alpha-2. Nevertheless, Greece may use the code 'EL', Kosovo may use the code 'XK'.</assert>
+        >[TR-TS-14] The country code MUST be coded with ISO code ISO 3166-1 alpha-2. Nevertheless, Greece may use the code 'EL', Kosovo may use the code 'XK'.</assert>
     </rule>
   </pattern>
 </schema>
