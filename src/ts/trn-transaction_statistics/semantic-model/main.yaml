@@ -23,7 +23,7 @@ content:
         definition: The year and month the data in this report refers to.
         cardinality: 1..1
         value:
-          datatype: Date
+          datatype: YearMonth
 
       - id: IBT-004
         name: Reporter identification
