@@ -56,7 +56,7 @@
   <Subtotal type="PerCountryToCountry">
     <Key metaSchemeID="CC" schemeID="SenderCountry">AT</Key>
     <Key metaSchemeID="CC" schemeID="ReceiverCountry">AT</Key>
-    <Incoming>8</Incoming>
+    <Incoming>9</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>
 

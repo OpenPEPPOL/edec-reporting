@@ -15,7 +15,7 @@
   
   <!-- Sum per SP must match TotalCount -->
   <Subtotal type="PerSP">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
+    <Key metaSchemeID="XXX" schemeID="CertSubjectCN">POP000001</Key>
     <Incoming>5</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>

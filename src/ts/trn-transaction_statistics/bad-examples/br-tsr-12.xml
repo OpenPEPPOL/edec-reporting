@@ -23,7 +23,7 @@
   <Subtotal type="PerSP">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000002</Key>
     <Incoming>7</Incoming>
-    <Outgoing>0</Outgoing>
+    <Outgoing>1</Outgoing>
   </Subtotal>
   
   <Subtotal type="PerSP">

@@ -47,7 +47,7 @@
   
   <!-- Sum per TP must match TotalCount -->
   <Subtotal type="PerTP">
-    <Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</Key>
+    <Key metaSchemeID="TP" schemeID="PeppolX">peppol-transport-as4-v2_0</Key>
     <Incoming>23</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>

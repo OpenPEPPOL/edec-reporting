@@ -13,25 +13,6 @@
     <Outgoing>0</Outgoing>
   </Total>
   
-  <!-- Sum per SP must match TotalCount -->
-  <Subtotal type="PerSP">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
-    <Incoming>5</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-  
-  <Subtotal type="PerSP">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000002</Key>
-    <Incoming>7</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-  
-  <Subtotal type="PerSP">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000003</Key>
-    <Incoming>11</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-  
   <!-- Sum per DT must match TotalCount -->
   <Subtotal type="PerDatasetType">
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>

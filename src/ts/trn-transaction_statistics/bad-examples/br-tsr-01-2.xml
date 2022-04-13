@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-reporting:1.0">
-  <CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1</CustomizationID>
+  <CustomizationID></CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
   <Header>
     <ReportPeriod>2022-01</ReportPeriod>

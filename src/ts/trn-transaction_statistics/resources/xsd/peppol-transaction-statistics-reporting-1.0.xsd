@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="urn:fdc:peppol:transaction-statistics:1.0" 
+<xs:schema xmlns="urn:fdc:peppol:transaction-statistics-reporting:1.0" 
            xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-           targetNamespace="urn:fdc:peppol:transaction-statistics:1.0" 
+           targetNamespace="urn:fdc:peppol:transaction-statistics-reporting:1.0" 
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
   <xs:annotation>
@@ -14,7 +14,7 @@
          Philip Helger
 
        History: 
-         2022-04-12, Philip Helger
+         2022-04-13, Philip Helger
            initial version
     </xs:documentation>
   </xs:annotation>
@@ -134,7 +134,7 @@
     </xs:attribute>
   </xs:complexType>
 
-  <xs:complexType name="TransactionStatisticsType">
+  <xs:complexType name="TransactionStatisticsReportType">
     <xs:annotation>
       <xs:appinfo>
         This type is used to represent a single Peppol Transaction Statistics Report.
@@ -180,7 +180,7 @@
     </xs:sequence>
   </xs:complexType>  
     
-  <xs:element name="TransactionStatistics" type="TransactionStatisticsType">
+  <xs:element name="TransactionStatisticsReport" type="TransactionStatisticsReportType">
     <xs:annotation>
       <xs:documentation>
         This is the root element for a single Peppol Transaction Statistics Report.

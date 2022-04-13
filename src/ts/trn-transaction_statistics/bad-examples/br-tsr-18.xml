@@ -45,13 +45,6 @@
     <Outgoing>0</Outgoing>
   </Subtotal>
   
-  <!-- Sum per TP must match TotalCount -->
-  <Subtotal type="PerTP">
-    <Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</Key>
-    <Incoming>23</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-  
   <!-- Sum of all Country Exchange must match TotalCount -->
   <Subtotal type="PerCountryToCountry">
     <Key metaSchemeID="CC" schemeID="SenderCountry">AT</Key>

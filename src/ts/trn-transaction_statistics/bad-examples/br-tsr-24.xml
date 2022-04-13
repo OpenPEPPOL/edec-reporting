@@ -71,7 +71,7 @@
     <Key metaSchemeID="CC" schemeID="SenderCountry">DE</Key>
     <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
     <Incoming>6</Incoming>
-    <Outgoing>0</Outgoing>
+    <Outgoing>1</Outgoing>
   </Subtotal>
 
   <!-- Multi key -->

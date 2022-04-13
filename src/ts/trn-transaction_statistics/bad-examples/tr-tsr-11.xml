@@ -54,7 +54,7 @@
   
   <!-- Sum of all Country Exchange must match TotalCount -->
   <Subtotal type="PerCountryToCountry">
-    <Key metaSchemeID="CC" schemeID="SenderCountry">AT</Key>
+    <Key metaSchemeID="TP" schemeID="SenderCountry">AT</Key>
     <Key metaSchemeID="CC" schemeID="ReceiverCountry">AT</Key>
     <Incoming>8</Incoming>
     <Outgoing>0</Outgoing>
