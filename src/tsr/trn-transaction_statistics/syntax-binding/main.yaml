@@ -1,11 +1,11 @@
 metadata:
   namespaces:
-    tsr: urn:fdc:peppol:transaction-statistics:1.0
+    tsr: urn:fdc:peppol:transaction-statistics-reporting:1.0
     ## This is the schema for the Peppol Transaction Statistics Reporting
     ##  This is based on the "Internal Regulations" document,
     ##    chapter 4.4 "Service Provider Reporting on Transaction Statistics
 content:
-  element: tsr:TransactionStatistics
+  element: tsr:TransactionStatisticsReport
   name: Root element
   cardinality: 1..1
   children:
