@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TransactionStatistics xmlns="urn:fdc:peppol:transaction-statistics:1.0">
+<TransactionStatistics xmlns="urn:fdc:peppol:transaction-statistics-reporting:1.0">
   <CustomizationID></CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
   <Header>
