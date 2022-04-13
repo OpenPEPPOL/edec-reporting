@@ -11,12 +11,12 @@ include::./settings.adoc[]
 :sectanchors:
 :sectnums:
 image::./images/peppol.png[pdfwidth=3.5in,align=center]
-= {doctitle}
+== {doctitle}
 
 {name-op-en}
 v{version}
 
-This document sets out the processes and procedures for reporting End User data in the Peppol environment.
+This document sets out the processes and procedures for reporting End User data in the Peppol environment.  test
 
     
 *Target Audience:*
