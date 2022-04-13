@@ -12,14 +12,14 @@ content:
   - element: ts:CustomizationID
     reference: IBT-001
 
+  - element: ts:ProfileID
+    reference: IBT-002
+
   - element: ts:Header
     reference: IBG-1
     children:  
     
-    - element: ts:ReportPeriodStart
-      reference: IBT-002
-
-    - element: ts:ReportPeriodEnd
+    - element: ts:ReportPeriod
       reference: IBT-003
 
     - element: ts:ReporterID

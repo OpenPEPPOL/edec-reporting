@@ -13,14 +13,14 @@ content:
   - element: eur:CustomizationID
     reference: IBT-001
 
+  - element: eur:ProfileID
+    reference: IBT-002
+
   - element: eur:Header
     reference: IBG-1
     children:  
 
-    - element: eur:ReportPeriodStart
-      reference: IBT-002
-
-    - element: eur:ReportPeriodEnd
+    - element: eur:ReportPeriod
       reference: IBT-003
 
     - element: eur:ReporterID

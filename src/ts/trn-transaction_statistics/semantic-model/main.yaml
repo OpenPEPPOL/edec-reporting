@@ -1,7 +1,14 @@
 content:
   - id: IBT-001
-    name: Customization ID
-    definition: Identifies a customization of this format for a specific use.
+    name: Specification identifier
+    definition: An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.
+    cardinality: 1..1
+    value:
+      datatype: Identifier
+
+  - id: IBT-002
+    name: Business process type
+    definition: Identifies the business process context in which the transaction appears, to enable the receiver to process the document in an appropriate way.
     cardinality: 1..1
     value:
       datatype: Identifier
@@ -11,22 +18,12 @@ content:
     definition: Transaction Statistics header metadata.
     cardinality: 1..1
     children:
-      - id: IBT-002
-        name: Report period start date
-        definition: The first date (inclusive) of the reporting period.
-          Usually the first day of the preceding month.
-          E.g. for the first report this may be a different date as well.
-        cardinality: 1..1
-        value:
-          datatype: Date
-        
       - id: IBT-003
-        name: Report period end date
-        definition: The last date (inclusive) of the reporting period.
-          Usually the last day of the preceding month.
+        name: Report period
+        definition: The year and month the data in this report refers to.
         cardinality: 1..1
         value:
-          datatype: Date
+          datatype: YearMonth
 
       - id: IBT-004
         name: Reporter identification
@@ -39,8 +36,8 @@ content:
       - id: IBT-005
         name: Reporter identification scheme
         definition: This value must follow the "ReporterIDScheme" code list.
-          Currently onl "CertSubjectCN" for the Peppol AP Certificate 
-          Subject CN (Common Name) is supported.
+          Currently only "CertSubjectCN" for the Peppol AP Certificate 
+            Subject CN (Common Name) is supported.
         cardinality: 1..1
         value:
           datatype: Code
