@@ -96,7 +96,7 @@ NOTE: add the main parties of the *Business Process*. The party is the service p
 
 == End-User Reporting Process
 
-NOTE: Consolidated Diagram and process overview
+NOTE: Consolidated Diagram and process overview to be added
 
 === Data Gathering
 NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Gathering
