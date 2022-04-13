@@ -45,9 +45,8 @@ content:
 
     children:  
     - element: tsr:Key
-      reference: 
-      - IBT-011
-      - IBG-4
+      reference: IBT-011
+      # Als reference: IBG-4
       attribute:
       - element: metaSchemeID
         reference: IBT-009
