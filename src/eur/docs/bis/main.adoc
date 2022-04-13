@@ -11,47 +11,182 @@ include::./settings.adoc[]
 :sectanchors:
 :sectnums:
 image::./images/peppol.png[pdfwidth=3.5in,align=center]
+
 = {doctitle}
 
 {name-op-en}
 v{version}
 
-This document sets out the processes and procedures for reporting End User data in the Peppol environment.
+This document sets out the processes and procedures for reporting End User data in the Peppol environment.  test
 
-    
-*Target Audience:*
 
-* Service Provider (SP) 
-   - how SPs are to submit reports on their End Users on transactions to the Peppol Coordinating Authority. 
+:leveloffset: +1
+
+= Introduction
+
+End User reporting of production data helps the Peppol Coordinating Authority and PAs to monitor the operations of the Peppol Network and identify and manage risks and issues within the network.
+The reporting requirements towards SPs are divided into two areas: reporting about End User data and reporting about Transaction Statistics. This operational procedure will explain and outline the operational procedures for the End User Reporting.
+The policy on reporting is stated in https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B2.-Internal-Regulations-on-the-Use-of-the-Peppol-Network[Internal Regulations for Use of the Peppol Network].
+
+
+== Scope
+
+NOTE: Add what is in scope explicitly it can be just a paragraph
+
+This document sets out the processes and procedure for End User reporting process including:
+
+.	Parties and Roles,
+.	Document Structure,
+.	...,
+
+
+
+== Audience
 
 * Peppol Coordinating Authority reports
    - how the Peppol Coordinating Authority will make consolidated statistical reports available for public consumption.
 
-*Out of scope:*
+* Service Provider (SP)
+- how SPs are to submit reports on their End Users on transactions to the Peppol Coordinating Authority.
 
-* Peppol Authority (PA)
-   - how PAs can access and download the information from the Peppol Coordinating Authority.
+More specifically, roles addressed are the following:
 
-* PA usage
-   - how PAs will use and share statistical information/reports is managed by each PA.
+** ICT Architects
+** ICT Developers
+** Business Experts
 
-* Local or regional domains
-   - reporting of information for activities within local or regional domains is the responsibility of the PAs owner of those domains. Local and regional domains are required to keep the Peppol Coordinating Authority informed of its activities.
+== References
 
-* Operational reports
-   - Management reports relating to workloads and workflow (e.g. change requests, extended use requests, issues and incidents, non-compliance, etc.) are managed by the OpenPeppol Operating Office as part of its operations.
+* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756772071/Other+Files[Internal Regulations - Use of Peppol Network_v1.0s]
+
+* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B3.-Operational-Procedures[Non-compliance Operational Procedure].
+
+
+= Document Structure
+
+* Introduction
+
+Provide general informations about End User Reporting business Process.
+
+* Document Structure
+
+   Provide Helpfull informationabout this document structure.
+
+* Reporting Business Process
+
+   Provide the reader with information on how to implement the End User Reporting Process.
+
+* Business Information
+
+   Provide the reader with functionnal information for the End User Reporting Process.
+
+* Rules
+
+   Provide the reader with information on the business rules to be respected for the End User Reporting Process.
+
+* Technical Details
+
+   Provide the reader with information on the technical aspects for the implementation of the End User Reporting Process.
+
+= Reporting Business Process
+
+== Parties and Roles
+
+NOTE: add the main parties of the *Business Process*. The party is the service provider on the role of reporter and the Peppol OO as the reprot receiver
+
+== End-User Reporting Process
+
+NOTE: Consolidated Diagram and process overview
+
+=== Data Gathering
+NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Gathering
+
+=== Data Aggregation
+
+NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Aggregation
+
+=== Data Transmission
+NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
+
+= Business Information
+
+NOTE: Description of the details on the semantic model of the Message. Header, Reporting Period (Previous Section 3). Link to the processes
+
+
+= Rules
+
+include::./doc-section/technical/businessrules/index.adoc[]
+
+
+== Calculations
+
+
+
+= Technical Details
+
+NOTE: Technical information on semantic and syntax binding. Data Types, Identifiers, schema
+
+== Primitive Datatypes
+
+//NOTE: ISO 15000, Annex A (see PINT) of primitive types used in the syntax binding.
+
+include::./doc-section/technical/datatypes/primitive-types.adoc[]
+
+== Semantic Datatypes
+
+//NOTE: Richer definition of types, based on primitive times and optionally external rules.
+
+include::./doc-section/technical/datatypes/semantic-types.adoc[]
+
+== Code lists
+
+== BIS Identifiers
+
+
+:leveloffset: -1
+
+
+//******************************************************************** */
+
+
+
+
+
+
+
+//*Target Audience:*
+
+//* Service Provider (SP) 
+//   - how SPs are to submit reports on their End Users on transactions to the Peppol Coordinating Authority. 
+
+//* Peppol Coordinating Authority reports
+//   - how the Peppol Coordinating Authority will make consolidated statistical reports available for public consumption.
+
+//*Out of scope:*
+
+//* Peppol Authority (PA)
+//   - how PAs can access and download the information from the Peppol Coordinating Authority.
+
+//* PA usage
+//   - how PAs will use and share statistical information/reports is managed by each PA.
+
+//* Local or regional domains
+//   - reporting of information for activities within local or regional domains is the responsibility of the PAs owner of those domains. Local and regional domains are required to keep the Peppol Coordinating Authority informed of its activities.
+
+//* Operational reports
+//   - Management reports relating to workloads and workflow (e.g. change requests, extended use requests, issues and incidents, non-compliance, etc.) are managed by the OpenPeppol Operating Office as part of its operations.
 
 //== Link to main site of documentation
 
 //https://docs.peppol.eu/poacc/billing/3.0/[Main documentation site]  (to be changed to reporting main doc site when existing)
 
 
-/**link:/reporting/EndUserReporting/[Main documentation site]*/
+//**link:/reporting/EndUserReporting/[Main documentation site]*/
 
 :leveloffset: +1
 
 
-include::./doc-section/introduction.adoc[Introduction]
+//include::./doc-section/introduction.adoc[Introduction]
 
 include::./doc-section/business-processes.adoc[]
 

@@ -1,6 +1,6 @@
 :lang: en
 
-:doctitle: Peppol Model for End User Reporting
+:doctitle: Peppol Model for End User Reporting 2
 :version: 1.0-Draft
 :shared-dir: ../shared
 :snippet-dir: ../rules/snippets

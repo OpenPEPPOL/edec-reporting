@@ -1,6 +1,6 @@
 :lang: en
 
-:doctitle: Peppol End User Reporting BIS
+:doctitle: Peppol Model for End User Reporting
 :version: 0.1.2
 :shared-dir: ../shared
 :snippet-dir: ../rules/snippets
