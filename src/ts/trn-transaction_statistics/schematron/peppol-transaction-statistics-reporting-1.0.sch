@@ -29,149 +29,149 @@
       <let name="total" value="ts:Total/ts:Incoming + ts:Total/ts:Outgoing" />
       <let name="empty" value="$total = 0" />
       
-      <assert id="BR-TS-01" flag="fatal" test="normalize-space(ts:CustomizationID) = 'urn:fdc:peppol.eu:oo:trns:transaction-statistics:1'"
-        >[BR-TS-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:oo:trns:transaction-statistics:1'</assert>
-      <assert id="BR-TS-02" flag="fatal" test="normalize-space(ts:ProfileID) = 'urn:fdc:peppol.eu:oo:bis:reporting:1'"
-        >[BR-TS-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:oo:bis:reporting:1'</assert>
+      <assert id="BR-TSR-01" flag="fatal" test="normalize-space(ts:CustomizationID) = 'urn:fdc:peppol.eu:oo:trns:transaction-statistics:1'"
+        >[BR-TSR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:oo:trns:transaction-statistics:1'</assert>
+      <assert id="BR-TSR-02" flag="fatal" test="normalize-space(ts:ProfileID) = 'urn:fdc:peppol.eu:oo:bis:reporting:1'"
+        >[BR-TSR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:oo:bis:reporting:1'</assert>
         
       <!-- Check Subtotal existence -->  
-      <assert id="BR-TS-10" flag="fatal" test="$empty or ts:Subtotal[@type='PerSP']"
-        >[BR-TS-10] The subtotals aggregated by Service Provider ID are missing</assert>
+      <assert id="BR-TSR-10" flag="fatal" test="$empty or ts:Subtotal[@type='PerSP']"
+        >[BR-TSR-10] The subtotals aggregated by Service Provider ID are missing</assert>
       <!-- Check Subtotal sums -->
-      <assert id="BR-TS-11" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerSP']/ts:Incoming) = ts:Total/ts:Incoming"
-        >[BR-TS-11] The sum of all subtotal aggregated per Service Provider ID incoming MUST match the total incoming count</assert>
-      <assert id="BR-TS-12" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerSP']/ts:Outgoing) = ts:Total/ts:Outgoing"
-        >[BR-TS-12] The sum of all subtotal aggregated per Service Provider ID outgoing MUST match the total outgoing count</assert>
+      <assert id="BR-TSR-11" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerSP']/ts:Incoming) = ts:Total/ts:Incoming"
+        >[BR-TSR-11] The sum of all subtotal aggregated per Service Provider ID incoming MUST match the total incoming count</assert>
+      <assert id="BR-TSR-12" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerSP']/ts:Outgoing) = ts:Total/ts:Outgoing"
+        >[BR-TSR-12] The sum of all subtotal aggregated per Service Provider ID outgoing MUST match the total outgoing count</assert>
       <!-- Global uniqueness check per Key -->
-      <assert id="BR-TS-13" flag="fatal" test="every $x in (ts:Subtotal[@type='PerSP']/ts:Key) satisfies 
+      <assert id="BR-TSR-13" flag="fatal" test="every $x in (ts:Subtotal[@type='PerSP']/ts:Key) satisfies 
                                                  count(ts:Subtotal[@type='PerSP']/ts:Key[concat(normalize-space(@schemeID),'::',normalize-space(.)) = 
                                                                                          concat(normalize-space($x/@schemeID),'::',normalize-space($x))]) = 1"
-        >[BR-TS-13] Each Service Provider ID MUST occur only once.</assert>
+        >[BR-TSR-13] Each Service Provider ID MUST occur only once.</assert>
 
       <!-- Check Subtotal existence -->  
-      <assert id="BR-TS-14" flag="fatal" test="$empty or ts:Subtotal[@type='PerDatasetType']"
-        >[BR-TS-14] The subtotals aggregated by Dataset Type ID are missing</assert>
+      <assert id="BR-TSR-14" flag="fatal" test="$empty or ts:Subtotal[@type='PerDatasetType']"
+        >[BR-TSR-14] The subtotals aggregated by Dataset Type ID are missing</assert>
       <!-- Check Subtotal sums -->
-      <assert id="BR-TS-15" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerDatasetType']/ts:Incoming) = ts:Total/ts:Incoming"
-        >[BR-TS-15] The sum of all subtotal aggregated per Dataset Type ID incoming MUST match the total incoming count</assert>
-      <assert id="BR-TS-16" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerDatasetType']/ts:Outgoing) = ts:Total/ts:Outgoing"
-        >[BR-TS-16] The sum of all subtotal aggregated per Dataset Type ID outgoing MUST match the total outgoing count</assert>
+      <assert id="BR-TSR-15" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerDatasetType']/ts:Incoming) = ts:Total/ts:Incoming"
+        >[BR-TSR-15] The sum of all subtotal aggregated per Dataset Type ID incoming MUST match the total incoming count</assert>
+      <assert id="BR-TSR-16" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerDatasetType']/ts:Outgoing) = ts:Total/ts:Outgoing"
+        >[BR-TSR-16] The sum of all subtotal aggregated per Dataset Type ID outgoing MUST match the total outgoing count</assert>
       <!-- Global uniqueness check per Key -->
-      <assert id="BR-TS-17" flag="fatal" test="every $x in (ts:Subtotal[@type='PerDatasetType']/ts:Key) satisfies 
+      <assert id="BR-TSR-17" flag="fatal" test="every $x in (ts:Subtotal[@type='PerDatasetType']/ts:Key) satisfies 
                                                  count(ts:Subtotal[@type='PerDatasetType']/ts:Key[concat(normalize-space(@schemeID),'::',normalize-space(.)) = 
                                                                                                   concat(normalize-space($x/@schemeID),'::',normalize-space($x))]) = 1"
-        >[BR-TS-17] Each Dataset Type ID MUST occur only once.</assert>
+        >[BR-TSR-17] Each Dataset Type ID MUST occur only once.</assert>
 
       <!-- Check Subtotal existence -->  
-      <assert id="BR-TS-18" flag="fatal" test="$empty or ts:Subtotal[@type='PerTP']"
-        >[BR-TS-18] The subtotals aggregated by Transport Protocol ID are missing</assert>
+      <assert id="BR-TSR-18" flag="fatal" test="$empty or ts:Subtotal[@type='PerTP']"
+        >[BR-TSR-18] The subtotals aggregated by Transport Protocol ID are missing</assert>
       <!-- Check Subtotal sums -->
-      <assert id="BR-TS-19" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerTP']/ts:Incoming) = ts:Total/ts:Incoming"
-        >[BR-TS-19] The sum of all subtotal aggregated per Transport Protocol ID incoming MUST match the total incoming count</assert>
-      <assert id="BR-TS-20" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerTP']/ts:Outgoing) = ts:Total/ts:Outgoing"
-        >[BR-TS-20] The sum of all subtotal aggregated per Transport Protocol ID outgoing MUST match the total outgoing count</assert>
+      <assert id="BR-TSR-19" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerTP']/ts:Incoming) = ts:Total/ts:Incoming"
+        >[BR-TSR-19] The sum of all subtotal aggregated per Transport Protocol ID incoming MUST match the total incoming count</assert>
+      <assert id="BR-TSR-20" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerTP']/ts:Outgoing) = ts:Total/ts:Outgoing"
+        >[BR-TSR-20] The sum of all subtotal aggregated per Transport Protocol ID outgoing MUST match the total outgoing count</assert>
       <!-- Global uniqueness check per Key -->
-      <assert id="BR-TS-21" flag="fatal" test="every $x in (ts:Subtotal[@type='PerTP']/ts:Key) satisfies 
+      <assert id="BR-TSR-21" flag="fatal" test="every $x in (ts:Subtotal[@type='PerTP']/ts:Key) satisfies 
                                                  count(ts:Subtotal[@type='PerTP']/ts:Key[concat(normalize-space(@schemeID),'::',normalize-space(.)) = 
                                                                                          concat(normalize-space($x/@schemeID),'::',normalize-space($x))]) = 1"
-        >[BR-TS-21] Each Transport Protocol ID MUST occur only once.</assert>
+        >[BR-TSR-21] Each Transport Protocol ID MUST occur only once.</assert>
 
       <!-- Check Subtotal existence -->  
-      <assert id="BR-TS-22" flag="fatal" test="$empty or ts:Subtotal[@type='PerCountryToCountry']"
-        >[BR-TS-22] The subtotals aggregated by Country to Country are missing</assert>
+      <assert id="BR-TSR-22" flag="fatal" test="$empty or ts:Subtotal[@type='PerCountryToCountry']"
+        >[BR-TSR-22] The subtotals aggregated by Country to Country are missing</assert>
       <!-- Check Subtotal sums -->
-      <assert id="BR-TS-23" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerCountryToCountry']/ts:Incoming) = ts:Total/ts:Incoming"
-        >[BR-TS-23] The sum of all subtotal aggregated per Country to Country incoming MUST match the total incoming count</assert>
-      <assert id="BR-TS-24" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerCountryToCountry']/ts:Outgoing) = ts:Total/ts:Outgoing"
-        >[BR-TS-24] The sum of all subtotal aggregated per Country to Country outgoing MUST match the total outgoing count</assert>
+      <assert id="BR-TSR-23" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerCountryToCountry']/ts:Incoming) = ts:Total/ts:Incoming"
+        >[BR-TSR-23] The sum of all subtotal aggregated per Country to Country incoming MUST match the total incoming count</assert>
+      <assert id="BR-TSR-24" flag="fatal" test="$empty or sum(ts:Subtotal[@type='PerCountryToCountry']/ts:Outgoing) = ts:Total/ts:Outgoing"
+        >[BR-TSR-24] The sum of all subtotal aggregated per Country to Country outgoing MUST match the total outgoing count</assert>
       <!-- Global uniqueness check per Key -->
-      <assert id="BR-TS-25" flag="fatal" test="every $cc in (ts:Subtotal[@type='PerCountryToCountry']),
+      <assert id="BR-TSR-25" flag="fatal" test="every $cc in (ts:Subtotal[@type='PerCountryToCountry']),
                                                      $ccsc in ($cc/ts:Key[@schemeID='SenderCountry']),
                                                      $ccrc in ($cc/ts:Key[@schemeID='ReceiverCountry']) satisfies 
                                                  count(ts:Subtotal[@type='PerCountryToCountry'][every $sc in (ts:Key[@schemeID='SenderCountry']),
                                                                                                       $rc in (ts:Key[@schemeID='ReceiverCountry']) satisfies
                                                                                                  concat(normalize-space($sc),'::',normalize-space($rc)) = 
                                                                                                  concat(normalize-space($ccsc),'::',normalize-space($ccrc))]) = 1"
-        >[BR-TS-25] Each Country to Country combination MUST occur only once.</assert>
+        >[BR-TSR-25] Each Country to Country combination MUST occur only once.</assert>
     </rule>
 
     <rule context="/ts:TransactionStatistics/ts:Header">
-      <assert id="BR-TS-04" flag="fatal" test="matches(normalize-space(ts:ReportPeriod), '^[0-9]{4}\-[0-9]{2}$')"
-        >[BR-TS-04] The report period (<value-of select="normalize-space(ts:ReportPeriod)" />) MUST NOT contain timezone information</assert>
+      <assert id="BR-TSR-04" flag="fatal" test="matches(normalize-space(ts:ReportPeriod), '^[0-9]{4}\-[0-9]{2}$')"
+        >[BR-TSR-04] The report period (<value-of select="normalize-space(ts:ReportPeriod)" />) MUST NOT contain timezone information</assert>
     </rule>
 
     <rule context="/ts:TransactionStatistics/ts:Header/ts:ReporterID">
-      <assert id="BR-TS-05" flag="fatal" test="normalize-space(.) != ''"
-        >[BR-TS-05] The reporter ID MUST be present</assert>
-      <assert id="BR-TS-06" flag="fatal" test="not(contains(normalize-space(@schemeID), ' ')) and 
+      <assert id="BR-TSR-05" flag="fatal" test="normalize-space(.) != ''"
+        >[BR-TSR-05] The reporter ID MUST be present</assert>
+      <assert id="BR-TSR-06" flag="fatal" test="not(contains(normalize-space(@schemeID), ' ')) and 
                                                 contains($cl_ridtype, concat(' ', normalize-space(@schemeID), ' '))"
-        >[BR-TS-06] The Reporter ID scheme (<value-of select="normalize-space(@schemeID)" />) MUST be coded according to the code list</assert>
-      <assert id="BR-TS-07" flag="fatal" test="(@schemeID='CertSubjectCN' and 
+        >[BR-TSR-06] The Reporter ID scheme (<value-of select="normalize-space(@schemeID)" />) MUST be coded according to the code list</assert>
+      <assert id="BR-TSR-07" flag="fatal" test="(@schemeID='CertSubjectCN' and 
                                                  matches(normalize-space(.), $re_seatid)) or 
                                                 not(@schemeID='CertSubjectCN')"
-        >[BR-TS-07] The layout of the certificate subject CN (<value-of select="normalize-space(.)" />) is not a valid Peppol Seat ID</assert>
+        >[BR-TSR-07] The layout of the certificate subject CN (<value-of select="normalize-space(.)" />) is not a valid Peppol Seat ID</assert>
     </rule>
     
     <!-- Per Service Provider aggregation -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal[@type='PerSP']">
-      <assert id="TR-TS-01" flag="fatal" test="count(ts:Key) = 1"
-        >[TR-TS-01] The subtotal per Service Provider ID MUST have one Key element</assert>
-      <assert id="TR-TS-02" flag="fatal" test="ts:Key[normalize-space(@metaSchemeID) = 'SP']"
-        >[TR-TS-02] The subtotal per Service Provider ID MUST have a Key element with the meta scheme ID 'SP'</assert>
-      <assert id="TR-TS-03" flag="fatal" test="every $x in (ts:Key) satisfies 
+      <assert id="TR-TSR-01" flag="fatal" test="count(ts:Key) = 1"
+        >[TR-TSR-01] The subtotal per Service Provider ID MUST have one Key element</assert>
+      <assert id="TR-TSR-02" flag="fatal" test="ts:Key[normalize-space(@metaSchemeID) = 'SP']"
+        >[TR-TSR-02] The subtotal per Service Provider ID MUST have a Key element with the meta scheme ID 'SP'</assert>
+      <assert id="TR-TSR-03" flag="fatal" test="every $x in (ts:Key) satisfies 
                                                  not(contains(normalize-space($x/@schemeID), ' ')) and 
                                                  contains($cl_ridtype, concat(' ', normalize-space($x/@schemeID), ' '))"
-        >[TR-TS-03] The subtotal per Service Provider ID MUST have a Key element with the scheme ID coded according to the code list</assert>
+        >[TR-TSR-03] The subtotal per Service Provider ID MUST have a Key element with the scheme ID coded according to the code list</assert>
     </rule>
     
     <!-- Make this check outside to ensure it works for different subtotals -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal/ts:Key[@schemeID='CertSubjectCN']">
-      <assert id="TR-TS-04" flag="fatal" test="matches(normalize-space(.), $re_seatid)"
-        >[TR-TS-04] The layout of the certificate subject CN is not a valid Peppol Seat ID</assert>
+      <assert id="TR-TSR-04" flag="fatal" test="matches(normalize-space(.), $re_seatid)"
+        >[TR-TSR-04] The layout of the certificate subject CN is not a valid Peppol Seat ID</assert>
     </rule>
 
     <!-- Per Dataset Type aggregation -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal[@type='PerDatasetType']">
-      <assert id="TR-TS-05" flag="fatal" test="count(ts:Key) = 1"
-        >[TR-TS-05] The subtotal per Dataset Type ID MUST have one Key element</assert>
-      <assert id="TR-TS-06" flag="fatal" test="ts:Key[normalize-space(@metaSchemeID) = 'DT']"
-        >[TR-TS-06] The subtotal per Dataset Type ID MUST have a Key element with the meta scheme ID 'DT'</assert>
+      <assert id="TR-TSR-05" flag="fatal" test="count(ts:Key) = 1"
+        >[TR-TSR-05] The subtotal per Dataset Type ID MUST have one Key element</assert>
+      <assert id="TR-TSR-06" flag="fatal" test="ts:Key[normalize-space(@metaSchemeID) = 'DT']"
+        >[TR-TSR-06] The subtotal per Dataset Type ID MUST have a Key element with the meta scheme ID 'DT'</assert>
     </rule>
     
     <!-- Per Transport Protocol aggregation -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal[@type='PerTP']">
-      <assert id="TR-TS-07" flag="fatal" test="count(ts:Key) = 1"
-        >[TR-TS-07] The subtotal per Transport Protocol ID MUST have one Key element</assert>
-      <assert id="TR-TS-08" flag="fatal" test="ts:Key[normalize-space(@metaSchemeID) = 'TP']"
-        >[TR-TS-08] The subtotal per Transport Protocol ID MUST have a Key element with the meta scheme ID 'TP'</assert>
-      <assert id="TR-TS-09" flag="fatal" test="ts:Key[normalize-space(@schemeID) = 'Peppol']"
-        >[TR-TS-09] The subtotal per Transport Protocol ID MUST have a Key element with the scheme ID 'Peppol'</assert>
+      <assert id="TR-TSR-07" flag="fatal" test="count(ts:Key) = 1"
+        >[TR-TSR-07] The subtotal per Transport Protocol ID MUST have one Key element</assert>
+      <assert id="TR-TSR-08" flag="fatal" test="ts:Key[normalize-space(@metaSchemeID) = 'TP']"
+        >[TR-TSR-08] The subtotal per Transport Protocol ID MUST have a Key element with the meta scheme ID 'TP'</assert>
+      <assert id="TR-TSR-09" flag="fatal" test="ts:Key[normalize-space(@schemeID) = 'Peppol']"
+        >[TR-TSR-09] The subtotal per Transport Protocol ID MUST have a Key element with the scheme ID 'Peppol'</assert>
     </rule>
     
     <!-- Per Country to Country aggregation -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal[@type='PerCountryToCountry']">
-      <assert id="TR-TS-10" flag="fatal" test="count(ts:Key) = 2"
-        >[TR-TS-10] The subtotal per Country to Country MUST have two Key elements</assert>
-      <assert id="TR-TS-11" flag="fatal" test="count(ts:Key[normalize-space(@metaSchemeID) = 'CC']) = 2"
-        >[TR-TS-11] The subtotal per Country to Country MUST have two Key elements with the meta scheme ID 'CC'</assert>
-      <assert id="TR-TS-12" flag="fatal" test="count(ts:Key[normalize-space(@schemeID) = 'SenderCountry']) = 1"
-        >[TR-TS-12] The subtotal per Country to Country MUST have one Key element with the scheme ID 'SenderCountry'</assert>
-      <assert id="TR-TS-13" flag="fatal" test="count(ts:Key[normalize-space(@schemeID) = 'ReceiverCountry']) = 1"
-        >[TR-TS-13] The subtotal per Country to Country MUST have one Key element with the scheme ID 'ReceiverCountry'</assert>
+      <assert id="TR-TSR-10" flag="fatal" test="count(ts:Key) = 2"
+        >[TR-TSR-10] The subtotal per Country to Country MUST have two Key elements</assert>
+      <assert id="TR-TSR-11" flag="fatal" test="count(ts:Key[normalize-space(@metaSchemeID) = 'CC']) = 2"
+        >[TR-TSR-11] The subtotal per Country to Country MUST have two Key elements with the meta scheme ID 'CC'</assert>
+      <assert id="TR-TSR-12" flag="fatal" test="count(ts:Key[normalize-space(@schemeID) = 'SenderCountry']) = 1"
+        >[TR-TSR-12] The subtotal per Country to Country MUST have one Key element with the scheme ID 'SenderCountry'</assert>
+      <assert id="TR-TSR-13" flag="fatal" test="count(ts:Key[normalize-space(@schemeID) = 'ReceiverCountry']) = 1"
+        >[TR-TSR-13] The subtotal per Country to Country MUST have one Key element with the scheme ID 'ReceiverCountry'</assert>
     </rule>
     
     <!-- Make this check outside to ensure it works for different subtotals -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal/ts:Key[@schemeID='SenderCountry' or @schemeID='ReceiverCountry']">
-      <assert id="TR-TS-14" flag="fatal" test="not(contains(normalize-space(.), ' ')) and 
+      <assert id="TR-TSR-14" flag="fatal" test="not(contains(normalize-space(.), ' ')) and 
                                                contains($cl_iso3166, concat(' ', normalize-space(.), ' '))"
-        >[TR-TS-14] The country code MUST be coded with ISO code ISO 3166-1 alpha-2. Nevertheless, Greece may use the code 'EL', Kosovo may use the code 'XK'.</assert>
+        >[TR-TSR-14] The country code MUST be coded with ISO code ISO 3166-1 alpha-2. Nevertheless, Greece may use the code 'EL', Kosovo may use the code 'XK'.</assert>
     </rule>
 
     <!-- After all the specific Subtotals -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal">
-      <assert id="TR-TS-15" flag="fatal" test="not(contains(normalize-space(@type), ' ')) and 
+      <assert id="TR-TSR-15" flag="fatal" test="not(contains(normalize-space(@type), ' ')) and 
                                                 contains($cl_subtotalType, concat(' ', normalize-space(@type), ' '))"
-        >[TR-TS-15] The Subtotal type (<value-of select="normalize-space(@type)" />) MUST be coded according to the code list</assert>
+        >[TR-TSR-15] The Subtotal type (<value-of select="normalize-space(@type)" />) MUST be coded according to the code list</assert>
     </rule>
   </pattern>
 </schema>
