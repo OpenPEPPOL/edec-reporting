@@ -21,6 +21,7 @@
 
   <pattern id="default">
     <let name="cl_iso3166" value="' 1A AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH EL ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS XI YE YT ZA ZM ZW '" />
+    <let name="cl_ridtype" value="' CertSubjectCN '" />
     <let name="cl_subtotalType" value="' PerSP PerDatasetType PerTP PerCountryToCountry '" />
     <let name="re_seatid" value="'^P[A-Z]{2}[0-9]{6}$'" />
  
@@ -99,7 +100,7 @@
       <assert id="BR-TS-05" flag="fatal" test="normalize-space(.) != ''"
         >[BR-TS-05] The reporter ID MUST be present</assert>
       <assert id="BR-TS-06" flag="fatal" test="not(contains(normalize-space(@schemeID), ' ')) and 
-                                                contains(' CertSubjectCN ', concat(' ', normalize-space(@schemeID), ' '))"
+                                                contains($cl_ridtype, concat(' ', normalize-space(@schemeID), ' '))"
         >[BR-TS-06] The Reporter ID scheme (<value-of select="normalize-space(@schemeID)" />) MUST be coded according to the code list</assert>
       <assert id="BR-TS-07" flag="fatal" test="(@schemeID='CertSubjectCN' and 
                                                  matches(normalize-space(.), $re_seatid)) or 
@@ -113,54 +114,58 @@
         >[TR-TS-01] The subtotal per Service Provider ID MUST have one Key element</assert>
       <assert id="TR-TS-02" flag="fatal" test="ts:Key[@metaSchemeID='SP']"
         >[TR-TS-02] The subtotal per Service Provider ID MUST have a Key element with the meta scheme ID 'SP'</assert>
+      <assert id="TR-TS-03" flag="fatal" test="every $x in (ts:Key) satisfies 
+                                                 not(contains(normalize-space($x/@schemeID), ' ')) and 
+                                                 contains($cl_ridtype, concat(' ', normalize-space($x/@schemeID), ' '))"
+        >[TR-TS-03] The subtotal per Service Provider ID MUST have a Key element with the scheme ID coded according to the code list</assert>
     </rule>
     
     <!-- Per Dataset Type aggregation -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal[@type='PerDatasetType']">
-      <assert id="TR-TS-03" flag="fatal" test="count(ts:Key) = 1"
-        >[TR-TS-03] The subtotal per Dataset Type ID MUST have one Key element</assert>
-      <assert id="TR-TS-04" flag="fatal" test="ts:Key[@metaSchemeID='DT']"
-        >[TR-TS-04] The subtotal per Dataset Type ID MUST have a Key element with the meta scheme ID 'DT'</assert>
+      <assert id="TR-TS-04" flag="fatal" test="count(ts:Key) = 1"
+        >[TR-TS-04] The subtotal per Dataset Type ID MUST have one Key element</assert>
+      <assert id="TR-TS-05" flag="fatal" test="ts:Key[@metaSchemeID='DT']"
+        >[TR-TS-05] The subtotal per Dataset Type ID MUST have a Key element with the meta scheme ID 'DT'</assert>
     </rule>
     
     <!-- Per Transport Protocol aggregation -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal[@type='PerTP']">
-      <assert id="TR-TS-05" flag="fatal" test="count(ts:Key) = 1"
-        >[TR-TS-05] The subtotal per Transport Protocol ID MUST have one Key element</assert>
-      <assert id="TR-TS-06" flag="fatal" test="ts:Key[@metaSchemeID='TP']"
-        >[TR-TS-06] The subtotal per Transport Protocol ID MUST have a Key element with the meta scheme ID 'TP'</assert>
-      <assert id="TR-TS-07" flag="fatal" test="ts:Key[@schemeID='Peppol']"
-        >[TR-TS-07] The subtotal per Transport Protocol ID MUST have a Key element with the scheme ID 'Peppol'</assert>
+      <assert id="TR-TS-06" flag="fatal" test="count(ts:Key) = 1"
+        >[TR-TS-06] The subtotal per Transport Protocol ID MUST have one Key element</assert>
+      <assert id="TR-TS-07" flag="fatal" test="ts:Key[@metaSchemeID='TP']"
+        >[TR-TS-07] The subtotal per Transport Protocol ID MUST have a Key element with the meta scheme ID 'TP'</assert>
+      <assert id="TR-TS-08" flag="fatal" test="ts:Key[@schemeID='Peppol']"
+        >[TR-TS-08] The subtotal per Transport Protocol ID MUST have a Key element with the scheme ID 'Peppol'</assert>
     </rule>
     
     <!-- Per Country to Country aggregation -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal[@type='PerCountryToCountry']">
-      <assert id="TR-TS-08" flag="fatal" test="count(ts:Key) = 2"
-        >[TR-TS-08] The subtotal per Country to Country MUST have two Key elements</assert>
-      <assert id="TR-TS-09" flag="fatal" test="count(ts:Key[@metaSchemeID='CC']) = 2"
-        >[TR-TS-09] The subtotal per Country to Country MUST have two Key elements with the meta scheme ID 'CC'</assert>
-      <assert id="TR-TS-10" flag="fatal" test="count(ts:Key[@schemeID='SenderCountry']) = 1"
-        >[TR-TS-10] The subtotal per Country to Country MUST have one Key element with the scheme ID 'SenderCountry'</assert>
-      <assert id="TR-TS-11" flag="fatal" test="count(ts:Key[@schemeID='ReceiverCountry']) = 1"
-        >[TR-TS-11] The subtotal per Country to Country MUST have one Key element with the scheme ID 'ReceiverCountry'</assert>
+      <assert id="TR-TS-09" flag="fatal" test="count(ts:Key) = 2"
+        >[TR-TS-09] The subtotal per Country to Country MUST have two Key elements</assert>
+      <assert id="TR-TS-10" flag="fatal" test="count(ts:Key[@metaSchemeID='CC']) = 2"
+        >[TR-TS-10] The subtotal per Country to Country MUST have two Key elements with the meta scheme ID 'CC'</assert>
+      <assert id="TR-TS-11" flag="fatal" test="count(ts:Key[@schemeID='SenderCountry']) = 1"
+        >[TR-TS-11] The subtotal per Country to Country MUST have one Key element with the scheme ID 'SenderCountry'</assert>
+      <assert id="TR-TS-12" flag="fatal" test="count(ts:Key[@schemeID='ReceiverCountry']) = 1"
+        >[TR-TS-12] The subtotal per Country to Country MUST have one Key element with the scheme ID 'ReceiverCountry'</assert>
     </rule>
 
     <!-- After all the specific Subtotals -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal">
-      <assert id="TR-TS-12" flag="fatal" test="not(contains(normalize-space(@type), ' ')) and 
+      <assert id="TR-TS-13" flag="fatal" test="not(contains(normalize-space(@type), ' ')) and 
                                                 contains($cl_subtotalType, concat(' ', normalize-space(@type), ' '))"
-        >[TR-TS-12] The Subtotal type (<value-of select="normalize-space(@type)" />) MUST be coded according to the code list</assert>
+        >[TR-TS-13] The Subtotal type (<value-of select="normalize-space(@type)" />) MUST be coded according to the code list</assert>
     </rule>
     
     <!-- Test on Key elements -->
     <rule context="/ts:TransactionStatistics/ts:Subtotal/ts:Key[@schemeID='CertSubjectCN']">
-      <assert id="TR-TS-13" flag="fatal" test="matches(normalize-space(.), $re_seatid)"
-        >[TR-TS-13] The layout of the certificate subject CN (<value-of select="normalize-space(.)" />) is not a valid Peppol Seat ID</assert>
+      <assert id="TR-TS-14" flag="fatal" test="matches(normalize-space(.), $re_seatid)"
+        >[TR-TS-14] The layout of the certificate subject CN (<value-of select="normalize-space(.)" />) is not a valid Peppol Seat ID</assert>
     </rule>
     <rule context="/ts:TransactionStatistics/ts:Subtotal/ts:Key[@schemeID='SenderCountry' or @schemeID='ReceiverCountry']">
-      <assert id="TR-TS-14" flag="fatal" test="not(contains(normalize-space(.), ' ')) and 
+      <assert id="TR-TS-15" flag="fatal" test="not(contains(normalize-space(.), ' ')) and 
                                                contains($cl_iso3166, concat(' ', normalize-space(.), ' '))"
-        >[TR-TS-14] The country code MUST be coded with ISO code ISO 3166-1 alpha-2. Nevertheless, Greece may use the code 'EL', Kosovo may use the code 'XK'.</assert>
+        >[TR-TS-15] The country code MUST be coded with ISO code ISO 3166-1 alpha-2. Nevertheless, Greece may use the code 'EL', Kosovo may use the code 'XK'.</assert>
     </rule>
   </pattern>
 </schema>
