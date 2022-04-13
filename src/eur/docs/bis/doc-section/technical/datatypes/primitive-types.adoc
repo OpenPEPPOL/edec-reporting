@@ -8,14 +8,14 @@ Semantic data type content may be of the following primitive types. These primit
 |Primitive type
 |Definition
 
-|Binary
-|A set of finite-length sequences of binary digits.
+//|Binary
+//|A set of finite-length sequences of binary digits.
 
 |Date
-|Time point representing a calendar day on a time scale consisting of an origin and a succession of calendar https://www.iso.org/standard/40874.html[ISO8601].
+|Time point representing a calendar year and month (YYYYMM) a time scale consisting of an origin and a succession of calendar https://www.iso.org/standard/40874.html[ISO8601].
 
-|Decimal
-|A subset of the real numbers, which can be represented by decimal numerals.
+|Integer
+|A subset of the real numbers, which can be represented by numerals.
 
 |String
 |A finite sequence of characters.

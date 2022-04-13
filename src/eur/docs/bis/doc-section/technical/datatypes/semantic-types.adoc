@@ -5,7 +5,7 @@ The different semantic data types are described in the tables below, where vario
 
 When used in an instance of an invoice, each data element will contain data. In the below tables this is identified as the “content”. Whenever a business term is used this term shall *always* have content and therefore the content is always mandatory.
 
-//:leveloffset: +1
+:leveloffset: +1
 
 include::identifier.adoc[]
 
@@ -15,4 +15,4 @@ include::countrycode.adoc[]
 
 include::text.adoc[]
 
-//:leveloffset: -1
+:leveloffset: -1
