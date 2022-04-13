@@ -25,7 +25,7 @@
     <let name="cl_subtotalType" value="' PerSP PerDatasetType PerTP PerCountryToCountry '" />
     <let name="re_seatid" value="'^P[A-Z]{2}[0-9]{6}$'" />
  
-    <rule context="/ts:TransactionStatistics">
+    <rule context="/ts:TransactionStatisticsReport">
       <let name="total" value="ts:Total/ts:Incoming + ts:Total/ts:Outgoing" />
       <let name="empty" value="$total = 0" />
       
@@ -95,12 +95,12 @@
         >[BR-TSR-25] Each Country to Country combination MUST occur only once.</assert>
     </rule>
 
-    <rule context="/ts:TransactionStatistics/ts:Header">
+    <rule context="/ts:TransactionStatisticsReport/ts:Header">
       <assert id="BR-TSR-04" flag="fatal" test="matches(normalize-space(ts:ReportPeriod), '^[0-9]{4}\-[0-9]{2}$')"
         >[BR-TSR-04] The report period (<value-of select="normalize-space(ts:ReportPeriod)" />) MUST NOT contain timezone information</assert>
     </rule>
 
-    <rule context="/ts:TransactionStatistics/ts:Header/ts:ReporterID">
+    <rule context="/ts:TransactionStatisticsReport/ts:Header/ts:ReporterID">
       <assert id="BR-TSR-05" flag="fatal" test="normalize-space(.) != ''"
         >[BR-TSR-05] The reporter ID MUST be present</assert>
       <assert id="BR-TSR-06" flag="fatal" test="not(contains(normalize-space(@schemeID), ' ')) and 
@@ -113,7 +113,7 @@
     </rule>
     
     <!-- Per Service Provider aggregation -->
-    <rule context="/ts:TransactionStatistics/ts:Subtotal[@type='PerSP']">
+    <rule context="/ts:TransactionStatisticsReport/ts:Subtotal[@type='PerSP']">
       <assert id="TR-TSR-01" flag="fatal" test="count(ts:Key) = 1"
         >[TR-TSR-01] The subtotal per Service Provider ID MUST have one Key element</assert>
       <assert id="TR-TSR-02" flag="fatal" test="ts:Key[normalize-space(@metaSchemeID) = 'SP']"
@@ -125,13 +125,13 @@
     </rule>
     
     <!-- Make this check outside to ensure it works for different subtotals -->
-    <rule context="/ts:TransactionStatistics/ts:Subtotal/ts:Key[@schemeID='CertSubjectCN']">
+    <rule context="/ts:TransactionStatisticsReport/ts:Subtotal/ts:Key[@schemeID='CertSubjectCN']">
       <assert id="TR-TSR-04" flag="fatal" test="matches(normalize-space(.), $re_seatid)"
         >[TR-TSR-04] The layout of the certificate subject CN is not a valid Peppol Seat ID</assert>
     </rule>
 
     <!-- Per Dataset Type aggregation -->
-    <rule context="/ts:TransactionStatistics/ts:Subtotal[@type='PerDatasetType']">
+    <rule context="/ts:TransactionStatisticsReport/ts:Subtotal[@type='PerDatasetType']">
       <assert id="TR-TSR-05" flag="fatal" test="count(ts:Key) = 1"
         >[TR-TSR-05] The subtotal per Dataset Type ID MUST have one Key element</assert>
       <assert id="TR-TSR-06" flag="fatal" test="ts:Key[normalize-space(@metaSchemeID) = 'DT']"
@@ -139,7 +139,7 @@
     </rule>
     
     <!-- Per Transport Protocol aggregation -->
-    <rule context="/ts:TransactionStatistics/ts:Subtotal[@type='PerTP']">
+    <rule context="/ts:TransactionStatisticsReport/ts:Subtotal[@type='PerTP']">
       <assert id="TR-TSR-07" flag="fatal" test="count(ts:Key) = 1"
         >[TR-TSR-07] The subtotal per Transport Protocol ID MUST have one Key element</assert>
       <assert id="TR-TSR-08" flag="fatal" test="ts:Key[normalize-space(@metaSchemeID) = 'TP']"
@@ -149,7 +149,7 @@
     </rule>
     
     <!-- Per Country to Country aggregation -->
-    <rule context="/ts:TransactionStatistics/ts:Subtotal[@type='PerCountryToCountry']">
+    <rule context="/ts:TransactionStatisticsReport/ts:Subtotal[@type='PerCountryToCountry']">
       <assert id="TR-TSR-10" flag="fatal" test="count(ts:Key) = 2"
         >[TR-TSR-10] The subtotal per Country to Country MUST have two Key elements</assert>
       <assert id="TR-TSR-11" flag="fatal" test="count(ts:Key[normalize-space(@metaSchemeID) = 'CC']) = 2"
@@ -161,14 +161,14 @@
     </rule>
     
     <!-- Make this check outside to ensure it works for different subtotals -->
-    <rule context="/ts:TransactionStatistics/ts:Subtotal/ts:Key[@schemeID='SenderCountry' or @schemeID='ReceiverCountry']">
+    <rule context="/ts:TransactionStatisticsReport/ts:Subtotal/ts:Key[@schemeID='SenderCountry' or @schemeID='ReceiverCountry']">
       <assert id="TR-TSR-14" flag="fatal" test="not(contains(normalize-space(.), ' ')) and 
                                                contains($cl_iso3166, concat(' ', normalize-space(.), ' '))"
         >[TR-TSR-14] The country code MUST be coded with ISO code ISO 3166-1 alpha-2. Nevertheless, Greece may use the code 'EL', Kosovo may use the code 'XK'.</assert>
     </rule>
 
     <!-- After all the specific Subtotals -->
-    <rule context="/ts:TransactionStatistics/ts:Subtotal">
+    <rule context="/ts:TransactionStatisticsReport/ts:Subtotal">
       <assert id="TR-TSR-15" flag="fatal" test="not(contains(normalize-space(@type), ' ')) and 
                                                 contains($cl_subtotalType, concat(' ', normalize-space(@type), ' '))"
         >[TR-TSR-15] The Subtotal type (<value-of select="normalize-space(@type)" />) MUST be coded according to the code list</assert>

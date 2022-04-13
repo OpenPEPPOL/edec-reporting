@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TransactionStatistics xmlns="urn:fdc:peppol:transaction-statistics-reporting:1.0">
+<TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-reporting:1.0">
   <CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1</CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
   <Header>
@@ -84,4 +84,4 @@
     <Outgoing>0</Outgoing>
   </Subtotal>
    -->
-</TransactionStatistics>
+</TransactionStatisticsReport>

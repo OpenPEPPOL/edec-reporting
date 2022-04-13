@@ -134,7 +134,7 @@
     </xs:attribute>
   </xs:complexType>
 
-  <xs:complexType name="TransactionStatisticsType">
+  <xs:complexType name="TransactionStatisticsReportType">
     <xs:annotation>
       <xs:appinfo>
         This type is used to represent a single Peppol Transaction Statistics Report.
@@ -180,7 +180,7 @@
     </xs:sequence>
   </xs:complexType>  
     
-  <xs:element name="TransactionStatistics" type="TransactionStatisticsType">
+  <xs:element name="TransactionStatisticsReport" type="TransactionStatisticsReportType">
     <xs:annotation>
       <xs:documentation>
         This is the root element for a single Peppol Transaction Statistics Report.
