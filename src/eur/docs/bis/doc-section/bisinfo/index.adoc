@@ -3,7 +3,7 @@
 
 In the table below you will find the values to be used as the specification identifier and the business process type for this profile
 
-[cols="2s,3,3",options="header"]
+[cols="1s,2,2",options="header"]
 |====
 |Type
 |Element `CustomizationID`

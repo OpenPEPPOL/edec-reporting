@@ -14,6 +14,24 @@
   </Header>
   <!-- end::Header[] -->
 
+  <!-- tag::EndUserDefault[] -->
+  <EndUser>
+    <LegalID schemeID="orgnr">ID12345</LegalID>
+    <LegalName>Acme Inc.</LegalName>
+    <Country>AT</Country>
+    
+    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
+    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
+
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
+
+    <ParticipantID schemeID="iso6523-actorid-upis">9901:test1</ParticipantID>
+  </EndUser>
+  <!-- end::EndUserDefault[] -->
+
+  <!-- tag::EndUserFull[] -->
   <EndUser>
     <!-- tag::LegalID[] -->
     <LegalID schemeID="orgnr">ID12345</LegalID>
@@ -60,4 +78,13 @@
     </Intermediary>
     <!-- end::Intermediary[] -->
   </EndUser>
+  <!-- end::EndUserFull[] -->
+
+    <!-- tag::Intermediary2[] -->
+    <Intermediary>
+      <LegalID schemeID="orgnr">987654322</LegalID>
+      <LegalName>Intermediary B</LegalName>
+      <Country>NL</Country>
+    </Intermediary>
+    <!-- end::Intermediary2[] -->
 </EndUserReport>

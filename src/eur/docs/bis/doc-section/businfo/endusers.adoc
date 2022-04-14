@@ -3,6 +3,18 @@
 Defines the data for a single End User.
 The element `EndUser` and its child elements MUST be provided for every End User to be reported. 
 
+.Example of a regular End User:
+[source%linenums, xml, indent=0]
+----
+include::./snippet/snippet-1.xml[tags=EndUserDefault]
+----
+
+.Example of a End User with all optional elements:
+[source%linenums, xml, indent=0]
+----
+include::./snippet/snippet-1.xml[tags=EndUserFull]
+----
+
 == End User/Legal ID
 The element `EndUser/LegalID` MUST contain the Legal identifier of the End User in 
 the jurisdiction within which it is legally based, 
@@ -109,10 +121,16 @@ the element `EndUser/Intermediary` MUST contain the Intermediary information.
 
 Each End User can have no, one or multiple Intermediaries.
 
-.Example:
+.Example (including the optional Territory):
 [source, xml, indent=0]
 ----
 include::./snippet/snippet-1.xml[tags=Intermediary]
+----
+
+.Example (excluding the optional Territory):
+[source, xml, indent=0]
+----
+include::./snippet/snippet-1.xml[tags=Intermediary2]
 ----
 
 == End User/Intermediary/Legal ID

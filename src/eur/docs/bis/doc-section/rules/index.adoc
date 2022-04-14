@@ -2,7 +2,7 @@
 End User Reporting process rules
 
 .Business rules
-[cols="1h,4",options="header"]
+[cols="1h,5",options="header"]
 |====
 
 |RuleID
