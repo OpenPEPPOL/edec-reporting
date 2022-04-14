@@ -1,17 +1,10 @@
 = Participant Identifier Schemes
 
-//Party identifiers (`cac:PartyIdentification/cbc:ID`) and party legal registration identifier (`cac:PartyLegalEntity/cbc:CompanyID`) has an optional scheme identifier attribute (`@schemeID`).
-//If used, the value shall be chosen from the code list  https://docs.peppol.eu/poacc/upgrade-3/codelist/ICD/[codelist-ICD]
-Participant Identifiers (EndUser/ParticipantID) have a mandatory scheme identifier attribute (@schemeID). It shall be chosen from 
-the link:/eur/end_user_reporting/codelist/EAS/index.html[EAS Code list].
+[cols="1,4"]
+|===
+h| Document location
+| `eur:EndUserReport/eur:EndUser/eur:ParticipantID/@schemeID`
 
-.Examples of usage in `fdc:PartyIdentification`
-[source,xml, indent="0"]
-----
-<cac:PartyIdentification>
-	<cbc:ID schemeID="0088">5790000435968</cbc:ID> <1>
-</cac:PartyIdentification>
-----
-<1> schemeID attribute is optional, but when used, the codes must be from the https://www.iso.org/standard/25773.html[ISO/IEC 6523] maintenance agency.
-
-//link:/eur/end_user_reporting/codelist/EAS/index.html[EAS Code list]
+h| Source codelist
+| link:https://docs.peppol.eu/edelivery/codelists/[Participant Identifier Schemes] (latest version)
+|===
