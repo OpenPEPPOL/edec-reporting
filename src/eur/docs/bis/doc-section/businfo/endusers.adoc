@@ -1,19 +1,20 @@
 = End User
 
 Defines the data for a single End User.
-This element and it's child elements MUST be provided for every End User to be reported. 
+The element `EndUser` and its child elements MUST be provided for every End User to be reported. 
 
-== EndUser/LegalID
-The element `LegalID` MUST contain the Legal Identifier of the reporting organisation.
-Legal identifier of the End User in the jurisdiction within which it is legally based, 
-and legal identifier Type (e.g., VAT number, company registration number).
+== End User/Legal ID
+The element `EndUser/LegalID` MUST contain the Legal identifier of the End User in 
+the jurisdiction within which it is legally based, 
+as well as the legal identifier Type (e.g., VAT number, company registration number).
 
-a. The legal identifier has to be active, in jurisdictions when such distinction exists.
+a. The legal identifier has to be active, in jurisdictions where such distinction exists.
 b. In case of End Users that are public organisations and where legal identifiers as 
     such do not exist, other officially issued codes are acceptable.
-    The schemeID does not follow a code list. If possible, the values of the Peppol
-    Participant Identifier Scheme Code List SHOULD be used (like "9914" for an
-    Austrian VAT number).
+    
+The attribute `schemeID` does not follow a specific code list.
+If possible, the values of the Peppol Participant Identifier Scheme 
+code list SHOULD be used (like "9914" for an Austrian VAT number).
 
 .Example:
 [source, xml, indent=0]
@@ -22,9 +23,10 @@ include::./snippet/snippet-1.xml[tags=LegalID]
 ----
 
 
-== EndUser/LegalName
-The element `LegalName` MUST contain the Legal Name of the reporting organisation.
-Legal name of the End User, in the jurisdiction within which it is legally based.
+== End User/Legal Name
+
+The element `EndUser/LegalName` MUST contain the Legal name of the End User, 
+in the jurisdiction within which it is legally based.
 
 .Example:
 [source, xml, indent=0]
@@ -32,9 +34,9 @@ Legal name of the End User, in the jurisdiction within which it is legally based
 include::./snippet/snippet-1.xml[tags=LegalName]
 ----
 
-== EndUser/Country
+== End User/Country
 
-The element `Country` MUST contain the country code of the End User's legal address only.
+The element `EndUser/Country` MUST contain the country code of the End User's legal address only.
 The values in this element MUST be part of the <<codelist-countrycode>> code list.
 
 .Example:
@@ -43,9 +45,9 @@ The values in this element MUST be part of the <<codelist-countrycode>> code lis
 include::./snippet/snippet-1.xml[tags=Country]
 ----
 
-== EndUser/Territory
+== End User/Territory
 
-The element `Territory` is optional. 
+The element `EndUser/Territory` is optional. 
 If it is present, it MUST contain the Territory of the End User's legal address.
 
 .Example:
@@ -54,10 +56,10 @@ If it is present, it MUST contain the Territory of the End User's legal address.
 include::./snippet/snippet-1.xml[tags=Territory]
 ----
 
-== EndUser/SendingDatasetTypeID
+== End User/Sending Dataset Type
 
 For every unique Dataset Type ID (Document Type ID) this End User has sent in the reporting period,
-one `SendingDatasetTypeID` element MUST be provided.
+one `EndUser/SendingDatasetTypeID` element MUST be provided.
 The `schemeID` attribute MUST contain the scheme identifier of the respective Dataset Type ID.
 
 NOTE: The number of exchanged Datasets is not part of this report, it is part of the Transaction Statistics Report.
@@ -68,10 +70,10 @@ NOTE: The number of exchanged Datasets is not part of this report, it is part of
 include::./snippet/snippet-1.xml[tags=SendingDatasets]
 ----
 
-== EndUser/ReceivingDatasetTypeID
+== End User/Receiving Dataset Type
 
 For every unique Dataset Type ID (Document Type ID) this End User has received in the reporting period,
-one `ReceivingDatasetTypeID` element MUST be provided.
+one `EndUser/ReceivingDatasetTypeID` element MUST be provided.
 The `schemeID` attribute MUST contain the scheme identifier of the respective Dataset Type ID.
 
 NOTE: The number of exchanged Datasets is not part of this report, it is part of the Transaction Statistics Report.
@@ -82,9 +84,9 @@ NOTE: The number of exchanged Datasets is not part of this report, it is part of
 include::./snippet/snippet-1.xml[tags=ReceivingDatasets]
 ----
 
-== EndUser/ParticipantID
+== End User/Participant ID
 
-The element `ParticipantID` MUST contain the Participant ID.
+The element `EndUser/ParticipantID` MUST contain the Participant ID.
 
 .Example:
 [source, xml, indent=0]
@@ -92,9 +94,9 @@ The element `ParticipantID` MUST contain the Participant ID.
 include::./snippet/snippet-1.xml[tags=ParticipantID]
 ----
 
-== EndUser/Intermediary
+== End User/Intermediary
 
-The element `Intermediary` MUST contain the Intermediary informations
+The element `EndUser/Intermediary` MUST contain the Intermediary information.
 
 .Example:
 [source, xml, indent=0]

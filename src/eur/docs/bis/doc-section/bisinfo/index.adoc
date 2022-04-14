@@ -14,7 +14,7 @@ In the table below you will find the values to be used as the specification iden
 |====
 
 .XML example representation
-[source,xml]
+[source, xml, indent=0]
 ----
   <eur:CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-report:1</eur:CustomizationID>
   <eur:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</eur:ProfileID>
