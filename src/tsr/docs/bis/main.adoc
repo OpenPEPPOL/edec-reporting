@@ -21,38 +21,121 @@ v{version}
 
 = Introduction
 
-This document sets out the processes and procedures for reporting End User data in the Peppol environment.
+Transaction Statistics Reporting  of production data helps the Peppol Coordinating Authority and PAs to monitor the operations of the Peppol Network and identify and manage risks and issues within the network. The reporting requirements towards SPs are divided into two areas: reporting about Transaction Statistics data and reporting about Transaction Statistics. This operational procedure will explain and outline the operational procedures for the Transaction statistics Reporting. The policy on reporting is stated in Internal Regulations for Use of the Peppol Network.
+
 
 == Scope
 
-NOTE: Add what is in scope explicitly it can be just a paragraph
+//NOTE: Add what is in scope explicitly it can be just a paragraph
+
+This document sets out the processes and procedure for Transaction Statistics Reporting process including:
+
+.	Parties and Roles,
+.	Document Structure,
+.	Data gathered, 
+.  Reporting Rules.
+
+NOTE: To be completed
 
 == Audience
 
+* Peppol Coordinating Authority reports
+   - how the Peppol Coordinating Authority will make consolidated statistical reports available for public consumption.
+
 * Service Provider (SP)
-- how SPs are to submit reports on their End Users on transactions to the Peppol Coordinating Authority.
+- how SPs are to submit reports on their Transaction Statisticss on transactions to the Peppol Coordinating Authority.
 
 More specifically, roles addressed are the following:
 
-* ICT Architects
-* ICT Developers
-* Business Experts
+** ICT Architects
+** ICT Developers
+** Business Experts
 
 == References
 
+* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756772071/Other+Files[Internal Regulations - Use of Peppol Network_v1.0s]
 
+* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B3.-Operational-Procedures[Non-compliance Operational Procedure].
 
 = Document Structure
 
-NOTE: What is expected in Chapter 1, 2 etc.
+* Introduction
+
+Provide general informations about Transaction statistics Reporting business Process.
+
+* Document Structure
+
+   Provide Helpfull informationabout this document structure.
+
+* Reporting Business Process
+
+   Provide the reader with information on how to implement the Transaction Statistics Reporting Process.
+
+* Business Information
+
+   Provide the reader with functionnal information for the Transaction Statistics Reporting Process.
+
+* Rules
+
+   Provide the reader with information on the business rules to be respected for the Transaction Statistics Reporting Process.
+
+* Technical Details
+
+   Provide the reader with information on the technical aspects for the implementation of the Transaction Statistics Reporting Process.
 
 = Reporting Business Process
 
 == Parties and Roles
 
-NOTE: add the main parties of the *Business Process*. The party is the service provider on the role of reporter and the Peppol OO as the reprot receiver
+:leveloffset: +1
+The following roles may be specified. 
 
-== End-User Reporting Process
+== Service Provider (SP) 
+
+Service Provider  is mandatory information and provided in element 
+
+`eur:EndUserReport / eur:Header / eur:ReporterID`
+
+.EUR example of Service Provider information
+[source, xml, indent=0]
+
+    <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
+
+
+. Service Provider  schemeID (IBT-060-1), mandatory, the identification scheme identifier shall be chosen from the entries of the list published by the https://www.iso.org/standard/25773.html[ISO/IEC 6523] maintenance agency.
+. ReporterID (IBT-060) the value of the Peppol AP Certificate Subject CN (Common Name) to uniquely identify the Service Provider that is providing the data.
+
+SPs will:
+
+* Collect relevant data, taking care with the accuracy and validity of this data.
+*	Report this data in accordance to this document. This interface allows for a standardized and structured dataset from where the Peppol Coordinating Authority can automate processing and aggregation of the data upon receival in the Peppol Reporting Platform.
+* Ensure all data for a month is reported within 10 calendar days following the end of the month.
+* Transmit the Peppol Transaction Statistics Report BIS to the Peppol Coordinating Authority in accordance with this specification.
+
+== OpenPeppol Operating Office (OO)
+
+operating Office is mandatory information and provided in element ` ?????`
+
+.EUR example of Operating Office information
+[source, xml, indent=0]
+<ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID> 
+
+NOTE: to be corrected
+
+. Operating Office identifier  (IBT-002), identifies the business process context in which the transaction appears, to enable the receiver to process the document in an appropriate way.
+
+The OpenPeppol Operating Office (OO) will:
+
+* Automatically check which providers have not submitted their Transaction Statistics Report. This check will be triggered automatically.
+* Prompt any SPs that have not submitted the Transaction Statistics Report.
+* Prompting will be done by email and not by eDelivery
+* Define that in due time is supposed to be 5 days, giving it a total of 15 days
+* Prompt the PA of the SP if a SP fails to submit the Transaction Statistics Report in due time after reminders are sent. The PA of the SP will be informed to handle this as a non-compliance issue.
+* Failure by SPs to provide full and complete reports can be managed in accordance with the https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B3.-Operational-Procedures[Non-compliance Operational Procedure].
+
+:leveloffset: -1
+
+== Transaction Statistics Reporting Process
 
 NOTE: Consolidated Diagram and process overview
 
@@ -145,7 +228,7 @@ This document sets out the processes and procedures for Transaction Statistics r
 *Target Audience:*
 
 * Service Provider (SP) 
-   - how SPs are to submit reports on their End Users on transactions to the Peppol Coordinating Authority. 
+   - how SPs are to submit reports on their Transaction Statisticss on transactions to the Peppol Coordinating Authority. 
 
 * Peppol Coordinating Authority reports
    - how the Peppol Coordinating Authority will make consolidated statistical reports available for public consumption.
