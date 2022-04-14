@@ -3,9 +3,10 @@
 
 [cols="1,4"]
 |===
-h| Document type
-| `fdc:DocumentTypeCode`
+h| Document location
+| `eur:EndUserReport/eur:EndUser/eur:SendingDatasetID` +
+`eur:EndUserReport/eur:EndUser/eur:ReceivingDatasetID`
 h| Source codelist
 |
- link:https://docs.peppol.eu/edelivery/codelists/[Document Types v8.0]
+ link:https://docs.peppol.eu/edelivery/codelists/[Document Type Identifiers] (latest version)
 |===
