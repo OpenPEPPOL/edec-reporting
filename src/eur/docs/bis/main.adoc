@@ -31,13 +31,15 @@ The policy on reporting is stated in https://openpeppol.atlassian.net/wiki/space
 
 == Scope
 
-NOTE: Add what is in scope explicitly it can be just a paragraph
+//NOTE: Add what is in scope explicitly it can be just a paragraph
 
 This document sets out the processes and procedure for End User reporting process including:
 
 .	Parties and Roles,
 .	Document Structure,
-.	...,
+.	..., 
+
+NOTE: To be completed
 
 
 
@@ -92,7 +94,57 @@ Provide general informations about End User Reporting business Process.
 
 == Parties and Roles
 
-NOTE: add the main parties of the *Business Process*. The party is the service provider on the role of reporter and the Peppol OO as the reprot receiver
+//NOTE: add the main parties of the *Business Process*. The party is the service provider on the role of reporter and the Peppol OO as the reprot receiver
+:leveloffset: +1
+The following roles may be specified. 
+//The same actor may play more than one role depending on the handling routine.
+
+//Further details on the roles/actors can be found in <<roles>>.
+
+== Service Provider (SP) 
+
+Service Provider  is mandatory information and provided in element 
+
+`eur:EndUserReport / eur:Header / eur:ReporterID`
+
+.EUR example of Service Provider information
+[source, xml, indent=0]
+
+    <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
+
+
+. Service Provider  schemeID (IBT-060-1), mandatory, the identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+. ReporterID (IBT-060) the value of the Peppol AP Certificate Subject CN (Common Name) to uniquely identify the Service Provider that is providing the data.
+
+SPs will:
+
+* Collect relevant data, taking care with the accuracy and validity of this data.
+*	Report this data in accordance to this document. This interface allows for a standardized and structured dataset from where the Peppol Coordinating Authority can automate processing and aggregation of the data upon receival in the Peppol Reporting Platform.
+* Ensure all data for a month is reported within 10 calendar days following the end of the month.
+* Transmit the Peppol End User Report BIS to the Peppol Coordinating Authority in accordance with this specification.
+
+== OpenPeppol Operating Office (OO)
+
+operating Office is mandatory information and provided in element ` ?????`
+
+.EUR example of Operating Office information
+[source, xml, indent=0]
+<ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID> 
+
+NOTE: to be corrected
+
+. Operating Office identifier  (IBT-002), identifies the business process context in which the transaction appears, to enable the receiver to process the document in an appropriate way.
+//<2> Buyer identifier (ibt-046), if used, the identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+The OpenPeppol Operating Office (OO) will:
+
+* Automatically check which providers have not submitted their End User Report. This check will be triggered automatically.
+* Prompt any SPs that have not submitted the End User Report.
+* Prompting will be done by email and not by eDelivery
+* Define that in due time is supposed to be 5 days, giving it a total of 15 days
+* Prompt the PA of the SP if a SP fails to submit the End User Report in due time after reminders are sent. The PA of the SP will be informed to handle this as a non-compliance issue.
+* Failure by SPs to provide full and complete reports can be managed in accordance with the https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B3.-Operational-Procedures[Non-compliance Operational Procedure].
+
+:leveloffset: -1
 
 == End-User Reporting Process
 
@@ -109,14 +161,14 @@ NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Agg
 NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
 
 = Business Information
-
-NOTE: Description of the details on the semantic model of the Message. Header, Reporting Period (Previous Section 3). Link to the processes
-
+:leveloffset: +1
+//NOTE: Description of the details on the semantic model of the Message. Header, Reporting Period (Previous Section 3). Link to the processes
+include::./doc-section/technical/description/index.adoc[]
+:leveloffset: -1
 
 = Rules
 
 include::./doc-section/technical/businessrules/index.adoc[]
-
 
 == Calculations
 
@@ -140,8 +192,11 @@ include::./doc-section/technical/datatypes/semantic-types.adoc[]
 
 == Code lists
 
+include::./doc-section/technical/codelists/index.adoc[]
+
 == BIS Identifiers
 
+//include::./doc-section/technical/codelists/index.adoc[]
 
 :leveloffset: -1
 
@@ -183,12 +238,12 @@ include::./doc-section/technical/datatypes/semantic-types.adoc[]
 
 //**link:/reporting/EndUserReporting/[Main documentation site]*/
 
-:leveloffset: +1
+//:leveloffset: +1
 
 
 //include::./doc-section/introduction.adoc[Introduction]
 
-include::./doc-section/business-processes.adoc[]
+// include::./doc-section/business-processes.adoc[]
 
 //** include::./doc-section/business-info.adoc[]*/
 
@@ -197,4 +252,4 @@ include::./doc-section/business-processes.adoc[]
 
 //**include::./doc-section/technical.adoc[]*/
 
-:leveloffset: -1
+//:leveloffset: -1
