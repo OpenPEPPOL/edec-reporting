@@ -10,6 +10,8 @@ include::./settings.adoc[]
 :source-language: xml
 :sectanchors:
 :sectnums:
+:doctype: book
+
 image::./images/peppol.png[pdfwidth=3.5in,align=center]
 
 = {doctitle}
@@ -113,7 +115,7 @@ Service Provider  is mandatory information and provided in element
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
 
 
-. Service Provider  schemeID (IBT-060-1), mandatory, the identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+. Service Provider  schemeID (IBT-060-1), mandatory, the identification scheme identifier shall be chosen from the entries of the list published by the https://www.iso.org/standard/25773.html[ISO/IEC 6523] maintenance agency.
 . ReporterID (IBT-060) the value of the Peppol AP Certificate Subject CN (Common Name) to uniquely identify the Service Provider that is providing the data.
 
 SPs will:
@@ -135,6 +137,7 @@ NOTE: to be corrected
 
 . Operating Office identifier  (IBT-002), identifies the business process context in which the transaction appears, to enable the receiver to process the document in an appropriate way.
 //<2> Buyer identifier (ibt-046), if used, the identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+
 The OpenPeppol Operating Office (OO) will:
 
 * Automatically check which providers have not submitted their End User Report. This check will be triggered automatically.
@@ -176,7 +179,7 @@ include::./doc-section/technical/businessrules/index.adoc[]
 
 = Technical Details
 
-NOTE: Technical information on semantic and syntax binding. Data Types, Identifiers, schema
+//NOTE: Technical information on semantic and syntax binding. Data Types, Identifiers, schema
 
 == Primitive Datatypes
 
@@ -196,7 +199,11 @@ include::./doc-section/technical/codelists/index.adoc[]
 
 == BIS Identifiers
 
-//include::./doc-section/technical/codelists/index.adoc[]
+:leveloffset: +1
+
+include::./doc-section/technical/namespace.adoc[]
+
+:leveloffset: -1
 
 :leveloffset: -1
 

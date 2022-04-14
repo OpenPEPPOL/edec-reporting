@@ -12,4 +12,6 @@ the link:/eur/end_user_reporting/codelist/EAS/index.html[EAS Code list].
 	<cbc:ID schemeID="0088">5790000435968</cbc:ID> <1>
 </cac:PartyIdentification>
 ----
-<1> schemeID attribute is optional, but when used, the codes must be from link:/eur/end_user_reporting/codelist/EAS/index.html[EAS Code list]
+<1> schemeID attribute is optional, but when used, the codes must be from the https://www.iso.org/standard/25773.html[ISO/IEC 6523] maintenance agency.
+
+//link:/eur/end_user_reporting/codelist/EAS/index.html[EAS Code list]

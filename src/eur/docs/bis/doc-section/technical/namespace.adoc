@@ -1,0 +1,15 @@
+In the table below you will find the values to be used as the specification identifier and the business process type for this profile
+
+NOTE: to be corrected with the latest decision
+
+[cols="2s,3,3",options="header"]
+|====
+|Type
+|Element CustomizationID
+|Process ID
+
+|End User report
+|urn:fdc:peppol.eu:oo:trns:end-user-report:1
+|urn:fdc:peppol.eu:oo:bis:reporting:1
+
+|====
