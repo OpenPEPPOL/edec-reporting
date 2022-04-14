@@ -167,7 +167,7 @@ Service Provider should provide the data with the following level of aggregation
 - The count of incoming and outgoing Transactions per country.
 
 
-* Aggregation per Dataset Type type
+* Aggregation per Dataset Type 
 - The count of incoming and outgoing Transactions per documents type.
 
 * Aggregation per Transport Profile
@@ -175,7 +175,7 @@ Service Provider should provide the data with the following level of aggregation
 
 to be added  ?
 
-Per SP + Dataset Type Transport Protocol
+Per SP + Dataset Type  + Transport Protocol
 
 Per SP + Country code 
 
@@ -185,26 +185,50 @@ Per SP + Country code
 === Data Transmission
 NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
 
+- Transaction Statistics must be transmitted once per month ("reporting period")
+- Only Transaction Statistics on the Production stage must be transmitted
+- Transaction Statistics must be transmitted within 10 days (inclusive) after the end of the previous reporting period
+- The report must be transmitted, even if no Peppol transactions happened
+- In case the report of one Service Provider is received multiple times, only the latest received document will be evaluated
+- The begin and end date of the reporting period must be part of the transmission data
+- An identifier uniquely identifying the reporting Service Provider must be part of the transmission data
+- Transaction Statistics must be transmitted via the Peppol eDelivery Network
+- Transaction Statistics must be transmitted to the Peppol Participant iD XXXXX
+
+
+
 = Business Information
-
+:leveloffset: +1
 NOTE: Description of the details on the semantic model of the Message. Header, Reporting Period (Previous Section 3). Link to the processes
-
+include::./doc-section/technical/description/index.adoc[]
+:leveloffset: -1
 
 = Rules
 
-NOTE: Technical Business rules that concern the *information of the Message*
+//NOTE: Technical Business rules that concern the *information of the Message*
+
+include::./doc-section/technical/businessrules/index.adoc[]
+
 
 == Calculations
 
+NOTE: do we split per aggregation ???
+
+* For outgoing datasets, the receiving Service Provider (C3) MUST be counted. The sending Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
+* For incoming datasets, the sending Service Provider (C2) MUST be counted. * The receiving  Service Provider ID MUST in this case match the value "Header/ReporterCertSubjectCN".
+* The sum of all exchange datasets per Service Provider MUST equal the TotalCount.
+
 = Technical Details
 
-NOTE: Technical information on semantic and syntax binding. Data Types, Identifiers, schema
+//NOTE: Technical information on semantic and syntax binding. Data Types, Identifiers, schema
 
-== Primitive Datatypes
+include::./doc-section/technical/datatypes/index.adoc[]
+
+== Primitive Data Types
 
 NOTE: ISO 15000, Annex A (see PINT) of primitive types used in the syntax binding.
 
-== Semantic Datatypes
+== Semantic Data Types
 
 NOTE: Richer definition of types, based on primitive times and optionally external rules.
 

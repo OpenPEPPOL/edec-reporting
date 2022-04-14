@@ -1,7 +1,6 @@
-[[process-requirements]]
-= Transaction statistics process rules
+//[[process-requirements]]
 
-
+Transaction statistics process rules
 
 .Business rules
 [cols="1h,1,5",options="header"]
