@@ -1,0 +1,11 @@
+= Scope
+
+//NOTE: Add what is in scope explicitly it can be just a paragraph
+
+This document sets out the processes and procedure for End User reporting process including:
+
+. Parties and Roles,
+. Document Structure,
+. ..., 
+
+NOTE: To be completed

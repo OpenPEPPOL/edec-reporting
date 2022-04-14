@@ -1,166 +1,148 @@
-= Business processes
+= Reporting Business Process
 
-//*== Introduction
+== Parties and Roles
+
+//NOTE: add the main parties of the *Business Process*. The party is the service provider on the role of reporter and the Peppol OO as the report receiver
+:leveloffset: +1
+The following roles may be specified. 
+//The same actor may play more than one role depending on the handling routine.
+
+//Further details on the roles/actors can be found in <<roles>>.
+
+== Service Provider (SP) 
+
+Service Provider  is mandatory information and provided in element 
+
+`eur:EndUserReport / eur:Header / eur:ReporterID`
+
+.EUR example of Service Provider information
+[source, xml, indent=0]
+----
+    <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
+----
 
 
-== End User Reporting
-
-=== Process Overview
-
-The following diagram provides an overview of the key steps when Service Providers are reporting monthly End User Data. The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
-
-image::./images/process.png[process, align="center"]
-
-== Procedure steps
-
-=== Lodge End User report
+. Service Provider  schemeID (IBT-060-1), mandatory, the identification scheme identifier shall be chosen from the entries of the list published by the https://www.iso.org/standard/25773.html[ISO/IEC 6523] maintenance agency.
+. ReporterID (IBT-060) the value of the Peppol AP Certificate Subject CN (Common Name) to uniquely identify the Service Provider that is providing the data.
 
 SPs will:
 
-1.	Collect relevant data, taking care with the accuracy and validity of this data.
-2.	Report this data in accordance to this document. This interface allows for a standardized and structured dataset from where the Peppol Coordinating Authority can automate processing and aggregation of the data upon receival in the Peppol Reporting Platform.
-3.	Ensure all data for a month is reported within 10 calendar days following the end of the month.
-4.	Transmit the Peppol End User Report BIS to the Peppol Coordinating Authority in accordance with this specification.
+* Collect relevant data, taking care with the accuracy and validity of this data.
+* Report this data in accordance to this document. This interface allows for a standardized and structured dataset from where the Peppol Coordinating Authority can automate processing and aggregation of the data upon receival in the Peppol Reporting Platform.
+* Ensure all data for a month is reported within 10 calendar days following the end of the month.
+* Transmit the Peppol End User Report BIS to the Peppol Coordinating Authority in accordance with this specification.
 
-=== Send Reminders
+== OpenPeppol Operating Office (OO)
+
+operating Office is mandatory information and provided in element ` ?????`
+
+.EUR example of Operating Office information
+[source, xml, indent=0]
+----
+<eur:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</eur:ProfileID> 
+----
+
+NOTE: to be corrected
+
+. Operating Office identifier  (IBT-002), identifies the business process context in which the transaction appears, to enable the receiver to process the document in an appropriate way.
+//<2> Buyer identifier (ibt-046), if used, the identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
 
 The OpenPeppol Operating Office (OO) will:
 
-1.	Automatically check which providers have not submitted their End User Report. This check will be triggered automatically.
-2.	Prompt any SPs that have not submitted the End User Report.
-.. Prompting will be done by email and not by eDelivery
-.. Define that in due time is supposed to be 5 days, giving it a total of 15 days
-3.	Prompt the PA of the SP if a SP fails to submit the End User Report in due time after reminders are sent. The PA of the SP will be informed to handle this as a non-compliance issue.
-4.	Failure by SPs to provide full and complete reports can be managed in accordance with the https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B3.-Operational-Procedures[Non-compliance Operational Procedure].
-
-//* Prompting will be done by email and not by eDelivery
-//* Define that in due time is supposed to be 5 days, giving it a total of 15 days
-
-image::./images/ReminderTimeLine.png[Timeline, align="center"]
-
-=== Receive and Process Data
-
-The OO will:
-
-1.	Receive End User Reports from Service Providers in accordance with the Peppol End User Report specification.
-2.	Process the received data to generate reports for different jurisdictions and/or Peppol Authorities.
-
-//** */== Transaction Statistics reporting
-
-//**== Process Overview
-
-//**he following diagram provides an overview of the key steps when Service Providers are reporting monthly Transaction Statistics. The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
-
-//**image::./images/TXStatProcessOverview.png[process, align="center"]
-
-//**== Procedure steps
-
-//**=== Lodge Transaction Statistics report
-
-//**Service Providers will:
-
-//**1.	Collect relevant data, taking care of the accuracy and validity of this data. Data is to be reported and grouped according to the requirements of the Transaction Statistics Report specification.
-//**2.	Report this data in accordance with the Transaction Statistics Report specification. This interface allows for a standardized and structured dataset from where the Peppol Coordinating Authority can automate the handling of the data upon receival in the Peppol Reporting Platform.
-//**3.	Ensure all data for a month is reported within 10 business days following the end of the month.
-//**4.	Transmit the Transaction Statistics Report to the Peppol Coordinating Authority in accordance with the Transaction Statistics Report specification.
-
-//**=== Send Reminders
-
-//**The OpenPeppol Operating Office (OO) will:
-//**1.	Automatically check which providers have not submitted their Transaction Statistics Report. This check will be triggered inside the Peppol Reporting Platform.
-//**2.	Prompt any SPs that have not submitted the Transaction Statistics Report.
-//**3.	Prompt the PA of the SP if a SP fails to submit the Transaction Statistics Report in due time after reminders are sent. Their PA will be informed to handle this as a non-compliance issue.
-//**4.	Failure by SPs to provide full and complete reports can be managed in accordance with the https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents[Non-compliance Operational Procedure].
-
-
-//**=== Receive and Compound data
-
-//**The OpenPeppol Operating Office (OO) will:
-//**1.	Receive Transaction Statistics Reports from Service Providers in accordance with the Transaction Statistics Report specification.
-//**2.	Compound all the data inside the Peppol Reporting Platform preparing it for consolidation.
-
-
-//**=== Consolidate data to a common data pool
-
-//**The OpenPeppol Operating Office (OO) will:
-//**1.	Consolidate all compounded data.
-//**2.	Create a unified data structure and a proper basis for the data processing.
-
-//**=== Process consolidated reporting data
-
-//**The OpenPeppol Operating Office (OO) will:
-//**1.	Process the consolidated data by applying agreed rules for report generation.
-//**2.	Analyse the statistical information for any immediate trends and possible issues.
-//**3.	Create a statistical report to be submitted to the MC. Further details which are *not for publication* can be provided to the MC. MC members are bound by confidentiality agreements.
-//**4.	Create statistical reports for the PAs. 
-
-//**=== Provide access to PAs
-
-//**The OpenPeppol Operating Office (OO) will:
-//**1.	Make sure that the PAs have a secure space where they can log in, access, and download the reports generated by the Reporting Platform in relation to transaction data concerning their respective Jurisdiction.
-
-//**=== Publish report
-
-//**The OpenPeppol Operating Office (OO) will:
-//**1.	Publish the statistical report to a publicly accessible location.
-//**Information included in statistical reports is aggregated data and does not identify any end user or service provider or their individualised information or data.
-//**2.	Notify all OpenPeppol Members.
-//**The notification will include a link to the published report.*//
-
-== Peppol Identifiers
-
-PEPPOL has defined a https://peppol.eu/downloads/the-peppol-edelivery-network-specifications/[PEPPOL Policy for identifiers], policy 8 that specifies how to use identifiers in both its transport infrastructure and within the documents exchanged across that infrastructure. It also introduces principles for any identifiers used in the PEPPOL environment. The policies that apply to this BIS are the following:
-
-=== Process and messages
-
-All messages contains ProcessID and CustomizationID. ProcessID identifies what business process a given message is part of, and CustomizationID identifies the kind of message and the rules applied.
-
-Profiles are connected to one business process, and may contain multiple document types. Valid document instances shall contain corresponding ProfileID and CustomizationID.
-
-CustomizationID is a string without spaces.
-
-=== Customization and Process identifiers
-
-In the table below you will find the values to be used as the specification identifier and the business process type for this profile
-
-[cols="1s,3,3",options="header"]
-|====
-|Type
-|Element CustomizationID
-|Process ID
-
-|End User report
-|urn:fdc:peppol.eu:oo:trns:end-user-report:1
-|urn:fdc:peppol.eu:oo:bis:reporting:1
-
-|====
-
-== Semantic datatypes
-
-Semantic data types are used to bridge the gap between the semantic concepts expressed by the information elements and the technical implementation.
-The semantic data types define the allowed value domain for the content, and any additional information components (attributes) needed in order to ensure its precise interpretation.
-
-:leveloffset: +1
-
-include::./technical/datatypes/index.adoc[]
+* Automatically check which providers have not submitted their End User Report. This check will be triggered automatically.
+* Prompt any SPs that have not submitted the End User Report.
+* Prompting will be done by email and not by eDelivery
+* Define that in due time is supposed to be 5 days, giving it a total of 15 days
+* Prompt the PA of the SP if a SP fails to submit the End User Report in due time after reminders are sent. The PA of the SP will be informed to handle this as a non-compliance issue.
+* Failure by SPs to provide full and complete reports can be managed in accordance with the https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B3.-Operational-Procedures[Non-compliance Operational Procedure].
 
 :leveloffset: -1
 
+== End-User Reporting Process
 
-:leveloffset: +1
+NOTE: Consolidated Diagram and process overview to be added
 
-include::./technical/codelists/index.adoc[]
+=== Data Gathering
+//NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Gathering
 
-:leveloffset: -1
+* Reporting Period
 
-:leveloffset: +1
+- The "reporting period" starts with the first day of every month at 00:00:00 UTC (inclusive) and ends with the last day of said month at 23:59:59 UTC (inclusive).
 
-include::./technical/description/index.adoc[]
+- If a Service Provider initiates its Peppol activities during a reporting period, this particular reporting period starts for this Service Provider at the initiation point in time.
 
-:leveloffset: -1
+- If a Service Provider ends its Peppol activities during a reporting period, this particular reporting period ends for this Service Provider at the ending point in time. The report must be send anyway.
 
-:leveloffset: +1
+* Data
 
-include::./technical/businessrules/index.adoc[]
+- Only Service Providers offering the exchange of Dataset Types must fill out and transmit an End User Report.
 
-:leveloffset: -1
+- Only Data for production must be sent.
+
+- Only End Users that were the source of a dataset send via Peppol (C1) or the receiver of a dataset sent via Peppol (C4) within the reporting period must be part of the End User Report
+
+- A legal identifier of the particular Intermediary must be provided
+
+- The type of the legal identifier of the particular Intermediary must be provided
+
+- The country of the particular Intermediary must be provided
+
+- The territory of the particular Intermediary may be provided
+
+- A legal identifier of the particular End User must be provided
+- The type of the legal identifier of the particular End User must be provided
+- The country of the particular End User must be provided
+- The territory of the particular End User may be provided
+- All dataset types the particular End User was sending in the reporting period must be provided
+- All dataset types the particular End User was receiving in the reporting period must be provided
+- All Peppol participant identifiers used by the particular End User must be provided
+- Zero, one or more Intermediaries may be provided per particular End User
+
+
+
+
+
+
+=== Data Aggregation
+
+// NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Aggregation
+
+* Data
+
+
+
+
+
+=== Data Transmission
+NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
+
+* Frequency
+
+- An End User Report must be transmitted once per month ("reporting period")
+
+- An End User Report must be transmitted within 10 days (inclusive) after the end of the previous reporting period
+
+- The report must be transmitted, even if no Peppol transactions happened
+
+- In case the report of one Service Provider is received multiple times, only the latest received document will be evaluated
+
+* Data
+
+- Only End User Reports on the Production stage must be transmitted
+
+- Each End User must not be contained more than once in a report
+
+- The data of each End User must be reported separately
+
+- The begin and end date of the reporting period must be part of the transmission data
+
+- An identifier uniquely identifying the reporting Service Provider must be part of the transmission data
+
+* Network
+
+- End User Reports must be transmitted via the Peppol eDelivery Network
+
+- End User Reports must only be transmitted to the Peppol Participant iD Indicated in chapter 8. BIS Identifier
+
+- Only OpenPeppol is allowed to receive End User Reports
+

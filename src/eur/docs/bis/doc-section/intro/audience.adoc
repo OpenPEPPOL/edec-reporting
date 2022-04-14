@@ -1,0 +1,13 @@
+= Audience
+
+* Peppol Coordinating Authority
+  - how the Peppol Coordinating Authority will make consolidated statistical reports available for public consumption.
+
+* Service Provider (SP)
+  - how SPs are to submit reports on their End Users to the Peppol Coordinating Authority.
+
+More specifically, roles addressed are the following:
+
+* ICT Architects
+* ICT Developers
+* Business Experts
