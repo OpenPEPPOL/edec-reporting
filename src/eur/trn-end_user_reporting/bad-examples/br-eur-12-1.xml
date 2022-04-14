@@ -11,12 +11,12 @@
     <LegalName>Acme Inc.</LegalName>
     <Country>AT</Country>
     
-    <SendingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetID>
-    <SendingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetID>
+    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
+    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
 
-    <ReceivingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetID>
-    <ReceivingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetID>
-    <ReceivingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
 
     <ParticipantID schemeID="iso6523-actorid-upis">9999:test1</ParticipantID>
   </EndUser>
@@ -25,10 +25,10 @@
     <LegalName>FooBar Ltd.</LegalName>
     <Country>ZZ</Country>
     
-    <SendingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetID>
-    <SendingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetID>
+    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
+    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
 
-    <ReceivingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
 
     <ParticipantID schemeID="iso6523-actorid-upis">9999:test2</ParticipantID>
     <ParticipantID schemeID="iso6523-actorid-upis">9999:test3</ParticipantID>
@@ -38,7 +38,7 @@
     <LegalName>Tataa adventure.</LegalName>
     <Country>NL</Country>
     
-    <ReceivingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
     
     <ParticipantID schemeID="iso6523-actorid-upis">9999:test4</ParticipantID>
     <ParticipantID schemeID="iso6523-actorid-upis">9999:test5</ParticipantID>

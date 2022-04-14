@@ -13,7 +13,7 @@
       Philip Helger
 
     History: 
-      2022-04-12, Philip Helger
+      2022-04-14, Philip Helger
         initial version
   </p>
 
@@ -53,25 +53,25 @@
         >[BR-EUR-11] The legal name MUST be present</assert>
       
       <!-- Uniqueness checks -->
-      <assert id="BR-EUR-15" flag="fatal" test="every $x in (eur:SendingDatasetID) satisfies 
-                                                  count(eur:SendingDatasetID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
+      <assert id="BR-EUR-15" flag="fatal" test="every $x in (eur:SendingDatasetTypeID) satisfies 
+                                                  count(eur:SendingDatasetTypeID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
         >[BR-EUR-15] Each Sending Dataset Type ID must be reported only once.</assert>
-      <assert id="BR-EUR-18" flag="fatal" test="every $x in (eur:ReceivingDatasetID) satisfies 
-                                                  count(eur:ReceivingDatasetID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
+      <assert id="BR-EUR-18" flag="fatal" test="every $x in (eur:ReceivingDatasetTypeID) satisfies 
+                                                  count(eur:ReceivingDatasetTypeID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
         >[BR-EUR-18] Each Receiving Dataset Type ID must be reported only once.</assert>
       <assert id="BR-EUR-21" flag="fatal" test="every $x in (eur:ParticipantID) satisfies 
                                                   count(eur:ParticipantID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
         >[BR-EUR-21] Each Participant ID must be reported only once.</assert>
     </rule>
 
-    <rule context="/eur:EndUserReport/eur:EndUser/eur:SendingDatasetID">
+    <rule context="/eur:EndUserReport/eur:EndUser/eur:SendingDatasetTypeID">
       <assert id="BR-EUR-13" flag="fatal" test="normalize-space(.) != ''"
         >[BR-EUR-13] The Sending Dataset Type ID MUST be present</assert>
       <assert id="BR-EUR-14" flag="fatal" test="normalize-space(@schemeID) != ''"
         >[BR-EUR-14] The scheme ID MUST be present</assert>
     </rule>
 
-    <rule context="/eur:EndUserReport/eur:EndUser/eur:ReceivingDatasetID">
+    <rule context="/eur:EndUserReport/eur:EndUser/eur:ReceivingDatasetTypeID">
       <assert id="BR-EUR-16" flag="fatal" test="normalize-space(.) != ''"
         >[BR-EUR-16] The Receiving Dataset ID MUST be present</assert>
       <assert id="BR-EUR-17" flag="fatal" test="normalize-space(@schemeID) != ''"
