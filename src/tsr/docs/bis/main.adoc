@@ -155,7 +155,32 @@ Data for test and production must be gathered separately
 
 === Data Aggregation
 
-NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Aggregation
+//NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Aggregation
+
+Service Provider should provide the data with the following level of aggregation:
+
+* Aggregation per SP
+- The count of incoming and outgoing Transactions per Service Provider.  
+
+
+* Aggregation per country
+- The count of incoming and outgoing Transactions per country.
+
+
+* Aggregation per Dataset Type type
+- The count of incoming and outgoing Transactions per documents type.
+
+* Aggregation per Transport Profile
+- The count of incoming and outgoing Transactions per Transport Profile.
+
+to be added  ?
+
+Per SP + Dataset Type Transport Protocol
+
+Per SP + Country code 
+
+?? per TRansport Prototcol and document type ??
+
 
 === Data Transmission
 NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
