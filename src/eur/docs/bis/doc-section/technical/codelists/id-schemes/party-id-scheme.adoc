@@ -1,5 +1,7 @@
 = Participant Identifier Schemes
 
+A Participant Identifier Scheme defines the syntax and semantic of the Participant Identifier Values issued by the agency maintaining this scheme.
+
 [cols="1,4"]
 |===
 h| Document location
