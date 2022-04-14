@@ -224,18 +224,21 @@ NOTE: do we split per aggregation ???
 
 include::./doc-section/technical/datatypes/index.adoc[]
 
-== Primitive Data Types
+//== Primitive Data Types
 
-NOTE: ISO 15000, Annex A (see PINT) of primitive types used in the syntax binding.
+//NOTE: ISO 15000, Annex A (see PINT) of primitive types used in the syntax binding.
 
-== Semantic Data Types
+//== Semantic Data Types
 
-NOTE: Richer definition of types, based on primitive times and optionally external rules.
+//NOTE: Richer definition of types, based on primitive times and optionally external rules.
 
 == Code lists
 
+include::./doc-section/technical/codelists/index.adoc[]
+
 == BIS Identifiers
 
+include::./doc-section/technical/namespace.adoc[]
 
 :leveloffset: -1
 
