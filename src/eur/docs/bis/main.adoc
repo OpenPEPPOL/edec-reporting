@@ -156,6 +156,8 @@ NOTE: Consolidated Diagram and process overview to be added
 === Data Gathering
 NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Gathering
 
+
+
 === Data Aggregation
 
 NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Aggregation
@@ -173,9 +175,9 @@ include::./doc-section/technical/description/index.adoc[]
 
 include::./doc-section/technical/businessrules/index.adoc[]
 
-== Calculations
+//== Calculations
 
-
+//NOTE: Only relevant for TSR
 
 = Technical Details
 

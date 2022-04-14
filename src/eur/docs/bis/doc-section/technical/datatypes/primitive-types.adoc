@@ -14,8 +14,8 @@ Semantic data type content may be of the following primitive types. These primit
 |Date
 |Time point representing a calendar year and month (YYYYMM) a time scale consisting of an origin and a succession of calendar https://www.iso.org/standard/40874.html[ISO8601].
 
-|Integer
-|A subset of the real numbers, which can be represented by numerals.
+|positiveInteger
+|A whole number greater than zero, but. not a fraction or decimal fraction.
 
 |String
 |A finite sequence of characters.
