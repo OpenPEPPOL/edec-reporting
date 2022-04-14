@@ -1,44 +1,24 @@
 = Parties and Roles
 
-The following roles may be specified. 
+The following Parties are involved in the creation
+and submission of an End User Report. 
 
 == Service Provider (SP) 
 
 The reporting Service Provider is mandatory information in each End User Report.
-It must be in this element: 
 
-[source, xml, indent=0]
-----
-eur:EndUserReport/eur:Header/eur:ReporterID
-----
-
-1. The attribute `schemeID` (IBT-005) is mandatory and contains the 
-  scheme identifier that defines the syntax and semantic of the content
-  of the `ReporterID` element. The matching code list is <<codelist-repidscheme>>.
-2. The element `ReporterID` (IBT-004) needs to contain the value of the 
-  Peppol AP Certificate Subject CN (Common Name) to uniquely identify the 
-  Service Provider that is providing the data.
-
-.Example of Service Provider information
-[source, xml, indent=0]
-----
-<eur:ReporterID schemeID="CertSubjectCN">POP000360</eur:ReporterID>
-----
-
-NOTE: TODO Shall we remove the following paragraph? 
-
-SPs will:
+Each SP will:
 
 * Collect relevant data, taking care of the accuracy and validity 
   of this data.
 * Report this data in accordance to this document in a standardized and structured dataset. 
 * Ensure all data for a month is reported within 10 calendar days following the end of the month.
-* Transmit the Peppol End User Report BIS document to the Peppol Coordinating Authority in accordance with this specification.
+* Transmit the Peppol End User Report BIS document to the PCA in accordance with this specification.
 
 == OpenPeppol Operating Office (OO)
 
 Operating Office is the sole receiver of all End User Reports
-sent by Service Providers.
+sent by SPs.
 
 OO will:
 
