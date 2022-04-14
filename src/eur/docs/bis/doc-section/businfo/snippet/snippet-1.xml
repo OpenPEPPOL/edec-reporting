@@ -40,7 +40,7 @@
     <!-- end::ReceivingDatasets[] -->
 
     <!-- tag::ParticipantID[] -->
-    <ParticipantID schemeID="iso6523-actorid-upis">9999:test1</ParticipantID>
+    <ParticipantID schemeID="iso6523-actorid-upis">9901:test1</ParticipantID>
     <!-- end::ParticipantID[] -->
 
     <!-- tag::Intermediary[] -->

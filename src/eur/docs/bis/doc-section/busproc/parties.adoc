@@ -1,0 +1,56 @@
+= Parties and Roles
+
+The following roles may be specified. 
+
+== Service Provider (SP) 
+
+Service Provider is mandatory information and provided in element 
+
+[source, xml, indent=0]
+----
+eur:EndUserReport/eur:Header/eur:ReporterID
+----
+
+1. The attribute `schemeID` (IBT-005) is mandatory and contains the 
+  scheme identifier that defines the syntax and semantic of the content
+  of the `ReporterID` element.
+2. The element `ReporterID` (IBT-004) needs to contain the value of the 
+  Peppol AP Certificate Subject CN (Common Name) to uniquely identify the 
+  Service Provider that is providing the data.
+
+.Example of Service Provider information
+[source, xml, indent=0]
+----
+<eur:ReporterID schemeID="CertSubjectCN">POP000360</eur:ReporterID>
+----
+
+SPs will:
+
+* Collect relevant data, taking care with the accuracy and validity of this data.
+* Report this data in accordance to this document. This interface allows for a standardized and structured dataset from where the Peppol Coordinating Authority can automate processing and aggregation of the data upon receival in the Peppol Reporting Platform.
+* Ensure all data for a month is reported within 10 calendar days following the end of the month.
+* Transmit the Peppol End User Report BIS to the Peppol Coordinating Authority in accordance with this specification.
+
+== OpenPeppol Operating Office (OO)
+
+Operating Office is mandatory information and provided in element ` ?????`
+
+.Example of Operating Office information
+[source, xml, indent=0]
+----
+<eur:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</eur:ProfileID> 
+----
+
+NOTE: to be corrected
+
+. Operating Office identifier  (IBT-002), identifies the business process context in which the transaction appears, to enable the receiver to process the document in an appropriate way.
+//<2> Buyer identifier (ibt-046), if used, the identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.
+
+The OpenPeppol Operating Office (OO) will:
+
+* Automatically check which providers have not submitted their End User Report. This check will be triggered automatically.
+* Prompt any SPs that have not submitted the End User Report.
+* Prompting will be done by email and not by eDelivery
+* Define that in due time is supposed to be 5 days, giving it a total of 15 days
+* Prompt the PA of the SP if a SP fails to submit the End User Report in due time after reminders are sent. The PA of the SP will be informed to handle this as a non-compliance issue.
+* Failure by SPs to provide full and complete reports can be managed in accordance with the https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B3.-Operational-Procedures[Non-compliance Operational Procedure].

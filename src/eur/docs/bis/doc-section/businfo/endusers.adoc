@@ -60,6 +60,7 @@ include::./snippet/snippet-1.xml[tags=Territory]
 
 For every unique Dataset Type ID (Document Type ID) this End User has sent in the reporting period,
 one `EndUser/SendingDatasetTypeID` element MUST be provided.
+
 The `schemeID` attribute MUST contain the scheme identifier of the respective Dataset Type ID.
 
 NOTE: The number of exchanged Datasets is not part of this report, it is part of the Transaction Statistics Report.
@@ -74,6 +75,7 @@ include::./snippet/snippet-1.xml[tags=SendingDatasets]
 
 For every unique Dataset Type ID (Document Type ID) this End User has received in the reporting period,
 one `EndUser/ReceivingDatasetTypeID` element MUST be provided.
+
 The `schemeID` attribute MUST contain the scheme identifier of the respective Dataset Type ID.
 
 NOTE: The number of exchanged Datasets is not part of this report, it is part of the Transaction Statistics Report.
@@ -86,7 +88,11 @@ include::./snippet/snippet-1.xml[tags=ReceivingDatasets]
 
 == End User/Participant ID
 
-The element `EndUser/ParticipantID` MUST contain the Participant ID.
+For every identifiers used in the Peppol Network by the End User, 
+related only to the Peppol Services which that particular Service Providers 
+offers to them, one `EndUser/ParticipantID` element MUST be provided.
+
+The `schemeID` attribute MUST contain the scheme identifier of the respective Participant ID.
 
 .Example:
 [source, xml, indent=0]
@@ -96,7 +102,12 @@ include::./snippet/snippet-1.xml[tags=ParticipantID]
 
 == End User/Intermediary
 
-The element `EndUser/Intermediary` MUST contain the Intermediary information.
+Where intermediaries are both actively involved in the transmission of the 
+End Users’ Peppol Services and hold a contractual relationship with the 
+End User as described in the SP Agreement clause 9.2,
+the element `EndUser/Intermediary` MUST contain the Intermediary information.
+
+Each End User can have no, one or multiple Intermediaries.
 
 .Example:
 [source, xml, indent=0]
@@ -104,9 +115,9 @@ The element `EndUser/Intermediary` MUST contain the Intermediary information.
 include::./snippet/snippet-1.xml[tags=Intermediary]
 ----
 
-== EndUser/Intermediary/LegalID
+== End User/Intermediary/Legal ID
 
-The element `LegalID` MUST contain the Legal Identifier of the intermediary organisation.
+The element `EndUser/Intermediary/LegalID` MUST contain the Legal Identifier of the Intermediary.
 
 .Example:
 [source, xml, indent=0]
@@ -115,19 +126,19 @@ include::./snippet/snippet-1.xml[tags=IntermediaryLegalID]
 ----
 
 
-== EndUser/Intermediary/LegalName
+== End User/Intermediary/Legal Name
 
-The element `LegalName` MUST contain the Legal Name of the reporting organisation.
-Legal name of the End User, in the jurisdiction within which it is legally based.
+The element `EndUser/Intermediary/LegalName` MUST contain the Legal Name of the Intermediary.
+
 .Example:
 [source, xml, indent=0]
 ----
 include::./snippet/snippet-1.xml[tags=IntermediaryLegalName]
 ----
 
-== EndUser/Intermediary/Country
+== End User/Intermediary/Country
 
-The element `Country` MUST contain the country code of the intermediary's legal address only.
+The element `EndUser/Intermediary/Country` MUST contain the country code of the Intermediary's legal address only.
 The values in this element MUST be part of the <<codelist-countrycode>> code list.
 
 .Example:
@@ -136,10 +147,10 @@ The values in this element MUST be part of the <<codelist-countrycode>> code lis
 include::./snippet/snippet-1.xml[tags=IntermediaryCountry]
 ----
 
-== EndUser/Intermediary/Territory
+== End User/Intermediary/Territory
 
-The element `Territory` is optional. 
-If it is present, it MUST contain the Territory of the intermediary's legal address.
+The element `EndUser/Intermediary/Territory` is optional. 
+If it is present, it MUST contain the Territory of the Intermediary's legal address.
 
 .Example:
 [source, xml, indent=0]
