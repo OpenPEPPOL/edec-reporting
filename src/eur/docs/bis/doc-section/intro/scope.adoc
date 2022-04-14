@@ -6,6 +6,7 @@ This document sets out the processes and procedure for End User reporting proces
 
 . Parties and Roles,
 . Document Structure,
-. ..., 
+. Data gathered, 
+. Reporting rules.
 
 NOTE: To be completed
