@@ -40,9 +40,6 @@ SPs will:
 Operating Office is the sole receiver of all End User Reports
 sent by Service Providers.
 
-// TODO is this okay like this?
-NOTE: The Participant Identifier under which OO will receive the End User Reports is not part of this document.
-
 OO will:
 
 * Automatically check which providers have not submitted their End User Report. This check will be triggered automatically.
