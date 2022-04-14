@@ -19,14 +19,11 @@
     <LegalID schemeID="orgnr">ID12345</LegalID>
     <LegalName>Acme Inc.</LegalName>
     <Country>AT</Country>
-    
     <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
     <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
-
     <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
     <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
     <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
-
     <ParticipantID schemeID="iso6523-actorid-upis">9901:test1</ParticipantID>
   </EndUser>
   <!-- end::EndUserDefault[] -->
@@ -45,22 +42,18 @@
     <!-- tag::Territory[] -->
     <Territory>Lower Austria</Territory>
     <!-- end::Territory[] -->
-    
     <!-- tag::SendingDatasets[] -->
     <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
     <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
     <!-- end::SendingDatasets[] -->
-
     <!-- tag::ReceivingDatasets[] -->
     <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
     <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
     <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
     <!-- end::ReceivingDatasets[] -->
-
     <!-- tag::ParticipantID[] -->
     <ParticipantID schemeID="iso6523-actorid-upis">9901:test1</ParticipantID>
     <!-- end::ParticipantID[] -->
-
     <!-- tag::Intermediary[] -->
     <Intermediary>
       <!-- tag::IntermediaryLegalID[] -->
