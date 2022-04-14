@@ -11,6 +11,5 @@ h| Document location
 `eur:EndUserReport/eur:EndUser/eur:Intermediary/eur:Country`
 
 h| Source code list
-// TODO link to correct code list in here
-| https://docs.peppol.eu/poacc/upgrade-3/codelist/ISO3166/[ISO 3166-1 Alpha-2]
+| link:../end_user_reporting/codelist/ISO3166/[Country Codes code list]
 |===

@@ -9,5 +9,5 @@ h| Document location
 | `eur:Header/eur:ReporterID/@schemeID`
 
 h| Source code list
-| TODO link to correct code list in here
+| link:../end_user_reporting/codelist/ReporterIDScheme/[Reporter ID Scheme code list]
 |===
