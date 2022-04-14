@@ -25,15 +25,10 @@ This document sets out the processes and procedures for reporting End User data 
 
 include::./doc-section/intro/main.adoc[]
 
-include::./doc-section/business-processes.adoc[]
+include::./doc-section/busproc/main.adoc[]
 
 
 
-= Business Information
-:leveloffset: +1
-//NOTE: Description of the details on the semantic model of the Message. Header, Reporting Period (Previous Section 3). Link to the processes
-include::./doc-section/technical/description/index.adoc[]
-:leveloffset: -1
 
 = Rules
 
@@ -55,54 +50,4 @@ include::./doc-section/technical/codelists/index.adoc[]
 
 include::./doc-section/technical/namespace.adoc[]
 
-//******************************************************************** */
-
 :leveloffset: -1
-
-
-
-
-//*Target Audience:*
-
-//* Service Provider (SP) 
-//   - how SPs are to submit reports on their End Users on transactions to the Peppol Coordinating Authority. 
-
-//* Peppol Coordinating Authority reports
-//   - how the Peppol Coordinating Authority will make consolidated statistical reports available for public consumption.
-
-//*Out of scope:*
-
-//* Peppol Authority (PA)
-//   - how PAs can access and download the information from the Peppol Coordinating Authority.
-
-//* PA usage
-//   - how PAs will use and share statistical information/reports is managed by each PA.
-
-//* Local or regional domains
-//   - reporting of information for activities within local or regional domains is the responsibility of the PAs owner of those domains. Local and regional domains are required to keep the Peppol Coordinating Authority informed of its activities.
-
-//* Operational reports
-//   - Management reports relating to workloads and workflow (e.g. change requests, extended use requests, issues and incidents, non-compliance, etc.) are managed by the OpenPeppol Operating Office as part of its operations.
-
-//== Link to main site of documentation
-
-//https://docs.peppol.eu/poacc/billing/3.0/[Main documentation site]  (to be changed to reporting main doc site when existing)
-
-
-//**link:/reporting/EndUserReporting/[Main documentation site]*/
-
-//:leveloffset: +1
-
-
-//include::./doc-section/introduction.adoc[Introduction]
-
-// include::./doc-section/business-processes.adoc[]
-
-//** include::./doc-section/business-info.adoc[]*/
-
-
-//**include::./doc-section/rules.adoc[]*/
-
-//**include::./doc-section/technical.adoc[]*/
-
-//:leveloffset: -1

@@ -1,7 +1,4 @@
-
-
-
-== Header
+= Header
 
 The element `Header` contains the reporting period
 and the ID of the reporting Service Provider.
@@ -12,8 +9,7 @@ and the ID of the reporting Service Provider.
 include::./snippet/snippet-1.xml[tags=Header]
 ----
 
-
-== Reporting Period
+= Reporting Period
 
 The element `ReportPeriod` MUST contain the year and month of the reporting period.
 This element SHALL NOT contain time zone information.
@@ -24,8 +20,8 @@ This element SHALL NOT contain time zone information.
 include::./snippet/snippet-1.xml[tags=Period]
 ----
 
-== Reporter Identification
-The element `ReporterID` MUST contain rhe unique identification of the 
+= Reporter Identification
+The element `ReporterID` MUST contain the unique identification of the 
   Service Provider that is providing the data.
 If the `schemeID` attribute is set to `CertSubjectCN` than the value must be
   the Peppol AP Certificate Subject CN (Common Name). 
