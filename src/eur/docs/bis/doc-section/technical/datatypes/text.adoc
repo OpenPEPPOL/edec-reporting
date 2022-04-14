@@ -1,8 +1,9 @@
 = Text
 
-Text is the actual wording of anything written or printed. Line breaks in the text may be present, and any line breaks should be preserved and respected by the receiver’s system
+Text is the actual wording of anything written or printed.
+Line breaks in the text may be present, and any line breaks should be preserved and respected by the receiver’s system
 
-
+.Text.Type
 [cols="1s,1,1,1", options="header"]
 |===
 |Component
@@ -13,5 +14,5 @@ Text is the actual wording of anything written or printed. Line breaks in the te
 |Content
 |Mandatory
 |String
-|Here is my text for example
+|`Here is my example text`
 |===

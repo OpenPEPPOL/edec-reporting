@@ -243,21 +243,9 @@ include::./doc-section/technical/businessrules/index.adoc[]
 
 //NOTE: Only relevant for TSR
 
-= Technical Details
+// Datatypes
 
-//NOTE: Technical information on semantic and syntax binding. Data Types, Identifiers, schema
-
-== Primitive Datatypes
-
-//NOTE: ISO 15000, Annex A (see PINT) of primitive types used in the syntax binding.
-
-include::./doc-section/technical/datatypes/primitive-types.adoc[]
-
-== Semantic Datatypes
-
-//NOTE: Richer definition of types, based on primitive times and optionally external rules.
-
-include::./doc-section/technical/datatypes/semantic-types.adoc[]
+include::./doc-section/technical/datatypes/index.adoc[]
 
 // Code lists
 

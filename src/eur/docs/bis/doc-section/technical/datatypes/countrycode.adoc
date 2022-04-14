@@ -1,11 +1,12 @@
 = Country Code
 
+Country Codes are identifiers designed to identify countries according
+the https://docs.peppol.eu/poacc/upgrade-3/codelist/ISO3166/[ISO 3166-1 Alpha-2] standard.
 
-Country Code Types are identifiers designed to identify countries according
-the https://docs.peppol.eu/poacc/upgrade-3/codelist/ISO3166/[ISO3166] standard.
+// TODO is that correct?
+See [[codelist-countrycode]] for details.
 
-
-.Document Reference. Type
+.CountryCode.Type
 [cols="1s,1,1,1", options="header"]
 |===
 |Component
@@ -16,5 +17,5 @@ the https://docs.peppol.eu/poacc/upgrade-3/codelist/ISO3166/[ISO3166] standard.
 |Content
 |Mandatory
 |String
-|AT
+|`AT`
 |===

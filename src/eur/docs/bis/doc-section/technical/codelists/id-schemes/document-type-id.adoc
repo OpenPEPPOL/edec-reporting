@@ -1,5 +1,6 @@
-= Document Type identifiers 
+= Document Type Identifiers 
 
+Document Type Identifiers (aka Dataset Type Identifiers) are used to uniquely identify the type of a Peppol business document instance. 
 
 [cols="1,4"]
 |===
