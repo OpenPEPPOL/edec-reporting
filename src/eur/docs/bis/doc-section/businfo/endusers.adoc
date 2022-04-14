@@ -4,13 +4,13 @@ Defines the data for a single End User.
 The element `EndUser` and its child elements MUST be provided for every End User to be reported. 
 
 .Example of a regular End User:
-[source, xml, indent=0]
+[source, xml]
 ----
 include::./snippet/snippet-1.xml[tags=EndUserDefault]
 ----
 
 .Example of a End User with all optional elements:
-[source, xml, indent=0]
+[source, xml]
 ----
 include::./snippet/snippet-1.xml[tags=EndUserFull]
 ----
