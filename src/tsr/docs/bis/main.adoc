@@ -137,10 +137,21 @@ The OpenPeppol Operating Office (OO) will:
 
 == Transaction Statistics Reporting Process
 
-NOTE: Consolidated Diagram and process overview
+NOTE: Consolidated Diagram and process overview to be added
 
 === Data Gathering
-NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Gathering
+// NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Gathering
+
+- The "reporting period" starts with the first day of every month at 00:00:00 UTC (inclusive) and ends with the last day of said month at 23:59:59 UTC (inclusive)
+- If a Service Provider initiates its Peppol activities during a reporting period, this particular reporting period starts for this Service Provider at the initiation point in time.
+- If a Service Provider ends its Peppol activities during a reporting period, this particular reporting period ends for this Service Provider at the ending point in time. The report must be send anyway.
+- Only Service Providers offering the exchange of Dataset Types must fill out and transmit Transaction Statistics
+Data for test and production must be gathered separately
+- All outgoing datasets to which a positive transport level acknowledgment was received must be counted ("outgoing countable dataset")
+- All incoming datasets to which a positivie transport level acknowledgement was sent must be be counted ("incoming countable dataset")
+
+
+
 
 === Data Aggregation
 
