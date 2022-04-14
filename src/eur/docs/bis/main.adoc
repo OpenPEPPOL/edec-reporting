@@ -23,31 +23,18 @@ This document sets out the processes and procedures for reporting End User data 
 
 :leveloffset: +1
 
-include::./doc-section/intro/main.adoc[]
+include::./doc-section/intro/index.adoc[]
 
-include::./doc-section/busproc/main.adoc[]
+include::./doc-section/busproc/index.adoc[]
 
+include::./doc-section/businfo/index.adoc[]
 
+include::./doc-section/rules/index.adoc[]
 
+include::./doc-section/datatypes/index.adoc[]
 
-= Rules
+include::./doc-section/codelists/index.adoc[]
 
-include::./doc-section/technical/businessrules/index.adoc[]
-
-//== Calculations
-
-//NOTE: Only relevant for TSR
-
-// Datatypes
-
-include::./doc-section/technical/datatypes/index.adoc[]
-
-// Code lists
-
-include::./doc-section/technical/codelists/index.adoc[]
-
-// BIS Identifiers
-
-include::./doc-section/technical/namespace.adoc[]
+include::./doc-section/bisinfo/index.adoc[]
 
 :leveloffset: -1

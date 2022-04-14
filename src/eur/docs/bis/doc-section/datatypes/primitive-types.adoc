@@ -1,6 +1,7 @@
 = Primitive Data Types
 
-Semantic data type content may be of the following primitive types. These primitive types were taken from https://www.iso.org/standard/61433.html[ISO 15000], Annex A.
+Semantic data type content may be of the following primitive types. 
+These primitive types were taken from https://www.iso.org/standard/61433.html[ISO 15000], Annex A.
 
 [cols="1s,7", options="header"]
 |===

@@ -15,39 +15,49 @@
   <!-- end::Header[] -->
 
   <EndUser>
+    <!-- tag::LegalID[] -->
     <LegalID schemeID="orgnr">ID12345</LegalID>
+    <!-- end::LegalID[] -->
+    <!-- tag::LegalName[] -->
     <LegalName>Acme Inc.</LegalName>
+    <!-- end::LegalName[] -->
+    <!-- tag::Country[] -->
     <Country>AT</Country>
+    <!-- end::Country[] -->
+    <!-- tag::Territory[] -->
+    <Territory>Lower Austria</Territory>
+    <!-- end::Territory[] -->
     
-    <SendingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetID>
-    <SendingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetID>
+    <!-- tag::SendingDatasets[] -->
+    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
+    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
+    <!-- end::SendingDatasets[] -->
 
-    <ReceivingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetID>
-    <ReceivingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetID>
-    <ReceivingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetID>
+    <!-- tag::ReceivingDatasets[] -->
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
+    <!-- end::ReceivingDatasets[] -->
 
+    <!-- tag::ParticipantID[] -->
     <ParticipantID schemeID="iso6523-actorid-upis">9999:test1</ParticipantID>
-  </EndUser>
+    <!-- end::ParticipantID[] -->
 
-  <EndUser>
-    <LegalID schemeID="orgnr">ID12347</LegalID>
-    <LegalName>Tataa adventure.</LegalName>
-    <Country>NL</Country>
-    
-    <ReceivingDatasetID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetID>
-    
-    <ParticipantID schemeID="iso6523-actorid-upis">9999:test4</ParticipantID>
-    <ParticipantID schemeID="iso6523-actorid-upis">9999:test5</ParticipantID>
-
+    <!-- tag::Intermediary[] -->
     <Intermediary>
+      <!-- tag::IntermediaryLegalID[] -->
       <LegalID schemeID="orgnr">987654321</LegalID>
-      <LegalName>Inter 1</LegalName>
+      <!-- end::IntermediaryLegalID[] -->
+      <!-- tag::IntermediaryLegalName[] -->
+      <LegalName>Intermediary A</LegalName>
+      <!-- end::IntermediaryLegalName[] -->
+      <!-- tag::IntermediaryCountry[] -->
       <Country>BE</Country>
+      <!-- end::IntermediaryCountry[] -->
+      <!-- tag::IntermediaryTerritory[] -->
+      <Territory>Brussels Area</Territory>
+      <!-- end::IntermediaryTerritory[] -->
     </Intermediary>
-    <Intermediary>
-      <LegalID schemeID="sthgelse">987654322</LegalID>
-      <LegalName>Inter 2</LegalName>
-      <Country>LU</Country>
-    </Intermediary>
+    <!-- end::Intermediary[] -->
   </EndUser>
 </EndUserReport>

@@ -1,12 +1,15 @@
-= EndUser
-Defines the data for a single end user.
+= End User
 
-== EndUser/Legal ID
+Defines the data for a single End User.
+This element and it's child elements MUST be provided for every End User to be reported. 
+
+== EndUser/LegalID
 The element `LegalID` MUST contain the Legal Identifier of the reporting organisation.
 Legal identifier of the End User in the jurisdiction within which it is legally based, 
 and legal identifier Type (e.g., VAT number, company registration number).
+
 a. The legal identifier has to be active, in jurisdictions when such distinction exists.
- b. In case of End Users that are public organisations and where legal identifiers as 
+b. In case of End Users that are public organisations and where legal identifiers as 
     such do not exist, other officially issued codes are acceptable.
     The schemeID does not follow a code list. If possible, the values of the Peppol
     Participant Identifier Scheme Code List SHOULD be used (like "9914" for an
@@ -15,99 +18,129 @@ a. The legal identifier has to be active, in jurisdictions when such distinction
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet//snippet-2.xml[tags=LegalID]
+include::./snippet/snippet-1.xml[tags=LegalID]
 ----
 
 
-== EndUser/Legal Name
+== EndUser/LegalName
 The element `LegalName` MUST contain the Legal Name of the reporting organisation.
 Legal name of the End User, in the jurisdiction within which it is legally based.
+
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet//snippet-2.xml[tags=LegalName]
+include::./snippet/snippet-1.xml[tags=LegalName]
 ----
 
 == EndUser/Country
-The element `Country` MUST contain the country of the End User's legal address only.
-This type is used to represent link:/eur/end_user_reporting/codelist/ISO3166/index.html[ISO-3166 country codes] in Alpha-2 Mode.
+
+The element `Country` MUST contain the country code of the End User's legal address only.
+The values in this element MUST be part of the <<codelist-countrycode>> code list.
 
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet/snippet-2.xml[tags=Country]
+include::./snippet/snippet-1.xml[tags=Country]
 ----
 
 == EndUser/Territory
-The element `Territory` MUST contain the Territory of the End User's legal address.
+
+The element `Territory` is optional. 
+If it is present, it MUST contain the Territory of the End User's legal address.
 
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet/snippet-2.xml[tags=Country]
+include::./snippet/snippet-1.xml[tags=Territory]
 ----
 
-== EndUser/ReceivingDatasets
-The element `ReceivingDatasets` MUST contain the list of the datasets included in the report.
- End User's capability to send Peppol Dataset Types (Document Type ID).
+== EndUser/SendingDatasetTypeID
+
+For every unique Dataset Type ID (Document Type ID) this End User has sent in the reporting period,
+one `SendingDatasetTypeID` element MUST be provided.
+The `schemeID` attribute MUST contain the scheme identifier of the respective Dataset Type ID.
+
+NOTE: The number of exchanged Datasets is not part of this report, it is part of the Transaction Statistics Report.
+
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet/snippet-2.xml[tags=ReceivingDatasets]
+include::./snippet/snippet-1.xml[tags=SendingDatasets]
 ----
 
-== EndUser/SendingDatasets
-The element `SendingDatasets` MUST contain the list of the datasets included in the report.
- End User's capability to send Peppol Dataset Types (Document Type ID).
+== EndUser/ReceivingDatasetTypeID
+
+For every unique Dataset Type ID (Document Type ID) this End User has received in the reporting period,
+one `ReceivingDatasetTypeID` element MUST be provided.
+The `schemeID` attribute MUST contain the scheme identifier of the respective Dataset Type ID.
+
+NOTE: The number of exchanged Datasets is not part of this report, it is part of the Transaction Statistics Report.
+
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet/snippet-2.xml[tags=SendingDatasets]
+include::./snippet/snippet-1.xml[tags=ReceivingDatasets]
 ----
 
 == EndUser/ParticipantID
+
 The element `ParticipantID` MUST contain the Participant ID.
 
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet/snippet-2.xml[tags=ParticipantID]
+include::./snippet/snippet-1.xml[tags=ParticipantID]
 ----
 
 == EndUser/Intermediary
-The element `Intermediary` .
- Must contain the Intermediary informations
+
+The element `Intermediary` MUST contain the Intermediary informations
+
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet/snippet-2.xml[tags=Intermediary]
+include::./snippet/snippet-1.xml[tags=Intermediary]
 ----
 
-== EndUser/Intermediary/Legal ID
+== EndUser/Intermediary/LegalID
+
 The element `LegalID` MUST contain the Legal Identifier of the intermediary organisation.
 
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet//snippet-2.xml[tags=IntermediaryLegalID]
+include::./snippet/snippet-1.xml[tags=IntermediaryLegalID]
 ----
 
 
-== EndUser/Intermediary.\/Legal Name
+== EndUser/Intermediary/LegalName
+
 The element `LegalName` MUST contain the Legal Name of the reporting organisation.
 Legal name of the End User, in the jurisdiction within which it is legally based.
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet//snippet-2.xml[tags=IntermediaryLegalName]
+include::./snippet/snippet-1.xml[tags=IntermediaryLegalName]
 ----
 
 == EndUser/Intermediary/Country
-The element `Country` MUST contain the country of the End User's legal address only.
-This type is used to represent ISO-3166 country codes in Alpha-2 Mode.
+
+The element `Country` MUST contain the country code of the intermediary's legal address only.
+The values in this element MUST be part of the <<codelist-countrycode>> code list.
 
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet/snippet-2.xml[tags=IntermediaryCountry]
+include::./snippet/snippet-1.xml[tags=IntermediaryCountry]
+----
+
+== EndUser/Intermediary/Territory
+
+The element `Territory` is optional. 
+If it is present, it MUST contain the Territory of the intermediary's legal address.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet/snippet-1.xml[tags=IntermediaryTerritory]
 ----
