@@ -1,6 +1,6 @@
 :lang: en
 
-:doctitle: Peppol Model for Transaction Statistics Reporting
+:doctitle: Peppol Model for Transaction Statistics Reporting 
 :version: 0.1.2
 :shared-dir: ../shared
 :snippet-dir: ../rules/snippets
