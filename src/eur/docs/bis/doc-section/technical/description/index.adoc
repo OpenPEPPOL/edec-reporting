@@ -1,6 +1,5 @@
-[[descriptions]]
+ [[descriptions]]
 = Description of selected parts of the End User Reporting message
-
 
 :leveloffset: +1
 

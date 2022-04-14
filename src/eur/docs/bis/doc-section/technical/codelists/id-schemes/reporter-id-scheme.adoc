@@ -1,0 +1,13 @@
+[[codelist-repidscheme]]
+= Reporter Identification Scheme
+
+Reporter Identification Schemes are used to identify the Service Provider inside the End User Report.
+
+[cols="1,4"]
+|===
+h| Document location
+| `eur:Header/eur:ReporterID/@schemeID`
+
+h| Source code list
+| TODO link to correct code list in here
+|===

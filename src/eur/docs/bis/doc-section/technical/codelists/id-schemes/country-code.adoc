@@ -9,7 +9,8 @@ Country Codes must be coded according to the ISO-3166-1 Alpha-2 encoding.
 h| Document location
 | `eur:EndUserReport/eur:EndUser/eur:Country` +
 `eur:EndUserReport/eur:EndUser/eur:Intermediary/eur:Country`
-h| Source codelist
+
+h| Source code list
 // TODO link to correct code list in here
 | https://docs.peppol.eu/poacc/upgrade-3/codelist/ISO3166/[ISO 3166-1 Alpha-2]
 |===

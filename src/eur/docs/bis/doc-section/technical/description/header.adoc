@@ -3,47 +3,36 @@
 
 == Header
 
-The element `Header` contains the reporting periode start date, reporting period end date 
-and the Id of the reporting organization.
+The element `Header` contains the reporting period
+and the ID of the reporting Service Provider.
 
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet//snippet-1.xml[tags=Header]
+include::./snippet/snippet-1.xml[tags=Header]
 ----
 
 
-== Report Start Date
+== Reporting Period
 
-The element `ReportPeriodStart` MUST contain the start date (inclusive) of the reporting period.
-            Usually the first day of the preceding month.
-            E.g. for the first report this may be a different date as well of the reporting period.
+The element `ReportPeriod` MUST contain the year and month of the reporting period.
+This element SHALL NOT contain time zone information.
 
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet//snippet-1.xml[tags=startdate]
+include::./snippet/snippet-1.xml[tags=Period]
 ----
 
-
-== Report end date
-The element `ReportPeriodEnd` MUST contain the The last date (inclusive) of the reporting period.
-            Usually the last day of the preceding month.
+== Reporter Identification
+The element `ReporterID` MUST contain rhe unique identification of the 
+  Service Provider that is providing the data.
+If the `schemeID` attribute is set to `CertSubjectCN` than the value must be
+  the Peppol AP Certificate Subject CN (Common Name). 
+  See <<codelist-repidscheme>> for the full code list.
 
 .Example:
 [source, xml, indent=0]
 ----
-include::./snippet//snippet-1.xml[tags=eindate]
-----
-
-== Reporter ID
-The element `ReporterID` MUST contain The unique identification of the Service Provider that is providing the data.
-            If the "schemeID" attribute is set to "CertSubjectCN" than the value must be
-              the Peppol AP Certificate Subject CN (Common Name).
-              Other scheme IDs are currently not supported
-
-.Example:
-[source, xml, indent=0]
-----
-include::./snippet/snippet-1.xml[tags=sender]
+include::./snippet/snippet-1.xml[tags=Reporter]
 ----

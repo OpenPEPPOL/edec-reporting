@@ -1,3 +1,4 @@
+[[codelist-doctypeid]]
 = Document Type Identifiers 
 
 Document Type Identifiers (aka Dataset Type Identifiers) are used to uniquely identify the type of a Peppol business document instance. 
@@ -7,7 +8,7 @@ Document Type Identifiers (aka Dataset Type Identifiers) are used to uniquely id
 h| Document location
 | `eur:EndUserReport/eur:EndUser/eur:SendingDatasetID` +
 `eur:EndUserReport/eur:EndUser/eur:ReceivingDatasetID`
-h| Source codelist
-|
- link:https://docs.peppol.eu/edelivery/codelists/[Document Type Identifiers] (latest version)
+
+h| Source code list
+| link:https://docs.peppol.eu/edelivery/codelists/[Document Type Identifiers] (latest version)
 |===
