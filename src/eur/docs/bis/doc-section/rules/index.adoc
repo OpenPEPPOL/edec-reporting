@@ -9,75 +9,75 @@ End User Reporting process rules
 |Requirement (depending, as applicable, on the respective business case)
 
 |BR-EUR-01
-|The Report must contain an identification of the specification it conforms to.
+|The Report MUST contain an identification of the specification it conforms to.
 
 |BR-EUR-02
-|The Report must contain an identification of the business process context it appears in.
+|The Report MUST contain an identification of the business process context it appears in.
 
 |BR-EUR-03
-|The Report must contain the year and the month in which the reported data was gathered.
+|The Report MUST contain the year and the month in which the reported data was gathered.
 
 |BR-EUR-04
-|The Report must not not contain timezone information for the reporting period.
+|The Report MUST not not contain timezone information for the reporting period.
 
 |BR-EUR-05
-|The Report must uniquely identify the reporting Service Provider.
+|The Report MUST uniquely identify the reporting Service Provider.
 
 |BR-EUR-06
-|The scheme for identifying the reporting Service Provider must follow the "Reporter ID Scheme" code list
+|The scheme for identifying the reporting Service Provider MUST follow the "Reporter ID Scheme" code list
 
 |BR-EUR-07
-|If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID must be a valid Peppol seat ID.
+|If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID MUST be a valid Peppol seat ID.
 
 |BR-EUR-08
-|The Report must contain the details of no, one or multiple End Users.
+|The Report MUST contain the details of no, one or multiple End Users.
 
 |BR-EUR-09
-|The Report must contain the legal identifier of every reported End User.
+|The Report MUST contain the legal identifier of every reported End User.
 
 |BR-EUR-10
-|The Report must contain the legal name of every reported End User.
+|The Report MUST contain the legal name of every reported End User.
 
 |BR-EUR-11
-|The Report must contain the country code of every reported End User.
+|The Report MUST contain the country code of every reported End User.
 
 |BR-EUR-12
-|Each country code reported, must be specified following the ISO-3166-1 Alpha2 code list.
+|Each country code reported, MUST be specified following the ISO-3166-1 Alpha2 code list.
 
 |BR-EUR-13
-|The Report must contain an enumeration of all Dataset Type IDs sent out on behalf the End User in the reporting period.
+|The Report MUST contain an enumeration of all Dataset Type IDs sent out on behalf the End User in the reporting period.
 
 |BR-EUR-14
-|Each Dataset Type IDs sent out on behalf the End User in the reporting period, must be reported with identifier scheme and identifier value.
+|Each Dataset Type IDs sent out on behalf the End User in the reporting period, MUST be reported with identifier scheme and identifier value.
 
 |BR-EUR-15
-|Each Dataset Type IDs sent out on behalf the End User in the reporting period, must be present no more than once in the Report.
+|Each Dataset Type IDs sent out on behalf the End User in the reporting period, MUST be present no more than once in the Report.
 
 |BR-EUR-16
-|The Report must contain an enumeration of all Dataset Type IDs received on behalf the End User in the reporting period.
+|The Report MUST contain an enumeration of all Dataset Type IDs received on behalf the End User in the reporting period.
 
 |BR-EUR-17
-|Each Dataset Type IDs received on behalf the End User in the reporting period, must be reported with identifier scheme and identifier value.
+|Each Dataset Type IDs received on behalf the End User in the reporting period, MUST be reported with identifier scheme and identifier value.
 
 |BR-EUR-18
-|Each Dataset Type IDs received on behalf the End User in the reporting period, must be present no more than once in the Report.
+|Each Dataset Type IDs received on behalf the End User in the reporting period, MUST be present no more than once in the Report.
 
 |BR-EUR-19
-|The Report must contain an enumeration of all Peppol Participant IDs used by an End User in the reporting period.
+|The Report MUST contain an enumeration of all Peppol Participant IDs used by an End User in the reporting period.
 
 |BR-EUR-20
-|Each Peppol Participant IDs used by an End User in the reporting period, must be reported with identifier scheme and identifier value.
+|Each Peppol Participant IDs used by an End User in the reporting period, MUST be reported with identifier scheme and identifier value.
 
 |BR-EUR-21
-|Each Dataset Type IDs received on behalf the End User in the reporting period, must be present no more than once in the Report.
+|Each Dataset Type IDs received on behalf the End User in the reporting period, MUST be present no more than once in the Report.
 
 |BR-EUR-22
-|The Report must contain the legal identifier of every reported Intermediary of any End User.
+|The Report MUST contain the legal identifier of every reported Intermediary of any End User.
 
 |BR-EUR-23
-|The Report must contain the legal name of every reported Intermediary of any End User.
+|The Report MUST contain the legal name of every reported Intermediary of any End User.
 
 |BR-EUR-24
-|The Report must contain the country code of every reported Intermediary of any End User.
+|The Report MUST contain the country code of every reported Intermediary of any End User.
 
 |====
