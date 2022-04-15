@@ -21,7 +21,6 @@ In the table below you will find the values to be used as the specification iden
   <eur:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</eur:ProfileID>
 ----
 
-// TODO do we need to put the participant ID in here?
 NOTE: The Peppol Participant Identifier to which the End User Reports
       need to be sent by Service Providers is NOT part of this
       document.
