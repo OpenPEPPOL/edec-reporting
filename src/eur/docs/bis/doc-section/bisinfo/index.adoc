@@ -21,6 +21,12 @@ In the table below you will find the values to be used as the specification iden
   <eur:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</eur:ProfileID>
 ----
 
+.Full Peppol Document Type identifier
+[source, indent=0]
+----
+urn:fdc:peppol:end-user-reporting:1.0::EndUserReport##urn:fdc:peppol.eu:oo:trns:end-user-report:1::1.0
+----
+
 NOTE: The Peppol Participant Identifier to which the End User Reports
       need to be sent by Service Providers is NOT part of this
       document.
