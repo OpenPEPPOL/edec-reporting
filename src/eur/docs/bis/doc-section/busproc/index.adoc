@@ -1,0 +1,9 @@
+= Reporting Business Process
+
+:leveloffset: +1
+
+include::parties.adoc[]
+
+include::process.adoc[]
+
+:leveloffset: -1

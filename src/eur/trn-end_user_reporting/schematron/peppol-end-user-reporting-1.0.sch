@@ -13,7 +13,7 @@
       Philip Helger
 
     History: 
-      2022-04-12, Philip Helger
+      2022-04-14, Philip Helger
         initial version
   </p>
 
@@ -29,7 +29,7 @@
 
     <rule context="/eur:EndUserReport/eur:Header">
       <assert id="BR-EUR-04" flag="fatal" test="matches(normalize-space(eur:ReportPeriod), '^[0-9]{4}\-[0-9]{2}$')"
-        >[BR-EUR-04] The report period (<value-of select="normalize-space(eur:ReportPeriod)" />) MUST NOT contain timezone information</assert>
+        >[BR-EUR-04] The reporting period (<value-of select="normalize-space(eur:ReportPeriod)" />) MUST NOT contain timezone information</assert>
     </rule>
 
     <rule context="/eur:EndUserReport/eur:Header/eur:ReporterID">
@@ -37,7 +37,7 @@
         >[BR-EUR-05] The reporter ID MUST be present</assert>
       <assert id="BR-EUR-06" flag="fatal" test="not(contains(normalize-space(@schemeID), ' ')) and 
                                                 contains(' CertSubjectCN ', concat(' ', normalize-space(@schemeID), ' '))"
-        >[BR-EUR-06] The Reporter ID scheme (<value-of select="normalize-space(@schemeID)" />) MUST be coded according to the code list</assert>
+        >[BR-EUR-06] The Reporter ID scheme ID (<value-of select="normalize-space(@schemeID)" />) MUST be coded according to the code list</assert>
       <assert id="BR-EUR-07" flag="fatal" test="(@schemeID='CertSubjectCN' and 
                                                  matches(normalize-space(.), '^P[A-Z]{2}[0-9]{6}$')) or 
                                                 not(@schemeID='CertSubjectCN')"
@@ -46,52 +46,52 @@
 
     <rule context="/eur:EndUserReport/eur:EndUser">
       <assert id="BR-EUR-09" flag="fatal" test="normalize-space(eur:LegalID) != ''"
-        >[BR-EUR-09] The legal ID MUST be present</assert>
+        >[BR-EUR-09] The End User's legal ID MUST be present</assert>
       <assert id="BR-EUR-10" flag="fatal" test="normalize-space(eur:LegalID/@schemeID) != ''"
-        >[BR-EUR-10] The legal ID scheme ID MUST be present</assert>
+        >[BR-EUR-10] The End User's legal ID scheme ID MUST be present</assert>
       <assert id="BR-EUR-11" flag="fatal" test="normalize-space(eur:LegalName) != ''"
-        >[BR-EUR-11] The legal name MUST be present</assert>
+        >[BR-EUR-11] The End User's legal name MUST be present</assert>
       
       <!-- Uniqueness checks -->
-      <assert id="BR-EUR-15" flag="fatal" test="every $x in (eur:SendingDatasetID) satisfies 
-                                                  count(eur:SendingDatasetID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
+      <assert id="BR-EUR-15" flag="fatal" test="every $x in (eur:SendingDatasetTypeID) satisfies 
+                                                  count(eur:SendingDatasetTypeID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
         >[BR-EUR-15] Each Sending Dataset Type ID must be reported only once.</assert>
-      <assert id="BR-EUR-18" flag="fatal" test="every $x in (eur:ReceivingDatasetID) satisfies 
-                                                  count(eur:ReceivingDatasetID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
+      <assert id="BR-EUR-18" flag="fatal" test="every $x in (eur:ReceivingDatasetTypeID) satisfies 
+                                                  count(eur:ReceivingDatasetTypeID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
         >[BR-EUR-18] Each Receiving Dataset Type ID must be reported only once.</assert>
       <assert id="BR-EUR-21" flag="fatal" test="every $x in (eur:ParticipantID) satisfies 
                                                   count(eur:ParticipantID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
         >[BR-EUR-21] Each Participant ID must be reported only once.</assert>
     </rule>
 
-    <rule context="/eur:EndUserReport/eur:EndUser/eur:SendingDatasetID">
+    <rule context="/eur:EndUserReport/eur:EndUser/eur:SendingDatasetTypeID">
       <assert id="BR-EUR-13" flag="fatal" test="normalize-space(.) != ''"
         >[BR-EUR-13] The Sending Dataset Type ID MUST be present</assert>
       <assert id="BR-EUR-14" flag="fatal" test="normalize-space(@schemeID) != ''"
-        >[BR-EUR-14] The scheme ID MUST be present</assert>
+        >[BR-EUR-14] The Sending Dataset Type ID scheme ID MUST be present</assert>
     </rule>
 
-    <rule context="/eur:EndUserReport/eur:EndUser/eur:ReceivingDatasetID">
+    <rule context="/eur:EndUserReport/eur:EndUser/eur:ReceivingDatasetTypeID">
       <assert id="BR-EUR-16" flag="fatal" test="normalize-space(.) != ''"
-        >[BR-EUR-16] The Receiving Dataset ID MUST be present</assert>
+        >[BR-EUR-16] The Receiving Dataset Type ID MUST be present</assert>
       <assert id="BR-EUR-17" flag="fatal" test="normalize-space(@schemeID) != ''"
-        >[BR-EUR-17] The scheme ID MUST be present</assert>
+        >[BR-EUR-17] The Receiving Dataset Type ID scheme ID MUST be present</assert>
     </rule>
 
     <rule context="/eur:EndUserReport/eur:EndUser/eur:ParticipantID">
       <assert id="BR-EUR-19" flag="fatal" test="normalize-space(.) != ''"
         >[BR-EUR-19] The Participant ID MUST be present</assert>
       <assert id="BR-EUR-20" flag="fatal" test="normalize-space(@schemeID) != ''"
-        >[BR-EUR-20] The scheme ID MUST be present</assert>
+        >[BR-EUR-20] The Participant ID scheme ID MUST be present</assert>
     </rule>
 
     <rule context="/eur:EndUserReport/eur:EndUser/eur:Intermediary">
       <assert id="BR-EUR-22" flag="fatal" test="normalize-space(eur:LegalID) != ''"
-        >[BR-EUR-22] The legal ID MUST be present</assert>
+        >[BR-EUR-22] The Intermediary's legal ID MUST be present</assert>
       <assert id="BR-EUR-23" flag="fatal" test="normalize-space(eur:LegalID/@schemeID) != ''"
-        >[BR-EUR-23] The legal ID scheme ID MUST be present</assert>
+        >[BR-EUR-23] The Intermediary's legal ID scheme ID MUST be present</assert>
       <assert id="BR-EUR-24" flag="fatal" test="normalize-space(eur:LegalName) != ''"
-        >[BR-EUR-24] The legal name MUST be present</assert>
+        >[BR-EUR-24] The Intermediary's legal name MUST be present</assert>
     </rule>
 
     <rule context="/eur:EndUserReport/eur:EndUser/eur:Country | /eur:EndUserReport/eur:EndUser/eur:Intermediary/eur:Country">

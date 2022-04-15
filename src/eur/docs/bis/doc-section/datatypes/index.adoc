@@ -1,0 +1,9 @@
+= Data Types
+
+:leveloffset: +1
+
+include::primitive-types.adoc[]
+
+include::semantic-types.adoc[]
+
+:leveloffset: -1

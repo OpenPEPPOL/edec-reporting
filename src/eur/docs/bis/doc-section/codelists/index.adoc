@@ -1,0 +1,14 @@
+[[codelist]]
+= Code lists
+
+:leveloffset: +1
+
+include::id-schemes/country-code.adoc[]
+
+include::id-schemes/reporter-id-scheme.adoc[]
+
+include::id-schemes/party-id-scheme.adoc[]
+
+include::id-schemes/document-type-id.adoc[]
+
+:leveloffset: -1
