@@ -70,7 +70,4 @@ NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Tra
 * Network
 ** End User Reports must be transmitted via the Peppol eDelivery
    Network
-// TODO Peppol Participant ID in here?   
-** End User Reports must only be transmitted to the Peppol 
-   Participant ID indicated in <<bis-identifiers>>
 ** Only OpenPeppol is allowed to receive End User Reports directly
