@@ -21,7 +21,7 @@ The `schemeID` attribute of this `Key` element MUST have the value `Peppol`.
 The value of the `Key` element MUST be the transport protocol identifier
   according to the <<codelist-tp>> code list.
   
-Each Transport Protocol needs to be reported in a separate `Subtotal` element.
+Each Transport Protocol MUST be reported in a separate `Subtotal` element.
 
 The sum all incoming amounts per Transport Protocol MUST match the total
   incoming amount. 
@@ -48,17 +48,22 @@ The value of the `Key` element MUST follow the rules of the chosen scheme.
   (Dataset Type).
 The `schemeID` attribute of this `Key` element MUST be the Document Type
   Identifier Scheme of the exchanged Dataset (usually `busdox-docid-qns`).
-The value of the `Key` element MUST be the Document Type Identifier value
-  of the exchanged Dataset.
+The value of the `Key` element MUST be the Dataset Type (Document Type)
+  Identifier value of the exchanged Dataset.
   
-Each combination of Service Provider ID and Dataset Type needs to be
+Each combination of Service Provider and Dataset Type MUST be
   reported in a separate `Subtotal` element.
 
 The sum all incoming amounts per Service Provider and Dataset Type MUST
-   match the total incoming amount. 
+   match the total incoming amount.
 
 The sum all outgoing amounts per Service Provider and Dataset Type MUST 
-  match the total outgoing amount. 
+  match the total outgoing amount.
+
+NOTE: For outgoing messages, only the receiving Service Provider needs
+  to be counted. For incoming messages, only the sending Service Provider needs
+  to be counted. The other side must always be the reporting Service Provider
+  that is already part of the header data. 
 
 .Example of a subtotal per Service Provider and Dataset Type:
 [source, xml]
@@ -80,8 +85,8 @@ The value of the `Key` element MUST follow the rules of the chosen scheme.
   (Dataset Type).
 The `schemeID` attribute of this `Key` element MUST be the Document Type
   Identifier Scheme of the exchanged Dataset (usually `busdox-docid-qns`).
-The value of the `Key` element MUST be the Document Type Identifier value
-  of the exchanged Dataset.
+The value of the `Key` element MUST be the Dataset Type (Document Type)
+  Identifier value of the exchanged Dataset.
 * This subtotal requires one `Key` element with a Meta Scheme ID of `CC`
   (Country Code) and the `schemeID` attribute of `SenderCountry`.
 The value of the `Key` element MUST have a value according to the
@@ -91,14 +96,19 @@ The value of the `Key` element MUST have a value according to the
 The value of the `Key` element MUST have a value according to the
   <<codelist-countrycode>> code list.
   
-Each combination of Service Provider ID. Dataset Type, Sender Country 
-  and Receiver Country needs to be reported in a separate `Subtotal` element.
+Each combination of Service Provider, Dataset Type, Sender Country 
+  and Receiver Country MUST be reported in a separate `Subtotal` element.
 
 The sum all incoming amounts per Service Provider and Dataset Type MUST
    match the total incoming amount. 
 
 The sum all outgoing amounts per Service Provider and Dataset Type MUST 
   match the total outgoing amount. 
+
+NOTE: For outgoing messages, only the receiving Service Provider needs
+  to be counted. For incoming messages, only the sending Service Provider needs
+  to be counted. The other side must always be the reporting Service Provider
+  that is already part of the header data. 
 
 .Example of a subtotal per Service Provider, Dataset Type and Country Codes:
 [source, xml]

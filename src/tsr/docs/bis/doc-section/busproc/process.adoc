@@ -32,9 +32,11 @@ NOTE: Consolidated Diagram and process overview to be added
    acknowledgments (like AS4 Receipts) MUST be included in the Transaction
    Statistics Report. Transmissions that failed on a network or protocol
    level MUST NOT to be considered for the report.
-*** End User Reports MUST NOT be counted in a Transaction Statistics Report
-*** Transaction Statistics Reports themselves MUST NOT be counted in a
+*** End User Reports MUST NOT be counted for a Transaction Statistics Report
+*** Transaction Statistics Reports themselves MUST NOT be counted for a
     Transaction Statistics Report
+    
+
 
 == Data Aggregation
 
