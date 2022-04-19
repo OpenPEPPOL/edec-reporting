@@ -10,7 +10,7 @@ Whenever a business term is used this term shall *always* have content and there
 
 :leveloffset: +1
 
-include::semantic/countrycode.adoc[]
+include::semantic/country-code.adoc[]
 
 include::semantic/identifier.adoc[]
 
