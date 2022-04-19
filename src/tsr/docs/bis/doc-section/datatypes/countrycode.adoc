@@ -1,0 +1,20 @@
+= Country Code
+
+
+Country Code Types are identifiers designed to identify countries according
+the https://docs.peppol.eu/poacc/upgrade-3/codelist/ISO3166/[ISO3166] standard.
+
+
+.Document Reference. Type
+[cols="1s,1,1,1", options="header"]
+|===
+|Component
+|Use
+|Primitive Type
+|Example
+
+|Content
+|Mandatory
+|String
+|AT
+|===
