@@ -4,7 +4,6 @@
 NOTE: Consolidated Diagram and process overview to be added
 
 == Data Gathering
-//NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Gathering
 
 * Reporting Period
 ** The Reporting Period starts with the first day of every month at 
@@ -15,7 +14,7 @@ NOTE: Consolidated Diagram and process overview to be added
 ** Only Service Providers offering the exchange of Dataset Types must
    gather this data and transmit an End User Report.
 ** Only Data for production must be sent.
-** All End Users that capable of sending or receiving Datasets
+** All End Users that are capable of sending or receiving Datasets
    within the Reporting Period must be part of the End User Report.
 ** The following data elements MUST be provided for each End User
 *** Legal identifier of the End User in the jurisdiction within 
@@ -29,6 +28,11 @@ NOTE: Consolidated Diagram and process overview to be added
 *** All Peppol Participant identifiers used in the Peppol Network,
     related only to the Peppol Services which that particular 
     Service Provider offers to them.
+    
+NOTE: The following block on Intermediaries is optional by default 
+      and may become mandatory through Peppol Authority 
+      Specific Requirements (PASR) only.
+           
 ** Where intermediaries are both actively involved in the 
    transmission of the End Users’ Peppol Services and hold a 
    contractual relationship with the End User, the following 
@@ -44,7 +48,8 @@ NOTE: Consolidated Diagram and process overview to be added
 No data aggregation is needed for the End User Report.
 
 == Data Transmission
-NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
+
+// TODO Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
 
 * Frequency
 ** An End User Report MUST be transmitted once per month 
