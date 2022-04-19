@@ -1,5 +1,5 @@
 [[codelist]]
-= Code lists
+= Code Lists
 
 :leveloffset: +1
 
