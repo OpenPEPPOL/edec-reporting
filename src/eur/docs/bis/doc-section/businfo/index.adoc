@@ -1,6 +1,5 @@
 = Business Information
 
-[[descriptions]]
 Description of selected parts of the End User Report message.
 
 :leveloffset: +1
