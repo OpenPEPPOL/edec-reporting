@@ -9,7 +9,6 @@ Country Codes must be coded according to the ISO-3166-1 Alpha-2 encoding.
 h| Document location
 | `tsr:TransactionStatisticsReport/tsr:Subtotal/tsr:Key[@metaSchemeID="CC"]`
 
-// TODO link
 h| Source code list
-| link:../transaction_statistics_reporting/codelist/ISO3166/[Country Codes code list]
+| link:../transaction_statistics/codelist/ISO3166/[Country Codes code list]
 |===

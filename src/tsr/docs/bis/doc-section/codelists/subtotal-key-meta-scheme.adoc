@@ -10,6 +10,5 @@ h| Document location
 | `tsr:TransactionStatisticsReport/tsr:Subtotal/tsr:Key/@metaSchemeID`
 
 h| Source code list
-// TODO link
-| link:../transaction_statistics_reporting/codelist/ReporterIDScheme/[Subtotal Key Meta Scheme code list]
+| link:../transaction_statistics/codelist/SubtotalKeyMetaScheme/[Subtotal Key Meta Scheme code list]
 |===

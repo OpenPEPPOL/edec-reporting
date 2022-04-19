@@ -16,7 +16,7 @@ NOTE: Consolidated Diagram and process overview to be added
 
 * Data
 ** Only Service Providers offering the exchange of Dataset Types must
-   gather this data and transmit an transaction Statistics Report.
+   gather this data and transmit a Transaction Statistics Report.
 ** Only data for production MUST be sent.
 ** According to the Internal Regulations, chapter 4.4, the following 
    information elements need to be gathered for each exchanged Dataset:

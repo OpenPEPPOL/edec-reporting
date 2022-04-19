@@ -11,6 +11,5 @@ h| Document location
 tsr:TransactionStatisticsReport/tsr:Subtotal/tsr:Key[@metaSchemeID="SP"]/@schemeID`
 
 h| Source code list
-// TODO link
-| link:../transaction_statistics_reporting/codelist/ReporterIDScheme/[Reporter ID Scheme code list]
+| link:../transaction_statistics/codelist/ReporterIDScheme/[Reporter ID Scheme code list]
 |===

@@ -9,7 +9,7 @@ In the table below you will find the values to be used as the specification iden
 |Element `CustomizationID`
 |Process ID
 
-|transaction Statistics Report
+|Transaction Statistics Report
 |`urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1`
 |`urn:fdc:peppol.eu:oo:bis:reporting:1`
 |====

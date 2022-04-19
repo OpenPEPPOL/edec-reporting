@@ -1,5 +1,5 @@
 = Rules
-Transaction statistics Reporting process rules
+Transaction Statistics Reporting process rules
 
 .Business rules
 [cols="1h,5",options="header"]
