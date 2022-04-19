@@ -1,4 +1,4 @@
-
+[[bis-identifiers]]
 = BIS Identifiers
 
 In the table below you will find the values to be used as the specification identifier and the business process type for this profile
@@ -10,24 +10,24 @@ In the table below you will find the values to be used as the specification iden
 |Process ID
 
 |transaction Statistics Report
-|`urn:fdc:peppol.eu:oo:trns:transaction-Statistics-report:1`
+|`urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1`
 |`urn:fdc:peppol.eu:oo:bis:reporting:1`
 |====
 
 .XML example representation
 [source, xml, indent=0]
 ----
-  <eur:CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-Statistics-report:1</eur:CustomizationID>
-  <eur:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</eur:ProfileID>
+  <tsr:CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1</tsr:CustomizationID>
+  <tsr:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</tsr:ProfileID>
 ----
 
 .Full Peppol Document Type identifier
 [source, indent=0]
 ----
-urn:fdc:peppol:transaction-Statistics-reporting:1.0::EndUserReport##urn:fdc:peppol.eu:oo:trns:transaction-Statistics-report:1::1.0
+urn:fdc:peppol:transaction-statistics-reporting:1.0::TransactionStatisticsReport##urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1::1.0
 ----
 
-NOTE: The Peppol Participant Identifier to which the transaction Statistics Reports
+NOTE: The Peppol Participant Identifier to which the Transaction Statistics Reports
       need to be sent by Service Providers is NOT part of this
       document.
       
