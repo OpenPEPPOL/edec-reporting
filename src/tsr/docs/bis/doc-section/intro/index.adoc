@@ -4,7 +4,27 @@ Statistical reporting of production data helps the Peppol Coordinating Authority
 The reporting requirements towards SPs are divided into two areas: reporting about End User data and reporting about Transaction Statistics. This operational procedure will explain and outline the operational procedures for The Transaction Statistics Reporting.
 The policy on reporting is stated in https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B2.-Internal-Regulations-on-the-Use-of-the-Peppol-Network[Internal Regulations for Use of the Peppol Network].
 
-== Preface
+
+:leveloffset: +1
+
+include::structure.adoc[]
+
+include::scope.adoc[]
+
+include::audience.adoc[]
+
+include::ref.adoc[]
+
+include::namespaces.adoc[]
+
+:leveloffset: -1
+
+
+
+
+
+
+//== Preface
 
 
 // What is an einduser / intermediary
@@ -13,12 +33,12 @@ The policy on reporting is stated in https://openpeppol.atlassian.net/wiki/space
 // C3 only report aboout C4
 
 
-The purpose of this document is to describe the use of the Transaction Statistics messages in Peppol, and to facilitate an efficient implementation.
+//The purpose of this document is to describe the use of the Transaction Statistics messages in Peppol, and to facilitate an efficient implementation.
 
-== References
-* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756772071/Other+Files[Internal Regulations - Use of Peppol Network_v1.0s]
+//== References
+//* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756772071/Other+Files[Internal Regulations - Use of Peppol Network_v1.0s]
 
-* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B3.-Operational-Procedures[Non-compliance Operational Procedure].
+//* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B3.-Operational-Procedures[Non-compliance Operational Procedure].
 
 //*.Statement of copyright
 //*****

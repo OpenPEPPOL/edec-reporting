@@ -1,0 +1,69 @@
+= End-User Reporting Process
+
+// TODO
+The following diagram provides an overview of the key steps when Service Providers are reporting monthly Transaction Statistics. The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
+
+NOTE: Consolidated Diagram and process overview to be added
+
+== Data Gathering
+//NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Gathering  To be corrected
+
+* Reporting Period
+** The Reporting Period starts with the first day of every month at 
+   00:00:00 UTC (inclusive) and ends with the last day of said month
+   at 23:59:59 UTC (inclusive).
+
+* Data
+** Only Service Providers offering the exchange of Dataset Types must
+   gather this data and transmit an End User Report.
+** Only Data for production must be sent.
+** All End Users that capable of sending or receiving Datasets
+   within the Reporting Period must be part of the End User Report.
+** The following data elements MUST be provided for each datasets
+*** The legal identifier Type (e.g., VAT number, company 
+    registration number)
+*** All Peppol Participant identifiers used in the Peppol Network,
+    related only to the Peppol Services which that particular 
+    Service Provider offers to them.
+** Where intermediaries are both actively involved in the 
+   transmission of the End Users’ Peppol Services and hold a 
+   contractual relationship with the End User, the following 
+   information must be reported about each Intermediary:
+*** Legal identifier of the Intermediary
+*** Type of the legal identifier of the Intermediary
+*** Legal name of the Intermediary
+*** Country of the Intermediary's legal address
+*** If applicable, the territory of the Intermediary's legal address
+
+== Data Aggregation
+
+No data aggregation is needed for the End User Report.
+
+== Data Transmission
+NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
+
+* Frequency
+** An End User Report MUST be transmitted once per month 
+   (Reporting Period)
+** An End User Report MUST be transmitted within 10 calendar days 
+   (inclusive) after the end of the previous Reporting Period
+** The End User Report must be transmitted, even if no other Peppol
+   transactions happened in the Reporting Period
+** In case the End User Report of one Service Provider is received
+   multiple times for one reporting period, only the latest received 
+   document will be processed.
+** End User Reports received after the deadline WILL NOT be processed.   
+
+* Data
+** Only End User Reports on the Production stage MUST be transmitted
+** Each End User MUST NOT occur more than once in an End User Report
+** The data of each End User must each be reported in a designated
+   element 
+** The Reporting Period MUST be part of the End User Report
+** An identifier uniquely identifying the reporting Service Provider 
+   MUST be part of the End User Report
+
+* Network
+** End User Reports must be transmitted via the Peppol eDelivery
+   Network
+** Only OpenPeppol is allowed to receive End User Reports directly
