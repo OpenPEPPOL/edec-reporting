@@ -1,0 +1,21 @@
+= Country Code
+
+// TODO link
+Country Codes are identifiers designed to identify countries according
+the https://docs.peppol.eu/poacc/upgrade-3/codelist/ISO3166/[ISO 3166-1 Alpha-2] standard.
+
+See code list on <<codelist-countrycode>> for details.
+
+.CountryCode.Type
+[cols="1s,1,1,1", options="header"]
+|===
+|Component
+|Use
+|Primitive Type
+|Example
+
+|Content
+|Mandatory
+|String
+|`AT`
+|===

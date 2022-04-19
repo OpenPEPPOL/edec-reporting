@@ -1,16 +1,16 @@
+= Primitive Data Types
 
-= Primitive types
-
-Semantic data type content may be of the following primitive types. These primitive types were taken from https://www.iso.org/standard/61433.html[ISO15000].
+Semantic data type content may be of the following primitive types. 
+These primitive types were taken from https://www.iso.org/standard/61433.html[ISO 15000], Annex A.
 
 [cols="1s,7", options="header"]
 |===
 |Primitive type
 |Definition
 
-|Date
-|Time point representing a calendar day on a time scale consisting of an origin and a succession of calendar https://www.iso.org/standard/40874.html[ISO8601].
+|YearMonth
+|Time point representing a calendar year and month scale being a truncation of a Calendar Date according to https://www.iso.org/standard/40874.html[ISO 8601].
 
 |String
-|A finite sequence of characters.
+|A finite sequence of zero or more characters.
 |===
