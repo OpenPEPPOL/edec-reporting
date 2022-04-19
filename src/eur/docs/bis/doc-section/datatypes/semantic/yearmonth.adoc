@@ -5,7 +5,7 @@ YearMonth values shall be in accordance to the "Representations with reduced pre
  in the format *YYYY-MM*.
 
 ====
-IMPORTANT : YearMonth values *shall not* include timezone information.
+IMPORTANT : YearMonth values MUST NOT include timezone information.
 ====
 
 
