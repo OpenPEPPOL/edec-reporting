@@ -1,9 +1,9 @@
-= Transaction statistics
+= Total
 
 Defines the data for the Transaction Statistics Report.
 The element `Total` and its child elements MUST be provided for every transaction statisticsReport. 
 
-.Example of a Total:
+.Example of a Total count:
 [source, xml]
 ----
 include::./snippet/snippet-1.xml[tags=Total]
@@ -21,4 +21,29 @@ include::./snippet/snippet-1.xml[tags=Incoming]
 include::./snippet/snippet-1.xml[tags=Outgoing]
 ----
 
+= Subtotals
 
+== Subtotal per Transport Protocol
+
+.Example of a subtotal per Transport Protocol (TP):
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=SubtotalPerTP]
+----
+
+== Subtotal per Service Provider and Datasets
+
+.Example of a subtotal per Service Provider and Datasets (SP-DT):
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=SubtotalPerSP-DT]
+----
+
+
+== Subtotal per Service Provider and Datasets
+
+.Example of a subtotal per Service Provider and Datasets and Country (SP-DT-CC):
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=SubtotalPerSP-DT-CC]
+----
