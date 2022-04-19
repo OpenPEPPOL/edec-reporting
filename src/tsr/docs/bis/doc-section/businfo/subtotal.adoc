@@ -15,18 +15,19 @@ All values in this subchapter are case-sensitive, except stated otherwise.
 
 This subtotal is identified by the `@type` attribute having the value `PerTP`.
 
-This subtotal requires one `Key` element with a Meta Scheme ID of `TP`.
+* This subtotal requires one `Key` element with a Meta Scheme ID of `TP`
+  (Transport Protocol).
 The `schemeID` attribute of this `Key` element MUST have the value `Peppol`.
 The value of the `Key` element MUST be the transport protocol identifier
   according to the <<codelist-tp>> code list.
+  
+Each Transport Protocol needs to be reported in a separate `Subtotal` element.
 
 The sum all incoming amounts per Transport Protocol MUST match the total
   incoming amount. 
 
 The sum all outgoing amounts per Transport Protocol MUST match the total
   outgoing amount. 
-
-This element can be repeated.
 
 .Example of a subtotal per Transport Protocol:
 [source, xml]
@@ -36,9 +37,30 @@ include::./snippet/snippet-1.xml[tags=SubtotalPerTP]
 
 == Subtotal per Service Provider and Dataset Type
 
-This element can be repeated.
+This subtotal is identified by the `@type` attribute having the value `PerSP-DT`.
 
-.Example of a subtotal per Service Provider and Datasets (SP-DT):
+* This subtotal requires one `Key` element with a Meta Scheme ID of `SP`
+  (Service Provider).
+The `schemeID` attribute of this `Key` element MUST have a value according
+  to the <<codelist-repidscheme>> code list.
+The value of the `Key` element MUST follow the rules of the chosen scheme.
+* This subtotal requires one `Key` element with a Meta Scheme ID of `DT`
+  (Dataset Type).
+The `schemeID` attribute of this `Key` element MUST be the Document Type
+  Identifier Scheme of the exchanged Dataset (usually `busdox-docid-qns`).
+The value of the `Key` element MUST be the Document Type Identifier value
+  of the exchanged Dataset.
+  
+Each combination of Service Provider ID and Dataset Type needs to be
+  reported in a separate `Subtotal` element.
+
+The sum all incoming amounts per Service Provider and Dataset Type MUST
+   match the total incoming amount. 
+
+The sum all outgoing amounts per Service Provider and Dataset Type MUST 
+  match the total outgoing amount. 
+
+.Example of a subtotal per Service Provider and Dataset Type:
 [source, xml]
 ----
 include::./snippet/snippet-1.xml[tags=SubtotalPerSP-DT]
@@ -47,9 +69,38 @@ include::./snippet/snippet-1.xml[tags=SubtotalPerSP-DT]
 
 == Subtotal per Service Provider, Dataset Type and Country Codes
 
-This element can be repeated.
+This subtotal is identified by the `@type` attribute having the value `PerSP-DT-CC`.
 
-.Example of a subtotal per Service Provider and Datasets and Country (SP-DT-CC):
+* This subtotal requires one `Key` element with a Meta Scheme ID of `SP`
+  (Service Provider).
+The `schemeID` attribute of this `Key` element MUST have a value according
+  to the <<codelist-repidscheme>> code list.
+The value of the `Key` element MUST follow the rules of the chosen scheme.
+* This subtotal requires one `Key` element with a Meta Scheme ID of `DT`
+  (Dataset Type).
+The `schemeID` attribute of this `Key` element MUST be the Document Type
+  Identifier Scheme of the exchanged Dataset (usually `busdox-docid-qns`).
+The value of the `Key` element MUST be the Document Type Identifier value
+  of the exchanged Dataset.
+* This subtotal requires one `Key` element with a Meta Scheme ID of `CC`
+  (Country Code) and the `schemeID` attribute of `SenderCountry`.
+The value of the `Key` element MUST have a value according to the
+  <<codelist-countrycode>> code list.
+* This subtotal requires one `Key` element with a Meta Scheme ID of `CC`
+  (Country Code) and the `schemeID` attribute of `ReceiverCountry`.
+The value of the `Key` element MUST have a value according to the
+  <<codelist-countrycode>> code list.
+  
+Each combination of Service Provider ID. Dataset Type, Sender Country 
+  and Receiver Country needs to be reported in a separate `Subtotal` element.
+
+The sum all incoming amounts per Service Provider and Dataset Type MUST
+   match the total incoming amount. 
+
+The sum all outgoing amounts per Service Provider and Dataset Type MUST 
+  match the total outgoing amount. 
+
+.Example of a subtotal per Service Provider, Dataset Type and Country Codes:
 [source, xml]
 ----
 include::./snippet/snippet-1.xml[tags=SubtotalPerSP-DT-CC]
