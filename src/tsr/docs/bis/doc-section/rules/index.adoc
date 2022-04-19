@@ -18,7 +18,7 @@ Transaction statistics Reporting process rules
 | The Report MUST contain the year and the month in which the reported data was gathered.
 
 | BR-TSR-04
-| The Report MUST not not contain timezone information for the reporting period.
+| The Report MUST not not contain timezone information for the Reporting Period.
 
 | BR-TSR-05
 | The Report MUST uniquely identify the reporting Service Provider.
@@ -30,61 +30,61 @@ Transaction statistics Reporting process rules
 | If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID MUST be a valid Peppol Seat ID.
 
 | BR-TSR-08
-| The Report MUST contain the total amount of outgoing / sent Peppol Datasets in the reporting period.
+| The Report MUST contain the total amount of outgoing / sent Peppol Datasets in the Reporting Period.
 
 | BR-TSR-09
-| The Report MUST contain the total amount of incoming / received Peppol Datasets in the reporting period.
+| The Report MUST contain the total amount of incoming / received Peppol Datasets in the Reporting Period.
 
 | BR-TSR-10
-| The Report MUST contain the amount of outgoing / sent and incoming / received Peppol Datasets in the reporting period, aggregated by Service Provider ID, if at least one Peppol Dataset was exchanged.
+| The Report MUST contain the amount of outgoing / sent and incoming / received Peppol Datasets in the Reporting Period, aggregated by Service Provider ID, if at least one Peppol Dataset was exchanged.
 
 | BR-TSR-11
-| The sum of all amounts of outgoing / sent Peppol Datasets in the reporting period aggregated by Receiving Service Provider ID, MUST match the total amount of outgoing / sent Peppol Datasets.
+| The sum of all amounts of outgoing / sent Peppol Datasets in the Reporting Period aggregated by Receiving Service Provider ID, MUST match the total amount of outgoing / sent Peppol Datasets.
 
 | BR-TSR-12
-| The sum of all amounts of incoming / received Peppol Datasets in the reporting period aggregated by Sending Service Provider ID, MUST match the total amount of incoming / received Peppol Datasets.
+| The sum of all amounts of incoming / received Peppol Datasets in the Reporting Period aggregated by Sending Service Provider ID, MUST match the total amount of incoming / received Peppol Datasets.
 
 | BR-TSR-13
-| The Report MUST contain the amount of outgoing / sent and incoming / received Peppol Datasets in the reporting period, aggregated by Dataset Type ID, if at least one Peppol Dataset was exchanged.
+| The Report MUST contain the amount of outgoing / sent and incoming / received Peppol Datasets in the Reporting Period, aggregated by Dataset Type ID, if at least one Peppol Dataset was exchanged.
 
 | BR-TSR-14
-| The sum of all amounts of outgoing / sent Peppol Datasets in the reporting period aggregated by Dataset Type ID, MUST match the total amount of outgoing / sent Peppol Datasets.
+| The sum of all amounts of outgoing / sent Peppol Datasets in the Reporting Period aggregated by Dataset Type ID, MUST match the total amount of outgoing / sent Peppol Datasets.
 
 | BR-TSR-15
-| The sum of all amounts of incoming / received Peppol Datasets in the reporting period aggregated by Dataset Type ID, MUST match the total amount of incoming / received Peppol Datasets.
+| The sum of all amounts of incoming / received Peppol Datasets in the Reporting Period aggregated by Dataset Type ID, MUST match the total amount of incoming / received Peppol Datasets.
 
 | BR-TSR-16
-| The Report MUST contain the amount of outgoing / sent and incoming / received Peppol Datasets in the reporting period, aggregated by Transport Protocol ID, if at least any Peppol Dataset was exchanged.
+| The Report MUST contain the amount of outgoing / sent and incoming / received Peppol Datasets in the Reporting Period, aggregated by Transport Protocol ID, if at least any Peppol Dataset was exchanged.
 
 | BR-TSR-17
-| The sum of all amounts of outgoing / sent Peppol Datasets in the reporting period aggregated by Transport Protocol ID, MUST match the total amount of outgoing / sent Peppol Datasets.
+| The sum of all amounts of outgoing / sent Peppol Datasets in the Reporting Period aggregated by Transport Protocol ID, MUST match the total amount of outgoing / sent Peppol Datasets.
 
 | BR-TSR-18
-| The sum of all amounts of incoming / received Peppol Datasets in the reporting period aggregated by Transport Protocol ID, MUST match the total amount of incoming / received Peppol Datasets.
+| The sum of all amounts of incoming / received Peppol Datasets in the Reporting Period aggregated by Transport Protocol ID, MUST match the total amount of incoming / received Peppol Datasets.
 
 | BR-TSR-19
 | Each Transport Protocol ID, for which data is aggregated, MUST NOT occur more then once.
 
 | BR-TSR-20
-| The Report MUST contain the amount of outgoing / sent and incoming / received Peppol Datasets in the reporting period, aggregated by Sender Country ID and Receiver Country ID, if at least any Peppol Dataset was exchanged.
+| The Report MUST contain the amount of outgoing / sent and incoming / received Peppol Datasets in the Reporting Period, aggregated by Sender Country ID and Receiver Country ID, if at least any Peppol Dataset was exchanged.
 
 | BR-TSR-21
-| The sum of all amounts of outgoing / sent Peppol Datasets in the reporting period aggregated by Sender Country ID and Receiver Country ID, MUST match the total amount of outgoing / sent Peppol Datasets.
+| The sum of all amounts of outgoing / sent Peppol Datasets in the Reporting Period aggregated by Sender Country ID and Receiver Country ID, MUST match the total amount of outgoing / sent Peppol Datasets.
 
 | BR-TSR-22
-| The sum of all amounts of incoming / received Peppol Datasets in the reporting period aggregated by Sender Country ID and Receiver Country ID, MUST match the total amount of incoming / received Peppol Datasets.
+| The sum of all amounts of incoming / received Peppol Datasets in the Reporting Period aggregated by Sender Country ID and Receiver Country ID, MUST match the total amount of incoming / received Peppol Datasets.
 
 | BR-TSR-23
-| The Report MUST contain the amount of incoming / received Peppol Datasets in the reporting period, aggregated by Sending Service Provider ID and Dataset Type ID, if at least one Peppol Dataset was exchanged.
+| The Report MUST contain the amount of incoming / received Peppol Datasets in the Reporting Period, aggregated by Sending Service Provider ID and Dataset Type ID, if at least one Peppol Dataset was exchanged.
 
 | BR-TSR-24
-| The Report MUST contain the amount of outgoing / sent Peppol Datasets in the reporting period, aggregated by Receiving Service Provider ID and Dataset Type ID, if at least one Peppol Dataset was exchanged.
+| The Report MUST contain the amount of outgoing / sent Peppol Datasets in the Reporting Period, aggregated by Receiving Service Provider ID and Dataset Type ID, if at least one Peppol Dataset was exchanged.
 
 | BR-TSR-25
-| The sum of all amounts of incoming / received Peppol Datasets in the reporting period aggregated by Sending Service Provider ID and Dataset Type ID, MUST match the total amount of incoming / received Peppol Datasets.
+| The sum of all amounts of incoming / received Peppol Datasets in the Reporting Period aggregated by Sending Service Provider ID and Dataset Type ID, MUST match the total amount of incoming / received Peppol Datasets.
 
 | BR-TSR-26
-| The sum of all amounts of outgoing / sent Peppol Datasets in the reporting period aggregated by Receiving Service Provider ID and Dataset Type ID, MUST match the total amount of outgoing / sent Peppol Datasets.
+| The sum of all amounts of outgoing / sent Peppol Datasets in the Reporting Period aggregated by Receiving Service Provider ID and Dataset Type ID, MUST match the total amount of outgoing / sent Peppol Datasets.
 
 | BR-TSR-27
 | Each combination of Sending Service Provider ID and Dataset Type ID, for which data is aggregated, MUST NOT occur more then once.
@@ -93,16 +93,16 @@ Transaction statistics Reporting process rules
 | Each combination of Receiving Service Provider ID and Dataset Type ID, for which data is aggregated, MUST NOT occur more then once.
 
 | BR-TSR-29
-| The Report MUST contain the amount of incoming / received Peppol Datasets in the reporting period, aggregated by Sending Service Provider ID and Dataset Type ID and Sender Country ID and Receiver Country ID, if at least one Peppol Dataset was exchanged.
+| The Report MUST contain the amount of incoming / received Peppol Datasets in the Reporting Period, aggregated by Sending Service Provider ID and Dataset Type ID and Sender Country ID and Receiver Country ID, if at least one Peppol Dataset was exchanged.
 
 | BR-TSR-30
-| The Report MUST contain the amount of outgoing / sent Peppol Datasets in the reporting period, aggregated by Receiving Service Provider ID and Dataset Type ID and Sender Country ID and Receiver Country ID, if at least one Peppol Dataset was exchanged.
+| The Report MUST contain the amount of outgoing / sent Peppol Datasets in the Reporting Period, aggregated by Receiving Service Provider ID and Dataset Type ID and Sender Country ID and Receiver Country ID, if at least one Peppol Dataset was exchanged.
 
 | BR-TSR-31
-| The sum of all amounts of incoming / received Peppol Datasets in the reporting period aggregated by Sending Service Provider ID and Dataset Type ID and Sender Country ID and Receiver Country ID, MUST match the total amount of incoming / received Peppol Datasets.
+| The sum of all amounts of incoming / received Peppol Datasets in the Reporting Period aggregated by Sending Service Provider ID and Dataset Type ID and Sender Country ID and Receiver Country ID, MUST match the total amount of incoming / received Peppol Datasets.
 
 | BR-TSR-32
-| The sum of all amounts of outgoing / sent Peppol Datasets in the reporting period aggregated by Receiving Service Provider ID and Dataset Type ID and Sender Country ID and Receiver Country ID, MUST match the total amount of outgoing / sent Peppol Datasets.
+| The sum of all amounts of outgoing / sent Peppol Datasets in the Reporting Period aggregated by Receiving Service Provider ID and Dataset Type ID and Sender Country ID and Receiver Country ID, MUST match the total amount of outgoing / sent Peppol Datasets.
 
 | BR-TSR-33
 | Each combination of Sending Service Provider ID and Dataset Type ID and Sender Country ID and Receiver Country ID, for which data is aggregated, MUST NOT occur more then once.

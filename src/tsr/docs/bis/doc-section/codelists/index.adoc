@@ -13,4 +13,6 @@ include::subtotal-key-meta-scheme.adoc[]
 
 include::subtotal-type.adoc[]
 
+include::transport-profile.adoc[]
+
 :leveloffset: -1

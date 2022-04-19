@@ -1,4 +1,3 @@
 = References
-* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756772071/Other+Files[Internal Regulations - Use of Peppol Network_v1.0s]
 
-* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756771841/New+Peppol+Agreements+and+accompanying+documents#B3.-Operational-Procedures[Non-compliance Operational Procedure].
+* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2756772071/Other+Files[Internal Regulations - Use of Peppol Network_v1.0s]

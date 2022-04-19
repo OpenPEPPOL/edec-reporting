@@ -14,13 +14,11 @@ include::./settings.adoc[]
 
 image::./images/peppol.png[pdfwidth=3.5in,align=center]
 
-
 = {doctitle}
 
 {name-op-en} v{version}
 
 :leveloffset: +1
-
 
 include::./doc-section/intro/index.adoc[]  
 

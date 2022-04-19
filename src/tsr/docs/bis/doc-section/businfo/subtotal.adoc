@@ -1,0 +1,56 @@
+= Subtotals
+
+Each Transaction Statistics Report contains different subtotals.
+Each subtotal represents a different view on the transaction statistics data.
+
+The technical representation of the subtotals was designed in a generic way,
+  to allow for future extension without modifying the underlying schema.
+  Each `Subtotal` element therefore requires a `@type` attribute that defines
+  the type of the subtotal. The value range is defined by the
+  <<codelist-subtotaltype>> code list.
+  
+All values in this subchapter are case-sensitive, except stated otherwise.
+
+== Subtotal per Transport Protocol
+
+This subtotal is identified by the `@type` attribute having the value `PerTP`.
+
+This subtotal requires one `Key` element with a Meta Scheme ID of `TP`.
+The `schemeID` attribute of this `Key` element MUST have the value `Peppol`.
+The value of the `Key` element MUST be the transport protocol identifier
+  according to the <<codelist-tp>> code list.
+
+The sum all incoming amounts per Transport Protocol MUST match the total
+  incoming amount. 
+
+The sum all outgoing amounts per Transport Protocol MUST match the total
+  outgoing amount. 
+
+This element can be repeated.
+
+.Example of a subtotal per Transport Protocol:
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=SubtotalPerTP]
+----
+
+== Subtotal per Service Provider and Dataset Type
+
+This element can be repeated.
+
+.Example of a subtotal per Service Provider and Datasets (SP-DT):
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=SubtotalPerSP-DT]
+----
+
+
+== Subtotal per Service Provider, Dataset Type and Country Codes
+
+This element can be repeated.
+
+.Example of a subtotal per Service Provider and Datasets and Country (SP-DT-CC):
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=SubtotalPerSP-DT-CC]
+----
