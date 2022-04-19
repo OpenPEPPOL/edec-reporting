@@ -10,12 +10,12 @@ Whenever a business term is used this term shall *always* have content and there
 
 :leveloffset: +1
 
-include::semantic/identifier.adoc[]
-
-include::semantic/yearmonth.adoc[]
-
 include::semantic/countrycode.adoc[]
 
+include::semantic/identifier.adoc[]
+
 include::semantic/text.adoc[]
+
+include::semantic/yearmonth.adoc[]
 
 :leveloffset: -1
