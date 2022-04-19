@@ -1,0 +1,15 @@
+[[codelist-subtotalkeymeta]]
+= Subtotal Key Meta Scheme
+
+The Subtotal Key Meta Scheme defines the type of a single
+  key in a subtotal.
+
+[cols="1,4"]
+|===
+h| Document location
+| `tsr:TransactionStatisticsReport/tsr:Subtotal/tsr:Key/@metaSchemeID`
+
+h| Source code list
+// TODO link
+| link:../transaction_statistics_reporting/codelist/ReporterIDScheme/[Subtotal Key Meta Scheme code list]
+|===

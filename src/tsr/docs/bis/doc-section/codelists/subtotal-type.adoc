@@ -1,0 +1,16 @@
+[[codelist-subtotaltype]]
+= Subtotal Type
+
+The Subtotal Type determines the kind of aggregation that is contained in
+  a subtotal element. It determines the amount and types of
+  keys for a subtotal.
+
+[cols="1,4"]
+|===
+h| Document location
+| `tsr:TransactionStatisticsReport/tsr:Subtotal/@type`
+
+h| Source code list
+// TODO link
+| link:../transaction_statistics_reporting/codelist/ReporterIDScheme/[Subtotal Type code list]
+|===
