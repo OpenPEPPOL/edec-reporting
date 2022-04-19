@@ -1,7 +1,7 @@
 = Business Information
 
 [[descriptions]]
-Description of selected parts of the End User Report message.
+Description of selected parts of the Transaction Statistics Report message.
 
 :leveloffset: +1
 

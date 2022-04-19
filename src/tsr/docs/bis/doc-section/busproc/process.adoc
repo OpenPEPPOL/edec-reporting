@@ -1,4 +1,4 @@
-= End-User Reporting Process
+= Transaction statistics Reporting Process
 
 // TODO
 The following diagram provides an overview of the key steps when Service Providers are reporting monthly Transaction Statistics. The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
