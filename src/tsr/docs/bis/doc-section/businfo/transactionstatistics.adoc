@@ -24,6 +24,7 @@ include::./snippet/snippet-1.xml[tags=Outgoing]
 = Subtotals
 
 == Subtotal per Transport Protocol
+This element can be repeated.
 
 .Example of a subtotal per Transport Protocol (TP):
 [source, xml]
@@ -32,7 +33,8 @@ include::./snippet/snippet-1.xml[tags=SubtotalPerTP]
 ----
 
 == Subtotal per Service Provider and Datasets
-
+This e
+lement can be repeated.
 .Example of a subtotal per Service Provider and Datasets (SP-DT):
 [source, xml]
 ----
@@ -41,6 +43,7 @@ include::./snippet/snippet-1.xml[tags=SubtotalPerSP-DT]
 
 
 == Subtotal per Service Provider and Datasets
+This element can be repeated.
 
 .Example of a subtotal per Service Provider and Datasets and Country (SP-DT-CC):
 [source, xml]
