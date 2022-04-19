@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TransactionStatistics xmlns="urn:fdc:peppol.eu:oo:trns:transaction-statistics:1">
+
+  <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
+
+                
+
+
+        <!-- tag::CustomizationID[] -->  
+        <CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-report:1</CustomizationID>
+        <!-- end::CustomizationID[] --> 
+
+  <!-- tag::Header[] -->
+  <Header>
+    <!-- tag::Period[] -->
+    <ReportPeriod>2022-01</ReportPeriod>
+    <!-- end::Period[] -->
+    <!-- tag::Reporter[] -->
+    <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
+    <!-- end::Reporter[] -->
+  </Header>
+  <!-- end::Header[] -->
+          
+  <!-- tag::Total[] -->
+    <fdc:Total>
+      <fdc:Incoming>33</fdc:Incoming>
+      <fdc:Outgoing>33</fdc:Outgoing>
+    </fdc:Total>
+   <!-- end::Total[] -->
+
+   <!-- tag::Incoming[] -->
+          <fdc:Incoming>33</fdc:Incoming>
+   <!-- end::Incoming[] -->
+
+   <!-- tag::Outgoing[] -->
+      <fdc:Outgoing>33</fdc:Outgoing>
+   <!-- end::Outgoing[] -->
+
+   
+   </TransactionStatistics>
+
+
+
+
+   
