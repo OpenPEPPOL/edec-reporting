@@ -59,7 +59,7 @@ No data aggregation is needed for the End User Report.
 ** The End User Report must be transmitted, even if no other Peppol
    transactions happened in the Reporting Period
 ** In case the End User Report of one Service Provider is received
-   multiple times for one reporting period, only the latest received 
+   multiple times for one Reporting Period, only the latest received 
    document will be processed.
 ** End User Reports received after the deadline WILL NOT be processed.   
 

@@ -70,7 +70,7 @@ include::./snippet/snippet-1.xml[tags=Territory]
 
 == End User/Sending Dataset Type
 
-For every unique Dataset Type ID (Document Type ID) this End User has sent in the reporting period,
+For every unique Dataset Type ID (Document Type ID) this End User has sent in the Reporting Period,
 one `EndUser/SendingDatasetTypeID` element MUST be provided.
 
 The `schemeID` attribute MUST contain the scheme identifier of the respective Dataset Type ID.
@@ -85,7 +85,7 @@ include::./snippet/snippet-1.xml[tags=SendingDatasets]
 
 == End User/Receiving Dataset Type
 
-For every unique Dataset Type ID (Document Type ID) this End User has received in the reporting period,
+For every unique Dataset Type ID (Document Type ID) this End User has received in the Reporting Period,
 one `EndUser/ReceivingDatasetTypeID` element MUST be provided.
 
 The `schemeID` attribute MUST contain the scheme identifier of the respective Dataset Type ID.
