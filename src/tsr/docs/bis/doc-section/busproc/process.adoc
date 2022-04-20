@@ -10,7 +10,6 @@ image::./images/process-view.png[]
 ** The Reporting Period starts with the first day of every month at 
    00:00:00 UTC (inclusive) and ends with the last day of said month
    at 23:59:59 UTC (inclusive).
-tistics. The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be
 * Data
 ** Only Service Providers offering the exchange of Dataset Types must
    gather this data and transmit a Transaction Statistics Report.
