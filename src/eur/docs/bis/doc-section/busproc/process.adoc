@@ -1,7 +1,9 @@
 = End-User Reporting Process
 
-// TODO
-NOTE: Consolidated Diagram and process overview to be added
+The following diagram provides an overview of the key steps when Service Providers are reporting monthly End-User Statistics.
+//The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
+
+image::./images/process-view.png[]
 
 == Data Gathering
 
@@ -48,8 +50,6 @@ NOTE: The following block on Intermediaries is optional by default
 No data aggregation is needed for the End User Report.
 
 == Data Transmission
-
-// TODO Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
 
 * Frequency
 ** An End User Report MUST be transmitted once per month 
