@@ -1,104 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TransactionStatisticsReport xmlns="urn:fdc:peppol.eu:oo:trns:transaction-statistics:1">
+<tsr:TransactionStatisticsReport xmlns:tsr="urn:fdc:peppol.eu:oo:trns:transaction-statistics:1">
 
-  <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
+  <!-- tag::CustomizationID[] -->
+  <tsr:CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-report:1</tsr:CustomizationID>
+  <!-- end::CustomizationID[] -->
 
-                
-
-
-        <!-- tag::CustomizationID[] -->  
-        <CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-report:1</CustomizationID>
-        <!-- end::CustomizationID[] --> 
+  <tsr:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</tsr:ProfileID>
 
   <!-- tag::Header[] -->
-  <Header>
+  <tsr:Header>
     <!-- tag::Period[] -->
-    <ReportPeriod>2022-01</ReportPeriod>
+    <tsr:ReportPeriod>2022-01</tsr:ReportPeriod>
     <!-- end::Period[] -->
     <!-- tag::Reporter[] -->
-    <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
+    <tsr:ReporterID schemeID="CertSubjectCN">POP000360</tsr:ReporterID>
     <!-- end::Reporter[] -->
-  </Header>
+  </tsr:Header>
   <!-- end::Header[] -->
           
   <!-- tag::Total[] -->
-    <fdc:Total>
-      <fdc:Incoming>23</fdc:Incoming>
-      <fdc:Outgoing>0</fdc:Outgoing>
-    </fdc:Total>
-   <!-- end::Total[] -->
+  <tsr:Total>
+    <!-- tag::Incoming[] -->
+    <tsr:Incoming>23</tsr:Incoming>
+    <!-- end::Incoming[] -->
+    <!-- tag::Outgoing[] -->
+    <tsr:Outgoing>0</tsr:Outgoing>
+    <!-- end::Outgoing[] -->
+  </tsr:Total>
+  <!-- end::Total[] -->
 
-   <!-- tag::Incoming[] -->
-          <fdc:Incoming>23</fdc:Incoming>
-   <!-- end::Incoming[] -->
-
-   <!-- tag::Outgoing[] -->
-      <fdc:Outgoing>0</fdc:Outgoing>
-   <!-- end::Outgoing[] -->
-
-
-<!-- tag::SubtotalPerTP[] -->  
- <!-- Sum per TP must match TotalCount -->
-  <Subtotal type="PerTP">
-    <Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</Key>
-    <Incoming>23</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
+  <!-- tag::SubtotalPerTP[] -->  
+  <tsr:Subtotal type="PerTP">
+    <tsr:Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</tsr:Key>
+    <tsr:Incoming>23</tsr:Incoming>
+    <tsr:Outgoing>0</tsr:Outgoing>
+  </tsr:Subtotal>
   <!-- end::SubtotalPerTP[] -->  
 
   <!-- tag::SubtotalPerSP-DT[] -->  
-  <!-- Subtotals must match Total -->
-  <Subtotal type="PerSP-DT">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
-    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
-    <Incoming>5</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
+  <tsr:Subtotal type="PerSP-DT">
+    <tsr:Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</tsr:Key>
+    <tsr:Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</tsr:Key>
+    <tsr:Incoming>5</tsr:Incoming>
+    <tsr:Outgoing>0</tsr:Outgoing>
+  </tsr:Subtotal>
   <!-- end::SubtotalPerSP-DT[] -->  
 
   <!-- tag::SubtotalPerSP-DT-CC[] -->  
-  <!-- Subtotals must match Total -->
-  <Subtotal type="PerSP-DT-CC">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
-    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
-    <Key metaSchemeID="CC" schemeID="SenderCountry">AT</Key>
-    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
-    <Incoming>4</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-  <!-- end::SubtotalPerSP-DT-CC[] -->  
-
-
-
-  <Subtotal type="PerSP-DT-CC">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
-    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
-    <Key metaSchemeID="CC" schemeID="SenderCountry">DE</Key>
-    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
-    <Incoming>1</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-
-  <Subtotal type="PerSP-DT-CC">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
-    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
-    <Key metaSchemeID="CC" schemeID="SenderCountry">BE</Key>
-    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
-    <Incoming>2</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-
-  <Subtotal type="PerSP-DT-CC">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000002</Key>
-    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
-    <Key metaSchemeID="CC" schemeID="SenderCountry">AT</Key>
-    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
-    <Incoming>16</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-   </TransactionStatisticsReport>
-
-
-
-
-   
+  <tsr:Subtotal type="PerSP-DT-CC">
+    <tsr:Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</tsr:Key>
+    <tsr:Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</tsr:Key>
+    <tsr:Key metaSchemeID="CC" schemeID="SenderCountry">AT</tsr:Key>
+    <tsr:Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</tsr:Key>
+    <tsr:Incoming>4</tsr:Incoming>
+    <tsr:Outgoing>0</tsr:Outgoing>
+  </tsr:Subtotal>
+  <!-- end::SubtotalPerSP-DT-CC[] -->
+</tsr:TransactionStatisticsReport>

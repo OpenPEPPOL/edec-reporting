@@ -1,19 +1,21 @@
+= Semantic Data Types
 
-= Semantic data types
+The different semantic data types are described in the tables below, where various features such as attributes, 
+format, and decimals as well as the basic type are defined for each semantic data type. 
+They are based on https://www.iso.org/standard/61433.html[ISO 15000].
 
-The different semantic data types are described in the tables below, where various features such as attributes, format, and decimals as well as the basic type are defined for each semantic data type. They are based on https://www.iso.org/standard/61433.html[ISO15000].
+When used in an instance of an invoice, each data element will contain data. 
+In the below tables this is identified as the "content". 
+Whenever a business term is used this term shall *always* have content and therefore the content is always mandatory.
 
-When used in an instance of an invoice, each data element will contain data. In the below tables this is identified as the “content”. Whenever a business term is used this term shall *always* have content and therefore the content is always mandatory.
+:leveloffset: +1
 
+include::semantic/country-code.adoc[]
 
-//:leveloffset: +1
+include::semantic/identifier.adoc[]
 
-include::identifier.adoc[]
+include::semantic/text.adoc[]
 
-include::date.adoc[]
+include::semantic/yearmonth.adoc[]
 
-include::countrycode.adoc[]
-
-include::text.adoc[]
-
-//:leveloffset: -1
+:leveloffset: -1

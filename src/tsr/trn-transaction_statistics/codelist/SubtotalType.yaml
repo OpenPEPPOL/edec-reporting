@@ -1,24 +1,18 @@
 title:
   en: Subtotal Type
-identifier: Peppol:TS:SubtotalType
+identifier: Peppol:TSR:SubtotalType
 agency: OpenPeppol OO
 language: en
 version:
   identifier: 2022-01
   status: draft
 codes:
-- id: PerSP
-  name:
-    en: Aggregated per Service Provider
-- id: PerDatasetType
-  name:
-    en: Aggregated per Dataset Type ID
 - id: PerTP
   name:
     en: Aggregated per Transport Profile
-- id: PerCountryToCountry
+- id: PerSP-DT
   name:
-    en: Aggregated per Sender and Receiver Country Code
-- id: PerSP-PerDatasetType
+    en: Aggregated per Service Provider and Dataset Type ID
+- id: PerSP-DT-CC
   name:
-    en: Aggregated per Service Provider and per Dataset Type ID
+    en: Aggregated per Service Provider, Dataset Type ID, Sender Country and Receiver Country

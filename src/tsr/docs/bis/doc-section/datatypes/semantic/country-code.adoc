@@ -1,0 +1,20 @@
+= Country Code
+
+Country Codes are identifiers designed to identify countries.
+Country Codes must be coded according to the ISO-3166-1 Alpha-2 encoding.
+
+See code list on <<codelist-countrycode>> for details.
+
+.CountryCode.Type
+[cols="1s,1,1,1", options="header"]
+|===
+|Component
+|Use
+|Primitive Type
+|Example
+
+|Content
+|Mandatory
+|String
+|`AT`
+|===

@@ -1,12 +1,13 @@
 = Business Information
 
-[[descriptions]]
 Description of selected parts of the Transaction Statistics Report message.
 
 :leveloffset: +1
 
 include::header.adoc[]
 
-include::transactionstatistics.adoc[]
+include::total.adoc[]
+
+include::subtotal.adoc[]
 
 :leveloffset: -1

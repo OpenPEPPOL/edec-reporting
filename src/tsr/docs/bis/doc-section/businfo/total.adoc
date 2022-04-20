@@ -1,0 +1,17 @@
+= Total
+
+Defines the total amount of exchanged Datasets in the Reporting Period.
+The element `Total` and its child elements MUST be provided for every 
+  Transaction Statistics Report.
+  
+The element `tsr:Total/tsr:Incoming` contains the total amount of incoming / received
+  Datasets. Only values &ge; 0 are allowed.
+
+The element `tsr:Total/tsr:Outgoing` contains the total amount of outgoing / sent
+  Datasets. Only values &ge; 0 are allowed.
+
+.Example of a `Total` element with 23 received and no sent Datasets:
+[source, xml, indent=0]
+----
+include::./snippet/snippet-1.xml[tags=Total]
+----

@@ -1,14 +1,14 @@
 [[codelist]]
-= Code lists
+= Code Lists
 
 :leveloffset: +1
 
-include::id-schemes/country-code.adoc[]
+include::country-code.adoc[]
 
-include::id-schemes/reporter-id-scheme.adoc[]
+include::document-type-id.adoc[]
 
-include::id-schemes/party-id-scheme.adoc[]
+include::party-id-scheme.adoc[]
 
-include::id-schemes/document-type-id.adoc[]
+include::reporter-id-scheme.adoc[]
 
 :leveloffset: -1

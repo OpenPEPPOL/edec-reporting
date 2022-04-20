@@ -6,6 +6,7 @@ The following diagram provides an overview of the key steps when Service Provide
 NOTE: Consolidated Diagram and process overview to be added
 
 == Data Gathering
+
 //NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Gathering  To be corrected
 
 * Reporting Period
@@ -15,55 +16,68 @@ NOTE: Consolidated Diagram and process overview to be added
 
 * Data
 ** Only Service Providers offering the exchange of Dataset Types must
-   gather this data and transmit an transaction Statistics Report.
-** Only Data for production must be sent.
-** All transaction Statisticss that capable of sending or receiving Datasets
-   within the Reporting Period must be part of the transaction Statistics Report.
-** The following data elements MUST be provided for each datasets
-*** The legal identifier Type (e.g., VAT number, company 
-    registration number)
-*** All Peppol Participant identifiers used in the Peppol Network,
-    related only to the Peppol Services which that particular 
-    Service Provider offers to them.
-** Where intermediaries are both actively involved in the 
-   transmission of the transaction Statisticss’ Peppol Services and hold a 
-   contractual relationship with the transaction Statistics, the following 
-   information must be reported about each Intermediary:
-*** Legal identifier of the Intermediary
-*** Type of the legal identifier of the Intermediary
-*** Legal name of the Intermediary
-*** Country of the Intermediary's legal address
-*** If applicable, the territory of the Intermediary's legal address
+   gather this data and transmit a Transaction Statistics Report.
+** Only data for production MUST be sent.
+** According to the Internal Regulations, chapter 4.4, the following 
+   information elements need to be gathered for each exchanged Dataset:
+    1. Timing of the exchange
+    2. Direction of the exchange (incoming or outgoing)
+    3. Sending Peppol Service Provider
+    4. Receiving Peppol Service Provider
+    5. Peppol Dataset Type (Document Type ID)
+    6. Transport protocol used
+    7. Country of sender
+    8. Country of receiver
+** Only Dataset exchanges that resulted in a positive transport level
+   acknowledgments (like AS4 Receipts) MUST be included in the Transaction
+   Statistics Report. Transmissions that failed on a network or protocol
+   level MUST NOT to be considered for the report.
+*** End User Reports MUST NOT be counted for a Transaction Statistics Report
+*** Transaction Statistics Reports themselves MUST NOT be counted for a
+    Transaction Statistics Report
+    
+
 
 == Data Aggregation
 
-No data aggregation is needed for the transaction Statistics Report.
+Before the Transaction Statistics Report data is transmitted to OpenPeppol
+  it needs to be aggregated. The aggregation can be performed on any of the
+  above mentioned source fields defined by the Internal Regulations.
+  
+The following aggregations MUST be provided to be compliant to this specification:
+
+* Transport Protocol only
+* Service Provider and Dataset Type
+* Service Provider, Dataset Type, Sender Country and Receiver Country 
 
 == Data Transmission
-NOTE: Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
+
+// TODO needed
+// Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
 
 * Frequency
-** An transaction Statistics Report MUST be transmitted once per month 
+** A Transaction Statistics Report MUST be transmitted once per month 
    (Reporting Period)
-** An transaction Statistics Report MUST be transmitted within 10 calendar days 
+** A Transaction Statistics Report MUST be transmitted within 10 calendar days 
    (inclusive) after the end of the previous Reporting Period
-** The transaction Statistics Report must be transmitted, even if no other Peppol
-   transactions happened in the Reporting Period
-** In case the transaction Statistics Report of one Service Provider is received
-   multiple times for one reporting period, only the latest received 
+** The Transaction Statistics Report MUST be transmitted, even if no other Peppol
+   exchange happened in the Reporting Period
+** In case the Transaction Statistics Report of one Service Provider is received
+   multiple times for one Reporting Period, only the latest received 
    document will be processed.
-** transaction Statistics Reports received after the deadline WILL NOT be processed.   
+** Transaction Statistics Reports received after the deadline WILL NOT be processed.   
 
 * Data
-** Only transaction Statistics Reports on the Production stage MUST be transmitted
-** Each transaction Statistics MUST NOT occur more than once in an transaction Statistics Report
-** The data of each transaction Statistics must each be reported in a designated
-   element 
-** The Reporting Period MUST be part of the transaction Statistics Report
+** Only Transaction Statistics Reports on the Production stage MUST be transmitted
+** Each Transaction Statistics MUST NOT occur more than once in a 
+   Transaction Statistics Report
+** The data of each Transaction Statistics must be reported in the designated
+   elements
+** The Reporting Period MUST be part of the Transaction Statistics Report
 ** An identifier uniquely identifying the reporting Service Provider 
-   MUST be part of the transaction Statistics Report
+   MUST be part of the Transaction Statistics Report
 
 * Network
-** transaction Statistics Reports must be transmitted via the Peppol eDelivery
+** Transaction Statistics Reports must be transmitted via the Peppol eDelivery
    Network
-** Only OpenPeppol is allowed to receive transaction Statistics Reports directly
+** Only OpenPeppol is allowed to receive Transaction Statistics Reports directly
