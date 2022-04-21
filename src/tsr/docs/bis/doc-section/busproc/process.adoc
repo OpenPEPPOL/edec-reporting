@@ -1,6 +1,10 @@
 = Transaction statistics Reporting Process
 
-The following diagram provides an overview of the key steps when Service Providers are reporting monthly Transaction Statistics
+The following diagrams provide an overview of the key steps when Service Providers are reporting monthly Transaction Statistics
+
+image::./images/tsr_processSimples.png[]
+
+BPMN notation :
 
 image::./images/process-view.png[]
 
