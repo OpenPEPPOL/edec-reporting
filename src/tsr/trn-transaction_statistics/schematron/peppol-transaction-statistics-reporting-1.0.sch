@@ -13,7 +13,7 @@
       Philip Helger
 
     History: 
-      2022-04-15, Philip Helger
+      2022-04-21, Philip Helger
         initial version
   </p>
 
@@ -70,11 +70,11 @@
 
       <!-- Per Service Provider and Dataset Type and Country to Country-->
       <let name="name_spdtcc" value="'Service Provider ID, Dataset Type ID, Sender Country and Receiver Country'" />
-      <assert id="TSR-11" flag="fatal" test="$empty or tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-CC']"
+      <assert id="TSR-11" flag="warning" test="$empty or tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-CC']"
         >[TSR-11] The subtotals per $name_spdtcc are missing</assert>
-      <assert id="TSR-12" flag="fatal" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-CC']/tsr:Incoming) = tsr:Total/tsr:Incoming"
+      <assert id="TSR-12" flag="warning" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-CC']/tsr:Incoming) = tsr:Total/tsr:Incoming"
         >[TSR-12] The sum of all subtotals per $name_spdtcc incoming MUST match the total incoming count</assert>
-      <assert id="TSR-13" flag="fatal" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-CC']/tsr:Outgoing) = tsr:Total/tsr:Outgoing"
+      <assert id="TSR-13" flag="warning" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-CC']/tsr:Outgoing) = tsr:Total/tsr:Outgoing"
         >[TSR-13] The sum of all subtotals per $name_spdtcc outgoing MUST match the total outgoing count</assert>
       <assert id="TSR-14" flag="fatal" test="every $st in (tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-CC']),
                                                    $stsp in ($st/tsr:Key[normalize-space(@metaSchemeID) = 'SP']),
