@@ -1,7 +1,7 @@
 = End-User Reporting Process
 
-The following diagrams provide an overview of the key steps when Service Providers are reporting monthly End-User Statistics.
-//The diagram is a general representation of the process flow; some steps can be undertaken in parallel and do not need to be completed in strict order.
+The following diagrams provide an overview of the key steps when 
+Service Providers are reporting monthly End User Statistics:
 
 image::./images/eurProcessSimple.png[]
 

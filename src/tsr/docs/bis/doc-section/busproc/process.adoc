@@ -1,10 +1,11 @@
 = Transaction statistics Reporting Process
 
-The following diagrams provide an overview of the key steps when Service Providers are reporting monthly Transaction Statistics
+The following diagrams provide an overview of the key steps when 
+Service Providers are reporting monthly Transaction Statistics:
 
 image::./images/tsr_processSimples.png[]
 
-Using detailed Archimate notation :
+Using detailed Archimate notation:
 
 image::./images/process-view.png[]
 
