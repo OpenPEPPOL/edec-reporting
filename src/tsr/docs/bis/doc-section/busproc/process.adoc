@@ -4,7 +4,7 @@ The following diagrams provide an overview of the key steps when Service Provide
 
 image::./images/tsr_processSimples.png[]
 
-BPMN notation :
+Using detailed Archimate notation :
 
 image::./images/process-view.png[]
 
