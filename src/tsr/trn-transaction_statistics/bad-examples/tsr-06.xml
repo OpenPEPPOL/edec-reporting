@@ -13,6 +13,19 @@
     <Outgoing>0</Outgoing>
   </Total>
   
+  <!-- Sum per TP must match TotalCount -->
+  <Subtotal type="PerTP">
+    <Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</Key>
+    <Incoming>22</Incoming>
+    <Outgoing>0</Outgoing>
+  </Subtotal>
+
+  <Subtotal type="PerTP">
+    <Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</Key>
+    <Incoming>1</Incoming>
+    <Outgoing>0</Outgoing>
+  </Subtotal>
+
   <!-- Subtotals must match Total -->
   <Subtotal type="PerSP-DT">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-reporting:1.0">
-  <CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1</CustomizationID>
+  <CustomizationID>Xurn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1</CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
   <Header>
     <ReportPeriod>2022-01</ReportPeriod>
@@ -13,6 +13,13 @@
     <Outgoing>0</Outgoing>
   </Total>
   
+  <!-- Sum per TP must match TotalCount -->
+  <Subtotal type="PerTP">
+    <Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</Key>
+    <Incoming>23</Incoming>
+    <Outgoing>0</Outgoing>
+  </Subtotal>
+
   <!-- Subtotals must match Total -->
   <Subtotal type="PerSP-DT">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
