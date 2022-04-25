@@ -45,8 +45,20 @@
                 },
                 "agency": {
                     "type": "string"
+                },
+                "subset": {
+                    "$ref": "#/definitions/subset"
+                },
+                "translations": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
+        },
+        "subset": {
+            "type": "object"
         },
         "content": {
             "type": "array",
@@ -56,14 +68,24 @@
         },
         "code": {
             "type": "object",
+            "required": [
+                "id",
+                "name"
+            ],
             "properties": {
                 "id": {
                     "$ref": "#/definitions/identifier"
+                },
+                "name": {
+                    "$ref": "#/definitions/string_translatable"
+                },
+                "description": {
+                    "$ref": "#/definitions/string_translatable"
                 }
             }
         },
         "version": {
-            "type" : "object",
+            "type": "object",
             "properties": {
                 "identifier": {
                     "$ref": "#/definitions/identifier"
@@ -75,7 +97,7 @@
                         "review",
                         "published"
                     ]
-                        }
+                }
             }
         },
         "identifier": {

@@ -1,0 +1,15 @@
+[[codelist-countrycode]]
+= Country Codes
+
+Country Codes are identifiers designed to identify countries.
+Country Codes must be coded according to the ISO-3166-1 Alpha-2 encoding.
+
+[cols="1,4"]
+|===
+h| Document location
+| `eur:EndUserReport/eur:EndUser/eur:Country +
+eur:EndUserReport/eur:EndUser/eur:Intermediary/eur:Country`
+
+h| Source code list
+| link:../end_user_reporting/codelist/ISO3166/[Country Codes code list]
+|===

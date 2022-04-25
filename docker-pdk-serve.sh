@@ -1,1 +1,1 @@
-docker run --rm -i -d --name pdk-serve -v "$(pwd)":/src -p8000:8000 public.ecr.aws/openpeppol/pdk:0.7.1 pdk serve
+docker run --rm -i -d --pull=always --name pdk-serve -v "$(pwd)":/src -p8000:8000 public.ecr.aws/openpeppol/pdk:latest pdk serve

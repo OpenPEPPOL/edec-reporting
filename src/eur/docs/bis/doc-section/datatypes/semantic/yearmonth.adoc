@@ -1,0 +1,26 @@
+= YearMonth
+
+YearMonth values shall be in accordance to the "Representations with reduced precision"
+ of Calendar Dates as specified by https://www.iso.org/standard/40874.html[ISO 8601],
+ in the format *YYYY-MM*.
+
+====
+IMPORTANT : YearMonth values MUST NOT include timezone information.
+====
+
+
+.YearMonth.Type
+[cols="1s,1,1,1", options="header"]
+|===
+|Component
+|Use
+|Primitive Type
+|Example
+
+|Content
+|Mandatory
+|YearMonth
+|2022-12
+|===
+
+NOTE: The XML Schema data type matching this semantic data type is `xs:gYearMonth`

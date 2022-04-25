@@ -1,0 +1,33 @@
+[[bis-identifiers]]
+= BIS Identifiers
+
+In the table below you will find the values to be used as the specification identifier and the business process type for this profile
+
+[cols="1s,2,2",options="header"]
+|====
+|Type
+|Element `CustomizationID`
+|Process ID
+
+|End User Report
+|`urn:fdc:peppol.eu:oo:trns:end-user-report:1`
+|`urn:fdc:peppol.eu:oo:bis:reporting:1`
+|====
+
+.XML example representation
+[source, xml, indent=0]
+----
+  <eur:CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-report:1</eur:CustomizationID>
+  <eur:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</eur:ProfileID>
+----
+
+.Full Peppol Document Type identifier
+[source, indent=0]
+----
+urn:fdc:peppol:end-user-reporting:1.0::EndUserReport##urn:fdc:peppol.eu:oo:trns:end-user-report:1::1.0
+----
+
+NOTE: The Peppol Participant Identifier to which the End User Reports
+      need to be sent by Service Providers is NOT part of this
+      document.
+      

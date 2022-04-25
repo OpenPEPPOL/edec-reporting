@@ -1,0 +1,14 @@
+[[codelist-tp]]
+= Transport Profiles 
+
+Transport Profiles are used to uniquely identify the technical protocol profile
+  with which the data exchange happens. 
+
+[cols="1,4"]
+|===
+h| Document location
+| `tsr:TransactionStatisticsReport/tsr:Subtotal/tsr:Key[@metaSchemeID="TP"]`
+
+h| Source code list
+| link:https://docs.peppol.eu/edelivery/codelists/[Transport Profiles] (latest version)
+|===

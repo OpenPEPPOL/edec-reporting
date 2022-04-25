@@ -1,0 +1,11 @@
+= Business Information
+
+Description of selected parts of the End User Report message.
+
+:leveloffset: +1
+
+include::header.adoc[]
+
+include::endusers.adoc[]
+
+:leveloffset: -1

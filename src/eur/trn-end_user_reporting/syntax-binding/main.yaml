@@ -1,0 +1,114 @@
+metadata:
+  namespaces:
+    eur: urn:fdc:peppol:end-user-reporting:1.0
+    ## This is the XML schema for the Peppol End User Reporting.
+    ## This is based on the "Internal Regulations" document,
+    ##   chapter 4.3 "Service Provider Reporting about End Users"
+content:
+  element: eur:EndUserReport
+  name: Root element
+  definition: The root element of the End User Report
+  cardinality: 1..1
+  children:
+  - element: eur:CustomizationID
+    reference: IBT-001
+
+  - element: eur:ProfileID
+    reference: IBT-002
+
+  - element: eur:Header
+    reference: IBG-1
+    children:  
+
+    - element: eur:ReportPeriod
+      reference: IBT-003
+
+    - element: eur:ReporterID
+      reference: IBT-004
+      attribute: 
+      
+      - element: schemeID
+        reference: IBT-005
+
+  - element: eur:EndUser
+    reference: IBG-2
+    children:  
+
+    - element: eur:LegalID
+      reference: IBT-006
+      attribute: 
+      
+      - element: schemeID
+        name: Scheme identifier
+        definition: The scheme identifier does not follow a code list. If possible, the values of the Peppol
+          Participant Identifier Scheme Code List SHOULD be used (like "9914" for an
+          Austrian VAT number).
+        cardinality: 1..1
+        type: Identifier
+
+    - element: eur:LegalName
+      reference: IBT-007
+
+    - element: eur:Country
+      reference: IBT-008
+
+    - element: eur:Territory
+      reference: IBT-009
+
+    - element: eur:SendingDatasetID
+      reference: IBT-010
+      attribute:
+      
+      - element: schemeID
+        name: Scheme identifier
+        definition: The Dataset / Document Type Identfier scheme value
+          like "busdox-docid-qns"  
+        cardinality: 1..1
+        type: Identifier
+
+    - element: eur:ReceivingDatasetID
+      reference: IBT-011
+      attribute:
+      
+      - element: schemeID
+        name: Scheme identifier
+        definition: The Dataset / Document Type Identfier scheme value
+          like "busdox-docid-qns"  
+        cardinality: 1..1
+        type: Identifier
+
+    - element: eur:ParticipantID
+      reference: IBT-012
+      attribute:
+      
+      - element: schemeID
+        name: Scheme identifier
+        definition: The Participant Identfier scheme value
+          like "iso6523-actorid-upis"  
+        cardinality: 1..1
+        type: Identifier
+
+    - element: eur:Intermediary
+      reference: IBG-3
+      children:
+
+      - element: eur:LegalID
+        reference: IBT-013
+        attribute: 
+        
+        - element: schemeID
+          name: Scheme identifier
+          definition: The scheme identifier does not follow a code list. If possible, the values of the Peppol
+            Participant Identifier Scheme Code List SHOULD be used (like "9914" for an
+            Austrian VAT number).
+          cardinality: 1..1
+          type: Identifier
+
+      - element: eur:LegalName
+        reference: IBT-014
+        
+      - element: eur:Country
+        reference: IBT-015
+        
+      - element: eur:Territory
+        reference: IBT-016

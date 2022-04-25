@@ -1,34 +1,62 @@
 {
     "yaml.schemas": {
-        // Project structure
+        "file:///c%3A/Users/jerou/.vscode/extensions/atlassian.atlascode-2.10.7/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml",
         ".vscode/json-schema/imports.json": ".imports.yaml",
         ".vscode/json-schema/process.json": "process.yaml",
         ".vscode/json-schema/project.json": "project.yaml",
         ".vscode/json-schema/library.json": "library.yaml",
         ".vscode/json-schema/transaction.json": "transaction.yaml",
-        
-        // Codelists
-        ".vscode/json-schema/codelist.json": ["codelist/*.yaml", "codelist/abstract/*.yaml", "!.imports.yaml"],
-        ".vscode/json-schema/codelist-subset.json": ["codelist/subset/*.yaml", "!.imports.yaml"],
-        
-        // Semantic model
-        ".vscode/json-schema/semantic-model.json": ["semantic-model/main.yaml", "semantic-model.yaml"],
-        ".vscode/json-schema/semantic-model-content.json": ["semantic-model/*.yaml", "semantic-model/**/*.yaml", "!semantic-model/main.yaml", "!.imports.yaml", "!*.meta.yaml"],
-        ".vscode/json-schema/semantic-model-meta.json": ["semantic-model/*.meta.yaml"],
-        
-        // Semantic rules
-        ".vscode/json-schema/semantic-rules.json": ["semantic-rules/*.yaml", "!.imports.yaml"],
-        
-        // Syntax bindings
-        ".vscode/json-schema/syntax-binding.json": ["syntax-binding/main.yaml", "syntax-binding.yaml"],
-        ".vscode/json-schema/syntax-binding-content.json": ["syntax-binding/*.yaml", "syntax-binding/**/*.yaml", "!syntax-binding/main.yaml", "!.imports.yaml", "!*.meta.yaml"],
-        ".vscode/json-schema/syntax-binding-meta.json": ["syntax-binding/*.meta.yaml"],
-
-        // Syntax validation
-        ".vscode/json-schema/syntax-validation.json": ["schematron/*.yaml", "!*.meta.yaml", "!.imports.yaml", "!*.meta.yaml"],
-        
-        // Schematron
-        ".vscode/json-schema/schematron-meta.json": ["schematron/*.meta.yaml"],
+        ".vscode/json-schema/codelist.json": [
+            "codelist/*.yaml",
+            "codelist/abstract/*.yaml",
+            "!.imports.yaml"
+        ],
+        ".vscode/json-schema/codelist-subset.json": [
+            "codelist/subset/*.yaml",
+            "!.imports.yaml"
+        ],
+        ".vscode/json-schema/semantic-model.json": [
+            "semantic-model/main.yaml",
+            "semantic-model.yaml"
+        ],
+        ".vscode/json-schema/semantic-model-content.json": [
+            "semantic-model/*.yaml",
+            "semantic-model/**/*.yaml",
+            "!semantic-model/main.yaml",
+            "!.imports.yaml",
+            "!*.meta.yaml"
+        ],
+        ".vscode/json-schema/semantic-model-meta.json": [
+            "semantic-model/*.meta.yaml"
+        ],
+        ".vscode/json-schema/semantic-rules.json": [
+            "semantic-rules/*.yaml",
+            "!.imports.yaml"
+        ],
+        ".vscode/json-schema/syntax-binding.json": [
+            "syntax-binding/main.yaml",
+            "syntax-binding.yaml"
+        ],
+        ".vscode/json-schema/syntax-binding-content.json": [
+            "syntax-binding/*.yaml",
+            "syntax-binding/**/*.yaml",
+            "!syntax-binding/main.yaml",
+            "!.imports.yaml",
+            "!*.meta.yaml"
+        ],
+        ".vscode/json-schema/syntax-binding-meta.json": [
+            "syntax-binding/*.meta.yaml"
+        ],
+        ".vscode/json-schema/syntax-validation.json": [
+            "schematron/*.yaml",
+            "!*.meta.yaml",
+            "!.imports.yaml",
+            "!*.meta.yaml"
+        ],
+        ".vscode/json-schema/schematron-meta.json": [
+            "schematron/*.meta.yaml"
+        ],
+        "file:///c%3A/Users/jerou/develop/OpenPEPPOL/reporting/.vscode/json-schema/syntax-binding-content.json": "file:///c%3A/Users/jerou/develop/OpenPEPPOL/reporting/src/reporting/trn-transaction_statistics/syntax-binding/main-old.yaml"
     },
     // Until https://github.com/redhat-developer/vscode-yaml/issues/397 is fixed.
     "yaml.schemaStore.enable": false,

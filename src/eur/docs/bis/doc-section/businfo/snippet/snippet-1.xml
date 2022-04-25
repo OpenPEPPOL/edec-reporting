@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EndUserReport xmlns="urn:fdc:peppol:end-user-reporting:1.0">
+  <CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-report:1</CustomizationID>
+  <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
+
+  <!-- tag::Header[] -->
+  <Header>
+    <!-- tag::Period[] -->
+    <ReportPeriod>2022-01</ReportPeriod>
+    <!-- end::Period[] -->
+    <!-- tag::Reporter[] -->
+    <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
+    <!-- end::Reporter[] -->
+  </Header>
+  <!-- end::Header[] -->
+
+  <!-- tag::EndUserDefault[] -->
+  <EndUser>
+    <LegalID schemeID="orgnr">ID12345</LegalID>
+    <LegalName>Acme Inc.</LegalName>
+    <Country>AT</Country>
+    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
+    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
+    <ParticipantID schemeID="iso6523-actorid-upis">9901:test1</ParticipantID>
+  </EndUser>
+  <!-- end::EndUserDefault[] -->
+
+  <!-- tag::EndUserFull[] -->
+  <EndUser>
+    <!-- tag::LegalID[] -->
+    <LegalID schemeID="orgnr">ID12345</LegalID>
+    <!-- end::LegalID[] -->
+    <!-- tag::LegalName[] -->
+    <LegalName>Acme Inc.</LegalName>
+    <!-- end::LegalName[] -->
+    <!-- tag::Country[] -->
+    <Country>AT</Country>
+    <!-- end::Country[] -->
+    <!-- tag::Territory[] -->
+    <Territory>Lower Austria</Territory>
+    <!-- end::Territory[] -->
+    <!-- tag::SendingDatasets[] -->
+    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
+    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
+    <!-- end::SendingDatasets[] -->
+    <!-- tag::ReceivingDatasets[] -->
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
+    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
+    <!-- end::ReceivingDatasets[] -->
+    <!-- tag::ParticipantID[] -->
+    <ParticipantID schemeID="iso6523-actorid-upis">9901:test1</ParticipantID>
+    <!-- end::ParticipantID[] -->
+    <!-- tag::Intermediary[] -->
+    <Intermediary>
+      <!-- tag::IntermediaryLegalID[] -->
+      <LegalID schemeID="orgnr">987654321</LegalID>
+      <!-- end::IntermediaryLegalID[] -->
+      <!-- tag::IntermediaryLegalName[] -->
+      <LegalName>Intermediary A</LegalName>
+      <!-- end::IntermediaryLegalName[] -->
+      <!-- tag::IntermediaryCountry[] -->
+      <Country>BE</Country>
+      <!-- end::IntermediaryCountry[] -->
+      <!-- tag::IntermediaryTerritory[] -->
+      <Territory>Brussels Area</Territory>
+      <!-- end::IntermediaryTerritory[] -->
+    </Intermediary>
+    <!-- end::Intermediary[] -->
+  </EndUser>
+  <!-- end::EndUserFull[] -->
+
+    <!-- tag::Intermediary2[] -->
+    <Intermediary>
+      <LegalID schemeID="orgnr">987654322</LegalID>
+      <LegalName>Intermediary B</LegalName>
+      <Country>NL</Country>
+    </Intermediary>
+    <!-- end::Intermediary2[] -->
+</EndUserReport>

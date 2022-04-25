@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tsr:TransactionStatisticsReport xmlns:tsr="urn:fdc:peppol.eu:oo:trns:transaction-statistics:1">
+
+  <!-- tag::CustomizationID[] -->
+  <tsr:CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-report:1</tsr:CustomizationID>
+  <!-- end::CustomizationID[] -->
+
+  <tsr:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</tsr:ProfileID>
+
+  <!-- tag::Header[] -->
+  <tsr:Header>
+    <!-- tag::Period[] -->
+    <tsr:ReportPeriod>2022-01</tsr:ReportPeriod>
+    <!-- end::Period[] -->
+    <!-- tag::Reporter[] -->
+    <tsr:ReporterID schemeID="CertSubjectCN">POP000360</tsr:ReporterID>
+    <!-- end::Reporter[] -->
+  </tsr:Header>
+  <!-- end::Header[] -->
+          
+  <!-- tag::Total[] -->
+  <tsr:Total>
+    <!-- tag::Incoming[] -->
+    <tsr:Incoming>23</tsr:Incoming>
+    <!-- end::Incoming[] -->
+    <!-- tag::Outgoing[] -->
+    <tsr:Outgoing>0</tsr:Outgoing>
+    <!-- end::Outgoing[] -->
+  </tsr:Total>
+  <!-- end::Total[] -->
+
+  <!-- tag::SubtotalPerTP[] -->  
+  <tsr:Subtotal type="PerTP">
+    <tsr:Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</tsr:Key>
+    <tsr:Incoming>23</tsr:Incoming>
+    <tsr:Outgoing>0</tsr:Outgoing>
+  </tsr:Subtotal>
+  <!-- end::SubtotalPerTP[] -->  
+
+  <!-- tag::SubtotalPerSP-DT[] -->  
+  <tsr:Subtotal type="PerSP-DT">
+    <tsr:Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</tsr:Key>
+    <tsr:Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</tsr:Key>
+    <tsr:Incoming>5</tsr:Incoming>
+    <tsr:Outgoing>0</tsr:Outgoing>
+  </tsr:Subtotal>
+  <!-- end::SubtotalPerSP-DT[] -->  
+
+  <!-- tag::SubtotalPerSP-DT-CC[] -->  
+  <tsr:Subtotal type="PerSP-DT-CC">
+    <tsr:Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</tsr:Key>
+    <tsr:Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</tsr:Key>
+    <tsr:Key metaSchemeID="CC" schemeID="SenderCountry">AT</tsr:Key>
+    <tsr:Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</tsr:Key>
+    <tsr:Incoming>4</tsr:Incoming>
+    <tsr:Outgoing>0</tsr:Outgoing>
+  </tsr:Subtotal>
+  <!-- end::SubtotalPerSP-DT-CC[] -->
+</tsr:TransactionStatisticsReport>

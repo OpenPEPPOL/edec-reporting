@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="urn:fdc:peppol:end-user-reporting:1.0" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="urn:fdc:peppol:end-user-reporting:1.0" 
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+  <xs:annotation>
+    <xs:documentation>
+       This is the XML schema for the Peppol End User Reporting.
+       This is based on the "Internal Regulations" document, 
+         chapter 4.3 "Service Provider Reporting about End Users"
+       
+       Author:
+         Philip Helger
+
+       History: 
+         2022-04-14, Philip Helger
+           initial version
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:complexType name="IDType">
+    <xs:annotation>
+      <xs:documentation>
+        A generic ID type with a mandatory schemeID attribute and a value
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="schemeID" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>ID scheme</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="HeaderType">
+    <xs:annotation> 
+      <xs:documentation>
+        The type for the report header metadata.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ReportPeriod" type="xs:gYearMonth">
+        <xs:annotation>
+          <xs:documentation>
+            The year and month of the data, this report refers to. 
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReporterID" type="IDType">
+        <xs:annotation>
+          <xs:documentation>
+            The unique identification of the Service Provider that is providing the data.
+            If the "schemeID" attribute is set to "CertSubjectCN" than the value must be
+              the Peppol AP Certificate Subject CN (Common Name).
+              Other scheme IDs are currently not supported.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:simpleType name="CountryCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        This type is used to represent ISO-3166 country codes in Alpha-2 Mode.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="2" />
+      <xs:maxLength value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="IntermediaryType">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the data for a single (optional) intermediary.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="LegalID" type="IDType">
+        <xs:annotation>
+          <xs:documentation>
+            Legal identifier of the Intermediary.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LegalName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Legal name of the Intermediary.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Country" type="CountryCodeType">
+        <xs:annotation>
+          <xs:documentation>
+            Country of the intermediary's legal address only.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Territory" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            Territory of the intermediary's legal address.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="EndUserType">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the data for a single end user.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="LegalID" type="IDType">
+        <xs:annotation>
+          <xs:documentation>
+            Legal identifier of the End User in the jurisdiction within which it is legally based, 
+            and legal identifier Type (e.g., VAT number, company registration number).
+            a. The legal identifier has to be active, in jurisdictions when such distinction exists.
+            b. In case of End Users that are public organisations and where legal identifiers as 
+               such do not exist, other officially issued codes are acceptable.
+            The schemeID does not follow a code list. If possible, the values of the Peppol
+              Participant Identifier Scheme Code List SHOULD be used (like "9914" for an
+              Austrian VAT number).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LegalName" type="xs:normalizedString">
+        <xs:annotation>
+          <xs:documentation>
+            Legal name of the End User, in the jurisdiction within which it is legally based.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Country" type="CountryCodeType">
+        <xs:annotation>
+          <xs:documentation>
+            Country of the End User's legal address only.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Territory" type="xs:normalizedString" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            Territory of the End User's legal address.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SendingDatasetTypeID" type="IDType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            End User's capability to send Peppol Dataset Types (Document Types).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivingDatasetTypeID" type="IDType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            End User's capability to receive Peppol Dataset Types (Document Types).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ParticipantID" type="IDType" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            All identifiers used in the Peppol Network by the End User, related only to 
+              the Peppol Services which that particular Service Providers offers to them.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Intermediary" type="IntermediaryType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            Where intermediaries are both actively involved in the transmission of the End Users’
+              Peppol Services and hold a contractual relationship with the End User as described
+              in the SP Agreement clause 9.2
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EndUserReportType">
+    <xs:annotation>
+      <xs:appinfo>
+        This type is used to represent a single Peppol End User Report.
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CustomizationID" type="IDType">
+        <xs:annotation>
+          <xs:documentation>
+            Identifies a customization of this format for a specific use.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProfileID" type="IDType">
+        <xs:annotation>
+          <xs:documentation>
+            Identifies the business process context in which the transaction appears.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Header" type="HeaderType">
+        <xs:annotation>
+          <xs:documentation>
+            Identifies the metadata of the report.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EndUser" type="EndUserType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            The data for a single end user.
+            No end user may be present, to indicate that not transmission has happened in the
+              reporting period.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>  
+    
+  <xs:element name="EndUserReport" type="EndUserReportType">
+    <xs:annotation>
+      <xs:documentation>
+        This is the root element for a single Peppol End User Report.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

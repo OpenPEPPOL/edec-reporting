@@ -33,19 +33,22 @@
             "additionalProperties": false,
             "required": [
                 "id",
-                "term",
+                "name",
                 "cardinality",
-                "type"
+                "value"
             ],
             "properties": {
                 "id": {
                     "$ref": "#/definitions/id"
                 },
-                "term": {
+                "name": {
                     "$ref": "#/definitions/string_translatable"
                 },
                 "definition": {
                     "$ref": "#/definitions/string_translatable"
+                },
+                "value": {
+                    "$ref": "#/definitions/value"
                 },
                 "note": {
                     "$ref": "#/definitions/string_translatable"
@@ -58,9 +61,6 @@
                 },
                 "requirement": {
                     "$ref": "#/definitions/requirements"
-                },
-                "type": {
-                    "$ref": "#/definitions/type"
                 },
                 "attribute": {
                     "type": "array",
@@ -75,19 +75,22 @@
             "additionalProperties": false,
             "required": [
                 "id",
-                "term",
+                "name",
                 "cardinality",
-                "type"
+                "value"
             ],
             "properties": {
                 "id": {
                     "$ref": "#/definitions/id"
                 },
-                "term": {
+                "name": {
                     "$ref": "#/definitions/string_translatable"
                 },
                 "definition": {
                     "$ref": "#/definitions/string_translatable"
+                },
+                "value": {
+                    "$ref": "#/definitions/value"
                 },
                 "note": {
                     "$ref": "#/definitions/string_translatable"
@@ -100,9 +103,6 @@
                 },
                 "requirement": {
                     "$ref": "#/definitions/requirements"
-                },
-                "type": {
-                    "$ref": "#/definitions/type"
                 }
             }
         },
@@ -111,7 +111,7 @@
             "additionalProperties": false,
             "required": [
                 "id",
-                "term",
+                "name",
                 "cardinality",
                 "children"
             ],
@@ -119,11 +119,14 @@
                 "id": {
                     "$ref": "#/definitions/id"
                 },
-                "term": {
+                "name": {
                     "$ref": "#/definitions/string_translatable"
                 },
                 "definition": {
                     "$ref": "#/definitions/string_translatable"
+                },
+                "value": {
+                    "$ref": "#/definitions/value"
                 },
                 "note": {
                     "$ref": "#/definitions/string_translatable"
@@ -185,9 +188,6 @@
                 }
             ]
         },
-        "type": {
-            "type": "string"
-        },
         "requirements": {
             "oneOf": [
                 {
@@ -203,6 +203,65 @@
         },
         "requirement": {
             "type": "string"
+        },
+        "value": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "datatype"
+            ],
+            "properties": {
+                "datatype": {
+                    "type": "string"
+                },
+                "default": {
+                    "$ref": "#/definitions/some_value"
+                },
+                "example": {
+                    "$ref": "#/definitions/some_value"
+                },
+                "fixed": {
+                    "$ref": "#/definitions/some_value"
+                },
+                "codelist": {
+                    "$ref": "#/definitions/some_value_array"
+                },
+                "max_length": {
+                    "type": "integer"
+                },
+                "min_length": {
+                    "type": "integer"
+                },
+                "pattern": {
+                    "type": "string"
+                }
+            }
+        },
+        "some_value_array": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/some_value"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/some_value"
+                    }
+                }
+            ]
+        },
+        "some_value": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "boolean"
+                }
+            ]
         },
         "string_translatable": {
             "oneOf": [
