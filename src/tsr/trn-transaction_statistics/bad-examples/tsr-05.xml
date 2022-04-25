@@ -13,74 +13,69 @@
     <Outgoing>0</Outgoing>
   </Total>
   
-  <!-- Sum per SP must match TotalCount -->
-  <Subtotal type="PerSP">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
-    <Incoming>5</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-  
-  <Subtotal type="PerSP">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000002</Key>
-    <Incoming>7</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-  
-  <Subtotal type="PerSP">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000003</Key>
-    <Incoming>11</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-  
-  <!-- Sum per DT must match TotalCount -->
-  <Subtotal type="PerDatasetType">
-    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
-    <Incoming>20</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-  
-  <Subtotal type="PerDatasetType">
-    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
-    <Incoming>3</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-  
   <!-- Sum per TP must match TotalCount -->
   <Subtotal type="PerTP">
     <Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</Key>
     <Incoming>23</Incoming>
     <Outgoing>1</Outgoing>
   </Subtotal>
-  
-  <!-- Sum of all Country Exchange must match TotalCount -->
-  <Subtotal type="PerCountryToCountry">
-    <Key metaSchemeID="CC" schemeID="SenderCountry">AT</Key>
-    <Key metaSchemeID="CC" schemeID="ReceiverCountry">AT</Key>
-    <Incoming>8</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
 
-  <Subtotal type="PerCountryToCountry">
-    <Key metaSchemeID="CC" schemeID="SenderCountry">AT</Key>
-    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
-    <Incoming>9</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-
-  <Subtotal type="PerCountryToCountry">
-    <Key metaSchemeID="CC" schemeID="SenderCountry">DE</Key>
-    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
-    <Incoming>6</Incoming>
-    <Outgoing>0</Outgoing>
-  </Subtotal>
-
-  <!-- Multi key -->
-  <!-- 
-  <Subtotal type="PerSP-PerDatasetType">
+  <!-- Subtotals must match Total -->
+  <Subtotal type="PerSP-DT">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <Incoming>5</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>
-   -->
+
+  <Subtotal type="PerSP-DT">
+    <Key metaSchemeID="SP" schemeID="CertSubjectCN">xOP000001</Key>
+    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <Incoming>2</Incoming>
+    <Outgoing>0</Outgoing>
+  </Subtotal>
+
+  <Subtotal type="PerSP-DT">
+    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000002</Key>
+    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <Incoming>16</Incoming>
+    <Outgoing>0</Outgoing>
+  </Subtotal>
+
+  <!-- Subtotals must match Total -->
+  <Subtotal type="PerSP-DT-CC">
+    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
+    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <Key metaSchemeID="CC" schemeID="SenderCountry">AT</Key>
+    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
+    <Incoming>4</Incoming>
+    <Outgoing>0</Outgoing>
+  </Subtotal>
+
+  <Subtotal type="PerSP-DT-CC">
+    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
+    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <Key metaSchemeID="CC" schemeID="SenderCountry">DE</Key>
+    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
+    <Incoming>1</Incoming>
+    <Outgoing>0</Outgoing>
+  </Subtotal>
+
+  <Subtotal type="PerSP-DT-CC">
+    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
+    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <Key metaSchemeID="CC" schemeID="SenderCountry">BE</Key>
+    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
+    <Incoming>2</Incoming>
+    <Outgoing>0</Outgoing>
+  </Subtotal>
+
+  <Subtotal type="PerSP-DT-CC">
+    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000002</Key>
+    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <Key metaSchemeID="CC" schemeID="SenderCountry">AT</Key>
+    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
+    <Incoming>16</Incoming>
+    <Outgoing>0</Outgoing>
+  </Subtotal>
 </TransactionStatisticsReport>
