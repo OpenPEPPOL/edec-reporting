@@ -21,14 +21,15 @@ image::./images/process-view.png[]
 ** Only data for production MUST be sent.
 ** According to the Internal Regulations, chapter 4.4, the following 
    information elements need to be gathered for each exchanged Dataset:
-    1. Timing of the exchange
-    2. Direction of the exchange (incoming or outgoing)
-    3. Sending Peppol Service Provider
-    4. Receiving Peppol Service Provider
-    5. Peppol Dataset Type (Document Type ID)
-    6. Transport protocol used
-    7. Country of sender
-    8. Country of receiver
+    . Timing of the exchange
+    . Direction of the exchange (incoming or outgoing)
+    . Sending Peppol Service Provider
+    . Receiving Peppol Service Provider
+    . Peppol Dataset Type (Document Type ID)
+    . Process ID
+    . Transport protocol used
+    . Country of sender
+    . Country of receiver
 ** Only Dataset exchanges that resulted in a positive transport level
    acknowledgments (like AS4 Receipts) MUST be included in the Transaction
    Statistics Report. Transmissions that failed on a network or protocol
@@ -49,7 +50,12 @@ The following aggregations MUST be provided to be compliant to this specificatio
 
 * Transport Protocol only
 * Service Provider and Dataset Type
-* Service Provider, Dataset Type, Sender Country and Receiver Country 
+* Service Provider, Dataset Type, Sender Country and Receiver Country
+
+The following aggregations MAY be provided in addition:
+
+* Dataset Type and Process ID (sent)
+* Dataset Type and Process ID (received)
 
 == Data Transmission
 

@@ -7,6 +7,8 @@ include::country-code.adoc[]
 
 include::document-type-id.adoc[]
 
+include::process-id.adoc[]
+
 include::reporter-id-scheme.adoc[]
 
 include::subtotal-key-meta-scheme.adoc[]
