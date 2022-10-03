@@ -29,8 +29,8 @@ image::./images/process-view.png[]
     registration number)
 *** Country of the End User’s legal address
 *** If applicable, the territory of the End User’s legal address
-*** All Dataset Type identifiers the End User is capable to send  
-*** All Dataset Type identifiers the End User is capable to receive  
+*** All Dataset Type identifiers the End User has sent during the reporting period
+*** All Dataset Type identifiers the End User has received during the reporting period
 *** All Peppol Participant identifiers used in the Peppol Network,
     related only to the Peppol Services which that particular 
     Service Provider offers to them.

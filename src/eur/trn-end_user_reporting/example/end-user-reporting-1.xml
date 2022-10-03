@@ -6,52 +6,28 @@
     <ReportPeriod>2022-01</ReportPeriod>
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
-  <EndUser>
-    <LegalID schemeID="orgnr">ID12345</LegalID>
-    <LegalName>Acme Inc.</LegalName>
-    <Country>AT</Country>
-    
-    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
-    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
 
-    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
-    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</ReceivingDatasetTypeID>
-    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
+  <SenderCount>7</SenderCount>
+  <ReceiverCount>4</ReceiverCount> <!-- Australia/NZealand doont send that -->
 
-    <ParticipantID schemeID="iso6523-actorid-upis">9999:test1</ParticipantID>
-  </EndUser>
-  <EndUser>
-    <LegalID schemeID="orgnr">ID12346</LegalID>
-    <LegalName>FooBar Ltd.</LegalName>
-    <Country>NL</Country>
-    
-    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
-    <SendingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</SendingDatasetTypeID>
-
-    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
-
-    <ParticipantID schemeID="iso6523-actorid-upis">9999:test2</ParticipantID>
-    <ParticipantID schemeID="iso6523-actorid-upis">9999:test3</ParticipantID>
-  </EndUser>
-  <EndUser>
-    <LegalID schemeID="orgnr">ID12347</LegalID>
-    <LegalName>Tataa adventure.</LegalName>
-    <Country>NL</Country>
-    
-    <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
-    
-    <ParticipantID schemeID="iso6523-actorid-upis">9999:test4</ParticipantID>
-    <ParticipantID schemeID="iso6523-actorid-upis">9999:test5</ParticipantID>
-
-    <Intermediary>
-      <LegalID schemeID="orgnr">987654321</LegalID>
-      <LegalName>Inter 1</LegalName>
-      <Country>BE</Country>
-    </Intermediary>
-    <Intermediary>
-      <LegalID schemeID="sthgelse">987654322</LegalID>
-      <LegalName>Inter 2</LegalName>
-      <Country>LU</Country>
-    </Intermediary>
-  </EndUser>
+  <!-- Reflect # of "invoice" sending / receiving end users? -->
+  <!--
+    Num transactions is in ST but num Users PerDT is here. Redefine? Move to TS?
+    Something doesn't feel right.
+   -->
+  <Subtotal type="PerDT-PR">
+    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
+    <!-- Not incoming/outgoing this time -->
+    <Senders>4</Senders>
+    <Receives>2</Receives>
+  </Subtotal>
+  <!-- Now that Invoices are here, should that be generic? Like other DTs? -->
+  <Subtotal type="PerDT-PR">
+    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
+    <!-- Not incoming/outgoing this time -->
+    <Senders>3</Senders>
+    <Receives>2</Receives>
+  </Subtotal>
 </EndUserReport>
