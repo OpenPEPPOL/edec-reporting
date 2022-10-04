@@ -147,42 +147,44 @@
         >[TSR-25] $name MUST have one Key element with the meta scheme ID 'SP'</assert>
       <assert id="TSR-26" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
         >[TSR-26] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
-
-      <!-- TODO: add new rule for having one Key element with meta scheme ID 'PR' -->
-      <assert id="TSR-27" flag="fatal" test="every $x in (tsr:Key[normalize-space(@metaSchemeID) = 'SP']) satisfies 
+      <assert id="TSR-27" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'PR']) = 1">
+        [TSR-27] $name MUST have one Key element with the meta scheme ID 'PR'
+      </assert>
+      <assert id="TSR-28" flag="fatal" test="every $x in (tsr:Key[normalize-space(@metaSchemeID) = 'SP']) satisfies
                                                not(contains(normalize-space($x/@schemeID), ' ')) and 
                                                contains($cl_spidtype, concat(' ', normalize-space($x/@schemeID), ' '))"
-        >[TSR-27] $name MUST have one SP Key element with the scheme ID coded according to the code list</assert>
+        >[TSR-28] $name MUST have one SP Key element with the scheme ID coded according to the code list</assert>
     </rule>     
 
     <!-- Per Service Provider and DatasetType and Countries aggregation -->
     <rule context="/tsr:TransactionStatisticsReport/tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']">
       <let name="name" value="'The subtotal per Service Provider ID, Dataset Type ID, Sender Country and Receiver Country'" />
-      <assert id="TSR-28" flag="fatal" test="count(tsr:Key) = 5"
-        >[TSR-28] $name MUST have five Key elements</assert>
-      <assert id="TSR-29" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'SP']) = 1"
-        >[TSR-29] $name MUST have one Key element with the meta scheme ID 'SP'</assert>
-      <assert id="TSR-30" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
-        >[TSR-30] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
-      <assert id="TSR-31" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'CC']) = 2"
-        >[TSR-31] $name MUST have two Key element with the meta scheme ID 'CC'</assert>
-
-      <!-- TODO: add new rule for having one Key element with meta scheme ID 'PR' -->
-      <assert id="TSR-32" flag="fatal" test="every $x in (tsr:Key[normalize-space(@metaSchemeID) = 'SP']) satisfies 
+      <assert id="TSR-29" flag="fatal" test="count(tsr:Key) = 5"
+        >[TSR-29] $name MUST have five Key elements</assert>
+      <assert id="TSR-30" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'SP']) = 1"
+        >[TSR-30] $name MUST have one Key element with the meta scheme ID 'SP'</assert>
+      <assert id="TSR-31" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
+        >[TSR-31] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
+      <assert id="TSR-32" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'PR']) = 1">
+        [TSR-32] $name MUST have one Key element with the meta scheme ID 'PR'
+      </assert>
+      <assert id="TSR-33" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'CC']) = 2">
+        [TSR-33] $name MUST have two Key elements with the meta scheme ID 'CC'</assert>
+      <assert id="TSR-34" flag="fatal" test="every $x in (tsr:Key[normalize-space(@metaSchemeID) = 'SP']) satisfies
                                                not(contains(normalize-space($x/@schemeID), ' ')) and 
                                                contains($cl_spidtype, concat(' ', normalize-space($x/@schemeID), ' '))"
-        >[TSR-32] $name MUST have one SP Key element with the scheme ID coded according to the code list</assert>
-      <assert id="TSR-33" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'SenderCountry']) = 1"
-        >[TSR-33] $name MUST have one CC Key element with the scheme ID 'SenderCountry'</assert>
-      <assert id="TSR-34" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'ReceiverCountry']) = 1"
-        >[TSR-34] $name MUST have one CC Key element with the scheme ID 'ReceiverCountry'</assert>
+        >[TSR-34] $name MUST have one SP Key element with the scheme ID coded according to the code list</assert>
+      <assert id="TSR-35" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'SenderCountry']) = 1"
+        >[TSR-35] $name MUST have one CC Key element with the scheme ID 'SenderCountry'</assert>
+      <assert id="TSR-36" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'ReceiverCountry']) = 1"
+        >[TSR-36] $name MUST have one CC Key element with the scheme ID 'ReceiverCountry'</assert>
     </rule>     
 
     <!-- After all the specific Subtotals -->
     <rule context="/tsr:TransactionStatisticsReport/tsr:Subtotal">
-      <assert id="TSR-35" flag="fatal" test="not(contains(normalize-space(@type), ' ')) and 
+      <assert id="TSR-37" flag="fatal" test="not(contains(normalize-space(@type), ' ')) and
                                              contains($cl_subtotalType, concat(' ', normalize-space(@type), ' '))"
-        >[TSR-35] The Subtotal type (<value-of select="normalize-space(@type)" />) MUST be coded according to the code list</assert>
+        >[TSR-37] The Subtotal type (<value-of select="normalize-space(@type)" />) MUST be coded according to the code list</assert>
     </rule>
   </pattern>
 </schema>

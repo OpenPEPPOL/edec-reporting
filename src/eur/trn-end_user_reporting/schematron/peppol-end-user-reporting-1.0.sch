@@ -49,12 +49,13 @@
 
 
     <rule context="/eur:EndUserReport/eur:Totals">
-      <assert id="NEWNAME-01" flag="fatal" test="matches(normalize-space(eur:SendingEndUsers), '^\d+$')">
-        [NEWNAME-01] The Totals/SendingEndUsers  (<value-of select="normalize-space(eur:SendingEndUsers)"/>) MUST be a non-negative number
+      <assert id="EUR-07" flag="fatal" test="matches(normalize-space(eur:SendingEndUsers), '^\d+$')">
+        [EUR-07] The Totals/SendingEndUsers  (<value-of select="normalize-space(eur:SendingEndUsers)"/>) MUST be a non-negative number
       </assert>
-      <assert id="NEWNAME-02" flag="fatal" test="matches(normalize-space(eur:ReceivingEndUsers), '^\d+$')">
-        [NEWNAME-02] The Totals/ReceivingEndUsers  (<value-of select="normalize-space(eur:ReceivingEndUsers)"/>) MUST be a non-negative number
+      <assert id="EUR-08" flag="fatal" test="matches(normalize-space(eur:ReceivingEndUsers), '^\d+$')">
+        [EUR-08] The Totals/ReceivingEndUsers  (<value-of select="normalize-space(eur:ReceivingEndUsers)"/>) MUST be a non-negative number
       </assert>
     </rule>
+
   </pattern>
 </schema>
