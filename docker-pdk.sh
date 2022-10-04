@@ -1,1 +1,1 @@
-docker run --rm -i -v "$(pwd)":/src public.ecr.aws/openpeppol/pdk:latest pdk "$@"
+docker run --rm --pull=always -i -v "$(pwd)":/src public.ecr.aws/openpeppol/pdk:latest pdk "$@"
