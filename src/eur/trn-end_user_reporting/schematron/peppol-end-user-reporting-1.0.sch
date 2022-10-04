@@ -47,60 +47,14 @@
         >[EUR-06] The layout of the certificate subject CN (<value-of select="normalize-space(.)" />) is not a valid Peppol Seat ID</assert>
     </rule>
 
-    <rule context="/eur:EndUserReport/eur:EndUser">
-      <assert id="EUR-07" flag="fatal" test="normalize-space(eur:LegalID) != ''"
-        >[EUR-07] The End User's legal ID MUST be present</assert>
-      <assert id="EUR-08" flag="fatal" test="normalize-space(eur:LegalID/@schemeID) != ''"
-        >[EUR-08] The End User's legal ID scheme ID MUST be present</assert>
-      <assert id="EUR-09" flag="fatal" test="normalize-space(eur:LegalName) != ''"
-        >[EUR-09] The End User's legal name MUST be present</assert>
-      
-      <!-- Uniqueness checks -->
-      <assert id="EUR-10" flag="fatal" test="every $x in (eur:SendingDatasetTypeID) satisfies 
-                                               count(eur:SendingDatasetTypeID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
-        >[EUR-10] Each Sending Dataset Type ID must be reported only once.</assert>
-      <assert id="EUR-11" flag="fatal" test="every $x in (eur:ReceivingDatasetTypeID) satisfies 
-                                               count(eur:ReceivingDatasetTypeID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
-        >[EUR-11] Each Receiving Dataset Type ID must be reported only once.</assert>
-      <assert id="EUR-12" flag="fatal" test="every $x in (eur:ParticipantID) satisfies 
-                                               count(eur:ParticipantID[concat(normalize-space(@schemeID),'::',normalize-space(.)) = concat(normalize-space($x/@schemeID),'::',normalize-space($x))])= 1"
-        >[EUR-12] Each Participant ID must be reported only once.</assert>
-    </rule>
 
-    <rule context="/eur:EndUserReport/eur:EndUser/eur:SendingDatasetTypeID">
-      <assert id="EUR-13" flag="fatal" test="normalize-space(.) != ''"
-        >[EUR-13] The Sending Dataset Type ID MUST be present</assert>
-      <assert id="EUR-14" flag="fatal" test="normalize-space(@schemeID) != ''"
-        >[EUR-14] The Sending Dataset Type ID scheme ID MUST be present</assert>
-    </rule>
-
-    <rule context="/eur:EndUserReport/eur:EndUser/eur:ReceivingDatasetTypeID">
-      <assert id="EUR-15" flag="fatal" test="normalize-space(.) != ''"
-        >[EUR-15] The Receiving Dataset Type ID MUST be present</assert>
-      <assert id="EUR-16" flag="fatal" test="normalize-space(@schemeID) != ''"
-        >[EUR-16] The Receiving Dataset Type ID scheme ID MUST be present</assert>
-    </rule>
-
-    <rule context="/eur:EndUserReport/eur:EndUser/eur:ParticipantID">
-      <assert id="EUR-17" flag="fatal" test="normalize-space(.) != ''"
-        >[EUR-17] The Participant ID MUST be present</assert>
-      <assert id="EUR-18" flag="fatal" test="normalize-space(@schemeID) != ''"
-        >[EUR-18] The Participant ID scheme ID MUST be present</assert>
-    </rule>
-
-    <rule context="/eur:EndUserReport/eur:EndUser/eur:Intermediary">
-      <assert id="EUR-19" flag="fatal" test="normalize-space(eur:LegalID) != ''"
-        >[EUR-19] The Intermediary's legal ID MUST be present</assert>
-      <assert id="EUR-20" flag="fatal" test="normalize-space(eur:LegalID/@schemeID) != ''"
-        >[EUR-20] The Intermediary's legal ID scheme ID MUST be present</assert>
-      <assert id="EUR-21" flag="fatal" test="normalize-space(eur:LegalName) != ''"
-        >[EUR-21] The Intermediary's legal name MUST be present</assert>
-    </rule>
-
-    <rule context="/eur:EndUserReport/eur:EndUser/eur:Country | /eur:EndUserReport/eur:EndUser/eur:Intermediary/eur:Country">
-      <assert id="EUR-22" flag="fatal" test="not(contains(normalize-space(.), ' ')) and 
-                                             contains($cl_iso3166, concat(' ', normalize-space(.), ' '))"
-        >[EUR-22] The country code MUST be coded with ISO code ISO 3166-1 alpha-2. Nevertheless, Greece may use the code 'EL', Kosovo may use the code 'XK'.</assert>
+    <rule context="/eur:EndUserReport/eur:Totals">
+      <assert id="NEWNAME-01" flag="fatal" test="matches(normalize-space(eur:SendingEndUsers), '^\d+$')">
+        [NEWNAME-01] The Totals/SendingEndUsers  (<value-of select="normalize-space(eur:SendingEndUsers)"/>) MUST be a non-negative number
+      </assert>
+      <assert id="NEWNAME-02" flag="fatal" test="matches(normalize-space(eur:ReceivingEndUsers), '^\d+$')">
+        [NEWNAME-02] The Totals/ReceivingEndUsers  (<value-of select="normalize-space(eur:ReceivingEndUsers)"/>) MUST be a non-negative number
+      </assert>
     </rule>
   </pattern>
 </schema>

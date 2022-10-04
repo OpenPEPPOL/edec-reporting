@@ -22,7 +22,7 @@
   <pattern id="default">
     <let name="cl_iso3166" value="' 1A AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH EL ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS XI YE YT ZA ZM ZW '" />
     <let name="cl_spidtype" value="' CertSubjectCN '" />
-    <let name="cl_subtotalType" value="' PerTP PerSP-DT PerSP-DT-CC '" />
+    <let name="cl_subtotalType" value="' PerTP PerSP-DT-PR PerSP-DT-PR-CC '" />
     <let name="re_seatid" value="'^P[A-Z]{2}[0-9]{6}$'" />
  
     <rule context="/tsr:TransactionStatisticsReport">
@@ -51,37 +51,39 @@
         >[TSR-06] Each $name_tp MUST occur only once.</assert>
 
       <!-- Per Service Provider and Dataset Type -->
-      <let name="name_spdt" value="'Service Provider ID and Dataset Type ID'" />
-      <assert id="TSR-07" flag="fatal" test="$empty or tsr:Subtotal[normalize-space(@type) = 'PerSP-DT']"
-        >[TSR-07] The subtotals per $name_spdt are missing</assert>
-      <assert id="TSR-08" flag="fatal" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT']/tsr:Incoming) = tsr:Total/tsr:Incoming"
-        >[TSR-08] The sum of all subtotals per $name_spdt incoming MUST match the total incoming count</assert>
-      <assert id="TSR-09" flag="fatal" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT']/tsr:Outgoing) = tsr:Total/tsr:Outgoing"
-        >[TSR-09] The sum of all subtotals per $name_spdt outgoing MUST match the total outgoing count</assert>
-      <assert id="TSR-10" flag="fatal" test="every $st in (tsr:Subtotal[normalize-space(@type) = 'PerSP-DT']),
+      <let name="name_spdtpr" value="'Service Provider ID, Dataset Type ID and Process ID'" />
+      <assert id="TSR-07" flag="fatal" test="$empty or tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR']"
+        >[TSR-07] The subtotals per $name_spdtpr are missing</assert>
+      <assert id="TSR-08" flag="fatal" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR']/tsr:Incoming) = tsr:Total/tsr:Incoming"
+        >[TSR-08] The sum of all subtotals per $name_spdtpr incoming MUST match the total incoming count</assert>
+      <assert id="TSR-09" flag="fatal" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR']/tsr:Outgoing) = tsr:Total/tsr:Outgoing"
+        >[TSR-09] The sum of all subtotals per $name_spdtpr outgoing MUST match the total outgoing count</assert>
+      <assert id="TSR-10" flag="fatal" test="every $st in (tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR']),
                                                    $stsp in ($st/tsr:Key[normalize-space(@metaSchemeID) = 'SP']),
-                                                   $stdt in ($st/tsr:Key[normalize-space(@metaSchemeID) = 'DT']) satisfies 
-                                               count(tsr:Subtotal[normalize-space(@type) ='PerSP-DT'][every $sp in (tsr:Key[normalize-space(@metaSchemeID) = 'SP']),
-                                                                                                            $dt in (tsr:Key[normalize-space(@metaSchemeID) = 'DT']) satisfies
-                                                                                                       concat(normalize-space($sp/@schemeID),'::',normalize-space($sp),'::',normalize-space($dt/@schemeID),'::',normalize-space($dt)) = 
-                                                                                                       concat(normalize-space($stsp/@schemeID),'::',normalize-space($stsp),'::',normalize-space($stdt/@schemeID),'::',normalize-space($stdt))]) = 1"
-        >[TSR-10] Each combination of $name_spdt MUST occur only once.</assert>
+                                                   $stdt in ($st/tsr:Key[normalize-space(@metaSchemeID) = 'DT']),
+                                                   $stpr in ($st/tsr:Key[normalize-space(@metaSchemeID) = 'PR'])  satisfies
+                                               count(tsr:Subtotal[normalize-space(@type) ='PerSP-DT-PR'][every $sp in (tsr:Key[normalize-space(@metaSchemeID) = 'SP']),
+                                                                                                            $dt in (tsr:Key[normalize-space(@metaSchemeID) = 'DT']),
+                                                                                                            $pr in (tsr:Key[normalize-space(@metaSchemeID) = 'PR']) satisfies
+                                                                                                       concat(normalize-space($sp/@schemeID),'::',normalize-space($sp),'::',normalize-space($dt/@schemeID),'::',normalize-space($dt),'::',normalize-space($pr/@schemeID),'::',normalize-space($pr)) =
+                                                                                                       concat(normalize-space($stsp/@schemeID),'::',normalize-space($stsp),'::',normalize-space($stdt/@schemeID),'::',normalize-space($stdt),'::',normalize-space($stpr/@schemeID),'::',normalize-space($stpr))]) = 1"
+        >[TSR-10] Each combination of $name_spdtpr MUST occur only once.</assert>
 
 
       <!-- Per Service Provider and Dataset Type and Country to Country-->
-      <let name="name_spdtcc" value="'Service Provider ID, Dataset Type ID, Sender Country and Receiver Country'" />
-      <assert id="TSR-11" flag="warning" test="$empty or tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-CC']"
-        >[TSR-11] The subtotals per $name_spdtcc are missing</assert>
-      <assert id="TSR-12" flag="warning" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-CC']/tsr:Incoming) = tsr:Total/tsr:Incoming"
-        >[TSR-12] The sum of all subtotals per $name_spdtcc incoming MUST match the total incoming count</assert>
-      <assert id="TSR-13" flag="warning" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-CC']/tsr:Outgoing) = tsr:Total/tsr:Outgoing"
-        >[TSR-13] The sum of all subtotals per $name_spdtcc outgoing MUST match the total outgoing count</assert>
-      <assert id="TSR-14" flag="fatal" test="every $st in (tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-CC']),
+      <let name="name_spdtprcc" value="'Service Provider ID, Dataset Type ID, Process ID, Sender Country and Receiver Country'" />
+      <assert id="TSR-11" flag="warning" test="$empty or tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']"
+        >[TSR-11] The subtotals per $name_spdtprcc are missing</assert>
+      <assert id="TSR-12" flag="warning" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']/tsr:Incoming) = tsr:Total/tsr:Incoming"
+        >[TSR-12] The sum of all subtotals per $name_spdtprcc incoming MUST match the total incoming count</assert>
+      <assert id="TSR-13" flag="warning" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']/tsr:Outgoing) = tsr:Total/tsr:Outgoing"
+        >[TSR-13] The sum of all subtotals per $name_spdtprcc outgoing MUST match the total outgoing count</assert>
+      <assert id="TSR-14" flag="fatal" test="every $st in (tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']),
                                                    $stsp in ($st/tsr:Key[normalize-space(@metaSchemeID) = 'SP']),
                                                    $stdt in ($st/tsr:Key[normalize-space(@metaSchemeID) = 'DT']),
                                                    $stsc in ($st/tsr:Key[normalize-space(@schemeID) = 'SenderCountry']),
                                                    $strc in ($st/tsr:Key[normalize-space(@schemeID) = 'ReceiverCountry']) satisfies 
-                                               count(tsr:Subtotal[normalize-space(@type) ='PerSP-DT-CC'][every $sp in (tsr:Key[normalize-space(@metaSchemeID) = 'SP']),
+                                               count(tsr:Subtotal[normalize-space(@type) ='PerSP-DT-PR-CC'][every $sp in (tsr:Key[normalize-space(@metaSchemeID) = 'SP']),
                                                                                                                $dt in (tsr:Key[normalize-space(@metaSchemeID) = 'DT']),
                                                                                                                $sc in (tsr:Key[normalize-space(@schemeID) = 'SenderCountry']),
                                                                                                                $rc in (tsr:Key[normalize-space(@schemeID) = 'ReceiverCountry']) satisfies
@@ -91,7 +93,7 @@
                                                                                                           concat(normalize-space($stsp/@schemeID),'::',normalize-space($stsp),'::',
                                                                                                                   normalize-space($stdt/@schemeID),'::',normalize-space($stdt),'::',
                                                                                                                   normalize-space($stsc),'::',normalize-space($strc))]) = 1"
-        >[TSR-14] Each combination of $name_spdtcc MUST occur only once.</assert>
+        >[TSR-14] Each combination of $name_spdtprcc MUST occur only once.</assert>
     </rule>
 
     <rule context="/tsr:TransactionStatisticsReport/tsr:Header">
@@ -137,14 +139,16 @@
     </rule>
 
     <!-- Per Service Provider and DatasetType aggregation -->
-    <rule context="/tsr:TransactionStatisticsReport/tsr:Subtotal[normalize-space(@type) = 'PerSP-DT']">
-      <let name="name" value="'The subtotal per Service Provider ID and Dataset Type ID'" />
-      <assert id="TSR-24" flag="fatal" test="count(tsr:Key) = 2"
-        >[TSR-24] $name MUST have two Key elements</assert>
+    <rule context="/tsr:TransactionStatisticsReport/tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR']">
+      <let name="name" value="'The subtotal per Service Provider ID, Dataset Type ID and Process ID'" />
+      <assert id="TSR-24" flag="fatal" test="count(tsr:Key) = 3"
+        >[TSR-24] $name MUST have three Key elements</assert>
       <assert id="TSR-25" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'SP']) = 1"
         >[TSR-25] $name MUST have one Key element with the meta scheme ID 'SP'</assert>
       <assert id="TSR-26" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
         >[TSR-26] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
+
+      <!-- TODO: add new rule for having one Key element with meta scheme ID 'PR' -->
       <assert id="TSR-27" flag="fatal" test="every $x in (tsr:Key[normalize-space(@metaSchemeID) = 'SP']) satisfies 
                                                not(contains(normalize-space($x/@schemeID), ' ')) and 
                                                contains($cl_spidtype, concat(' ', normalize-space($x/@schemeID), ' '))"
@@ -152,16 +156,18 @@
     </rule>     
 
     <!-- Per Service Provider and DatasetType and Countries aggregation -->
-    <rule context="/tsr:TransactionStatisticsReport/tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-CC']">
+    <rule context="/tsr:TransactionStatisticsReport/tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']">
       <let name="name" value="'The subtotal per Service Provider ID, Dataset Type ID, Sender Country and Receiver Country'" />
-      <assert id="TSR-28" flag="fatal" test="count(tsr:Key) = 4"
-        >[TSR-28] $name MUST have four Key elements</assert>
+      <assert id="TSR-28" flag="fatal" test="count(tsr:Key) = 5"
+        >[TSR-28] $name MUST have five Key elements</assert>
       <assert id="TSR-29" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'SP']) = 1"
         >[TSR-29] $name MUST have one Key element with the meta scheme ID 'SP'</assert>
       <assert id="TSR-30" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
         >[TSR-30] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
       <assert id="TSR-31" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'CC']) = 2"
         >[TSR-31] $name MUST have two Key element with the meta scheme ID 'CC'</assert>
+
+      <!-- TODO: add new rule for having one Key element with meta scheme ID 'PR' -->
       <assert id="TSR-32" flag="fatal" test="every $x in (tsr:Key[normalize-space(@metaSchemeID) = 'SP']) satisfies 
                                                not(contains(normalize-space($x/@schemeID), ' ')) and 
                                                contains($cl_spidtype, concat(' ', normalize-space($x/@schemeID), ' '))"

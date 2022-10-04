@@ -7,27 +7,26 @@
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
 
-  <SenderCount>7</SenderCount>
-  <ReceiverCount>4</ReceiverCount> <!-- Australia/NZealand doont send that -->
+  <Totals>
+    <SendingEndUsers>7</SendingEndUsers>
+    <!-- Australia/NZealand don't send that -->
+    <ReceivingEndUsers>4</ReceivingEndUsers>
+  </Totals>
 
   <!-- Reflect # of "invoice" sending / receiving end users? -->
-  <!--
-    Num transactions is in ST but num Users PerDT is here. Redefine? Move to TS?
-    Something doesn't feel right.
-   -->
   <Subtotal type="PerDT-PR">
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
     <!-- Not incoming/outgoing this time -->
-    <Senders>4</Senders>
-    <Receives>2</Receives>
+    <SendingEndUsers>4</SendingEndUsers>
+    <ReceivingEndUsers>2</ReceivingEndUsers>
   </Subtotal>
   <!-- Now that Invoices are here, should that be generic? Like other DTs? -->
   <Subtotal type="PerDT-PR">
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
     <!-- Not incoming/outgoing this time -->
-    <Senders>3</Senders>
-    <Receives>2</Receives>
+    <SendingEndUsers>3</SendingEndUsers>
+    <ReceivingEndUsers>2</ReceivingEndUsers>
   </Subtotal>
 </EndUserReport>
