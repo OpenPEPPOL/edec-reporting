@@ -19,6 +19,7 @@
     <ReceivingDatasetTypeID schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:fdc:peppol.eu:poacc:trns:mlr:3::2.1</ReceivingDatasetTypeID>
 
     <ParticipantID schemeID="iso6523-actorid-upis">9999:test1</ParticipantID>
+    <ParticipantID schemeID="iso6523-actorid-upis">9999:test1</ParticipantID>
   </EndUser>
   <EndUser>
     <LegalID schemeID="orgnr">ID12346</LegalID>
@@ -44,7 +45,7 @@
     <ParticipantID schemeID="iso6523-actorid-upis">9999:test5</ParticipantID>
 
     <Intermediary>
-      <LegalID schemeID="">987654321</LegalID>
+      <LegalID schemeID="orgnr">987654321</LegalID>
       <LegalName>Inter 1</LegalName>
       <Country>BE</Country>
     </Intermediary>
