@@ -8,25 +8,20 @@
   </Header>
 
   <Totals>
-    <SendingEndUsers>7</SendingEndUsers>
-    <!-- Australia/NZealand don't send that -->
+    <SendingEndUsers>9</SendingEndUsers>
     <ReceivingEndUsers>4</ReceivingEndUsers>
   </Totals>
 
-  <!-- Reflect # of "invoice" sending / receiving end users? -->
   <Subtotal type="PerDT-PR">
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
-    <!-- Not incoming/outgoing this time -->
     <SendingEndUsers>4</SendingEndUsers>
     <ReceivingEndUsers>2</ReceivingEndUsers>
   </Subtotal>
-  <!-- Now that Invoices are here, should that be generic? Like other DTs? -->
   <Subtotal type="PerDT-PR">
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
-    <!-- Not incoming/outgoing this time -->
-    <SendingEndUsers>3</SendingEndUsers>
+    <SendingEndUsers>5</SendingEndUsers>
     <ReceivingEndUsers>2</ReceivingEndUsers>
   </Subtotal>
 </EndUserReport>
