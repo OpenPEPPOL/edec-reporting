@@ -9,8 +9,8 @@
 
   <Totals>
     <SendingEndUsers>9</SendingEndUsers>
-    <!-- [EUR-09] The Totals/ReceivingEndUsers MUST be a non-negative number -->
-    <ReceivingEndUsers>-2</ReceivingEndUsers>
+    <!-- [EUR-10] The Totals/ReceivingEndUsers MUST be a non-negative number -->
+    <ReceivingEndUsers>abc</ReceivingEndUsers>
   </Totals>
 
   <Subtotal type="PerDT-PR">
