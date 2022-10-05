@@ -14,10 +14,7 @@
   </Total>
   
   <!-- Sum per TP must match TotalCount -->
-  <!--
-    [TSR-37] The Subtotal @type attribute MUST be coded according to the code list
-  -->
-  <Subtotal type="  ">
+  <Subtotal type="PerTP">
     <Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</Key>
     <Incoming>23</Incoming>
     <Outgoing>0</Outgoing>
@@ -25,8 +22,11 @@
 
   <!-- Subtotals must match Total -->
   <Subtotal type="PerSP-DT-PR">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
-    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <!--
+      [TSR-27] The subtotal per Service Provider ID, Dataset Type ID and Process ID
+      (PerSP-DT-PR) MUST have one Key element with the meta scheme ID 'PR'
+    -->
+    <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
     <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
     <Incoming>5</Incoming>
     <Outgoing>0</Outgoing>
