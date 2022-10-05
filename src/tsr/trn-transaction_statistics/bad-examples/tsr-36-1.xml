@@ -22,7 +22,7 @@
 
   <!-- Subtotals must match Total -->
   <Subtotal type="PerSP-DT-PR">
-    <Key metaSchemeID="SP" schemeID="xCertSubjectCN">POP000001</Key>
+    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <Incoming>5</Incoming>
     <Outgoing>0</Outgoing>
@@ -56,7 +56,7 @@
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <Key metaSchemeID="CC" schemeID="SenderCountry">DE</Key>
-    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
+    <Key metaSchemeID="CC" schemeID="ReceiverCountryX">DE</Key>
     <Incoming>1</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>
