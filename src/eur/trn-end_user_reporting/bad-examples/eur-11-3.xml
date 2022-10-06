@@ -7,10 +7,10 @@
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
 
-  <Totals>
+  <Total>
     <SendingEndUsers>4</SendingEndUsers>
     <ReceivingEndUsers>2</ReceivingEndUsers>
-  </Totals>
+  </Total>
 
   <Subtotal type="PerDT-PR">
     <!-- [EUR-11] The subtotal per Dataset Type ID and Process ID (PerDT-PR) MUST have two Key elements -->

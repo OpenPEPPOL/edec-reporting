@@ -7,9 +7,9 @@
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
 
-  <Totals>
+  <Total>
     <SendingEndUsers>0</SendingEndUsers>
     <ReceivingEndUsers>0</ReceivingEndUsers>
-  </Totals>
+  </Total>
 
 </EndUserReport>

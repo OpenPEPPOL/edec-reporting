@@ -10,9 +10,9 @@ codes:
 - id: PerTP
   name:
     en: Aggregated per Transport Profile
-- id: PerSP-DT
+- id: PerSP-DT-PR
   name:
-    en: Aggregated per Service Provider and Dataset Type ID
-- id: PerSP-DT-CC
+    en: Aggregated per Service Provider, Dataset Type ID and Process ID
+- id: PerSP-DT-PR-CC
   name:
-    en: Aggregated per Service Provider, Dataset Type ID, Sender Country and Receiver Country
+    en: Aggregated per Service Provider, Dataset Type ID, Process ID, Sender Country and Receiver Country

@@ -106,7 +106,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Totals" type="TotalsType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Total" type="TotalsType" minOccurs="1" maxOccurs="1"/>
       <xs:element name="Subtotal" type="SubtotalType" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation>

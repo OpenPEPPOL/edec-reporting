@@ -8,3 +8,5 @@ generated/
 *.iml
 .project
 ~$*
+# Ignore local scripts (starting with a dot)
+.*.sh

@@ -1,24 +1,15 @@
 title:
   en: Subtotal Key Meta Scheme
-identifier: Peppol:TSR:SubtotalKeyMetaScheme
+identifier: Peppol:EUR:SubtotalKeyMetaScheme
 agency: OpenPeppol OO
 language: en
 version:
   identifier: 2022-01
   status: draft
 codes:
-- id: SP
-  name:
-    en: Service Provider ID
 - id: DT
   name:
     en: Dataset Type ID
 - id: PR
   name:
     en: Process ID
-- id: TP
-  name:
-    en: Transport Profile ID
-- id: CC
-  name:
-    en: Country Code
