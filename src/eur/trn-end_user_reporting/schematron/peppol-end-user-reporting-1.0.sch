@@ -24,67 +24,49 @@
     <let name="cl_spidtype" value="' CertSubjectCN '"/>
 
     <rule context="/eur:EndUserReport">
-      <assert id="EUR-01" flag="fatal" test="normalize-space(eur:CustomizationID) = 'urn:fdc:peppol.eu:oo:trns:end-user-report:1'">
-        [EUR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:oo:trns:end-user-report:1'
-      </assert>
-      <assert id="EUR-02" flag="fatal" test="normalize-space(eur:ProfileID) = 'urn:fdc:peppol.eu:oo:bis:reporting:1'">
-        [EUR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:oo:bis:reporting:1'
-      </assert>
-
-      <assert id="EUR-03" flag="fatal" test="sum(eur:Subtotal/eur:SendingEndUsers) = eur:Totals/eur:SendingEndUsers">
-        [EUR-03] The sum of all subtotals of SendingEndUsers should be equal to Totals/SendingEndUsers
-      </assert>
-
-      <assert id="EUR-04" flag="fatal" test="sum(eur:Subtotal/eur:ReceivingEndUsers) = eur:Totals/eur:ReceivingEndUsers">
-        [EUR-04] The sum of all subtotals of ReceivingEndUsers should be equal to Totals/ReceivingEndUsers
-      </assert>
+      <assert id="EUR-01" flag="fatal" test="normalize-space(eur:CustomizationID) = 'urn:fdc:peppol.eu:oo:trns:end-user-report:1'"
+        >[EUR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:oo:trns:end-user-report:1'</assert>
+      <assert id="EUR-02" flag="fatal" test="normalize-space(eur:ProfileID) = 'urn:fdc:peppol.eu:oo:bis:reporting:1'"
+        >[EUR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:oo:bis:reporting:1'</assert>
+      <assert id="EUR-03" flag="fatal" test="sum(eur:Subtotal/eur:SendingEndUsers) = eur:Totals/eur:SendingEndUsers"
+        >[EUR-03] The sum of all subtotals of SendingEndUsers should be equal to Totals/SendingEndUsers</assert>
+      <assert id="EUR-04" flag="fatal" test="sum(eur:Subtotal/eur:ReceivingEndUsers) = eur:Totals/eur:ReceivingEndUsers"
+        >[EUR-04] The sum of all subtotals of ReceivingEndUsers should be equal to Totals/ReceivingEndUsers</assert>
     </rule>
 
     <rule context="/eur:EndUserReport/eur:Header">
-      <assert id="EUR-05" flag="fatal" test="matches(normalize-space(eur:ReportPeriod), '^[0-9]{4}\-[0-9]{2}$')">
-        [EUR-05] The reporting period (<value-of select="normalize-space(eur:ReportPeriod)"/>) MUST NOT contain timezone information
-      </assert>
+      <assert id="EUR-05" flag="fatal" test="matches(normalize-space(eur:ReportPeriod), '^[0-9]{4}\-[0-9]{2}$')"
+        >[EUR-05] The reporting period (<value-of select="normalize-space(eur:ReportPeriod)"/>) MUST NOT contain timezone information</assert>
     </rule>
 
     <rule context="/eur:EndUserReport/eur:Header/eur:ReporterID">
-      <assert id="EUR-06" flag="fatal" test="normalize-space(.) != ''">
-        [EUR-06] The Reporter ID MUST be present
-      </assert>
+      <assert id="EUR-06" flag="fatal" test="normalize-space(.) != ''"
+        >[EUR-06] The Reporter ID MUST be present</assert>
       <assert id="EUR-07" flag="fatal" test="not(contains(normalize-space(@schemeID), ' ')) and
-                                             contains($cl_spidtype, concat(' ', normalize-space(@schemeID), ' '))">
-        [EUR-07] The Reporter ID scheme ID (<value-of select="normalize-space(@schemeID)"/>) MUST be coded according to the code list
-      </assert>
+                                             contains($cl_spidtype, concat(' ', normalize-space(@schemeID), ' '))"
+        >[EUR-07] The Reporter ID scheme ID (<value-of select="normalize-space(@schemeID)"/>) MUST be coded according to the code list</assert>
       <assert id="EUR-08" flag="fatal" test="(@schemeID='CertSubjectCN' and
                                               matches(normalize-space(.), '^P[A-Z]{2}[0-9]{6}$')) or 
-                                             not(@schemeID='CertSubjectCN')">
-        [EUR-08] The layout of the certificate subject CN (<value-of select="normalize-space(.)"/>) is not a valid Peppol Seat ID
-      </assert>
+                                             not(@schemeID='CertSubjectCN')"
+        >[EUR-08] The layout of the certificate subject CN (<value-of select="normalize-space(.)"/>) is not a valid Peppol Seat ID</assert>
     </rule>
-
 
     <rule context="/eur:EndUserReport/eur:Totals">
-      <assert id="EUR-09" flag="fatal" test="matches(normalize-space(eur:SendingEndUsers), '^\d+$')">
-        [EUR-09] The Totals/SendingEndUsers (<value-of select="normalize-space(eur:SendingEndUsers)"/>) MUST be a non-negative number
-      </assert>
-      <assert id="EUR-10" flag="fatal" test="matches(normalize-space(eur:ReceivingEndUsers), '^\d+$')">
-        [EUR-10] The Totals/ReceivingEndUsers (<value-of select="normalize-space(eur:ReceivingEndUsers)"/>) MUST be a non-negative number
-      </assert>
+      <assert id="EUR-09" flag="fatal" test="matches(normalize-space(eur:SendingEndUsers), '^\d+$')"
+        >[EUR-09] The Totals/SendingEndUsers (<value-of select="normalize-space(eur:SendingEndUsers)"/>) MUST be a non-negative number</assert>
+      <assert id="EUR-10" flag="fatal" test="matches(normalize-space(eur:ReceivingEndUsers), '^\d+$')"
+        >[EUR-10] The Totals/ReceivingEndUsers (<value-of select="normalize-space(eur:ReceivingEndUsers)"/>) MUST be a non-negative number</assert>
     </rule>
-
 
     <!-- Per Dataset Type and Process ID aggregation -->
     <rule context="/eur:EndUserReport/eur:Subtotal[normalize-space(@type) = 'PerDT-PR']">
       <let name="name" value="'The subtotal per Dataset Type ID and Process ID'"/>
-      <assert id="EUR-11" flag="fatal" test="count(eur:Key) = 2">
-        [EUR-11] $name MUST have two Key elements
-      </assert>
-      <assert id="EUR-12" flag="fatal" test="count(eur:Key[normalize-space(@metaSchemeID) = 'DT']) = 1">
-        [EUR-12] $name MUST have one Key element with the meta scheme ID 'DT'
-      </assert>
-      <assert id="EUR-13" flag="fatal" test="count(eur:Key[normalize-space(@metaSchemeID) = 'PR']) = 1">
-        [EUR-13] $name MUST have one Key element with the meta scheme ID 'PR'
-      </assert>
+      <assert id="EUR-11" flag="fatal" test="count(eur:Key) = 2"
+        >[EUR-11] $name MUST have two Key elements</assert>
+      <assert id="EUR-12" flag="fatal" test="count(eur:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
+        >[EUR-12] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
+      <assert id="EUR-13" flag="fatal" test="count(eur:Key[normalize-space(@metaSchemeID) = 'PR']) = 1"
+        >[EUR-13] $name MUST have one Key element with the meta scheme ID 'PR'</assert>
     </rule>
-
   </pattern>
 </schema>
