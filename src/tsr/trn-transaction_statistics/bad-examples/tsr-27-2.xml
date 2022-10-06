@@ -22,6 +22,8 @@
 
   <!-- Subtotals must match Total -->
   <Subtotal type="PerSP-DT-PR">
+    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
+    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <!--
       [TSR-27] The subtotal per Service Provider ID, Dataset Type ID and Process ID
       (PerSP-DT-PR) MUST have one Key element with the meta scheme ID 'PR'
