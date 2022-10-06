@@ -9,7 +9,7 @@
 
   <Totals>
     <!-- [EUR-09] The Totals/SendingEndUsers MUST be a non-negative number -->
-    <SendingEndUsers>-1</SendingEndUsers>
+    <SendingEndUsers>abc</SendingEndUsers>
     <ReceivingEndUsers>4</ReceivingEndUsers>
   </Totals>
 
