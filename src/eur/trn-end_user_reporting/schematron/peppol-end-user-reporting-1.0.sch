@@ -51,22 +51,15 @@
         >[EUR-08] The layout of the certificate subject CN (<value-of select="normalize-space(.)"/>) is not a valid Peppol Seat ID</assert>
     </rule>
 
-    <rule context="/eur:EndUserReport/eur:Total">
-      <assert id="EUR-09" flag="fatal" test="matches(normalize-space(eur:SendingEndUsers), '^\d+$')"
-        >[EUR-09] The Totals/SendingEndUsers (<value-of select="normalize-space(eur:SendingEndUsers)"/>) MUST be a non-negative number</assert>
-      <assert id="EUR-10" flag="fatal" test="matches(normalize-space(eur:ReceivingEndUsers), '^\d+$')"
-        >[EUR-10] The Totals/ReceivingEndUsers (<value-of select="normalize-space(eur:ReceivingEndUsers)"/>) MUST be a non-negative number</assert>
-    </rule>
-
     <!-- Per Dataset Type and Process ID aggregation -->
     <rule context="/eur:EndUserReport/eur:Subtotal[normalize-space(@type) = 'PerDT-PR']">
       <let name="name" value="'The subtotal per Dataset Type ID and Process ID'"/>
-      <assert id="EUR-11" flag="fatal" test="count(eur:Key) = 2"
-        >[EUR-11] $name MUST have two Key elements</assert>
-      <assert id="EUR-12" flag="fatal" test="count(eur:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
-        >[EUR-12] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
-      <assert id="EUR-13" flag="fatal" test="count(eur:Key[normalize-space(@metaSchemeID) = 'PR']) = 1"
-        >[EUR-13] $name MUST have one Key element with the meta scheme ID 'PR'</assert>
+      <assert id="EUR-09" flag="fatal" test="count(eur:Key) = 2"
+        >[EUR-09] $name MUST have two Key elements</assert>
+      <assert id="EUR-10" flag="fatal" test="count(eur:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
+        >[EUR-10] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
+      <assert id="EUR-11" flag="fatal" test="count(eur:Key[normalize-space(@metaSchemeID) = 'PR']) = 1"
+        >[EUR-11] $name MUST have one Key element with the meta scheme ID 'PR'</assert>
     </rule>
   </pattern>
 </schema>

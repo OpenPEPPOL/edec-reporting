@@ -8,21 +8,14 @@
   </Header>
 
   <Total>
-    <!-- [EUR-09] The Totals/SendingEndUsers MUST be a non-negative number -->
-    <SendingEndUsers>-5</SendingEndUsers>
-    <ReceivingEndUsers>4</ReceivingEndUsers>
+    <SendingEndUsers>4</SendingEndUsers>
+    <ReceivingEndUsers>2</ReceivingEndUsers>
   </Total>
 
   <Subtotal type="PerDT-PR">
+    <!-- [EUR-11] The subtotal per Dataset Type ID and Process ID (PerDT-PR) MUST have two Key elements -->
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
-    <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
     <SendingEndUsers>4</SendingEndUsers>
-    <ReceivingEndUsers>2</ReceivingEndUsers>
-  </Subtotal>
-  <Subtotal type="PerDT-PR">
-    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
-    <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
-    <SendingEndUsers>5</SendingEndUsers>
     <ReceivingEndUsers>2</ReceivingEndUsers>
   </Subtotal>
 </EndUserReport>

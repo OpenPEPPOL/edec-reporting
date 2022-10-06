@@ -5,6 +5,7 @@
   <!-- [EUR-06] The Reporter ID MUST be present -->
   <Header>
     <ReportPeriod>2022-01</ReportPeriod>
+    <ReporterID></ReporterID>
   </Header>
   <Total>
     <SendingEndUsers>9</SendingEndUsers>
