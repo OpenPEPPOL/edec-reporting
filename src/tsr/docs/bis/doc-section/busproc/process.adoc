@@ -25,6 +25,8 @@ image::./images/process-view.png[]
     2. Direction of the exchange (incoming or outgoing)
     3. Sending Peppol Service Provider
     4. Receiving Peppol Service Provider
+// NOTE: Process ID was deliberately left out in order to ensure
+//       alignment with the IR
     5. Peppol Dataset Type (Document Type ID)
     6. Transport protocol used
     7. Country of sender
