@@ -1,0 +1,15 @@
+[[codelist-subtotaltype]]
+= Subtotal Type
+
+The Subtotal Type determines the kind of aggregation that is contained in
+  a subtotal element. It determines the amount and types of
+  keys for a subtotal.
+
+[cols="1,4"]
+|===
+h| Document location
+| `eur:EndUserReport/eur:Subtotal/@type`
+
+h| Source code list
+| link:../end_user_reporting/codelist/SubtotalType/[Subtotal Type code list]
+|===

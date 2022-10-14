@@ -18,40 +18,30 @@ image::./images/process-view.png[]
 
 * Data
 ** Only Service Providers offering the exchange of Dataset Types MUST
-   gather this data and transmit an End User Report.
+   gather this data and transmit as an End User Report.
 ** Only Data for production MUST be sent.
-** All End Users that are capable of sending or receiving Datasets
-   within the Reporting Period MUST be part of the End User Report.
-** The following data elements MUST be provided for each End User
-*** Legal identifier of the End User in the jurisdiction within 
-    which it is legally based
-*** The legal identifier Type (e.g., VAT number, company 
-    registration number)
-*** Country of the End User’s legal address
-*** If applicable, the territory of the End User’s legal address
-*** All Dataset Type identifiers the End User has sent during the reporting period
-*** All Dataset Type identifiers the End User has received during the reporting period
-*** All Peppol Participant identifiers used in the Peppol Network,
-    related only to the Peppol Services which that particular 
-    Service Provider offers to them.
-    
-NOTE: The following block on Intermediaries is optional by default 
-      and may become mandatory through Peppol Authority 
-      Specific Requirements (PASR) only.
-           
-** Where intermediaries are both actively involved in the 
-   transmission of the End Users’ Peppol Services and hold a 
-   contractual relationship with the End User, the following 
-   information MUST be reported about each Intermediary:
-*** Legal identifier of the Intermediary
-*** Type of the legal identifier of the Intermediary
-*** Legal name of the Intermediary
-*** Country of the Intermediary's legal address
-*** If applicable, the territory of the Intermediary's legal address
+** The following data elements MUST be provided for each End User Report
+*** Number of users that have sent a dataset
+*** Number of end users that have received a dataset
+*** Peppol Dataset Type (Document Type ID) and Profile ID (Process ID)
+
+
+** Only Dataset exchanges that resulted in a positive transport level
+acknowledgments (like AS4 Receipts) MUST be included in the End User Report.
+Transmissions that failed on a network or protocol
+level MUST NOT to be considered for the report.
+*** End User Reports MUST NOT be counted for an End User Report.
+*** Transaction Statistics Reports themselves MUST NOT be counted for an End User Report.
 
 == Data Aggregation
 
-No data aggregation is needed for the End User Report.
+Before the End User Report data is transmitted to OpenPeppol it needs to be aggregated. The aggregation
+can be performed on any of the above-mentioned osurce fields defined by the Internal Regulations.
+
+The following aggregations MUST be provided to be compliant with this specification.
+
+* The Dataset Type and Process ID.
+
 
 == Data Transmission
 
@@ -61,20 +51,18 @@ No data aggregation is needed for the End User Report.
 ** An End User Report MUST be transmitted within 10 calendar days 
    (inclusive) after the end of the previous Reporting Period
 ** The End User Report must be transmitted, even if no other Peppol
-   transactions happened in the Reporting Period
+   transactions happened in the Reporting Period.
 ** In case the End User Report of one Service Provider is received
    multiple times for one Reporting Period, only the latest received 
    document will be processed.
 ** End User Reports received after the deadline WILL NOT be processed.   
 
 * Data
-** Only End User Reports on the Production stage MUST be transmitted
-** Each End User MUST NOT occur more than once in an End User Report
-** The data of each End User must each be reported in a designated
-   element 
-** The Reporting Period MUST be part of the End User Report
-** An identifier uniquely identifying the reporting Service Provider 
-   MUST be part of the End User Report
+** Only End User Reports on the Production environment MUST be transmitted
+** Each aggregation per Dataset Type and Process ID pair MUST NOT occur more than once in an End User Report.
+** The Reporting Period MUST be part of the End User Report.
+** An identifier uniquely identifying the reporting Service Provider
+   MUST be part of the End User Report.
 
 * Network
 ** End User Reports MUST be transmitted via the Peppol eDelivery

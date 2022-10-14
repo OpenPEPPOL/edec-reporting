@@ -49,7 +49,7 @@ Before the Transaction Statistics Report data is transmitted to OpenPeppol
   
 The following aggregations MUST be provided to be compliant to this specification:
 
-* Transport Protocol only
+* Transport Protocol
 * Service Provider, Dataset Type and Process ID
 * Service Provider, Dataset Type, Process ID, Sender Country and Receiver Country
 
@@ -71,7 +71,7 @@ The following aggregations MUST be provided to be compliant to this specificatio
 ** Transaction Statistics Reports received after the deadline WILL NOT be processed.   
 
 * Data
-** Only Transaction Statistics Reports on the Production stage MUST be transmitted
+** Only Transaction Statistics Reports on the Production environment MUST be transmitted
 ** Each Transaction Statistics MUST NOT occur more than once in a 
    Transaction Statistics Report
 ** The data of each Transaction Statistics must be reported in the designated

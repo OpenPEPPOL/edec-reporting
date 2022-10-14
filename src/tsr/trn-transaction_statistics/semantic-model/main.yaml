@@ -45,7 +45,7 @@ content:
 
   - id: TRBG-2
     name: Total values
-    definition: Contains the actual total of exchanged Datasets
+    definition: Contains the total of exchanged Datasets
     cardinality: 1..1
     children:
 
