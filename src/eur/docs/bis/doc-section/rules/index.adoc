@@ -2,82 +2,69 @@
 End User Reporting process rules
 
 .Business rules
-[cols="1h,5",options="header"]
+[cols="1h,5,1h",options="header"]
 |====
 
 |RuleID
 |Requirement (depending, as applicable, on the respective business case)
+|Validation Level
 
-|BR-EUR-01
-|The Report MUST contain an identification of the specification it conforms to.
+| BR-EUR-01
+| The Report MUST contain an identification of the specification it conforms to.
+| XSD
 
-|BR-EUR-02
-|The Report MUST contain an identification of the business process context it appears in.
+| BR-EUR-02
+| The Report MUST contain an identification of the business process context it appears in.
+| XSD
 
-|BR-EUR-03
-|The Report MUST contain the year and the month in which the reported data was gathered.
+| BR-EUR-03
+| The Report MUST contain the year and the month in which the reported data was gathered.
+| XSD
 
-|BR-EUR-04
-|The Report MUST not not contain timezone information for the Reporting Period.
+| BR-EUR-04
+| The Report MUST not contain timezone information for the Reporting Period.
+| SCH-EUR-05
 
-|BR-EUR-05
-|The Report MUST uniquely identify the reporting Service Provider.
+| BR-EUR-05
+| The Report MUST uniquely identify the reporting Service Provider.
+| #*Uniquely Identify ??*# - SCH-EUR-06 -- 08 ?
 
-|BR-EUR-06
-|The scheme for identifying the reporting Service Provider MUST follow the "Reporter ID Scheme" code list
+| BR-EUR-06
+| The scheme for identifying the reporting Service Provider MUST follow the "Reporter ID Scheme" code list
+| SCH-EUR-07
 
-|BR-EUR-07
-|If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID MUST be a valid Peppol seat ID.
+| BR-EUR-07
+| If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID MUST be a valid Peppol seat ID.
+| SCH-EUR-08
 
-|BR-EUR-08
-|The Report MUST contain the details of no, one or multiple End Users.
+| BR-EUR-08
+| The Report MUST contain the total number of end users that have sent datasets during the reporting period.
+| XSD
 
-|BR-EUR-09
-|The Report MUST contain the legal identifier of every reported End User.
+| BR-EUR-09
+| The Report MUST contain the total number of end users that have received datasets during the reporting period.
+| XSD
 
-|BR-EUR-10
-|The Report MUST contain the legal name of every reported End User.
+| BR-EUR-10
+| The Report MUST contain the number of sending end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
+| #TODO: SCH-EUR-03?#
 
-|BR-EUR-11
-|The Report MUST contain the country code of every reported End User.
+| BR-EUR-11
+| The Report MUST contain the number of receiving end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
+| #TODO: SCH-EUR-04?#
 
-|BR-EUR-12
-|Each country code reported, MUST be specified following the ISO-3166-1 Alpha2 code list.
+| BR-EUR-12
+| The sum of all the number of end users that have sent datasets in the Reporting Period aggregated by Dataset Type ID and Process ID, MUST match the total number of sending end users.
+| SCH-EUR-03
 
-|BR-EUR-13
-|The Report MUST contain an enumeration of all Dataset Type IDs sent out on behalf the End User in the Reporting Period.
+| BR-EUR-13
+| The sum of all the number of end users that have received datasets in the Reporting Period aggregated by Dataset Type ID and Process ID, MUST match the total number of sending end users.
+| SCH-EUR-04
 
-|BR-EUR-14
-|Each Dataset Type IDs sent out on behalf the End User in the Reporting Period, MUST be reported with identifier scheme and identifier value.
-
-|BR-EUR-15
-|Each Dataset Type IDs sent out on behalf the End User in the Reporting Period, MUST be present no more than once in the Report.
-
-|BR-EUR-16
-|The Report MUST contain an enumeration of all Dataset Type IDs received on behalf the End User in the Reporting Period.
-
-|BR-EUR-17
-|Each Dataset Type IDs received on behalf the End User in the Reporting Period, MUST be reported with identifier scheme and identifier value.
-
-|BR-EUR-18
-|Each Dataset Type IDs received on behalf the End User in the Reporting Period, MUST be present no more than once in the Report.
-
-|BR-EUR-19
-|The Report MUST contain an enumeration of all Peppol Participant IDs used by an End User in the Reporting Period.
-
-|BR-EUR-20
-|Each Peppol Participant IDs used by an End User in the Reporting Period, MUST be reported with identifier scheme and identifier value.
-
-|BR-EUR-21
-|Each Dataset Type IDs received on behalf the End User in the Reporting Period, MUST be present no more than once in the Report.
-
-|BR-EUR-22
-|The Report MUST contain the legal identifier of every reported Intermediary of any End User.
-
-|BR-EUR-23
-|The Report MUST contain the legal name of every reported Intermediary of any End User.
-
-|BR-EUR-24
-|The Report MUST contain the country code of every reported Intermediary of any End User.
+| BR-EUR-14
+| Each combination of Dataset Type ID and Process ID, for which data is aggregated, MUST NOT occur more than once.
+| #TODO# add the missing SCH rule
 
 |====
+
+#TODO# Some schematron rules are not mentioned here (eg. EUR-09, 10, 11). Is that OK?

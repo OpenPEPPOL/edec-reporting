@@ -30,10 +30,14 @@ Each distinct combination of the Dataset Type and Process ID MUST be reported in
 `Subtotal` element.
 
 The sum of the number of all end users who have sent out datasets per Dataset Type and Process ID
-must macth the total number of sending en users.
+must match the total number of sending en users.
 
 The sum of the number of all end users who have received datasets per Dataset Type and Process ID
-must macth the total number of receiving en users.
+must match the total number of receiving en users.
 
-NOTE: asdfasdf
 
+.Example of a subtotal per Dataset Type and Process ID:
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=SubtotalPerDT-PR]
+----
