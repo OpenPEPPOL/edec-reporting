@@ -2,10 +2,10 @@
 <schema xmlns="http://purl.oclc.org/dsdl/schematron"
         queryBinding='xslt2'
         schemaVersion="ISO19757-3">
-  <title>OpenPeppol End User Reporting</title>
+  <title>OpenPeppol End User Report</title>
 
   <p id="about">
-    This is the Schematron for the Peppol End User Reporting.
+    This is the Schematron for the Peppol End User Reports.
     This is based on the "Internal Regulations" document,
     chapter 4.3 "Service Provider Reporting about End Users"
 
@@ -60,6 +60,12 @@
         >[EUR-10] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
       <assert id="EUR-11" flag="fatal" test="count(eur:Key[normalize-space(@metaSchemeID) = 'PR']) = 1"
         >[EUR-11] $name MUST have one Key element with the meta scheme ID 'PR'</assert>
+    </rule>
+
+    <rule context="//*[not(*) and not(normalize-space())]">
+      <assert id="EUR-12" test="false()" flag="fatal"
+      >[EUR-12] The Document MUST not contain empty elements.
+      </assert>
     </rule>
   </pattern>
 </schema>

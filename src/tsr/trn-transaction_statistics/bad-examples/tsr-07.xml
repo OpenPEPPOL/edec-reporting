@@ -21,7 +21,7 @@
   </Subtotal>
 
 
-  <!-- [TSR-07] The subtotals per Service Provider ID, Dataset Type ID and Process ID (PerSP-DT-PR) are missing -->
+  <!-- [TSR-07] The subtotals per Service Provider ID, Dataset Type ID and Process ID (PerSP-DT-PR) MUST exist -->
 
   <!-- Subtotals must match Total -->
   <Subtotal type="PerSP-DT-PR-CC">

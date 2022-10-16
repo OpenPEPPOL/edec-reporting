@@ -15,7 +15,7 @@ content:
 
   - id: ERBG-1
     name: Report Header
-    definition: End User Report header metadata.
+    definition: End User Report header data.
     cardinality: 1..1
     children:
       - id: ERBT-003
@@ -83,7 +83,7 @@ content:
           - id: ERBT-009
             name: Meta scheme identifier
             definition: Defines the meta scheme identifier of this subtotal key
-              Must follow the "SubtotalKeyMetaScheme" code list
+              must follow the "SubtotalKeyMetaScheme" code list
             cardinality: 1..1
             value:
               datatype: Code

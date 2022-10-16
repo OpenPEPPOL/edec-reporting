@@ -47,6 +47,6 @@
 
   <!--
     [TSR-11] The subtotals per Service Provider ID, Dataset Type ID, Process ID, Sender Country and Receiver Country
-     PerSP-DT-PR-CC are missing
+     PerSP-DT-PR-CC MUST exist
    -->
 </TransactionStatisticsReport>

@@ -13,7 +13,7 @@
     <Outgoing>0</Outgoing>
   </Total>
 
-  <!-- [TSR-03] The subtotals per Transport Protocol ID (PerTP) are missing -->
+  <!-- [TSR-03] The subtotals per Transport Protocol ID (PerTP) MUST exist -->
 
   <!-- Subtotals must match Total -->
   <Subtotal type="PerSP-DT-PR">

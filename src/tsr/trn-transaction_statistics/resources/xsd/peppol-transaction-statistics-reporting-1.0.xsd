@@ -173,7 +173,6 @@
         <xs:annotation>
           <xs:documentation>
             Contains the number of exchanged datasets for different aggregations.
-            The "type" attribute of this element defines the expected content.
           </xs:documentation>
         </xs:annotation>
       </xs:element>

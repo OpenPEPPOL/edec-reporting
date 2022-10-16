@@ -66,7 +66,6 @@ content:
   - id: TRBG-3
     name: Subtotal values
     definition: Contains the number of exchanged datasets for different aggregations.
-       The "type" attribute of this element defines the expected content.
     cardinality: 0..n
     children:
 
@@ -89,7 +88,7 @@ content:
           - id: TRBT-009
             name: Meta scheme identifier
             definition: Defines the meta scheme identifier of this subtotal key
-              Must follow the "SubtotalKeyMetaScheme" code list
+              must follow the "SubtotalKeyMetaScheme" code list
             cardinality: 1..1
             value:
               datatype: Code
