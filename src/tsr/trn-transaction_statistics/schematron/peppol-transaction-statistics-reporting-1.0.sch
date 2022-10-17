@@ -232,8 +232,8 @@
     </rule>
 
     <rule context="//*[not(*) and not(normalize-space())]">
-      <assert id="EUR-12" test="false()" flag="fatal"
-      >[EUR-38] The Document MUST not contain empty elements.
+      <assert id="TSR-38" test="false()" flag="fatal"
+      >[TSR-38] The Document MUST not contain empty elements.
       </assert>
     </rule>
   </pattern>
