@@ -34,7 +34,7 @@ Transaction Statistics Reporting process rules
 | SCH-TSR-17
 
 | BR-TSR-07
-| If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID MUST be a valid Peppol Seat ID.
+| If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID MUST the CN part of the Peppol AP certificate Subject.
 | SCH-TSR-18
 
 | BR-TSR-08

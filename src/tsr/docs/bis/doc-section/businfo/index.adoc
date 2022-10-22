@@ -1,4 +1,4 @@
-= Business Information
+= Description of selected parts of the Transaction Statistic Reports
 
 Description of selected parts of the Transaction Statistics Report message.
 

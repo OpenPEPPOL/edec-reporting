@@ -17,8 +17,7 @@ image::./images/process-view.png[]
    at 23:59:59 UTC (inclusive).
 
 * Data
-** Only Service Providers offering the exchange of Dataset Types MUST
-   gather this data and transmit as an End User Report.
+** Only Service Providers operating a production Peppol Access Point must gather this data and transmit an End User Report.
 ** Only Data for production MUST be sent.
 ** The following data elements MUST be provided for each End User Report
 *** Number of users that have sent a dataset
@@ -27,7 +26,7 @@ image::./images/process-view.png[]
 
 
 ** Only Dataset exchanges that resulted in a positive transport level
-acknowledgments (like AS4 Receipts) MUST be included in the End User Report.
+acknowledgment (like AS4 Receipts) MUST be included in the End User Report.
 Transmissions that failed on a network or protocol
 level MUST NOT to be considered for the report.
 *** End User Reports MUST NOT be counted for an End User Report.

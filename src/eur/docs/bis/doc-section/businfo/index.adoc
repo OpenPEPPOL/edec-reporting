@@ -1,4 +1,4 @@
-= An overview of the End User Report Messages
+= Description of selected parts of the End User Reports
 
 Description of selected parts of the End User Report message.
 

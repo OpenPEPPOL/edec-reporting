@@ -16,8 +16,8 @@ image::./images/process-view.png[]
    00:00:00 UTC (inclusive) and ends with the last day of said month
    at 23:59:59 UTC (inclusive).
 * Data
-** Only Service Providers offering the exchange of Dataset Types must
-   gather this data and transmit a Transaction Statistics Report.
+** Only Service Providers operating a production Peppol Access Point must gather this data and
+transmit a Transaction Statistics Report.
 ** Only data for production MUST be sent.
 ** According to the Internal Regulations, chapter 4.4, the following 
    information elements need to be gathered for each exchanged Dataset:
@@ -32,7 +32,7 @@ image::./images/process-view.png[]
     7. Country of sender
     8. Country of receiver
 ** Only Dataset exchanges that resulted in a positive transport level
-   acknowledgments (like AS4 Receipts) MUST be included in the Transaction
+   acknowledgment (like AS4 Receipts) MUST be included in the Transaction
    Statistics Report. Transmissions that failed on a network or protocol
    level MUST NOT to be considered for the report.
 *** End User Reports MUST NOT be counted for a Transaction Statistics Report

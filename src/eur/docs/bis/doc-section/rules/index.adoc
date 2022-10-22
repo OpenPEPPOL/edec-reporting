@@ -34,7 +34,7 @@ End User Reporting process rules
 | SCH-EUR-07
 
 | BR-EUR-07
-| If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID MUST be a valid Peppol seat ID.
+| If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID MUST be the CN part of the Peppol AP certificate Subject
 | SCH-EUR-08
 
 | BR-EUR-08
