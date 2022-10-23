@@ -78,7 +78,6 @@ include::./snippet/snippet-1.xml[tags=SubtotalPerSP-DT-PR]
 ----
 
 == Subtotal per Service Provider, Dataset Type, Process ID Country Codes
-//TODO: Continue here
 This subtotal is identified by the `@type` attribute having the value `PerSP-DT-PR-CC`.
 
 * This subtotal requires one `Key` element with a Meta Scheme ID of `SP`
@@ -117,7 +116,12 @@ The sum all outgoing amounts `PerSP-DT-PR-CC`  MUST match the total outgoing amo
 NOTE: For outgoing messages, only the receiving Service Provider needs
   to be counted. For incoming messages, only the sending Service Provider needs
   to be counted. The other side must always be the reporting Service Provider
-  that is already part of the header data. 
+  that is already part of the header data.
+
+
+NOTE: This subtotal is optional and will be mandatory when the backing eDEC
+specifications become mandatory.
+
 
 .Example of a subtotal per Service Provider, Dataset Type , Process ID and Country Codes:
 [source, xml]

@@ -30,10 +30,9 @@ transmit a Transaction Statistics Report.
     5. Peppol Dataset Type (Document Type ID)
     6. Transport protocol used
 // NOTE: CC's need to be optional
-    7. Country of sender
-    8. Country of receiver
-// TODO agree with JD
-** The Country of the sender and receiver will be mandatory, when the backing eDEC specifications become mandatory
+    7. Country of sender *
+    8. Country of receiver *
+
 ** Only Dataset exchanges that resulted in a positive transport level
    acknowledgment (like AS4 Receipts) MUST be included in the Transaction
    Statistics Report. Transmissions that failed on a network or protocol
@@ -41,7 +40,9 @@ transmit a Transaction Statistics Report.
 *** End User Reports MUST NOT be counted for a Transaction Statistics Report
 *** Transaction Statistics Reports MUST NOT be counted for a Transaction Statistics Report
 *** Each message MUST be counted only once by an SP (incoming or outgoing), it MUST NOT be counted twice.
-    
+
+// TODO agree with JD
+NOTE: * The Country of the sender and receiver will be mandatory, when the backing eDEC specifications become mandatory
 
 
 == Data Aggregation
@@ -54,6 +55,9 @@ The following aggregations MUST be provided to be compliant to this specificatio
 
 * Transport Protocol
 * Service Provider, Dataset Type and Process ID
+
+The following aggregations MAY be provided to be compliant to this specification:
+
 * Service Provider, Dataset Type, Process ID, Sender Country and Receiver Country
 
 == Data Transmission
