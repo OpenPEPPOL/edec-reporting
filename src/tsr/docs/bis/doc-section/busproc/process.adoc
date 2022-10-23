@@ -32,6 +32,8 @@ transmit a Transaction Statistics Report.
 // NOTE: CC's need to be optional
     7. Country of sender
     8. Country of receiver
+// TODO agree with JD
+** The Country of the sender and receiver will be mandatory, when the backing eDEC specifications become mandatory
 ** Only Dataset exchanges that resulted in a positive transport level
    acknowledgment (like AS4 Receipts) MUST be included in the Transaction
    Statistics Report. Transmissions that failed on a network or protocol
