@@ -19,7 +19,7 @@ image::./images/process-view.png[]
 ** Only Service Providers operating a production Peppol Access Point must gather this data and
 transmit a Transaction Statistics Report.
 ** Only data for production MUST be sent.
-** According to the Internal Regulations, chapter 4.4, the following 
+** According to the Internal Regulations (IR), chapter 4.4, the following
    information elements need to be gathered for each exchanged Dataset:
     1. Timing of the exchange
     2. Direction of the exchange (incoming or outgoing)
@@ -29,6 +29,7 @@ transmit a Transaction Statistics Report.
 //       alignment with the IR
     5. Peppol Dataset Type (Document Type ID)
     6. Transport protocol used
+// NOTE: CC's need to be optional
     7. Country of sender
     8. Country of receiver
 ** Only Dataset exchanges that resulted in a positive transport level
@@ -36,8 +37,8 @@ transmit a Transaction Statistics Report.
    Statistics Report. Transmissions that failed on a network or protocol
    level MUST NOT to be considered for the report.
 *** End User Reports MUST NOT be counted for a Transaction Statistics Report
-*** Transaction Statistics Reports themselves MUST NOT be counted for a
-    Transaction Statistics Report
+*** Transaction Statistics Reports MUST NOT be counted for a Transaction Statistics Report
+*** Each message MUST be counted only once by an SP (incoming or outgoing), it MUST NOT be counted twice.
     
 
 
@@ -45,7 +46,7 @@ transmit a Transaction Statistics Report.
 
 Before the Transaction Statistics Report data is transmitted to OpenPeppol
   it needs to be aggregated. The aggregation can be performed on any of the
-  above mentioned source fields defined by the Internal Regulations.
+  above-mentioned source fields defined by the Internal Regulations.
   
 The following aggregations MUST be provided to be compliant to this specification:
 
@@ -56,7 +57,7 @@ The following aggregations MUST be provided to be compliant to this specificatio
 == Data Transmission
 
 // TODO needed
-// Elaboration on Business Requirements (see Philip's excel file) on Data Transmission
+// Elaboration on Business Requirements (see Philip's Excel file) on Data Transmission
 
 * Frequency
 ** A Transaction Statistics Report MUST be transmitted once per month 

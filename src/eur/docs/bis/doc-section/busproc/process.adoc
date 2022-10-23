@@ -30,7 +30,9 @@ acknowledgment (like AS4 Receipts) MUST be included in the End User Report.
 Transmissions that failed on a network or protocol
 level MUST NOT to be considered for the report.
 *** End User Reports MUST NOT be counted for an End User Report.
-*** Transaction Statistics Reports themselves MUST NOT be counted for an End User Report.
+*** Transaction Statistics Reports MUST NOT be counted for an End User Report.
+*** Each message MUST be counted only once by an SP (incoming or outgoing), it MUST NOT be counted twice.
+
 
 == Data Aggregation
 
