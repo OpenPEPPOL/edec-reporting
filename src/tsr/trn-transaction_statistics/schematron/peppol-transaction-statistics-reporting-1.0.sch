@@ -87,13 +87,14 @@
 
       <!-- Per Service Provider and Dataset Type and Country to Country-->
       <let name="name_spdtprcc" value="'Service Provider ID, Dataset Type ID, Process ID, Sender Country and Receiver Country'"/>
-      <assert id="TSR-11" flag="warning" test="$empty or tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']"
-      >[TSR-11] The subtotals per $name_spdtprcc MUST exist
+      <let name="cc_exists" value="tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']"/>
+      <assert id="TSR-11" flag="fatal" test="$empty or $cc_exists or true()"
+      >[TSR-11] The subtotals per $name_spdtprcc MAY exist
       </assert>
-      <assert id="TSR-12" flag="warning" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']/tsr:Incoming) = tsr:Total/tsr:Incoming"
+      <assert id="TSR-12" flag="warning" test="not($cc_exists) or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']/tsr:Incoming) = tsr:Total/tsr:Incoming"
       >[TSR-12] The sum of all subtotals per $name_spdtprcc incoming MUST match the total incoming count
       </assert>
-      <assert id="TSR-13" flag="warning" test="$empty or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']/tsr:Outgoing) = tsr:Total/tsr:Outgoing"
+      <assert id="TSR-13" flag="warning" test="not($cc_exists) or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']/tsr:Outgoing) = tsr:Total/tsr:Outgoing"
       >[TSR-13] The sum of all subtotals per $name_spdtprcc outgoing MUST match the total outgoing count
       </assert>
       <assert id="TSR-14" flag="fatal" test="every $st in (tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']),
