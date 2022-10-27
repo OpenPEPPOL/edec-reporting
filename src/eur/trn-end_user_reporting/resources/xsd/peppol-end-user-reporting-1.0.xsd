@@ -8,23 +8,21 @@
     <xs:documentation>
       This is the XML schema for the Peppol End User Reporting.
       This is based on the "Internal Regulations" document,
-      chapter 4.3 "Service Provider Reporting about End Users"
+        chapter 4.3 "Service Provider Reporting about End Users"
 
       Author:
-      Philip Helger
+        Philip Helger
 
       History:
-      2022-04-14, Philip Helger
-      initial version
-      2022-10-04, Muhammet Yildiz
-      Updates after the Review
+        2022-10-04, Muhammet Yildiz - Updates after the Review
+        2022-04-14, Philip Helger - initial version
     </xs:documentation>
   </xs:annotation>
 
   <xs:complexType name="IDType">
     <xs:annotation>
       <xs:documentation>
-        A generic ID type with a mandatory schemeID attribute and a value
+        A generic ID type with an optional "schemeID" attribute and a value
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>

@@ -6,16 +6,16 @@
            attributeFormDefault="unqualified">
   <xs:annotation>
     <xs:documentation>
-       This is the XML schema for the Peppol Transaction Statistics Reporting
-       This is based on the "Internal Regulations" document, 
-         chapter 4.4 "Service Provider Reporting on Transaction Statistics"
-       
-       Author:
-         Philip Helger
+      This is the XML schema for the Peppol Transaction Statistics Reporting
+      This is based on the "Internal Regulations" document, 
+        chapter 4.4 "Service Provider Reporting on Transaction Statistics"
+      
+      Author:
+        Philip Helger
 
-       History: 
-         2022-04-13, Philip Helger
-           initial version
+      History: 
+        2022-10-04, Muhammet Yildiz - Updates after the Review
+        2022-04-13, Philip Helger - initial version
     </xs:documentation>
   </xs:annotation>
 
@@ -39,7 +39,7 @@
   <xs:complexType name="HeaderType">
     <xs:annotation> 
       <xs:documentation>
-        The type for the report metadata.
+        The type for the report header metadata.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

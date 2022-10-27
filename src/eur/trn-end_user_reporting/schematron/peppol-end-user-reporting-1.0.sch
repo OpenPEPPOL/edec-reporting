@@ -7,14 +7,14 @@
   <p id="about">
     This is the Schematron for the Peppol End User Reports.
     This is based on the "Internal Regulations" document,
-    chapter 4.3 "Service Provider Reporting about End Users"
+      chapter 4.3 "Service Provider Reporting about End Users"
 
     Author:
-    Philip Helger
+      Philip Helger
 
     History:
-    2022-04-15, Philip Helger
-    initial version
+      2022-10-27, Muhammet Yildiz - updates after review
+      2022-04-15, Philip Helger - initial version
   </p>
 
   <ns prefix="eur" uri="urn:fdc:peppol:end-user-reporting:1.0"/>
@@ -63,8 +63,7 @@
 
     <rule context="//*[not(*) and not(normalize-space())]">
       <assert id="EUR-12" test="false()" flag="fatal"
-      >[EUR-12] The Document MUST not contain empty elements.
-      </assert>
+      >[EUR-12] The Document MUST not contain empty elements.</assert>
     </rule>
   </pattern>
 </schema>
