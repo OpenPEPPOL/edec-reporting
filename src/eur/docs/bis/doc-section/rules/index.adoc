@@ -66,5 +66,3 @@ End User Reporting process rules
 | SCH-EUR-13
 
 |====
-
-// #TODO# Some schematron rules are not mentioned here (eg. EUR-09, 10, 11). Is that OK?
