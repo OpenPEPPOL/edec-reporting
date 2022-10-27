@@ -1,6 +1,6 @@
 include::./settings.adoc[]
 
-:description: Peppol Central Reporting platform (CRP) collects statistics that is sent by the Peppol Service Providers and aggregates the collected data into reports that are submitted to OpenPeppol and later also the Peppol Authorities.
+:description: Peppol Transaction Reporting BIS.
 :icons: font
 :stem:
 :toc: left
