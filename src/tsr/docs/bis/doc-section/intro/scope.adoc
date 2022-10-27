@@ -1,6 +1,8 @@
 = Scope
 
-This document is concerned with clarifying the requirements for ensuring compliance to the Internal Regulations (IR) requirements and provides guidelines for the support and implementation of these requirements. This document will also provide a detailed implementation guideline for the invoice and credit note transactions; to do that, the document sets out the processes and procedure for Transaction Statistics reporting process including:
+This document is concerned with clarifying the requirements for ensuring compliance to the Internal Regulations (IR) requirements and provides guidelines for the support and implementation of these requirements.
+This document will also provide a detailed implementation guideline for the Transaction Statistics Report transactions;
+to do that, the document sets out the processes and procedure for Transaction Statistics reporting process including:
 
 . Parties and Roles,
 . Document Structure,

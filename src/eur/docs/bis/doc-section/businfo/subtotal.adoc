@@ -1,6 +1,6 @@
 = Subtotals
 
-And End User Report contains subtotals per distinct pairs of Dataset Type and Process ID.
+An End User Report contains subtotals per distinct pairs of Dataset Type and Process ID.
 The purpose of this grouping is to get information about number of end users that
 have participated in a certain data exchange process.
 
@@ -8,7 +8,7 @@ Currently only a data aggregation in terms of subtotal per Dataset Type and Proc
 A subtotal is represented by a `Subtotal` element, which requires an attribute
 named `@type` which is set to `PerDT-PR`. In order to keep the possibility of future
 extensions on the subtotal type, the value range for `@type` has been defined
-in the   <<codelist-subtotaltype>> code list
+in the <<codelist-subtotaltype>> code list
 
 == Subtotal per Dataset Type and Process ID
 
@@ -17,7 +17,7 @@ It is defined by the `@type` attribute having the value `PerDT-PR`.
 
 * This subtotal requires one `Key` element with a Meta Scheme ID of `DT` (Dataset Type).
 The `@schemeID` attribute of this `Key` element MUST be the Document Type Identifier Scheme
-of the exchanged Dataset (usuallt `busdox-docid-qns`). The value of the `Key` element MUST be
+of the exchanged Dataset (usually `busdox-docid-qns`). The value of the `Key` element MUST be
 the Dataset Type (Document Type) Identifier value of the exchanged dataset.
 
 * This subtotal requires one `Key` element with Meta Scheme ID of `PR` (Process ID).
@@ -30,10 +30,10 @@ Each distinct combination of the Dataset Type and Process ID MUST be reported in
 `Subtotal` element.
 
 The sum of the number of all end users who have sent out datasets per Dataset Type and Process ID
-must match the total number of sending en users.
+must match the total number of sending end users.
 
 The sum of the number of all end users who have received datasets per Dataset Type and Process ID
-must match the total number of receiving en users.
+must match the total number of receiving end users.
 
 
 .Example of a subtotal per Dataset Type and Process ID:

@@ -2,7 +2,8 @@
 
 This document is concerned with clarifying the requirements for ensuring compliance to the
 Internal Regulations (IR) requirements and provides guidelines for the support and implementation of these requirements.
-This document will also provide a detailed sample implementation guideline for the invoice, credit note and order transactions; to do that, the document sets out the processes and procedure for End User reporting process including:
+This document will also provide a detailed sample implementation guideline for the End User Report transaction;
+to do that, the document sets out the processes and procedure for End User reporting process including:
 
 . Parties and Roles,
 . Document Structure,

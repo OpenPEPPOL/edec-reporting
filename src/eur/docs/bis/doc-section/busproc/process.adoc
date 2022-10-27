@@ -20,8 +20,8 @@ image::./images/process-view.png[]
 ** Only Service Providers operating a production Peppol Access Point must gather this data and transmit an End User Report.
 ** Only Data for production MUST be sent.
 ** The following data elements MUST be provided for each End User Report
-*** Number of users that have sent a dataset
-*** Number of end users that have received a dataset
+*** Number of End Users that have sent a Dataset
+*** Number of End Users that have received a Dataset
 *** Peppol Dataset Type (Document Type ID) and Profile ID (Process ID)
 
 
@@ -37,7 +37,7 @@ level MUST NOT to be considered for the report.
 == Data Aggregation
 
 Before the End User Report data is transmitted to OpenPeppol it needs to be aggregated. The aggregation
-can be performed on any of the above-mentioned osurce fields defined by the Internal Regulations.
+can be performed on any of the above-mentioned source fields defined by the Internal Regulations.
 
 The following aggregations MUST be provided to be compliant with this specification.
 
