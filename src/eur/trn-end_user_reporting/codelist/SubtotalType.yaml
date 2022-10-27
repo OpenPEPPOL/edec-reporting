@@ -1,0 +1,12 @@
+title:
+  en: Subtotal Type
+identifier: Peppol:EUR:SubtotalType
+agency: OpenPeppol OO
+language: en
+version:
+  identifier: 2022-01
+  status: draft
+codes:
+- id: PerDT-PR
+  name:
+    en: Aggregated per Dataset Type and Process ID

@@ -1,31 +1,31 @@
 content:
-  - id: IBT-001
+  - id: TRBT-001
     name: Specification identifier
     definition: An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.
     cardinality: 1..1
     value:
       datatype: Identifier
 
-  - id: IBT-002
+  - id: TRBT-002
     name: Business process type
     definition: Identifies the business process context in which the transaction appears, to enable the receiver to process the document in an appropriate way.
     cardinality: 1..1
     value:
       datatype: Identifier
 
-  - id: IBG-1
+  - id: TRBG-1
     name: Report Header
     definition: Transaction Statistics header metadata.
     cardinality: 1..1
     children:
-      - id: IBT-003
+      - id: TRBT-003
         name: Report period
         definition: The year and month the data in this report refers to.
         cardinality: 1..1
         value:
           datatype: YearMonth
 
-      - id: IBT-004
+      - id: TRBT-004
         name: Reporter identification
         definition: The unique identification of the Service Provider that 
           is providing the data.
@@ -33,7 +33,7 @@ content:
         value:
           datatype: Identifier
         
-      - id: IBT-005
+      - id: TRBT-005
         name: Reporter identification scheme
         definition: This value must follow the "ReporterIDScheme" code list.
           Currently only "CertSubjectCN" for the Peppol AP Certificate 
@@ -43,34 +43,33 @@ content:
           datatype: Code
           codelist: ReporterIDScheme
 
-  - id: IBG-2
+  - id: TRBG-2
     name: Total values
-    definition: Contains the actual total of exchanged Datasets
+    definition: Contains the total of exchanged Datasets
     cardinality: 1..1
     children:
 
-      - id: IBT-006
+      - id: TRBT-006
         name: Incoming total
         definition: The total number of received Datasets in the reporting period
         cardinality: 1..1
         value:
           datatype: Count
 
-      - id: IBT-007
+      - id: TRBT-007
         name: Outgoing total
         definition: The total number of sent Datasets in the reporting period
         cardinality: 1..1
         value:
           datatype: Count
 
-  - id: IBG-3
+  - id: TRBG-3
     name: Subtotal values
     definition: Contains the number of exchanged datasets for different aggregations.
-       The "type" attribute of this element defines the expected content.
     cardinality: 0..n
     children:
 
-      - id: IBT-008
+      - id: TRBT-008
         name: Subtotal type
         definition: Defines the expected Key elements and their meta schemes.
           The codelist for this field is "SubtotalType"
@@ -79,23 +78,23 @@ content:
           datatype: Code
           codelist: SubtotalType
           
-        # Note: IBG-4 is not referenced from the syntax model and that is fine          
-      - id: IBG-4
+        # Note: TRBG-4 is not referenced from the syntax model and that is fine          
+      - id: TRBG-4
         name: Subtotal key
         definition: Defines the keys, depending on the chosen Subtotal Type
         cardinality: 1..n
         children:
           
-          - id: IBT-009
+          - id: TRBT-009
             name: Meta scheme identifier
             definition: Defines the meta scheme identifier of this subtotal key
-              Must follow the "SubtotalKeyMetaScheme" code list
+              must follow the "SubtotalKeyMetaScheme" code list
             cardinality: 1..1
             value:
               datatype: Code
               codelist: SubtotalKeyMetaScheme
               
-          - id: IBT-010
+          - id: TRBT-010
             name: Scheme identifier
             definition: Defines the scheme identifier, depending on the Meta scheme
               identifier.
@@ -103,21 +102,21 @@ content:
             value:
               datatype: Identifier
               
-          - id: IBT-011
+          - id: TRBT-011
             name: Identifier value
             definition: Defines the main identifier value following the Scheme identifier.
             cardinality: 1..1
             value:
               datatype: Identifier
 
-      - id: IBT-012
+      - id: TRBT-012
         name: Incoming subtotal
         definition: The number of received Datasets in the reporting period matching this subtotal
         cardinality: 1..1
         value:
           datatype: Count
 
-      - id: IBT-013
+      - id: TRBT-013
         name: Outgoing subtotal
         definition: The total number of sent Datasets in the reporting period matching this subtotal
         cardinality: 1..1

@@ -11,104 +11,53 @@ content:
   cardinality: 1..1
   children:
   - element: eur:CustomizationID
-    reference: IBT-001
+    reference: ERBT-001
 
   - element: eur:ProfileID
-    reference: IBT-002
+    reference: ERBT-002
 
   - element: eur:Header
-    reference: IBG-1
-    children:  
+    reference: ERBG-1
+    children:
 
     - element: eur:ReportPeriod
-      reference: IBT-003
+      reference: ERBT-003
 
     - element: eur:ReporterID
-      reference: IBT-004
-      attribute: 
-      
-      - element: schemeID
-        reference: IBT-005
-
-  - element: eur:EndUser
-    reference: IBG-2
-    children:  
-
-    - element: eur:LegalID
-      reference: IBT-006
-      attribute: 
-      
-      - element: schemeID
-        name: Scheme identifier
-        definition: The scheme identifier does not follow a code list. If possible, the values of the Peppol
-          Participant Identifier Scheme Code List SHOULD be used (like "9914" for an
-          Austrian VAT number).
-        cardinality: 1..1
-        type: Identifier
-
-    - element: eur:LegalName
-      reference: IBT-007
-
-    - element: eur:Country
-      reference: IBT-008
-
-    - element: eur:Territory
-      reference: IBT-009
-
-    - element: eur:SendingDatasetID
-      reference: IBT-010
+      reference: ERBT-004
       attribute:
-      
+
       - element: schemeID
-        name: Scheme identifier
-        definition: The Dataset / Document Type Identfier scheme value
-          like "busdox-docid-qns"  
-        cardinality: 1..1
-        type: Identifier
+        reference: ERBT-005
 
-    - element: eur:ReceivingDatasetID
-      reference: IBT-011
-      attribute:
-      
-      - element: schemeID
-        name: Scheme identifier
-        definition: The Dataset / Document Type Identfier scheme value
-          like "busdox-docid-qns"  
-        cardinality: 1..1
-        type: Identifier
+  - element: eur:Total
+    reference: ERBG-2
+    children:
+      - element: eur:SendingEndUsers
+        reference: ERBT-006
 
-    - element: eur:ParticipantID
-      reference: IBT-012
-      attribute:
-      
-      - element: schemeID
-        name: Scheme identifier
-        definition: The Participant Identfier scheme value
-          like "iso6523-actorid-upis"  
-        cardinality: 1..1
-        type: Identifier
+      - element: eur:ReceivingEndUsers
+        reference: ERBT-007
 
-    - element: eur:Intermediary
-      reference: IBG-3
-      children:
+  - element: eur:Subtotal
+    reference: ERBG-3
+    attribute:
+      - element: type
+        reference: ERBT-008
 
-      - element: eur:LegalID
-        reference: IBT-013
-        attribute: 
-        
-        - element: schemeID
-          name: Scheme identifier
-          definition: The scheme identifier does not follow a code list. If possible, the values of the Peppol
-            Participant Identifier Scheme Code List SHOULD be used (like "9914" for an
-            Austrian VAT number).
-          cardinality: 1..1
-          type: Identifier
+    children:
+      - element: eur:Key
+        # TODO: can PDK reference two? Shouldn't ERBG-4 be preferred on ERBT-011
+        reference: ERBT-011
+        # Also reference: ERBG-4
+        attribute:
+          - element: metaSchemeID
+            reference: ERBT-009
 
-      - element: eur:LegalName
-        reference: IBT-014
-        
-      - element: eur:Country
-        reference: IBT-015
-        
-      - element: eur:Territory
-        reference: IBT-016
+          - element: schemeID
+            reference: ERBT-010
+      - element: eur:SendingEndUsers
+        reference: ERBT-012
+      - element: eur:ReceivingEndUsers
+        reference: ERBT-013
+
