@@ -23,14 +23,27 @@
     <let name="cl_spidtype" value="' CertSubjectCN '"/>
 
     <rule context="/eur:EndUserReport">
+      <let name="total" value="eur:Total/eur:SendingEndUsers + eur:Total/eur:ReceivingEndUsers"/>
+      <let name="empty" value="$total = 0"/>
+
       <assert id="EUR-01" flag="fatal" test="normalize-space(eur:CustomizationID) = 'urn:fdc:peppol.eu:oo:trns:end-user-report:1'"
         >[EUR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:oo:trns:end-user-report:1'</assert>
       <assert id="EUR-02" flag="fatal" test="normalize-space(eur:ProfileID) = 'urn:fdc:peppol.eu:oo:bis:reporting:1'"
         >[EUR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:oo:bis:reporting:1'</assert>
-      <assert id="EUR-03" flag="fatal" test="sum(eur:Subtotal/eur:SendingEndUsers) = eur:Total/eur:SendingEndUsers"
+      <assert id="EUR-03" flag="fatal" test="$empty or sum(eur:Subtotal/eur:SendingEndUsers) = eur:Total/eur:SendingEndUsers"
         >[EUR-03] The sum of all subtotals of SendingEndUsers should be equal to Totals/SendingEndUsers</assert>
-      <assert id="EUR-04" flag="fatal" test="sum(eur:Subtotal/eur:ReceivingEndUsers) = eur:Total/eur:ReceivingEndUsers"
+      <assert id="EUR-04" flag="fatal" test="$empty or sum(eur:Subtotal/eur:ReceivingEndUsers) = eur:Total/eur:ReceivingEndUsers"
         >[EUR-04] The sum of all subtotals of ReceivingEndUsers should be equal to Totals/ReceivingEndUsers</assert>
+      <assert id="EUR-13" flag="fatal" test="every $st in (eur:Subtotal[normalize-space(@type) = 'PerDT-PR']),
+                                                   $stdt in ($st/eur:Key[normalize-space(@metaSchemeID) = 'DT']),
+                                                   $stpr in ($st/eur:Key[normalize-space(@metaSchemeID) = 'PR'])  satisfies
+                                               count(eur:Subtotal[normalize-space(@type) ='PerDT-PR'][every $dt in (eur:Key[normalize-space(@metaSchemeID) = 'DT']),
+                                                                                                            $pr in (eur:Key[normalize-space(@metaSchemeID) = 'PR']) satisfies
+                                                                                                      concat(normalize-space($dt/@schemeID),'::',normalize-space($dt),'::',
+                                                                                                             normalize-space($pr/@schemeID),'::',normalize-space($pr)) =
+                                                                                                      concat(normalize-space($stdt/@schemeID),'::',normalize-space($stdt),'::',
+                                                                                                             normalize-space($stpr/@schemeID),'::',normalize-space($stpr))]) = 1"
+      >[EUR-13] Each combination of 'Dataset Type ID and Process ID' MUST occur only once.</assert>
     </rule>
 
     <rule context="/eur:EndUserReport/eur:Header">

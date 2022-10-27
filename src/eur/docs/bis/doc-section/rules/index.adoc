@@ -27,7 +27,7 @@ End User Reporting process rules
 
 | BR-EUR-05
 | The Report MUST uniquely identify the reporting Service Provider.
-| #*Uniquely Identify ??*# - SCH-EUR-06 -- 08 ?
+| SCH-EUR-08
 
 | BR-EUR-06
 | The scheme for identifying the reporting Service Provider MUST follow the "Reporter ID Scheme" code list
@@ -47,11 +47,11 @@ End User Reporting process rules
 
 | BR-EUR-10
 | The Report MUST contain the number of sending end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
-| #TODO: SCH-EUR-03?#
+| SCH-EUR-03
 
 | BR-EUR-11
 | The Report MUST contain the number of receiving end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
-| #TODO: SCH-EUR-04?#
+| SCH-EUR-04
 
 | BR-EUR-12
 | The sum of all the number of end users that have sent datasets in the Reporting Period aggregated by Dataset Type ID and Process ID, MUST match the total number of sending end users.
@@ -63,8 +63,8 @@ End User Reporting process rules
 
 | BR-EUR-14
 | Each combination of Dataset Type ID and Process ID, for which data is aggregated, MUST NOT occur more than once.
-| #TODO# add the missing SCH rule
+| SCH-EUR-13
 
 |====
 
-#TODO# Some schematron rules are not mentioned here (eg. EUR-09, 10, 11). Is that OK?
+// #TODO# Some schematron rules are not mentioned here (eg. EUR-09, 10, 11). Is that OK?
