@@ -1,6 +1,6 @@
 include::./settings.adoc[]
 
-:description: Peppol End User Reporting BIS.
+:description: Peppol End User Report BIS.
 :icons: font
 :stem:
 :toc: left

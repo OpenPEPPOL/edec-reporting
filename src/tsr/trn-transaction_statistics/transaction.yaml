@@ -1,4 +1,4 @@
-title: Transaction-Statistics Reporting
+title: Transaction Statistics Reporting
 
 hugo:
   weight: 1
@@ -11,5 +11,4 @@ validation:
   xsd: resources/xsd/peppol-transaction-statistics-reporting-1.0.xsd
   schematron:
    - schematron/peppol-transaction-statistics-reporting-1.0.sch
-#   - schematron/schematron-native.sch
    
