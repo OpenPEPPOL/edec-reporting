@@ -10,21 +10,21 @@ In the table below you will find the values to be used as the specification iden
 |Process ID
 
 |Transaction Statistics Report
-|`urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1`
-|`urn:fdc:peppol.eu:oo:bis:reporting:1`
+|`urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1.0`
+|`urn:fdc:peppol.eu:oo:bis:reporting:1.0`
 |====
 
 .XML example representation
 [source, xml, indent=0]
 ----
-  <tsr:CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1</tsr:CustomizationID>
-  <tsr:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</tsr:ProfileID>
+  <tsr:CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1.0</tsr:CustomizationID>
+  <tsr:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</tsr:ProfileID>
 ----
 
 .Full Peppol Document Type identifier
 [source, indent=0]
 ----
-urn:fdc:peppol:transaction-statistics-report:1.0::TransactionStatisticsReport##urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1::1.0
+urn:fdc:peppol:transaction-statistics-report:1.0::TransactionStatisticsReport##urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1.0::1.0
 ----
 
 NOTE: The Peppol Participant Identifier to which the Transaction Statistics Reports

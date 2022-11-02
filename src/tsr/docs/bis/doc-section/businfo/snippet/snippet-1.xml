@@ -2,10 +2,10 @@
 <tsr:TransactionStatisticsReport xmlns:tsr="urn:fdc:peppol:transaction-statistics-report:1.0">
 
   <!-- tag::CustomizationID[] -->
-  <tsr:CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-report:1</tsr:CustomizationID>
+  <tsr:CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1.0</tsr:CustomizationID>
   <!-- end::CustomizationID[] -->
 
-  <tsr:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</tsr:ProfileID>
+  <tsr:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</tsr:ProfileID>
 
   <!-- tag::Header[] -->
   <tsr:Header>
