@@ -2,8 +2,8 @@ name: PDK-Dev
 
 on:
   push:
-    branches:
-      - Develop
+    branches-ignore:
+      - main
 
 jobs:
   build:
