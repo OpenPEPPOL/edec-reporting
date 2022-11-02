@@ -1,6 +1,6 @@
 metadata:
   namespaces:
-    tsr: urn:fdc:peppol:transaction-statistics-reporting:1.0
+    tsr: urn:fdc:peppol:transaction-statistics-report:1.0
     ## This is the schema for the Peppol Transaction Statistics Reporting
     ##  This is based on the "Internal Regulations" document,
     ##    chapter 4.4 "Service Provider Reporting on Transaction Statistics

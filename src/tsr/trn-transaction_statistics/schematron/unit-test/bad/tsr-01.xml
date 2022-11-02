@@ -4,14 +4,14 @@
 
   <Test>
     <Trigger>TSR-01</Trigger>
-    <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-reporting:1.0">
+    <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-report:1.0">
       <CustomizationID>Xurn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1</CustomizationID>
     </TransactionStatisticsReport>
   </Test>
 
   <Test>
     <Trigger>TSR-01</Trigger>
-    <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-reporting:1.0">
+    <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-report:1.0">
       <CustomizationID></CustomizationID>
       <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
     </TransactionStatisticsReport>
@@ -19,7 +19,7 @@
 
   <Test>
     <Success>TSR-01</Success>
-    <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-reporting:1.0">
+    <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-report:1.0">
       <CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1</CustomizationID>
     </TransactionStatisticsReport>
   </Test>
@@ -28,7 +28,7 @@
   <Test>
     <Trigger>TSR-01</Trigger>
 
-    <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-reporting:1.0">
+    <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-report:1.0">
       <CustomizationID></CustomizationID>
       <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
       <Header>

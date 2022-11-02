@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="urn:fdc:peppol:transaction-statistics-reporting:1.0" 
+<xs:schema xmlns="urn:fdc:peppol:transaction-statistics-report:1.0" 
            xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-           targetNamespace="urn:fdc:peppol:transaction-statistics-reporting:1.0" 
+           targetNamespace="urn:fdc:peppol:transaction-statistics-report:1.0" 
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
   <xs:annotation>
@@ -14,7 +14,7 @@
         Philip Helger
 
       History: 
-        2022-10-04, Muhammet Yildiz - Updates after the Review
+        2022-10-04, Muhammet Yildiz, Philip Helger - updates after the review
         2022-04-13, Philip Helger - initial version
     </xs:documentation>
   </xs:annotation>

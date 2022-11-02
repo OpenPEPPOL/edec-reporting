@@ -24,7 +24,7 @@ In the table below you will find the values to be used as the specification iden
 .Full Peppol Document Type identifier
 [source, indent=0]
 ----
-urn:fdc:peppol:transaction-statistics-reporting:1.0::TransactionStatisticsReport##urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1::1.0
+urn:fdc:peppol:transaction-statistics-report:1.0::TransactionStatisticsReport##urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1::1.0
 ----
 
 NOTE: The Peppol Participant Identifier to which the Transaction Statistics Reports

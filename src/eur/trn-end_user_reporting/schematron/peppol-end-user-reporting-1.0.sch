@@ -13,11 +13,11 @@
       Philip Helger
 
     History:
-      2022-10-27, Muhammet Yildiz - updates after review
+      2022-10-27, Muhammet Yildiz, Philip Helger - updates after the first review
       2022-04-15, Philip Helger - initial version
   </p>
 
-  <ns prefix="eur" uri="urn:fdc:peppol:end-user-reporting:1.0"/>
+  <ns prefix="eur" uri="urn:fdc:peppol:end-user-report:1.0"/>
 
   <pattern id="default">
     <let name="cl_spidtype" value="' CertSubjectCN '"/>
