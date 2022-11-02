@@ -105,6 +105,11 @@
                                                                                                                    normalize-space($stsc),'::',
                                                                                                                    normalize-space($strc))]) = 1"
       >[TSR-14] Each combination of $name_spdtprcc MUST occur only once.</assert>
+
+      <assert id="TSR-39" flag="fatal" test="count(tsr:Subtotal[normalize-space(@type) !='PerTP' and 
+                                                                normalize-space(@type) !='PerSP-DT-PR' and 
+                                                                normalize-space(@type) !='PerSP-DT-PR-CC']) = 0"
+      >[TSR-39] Only allowed subtotal types MUST be used.</assert>
     </rule>
 
     <rule context="/tsr:TransactionStatisticsReport/tsr:Header">
@@ -197,7 +202,7 @@
     </rule>
 
     <rule context="//*[not(*) and not(normalize-space())]">
-      <assert id="TSR-38" test="false()" flag="fatal"
+      <assert id="TSR-38" flag="fatal" test="false()"
       >[TSR-38] The Document MUST not contain empty elements.</assert>
     </rule>
   </pattern>
