@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<EndUserReport xmlns="urn:fdc:peppol:end-user-reporting:1.0">
-  <CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-report:1</CustomizationID>
-  <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
+<EndUserReport xmlns="urn:fdc:peppol:end-user-report:1.0">
+  <CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-report:1.0</CustomizationID>
+  <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
   <!-- [EUR-06] The Reporter ID MUST be present -->
   <Header>
     <ReportPeriod>2022-01</ReportPeriod>

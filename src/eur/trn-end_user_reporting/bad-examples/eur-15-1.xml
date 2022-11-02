@@ -8,8 +8,11 @@
   </Header>
 
   <Total>
-    <SendingEndUsers>0</SendingEndUsers>
-    <ReceivingEndUsers>0</ReceivingEndUsers>
+    <SendingEndUsers>5</SendingEndUsers>
+    <ReceivingEndUsers>3</ReceivingEndUsers>
   </Total>
-
+  
+  <!--
+  [EUR-15] The subtotals per 'Dataset Type ID and Process ID' MUST exist 
+   -->
 </EndUserReport>

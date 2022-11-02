@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<EndUserReport xmlns="urn:fdc:peppol:end-user-reporting:1.0">
-  <CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-report:1</CustomizationID>
-  <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
+<EndUserReport xmlns="urn:fdc:peppol:end-user-report:1.0">
+  <CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-report:1.0</CustomizationID>
+  <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
   <Header>
     <ReportPeriod>2022-01</ReportPeriod>
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
 
-  <!--
-  [EUR-03] The sum of all subtotals of SendingEndUsers should be equal to Totals/SendingEndUsers
-  4 + 3 != 15
-  -->
   <Total>
-    <SendingEndUsers>15</SendingEndUsers>
+    <!--
+    [EUR-03] The maximum of all subtotals of SendingEndUsers MUST be lower or equal to Totals/SendingEndUsers
+    5 > 4
+    -->
+    <SendingEndUsers>4</SendingEndUsers>
     <ReceivingEndUsers>4</ReceivingEndUsers>
   </Total>
 
