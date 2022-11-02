@@ -30,10 +30,18 @@
         >[EUR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:oo:trns:end-user-report:1'</assert>
       <assert id="EUR-02" flag="fatal" test="normalize-space(eur:ProfileID) = 'urn:fdc:peppol.eu:oo:bis:reporting:1'"
         >[EUR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:oo:bis:reporting:1'</assert>
-      <assert id="EUR-03" flag="fatal" test="$empty or sum(eur:Subtotal/eur:SendingEndUsers) = eur:Total/eur:SendingEndUsers"
-        >[EUR-03] The sum of all subtotals of SendingEndUsers should be equal to Totals/SendingEndUsers</assert>
-      <assert id="EUR-04" flag="fatal" test="$empty or sum(eur:Subtotal/eur:ReceivingEndUsers) = eur:Total/eur:ReceivingEndUsers"
-        >[EUR-04] The sum of all subtotals of ReceivingEndUsers should be equal to Totals/ReceivingEndUsers</assert>
+
+      <assert id="EUR-03" flag="fatal" test="$empty or eur:Subtotal/eur:SendingEndUsers[not(. &lt; ../../eur:Subtotal/eur:SendingEndUsers)][1] &lt;= eur:Total/eur:SendingEndUsers"
+        >[EUR-03] The maximum of all subtotals of SendingEndUsers MUST be lower or equal to Totals/SendingEndUsers</assert>
+      <assert id="EUR-04" flag="fatal" test="$empty or eur:Subtotal/eur:ReceivingEndUsers[not(. &lt; ../../eur:Subtotal/eur:ReceivingEndUsers)][1] &lt;= eur:Total/eur:ReceivingEndUsers"
+        >[EUR-04] The maximum of all subtotals of ReceivingEndUsers MUST be lower or equal to Totals/ReceivingEndUsers</assert>
+        
+      <!-- Per Dataset Type -->
+      <!-- Check Subtotal existence -->
+      <assert id="EUR-15" flag="fatal" test="$empty or eur:Subtotal[normalize-space(@type) = 'PerDT-PR']"
+        >[EUR-15] The subtotals per 'Dataset Type ID and Process ID' MUST exist</assert>
+        
+      <!-- Global uniqueness check per Key -->
       <assert id="EUR-13" flag="fatal" test="every $st in (eur:Subtotal[normalize-space(@type) = 'PerDT-PR']),
                                                    $stdt in ($st/eur:Key[normalize-space(@metaSchemeID) = 'DT']),
                                                    $stpr in ($st/eur:Key[normalize-space(@metaSchemeID) = 'PR'])  satisfies
@@ -43,7 +51,11 @@
                                                                                                              normalize-space($pr/@schemeID),'::',normalize-space($pr)) =
                                                                                                       concat(normalize-space($stdt/@schemeID),'::',normalize-space($stdt),'::',
                                                                                                              normalize-space($stpr/@schemeID),'::',normalize-space($stpr))]) = 1"
-      >[EUR-13] Each combination of 'Dataset Type ID and Process ID' MUST occur only once.</assert>
+        >[EUR-13] Each combination of 'Dataset Type ID and Process ID' MUST occur only once.</assert>
+        
+      <!-- Check that no other types are used -->  
+      <assert id="EUR-14" flag="fatal" test="count(eur:Subtotal[normalize-space(@type) !='PerDT-PR']) = 0"
+        >[EUR-14] Only allowed subtotal types MUST be used.</assert>
     </rule>
 
     <rule context="/eur:EndUserReport/eur:Header">
@@ -75,7 +87,7 @@
     </rule>
 
     <rule context="//*[not(*) and not(normalize-space())]">
-      <assert id="EUR-12" test="false()" flag="fatal"
+      <assert id="EUR-12" flag="fatal" test="false()"
       >[EUR-12] The Document MUST not contain empty elements.</assert>
     </rule>
   </pattern>

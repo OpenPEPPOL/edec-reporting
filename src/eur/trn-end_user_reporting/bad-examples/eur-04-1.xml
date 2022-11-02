@@ -7,13 +7,13 @@
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
 
-  <!--
-  [EUR-04] The sum of all subtotals of ReceivingEndUsers should be equal to Totals/ReceivingEndUsers
-  2 + 2 != 8
-  -->
   <Total>
     <SendingEndUsers>9</SendingEndUsers>
-    <ReceivingEndUsers>8</ReceivingEndUsers>
+    <!--
+    [EUR-04] The maximum of all subtotals of ReceivingEndUsers MUST be lower or equal to Totals/ReceivingEndUsers
+    2 > 1
+    -->
+    <ReceivingEndUsers>1</ReceivingEndUsers>
   </Total>
 
   <Subtotal type="PerDT-PR">

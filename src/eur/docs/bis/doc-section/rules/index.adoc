@@ -13,9 +13,13 @@ End User Reporting process rules
 | The Report MUST contain an identification of the specification it conforms to.
 | XSD
 
+SCH-EUR-01
+
 | BR-EUR-02
 | The Report MUST contain an identification of the business process context it appears in.
 | XSD
+
+SCH-EUR-02
 
 | BR-EUR-03
 | The Report MUST contain the year and the month in which the reported data was gathered.
@@ -38,27 +42,27 @@ End User Reporting process rules
 | SCH-EUR-08
 
 | BR-EUR-08
-| The Report MUST contain the total number of end users that have sent datasets during the reporting period.
+| The Report MUST contain the total number of end users that have sent datasets during the Reporting Period.
 | XSD
 
 | BR-EUR-09
-| The Report MUST contain the total number of end users that have received datasets during the reporting period.
+| The Report MUST contain the total number of end users that have received datasets during the Reporting Period.
 | XSD
 
 | BR-EUR-10
 | The Report MUST contain the number of sending end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
-| SCH-EUR-03
+| SCH-EUR-15
 
 | BR-EUR-11
 | The Report MUST contain the number of receiving end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
-| SCH-EUR-04
+| SCH-EUR-15
 
 | BR-EUR-12
-| The sum of all the number of end users that have sent datasets in the Reporting Period aggregated by Dataset Type ID and Process ID, MUST match the total number of sending end users.
+| The total number of sending end users MUST be greater or equal to the maximum number of sending end users aggregated by Dataset Type ID and Process ID.
 | SCH-EUR-03
 
 | BR-EUR-13
-| The sum of all the number of end users that have received datasets in the Reporting Period aggregated by Dataset Type ID and Process ID, MUST match the total number of sending end users.
+| The total number of receiving end users MUST be greater or equal to the maximum number of receiving end users aggregated by Dataset Type ID and Process ID.
 | SCH-EUR-04
 
 | BR-EUR-14
