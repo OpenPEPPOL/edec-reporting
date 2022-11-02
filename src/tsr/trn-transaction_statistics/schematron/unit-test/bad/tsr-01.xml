@@ -1,36 +1,36 @@
 <Tests xmlns="urn:fdc:schunit.com:2020:v1">
   <Description>check of customization ID</Description>
-  <Scope>TSR-01</Scope>
+  <Scope>SCH-TSR-01</Scope>
 
   <Test>
-    <Trigger>TSR-01</Trigger>
+    <Trigger>SCH-TSR-01</Trigger>
     <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-report:1.0">
-      <CustomizationID>Xurn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1</CustomizationID>
+      <CustomizationID>Xurn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1.0</CustomizationID>
     </TransactionStatisticsReport>
   </Test>
 
   <Test>
-    <Trigger>TSR-01</Trigger>
+    <Trigger>SCH-TSR-01</Trigger>
     <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-report:1.0">
       <CustomizationID></CustomizationID>
-      <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
+      <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
     </TransactionStatisticsReport>
   </Test>
 
   <Test>
-    <Success>TSR-01</Success>
+    <Success>SCH-TSR-01</Success>
     <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-report:1.0">
-      <CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1</CustomizationID>
+      <CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1.0</CustomizationID>
     </TransactionStatisticsReport>
   </Test>
 
   <!-- XSD Compliant test -->
   <Test>
-    <Trigger>TSR-01</Trigger>
+    <Trigger>SCH-TSR-01</Trigger>
 
     <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-report:1.0">
       <CustomizationID></CustomizationID>
-      <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
+      <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
       <Header>
         <ReportPeriod>2022-01</ReportPeriod>
         <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
