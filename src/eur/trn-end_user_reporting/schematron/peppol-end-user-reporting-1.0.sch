@@ -26,16 +26,16 @@
       <let name="total" value="eur:Total/eur:SendingEndUsers + eur:Total/eur:ReceivingEndUsers"/>
       <let name="empty" value="$total = 0"/>
 
-      <assert id="SCH-EUR-01" flag="fatal" test="normalize-space(eur:CustomizationID) = 'urn:fdc:peppol.eu:oo:trns:end-user-report:1'"
-      >[SCH-EUR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:oo:trns:end-user-report:1'</assert>
-      <assert id="SCH-EUR-02" flag="fatal" test="normalize-space(eur:ProfileID) = 'urn:fdc:peppol.eu:oo:bis:reporting:1'"
-      >[SCH-EUR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:oo:bis:reporting:1'</assert>
+      <assert id="SCH-EUR-01" flag="fatal" test="normalize-space(eur:CustomizationID) = 'urn:fdc:peppol.eu:oo:trns:end-user-report:1.0'"
+      >[SCH-EUR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:oo:trns:end-user-report:1.0'</assert>
+      <assert id="SCH-EUR-02" flag="fatal" test="normalize-space(eur:ProfileID) = 'urn:fdc:peppol.eu:oo:bis:reporting:1.0'"
+      >[SCH-EUR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:oo:bis:reporting:1.0'</assert>
 
       <assert id="SCH-EUR-03" flag="fatal" test="$empty or eur:Subtotal/eur:SendingEndUsers[not(. &lt; ../../eur:Subtotal/eur:SendingEndUsers)][1] &lt;= eur:Total/eur:SendingEndUsers"
       >[SCH-EUR-03] The maximum of all subtotals of SendingEndUsers MUST be lower or equal to Totals/SendingEndUsers</assert>
       <assert id="SCH-EUR-04" flag="fatal" test="$empty or eur:Subtotal/eur:ReceivingEndUsers[not(. &lt; ../../eur:Subtotal/eur:ReceivingEndUsers)][1] &lt;= eur:Total/eur:ReceivingEndUsers"
       >[SCH-EUR-04] The maximum of all subtotals of ReceivingEndUsers MUST be lower or equal to Totals/ReceivingEndUsers</assert>
-
+        
       <!-- Per Dataset Type -->
       <!-- Check Subtotal existence -->
       <assert id="SCH-EUR-15" flag="fatal" test="$empty or eur:Subtotal[normalize-space(@type) = 'PerDT-PR']"
