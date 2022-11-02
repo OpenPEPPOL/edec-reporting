@@ -1,7 +1,6 @@
 = Parties and Roles
 
-The following Parties are involved in the creation
-and submission of an End User Report. 
+The following Parties are involved in the creation and submission of an End User Report. 
 
 == Service Provider (SP) 
 
@@ -9,8 +8,7 @@ The reporting Service Provider is mandatory information in each End User Report.
 
 Each SP will:
 
-* Collect relevant data, taking care of the accuracy and validity 
-  of this data.
+* Collect relevant data, taking care of the accuracy and validity of this data.
 * Report this data in accordance to this document in a standardized and structured dataset. 
 * Ensure all data for a month is reported within 10 calendar days following the end of the month.
 * Transmit the Peppol End User Report BIS document to the PCA in accordance with this specification.
