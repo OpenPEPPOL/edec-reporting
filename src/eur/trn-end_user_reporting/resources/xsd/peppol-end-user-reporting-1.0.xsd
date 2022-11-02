@@ -63,18 +63,64 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:simpleType name="CountryCodeType">
+  <xs:complexType name="TotalsType">
+    <xs:sequence>
+      <xs:element name="SendingEndUsers" type="xs:nonNegativeInteger"/>
+      <xs:element name="ReceivingEndUsers" type="xs:nonNegativeInteger"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SubtotalKeyType">
     <xs:annotation>
       <xs:documentation>
-        This type is used to represent ISO-3166 country codes in Alpha-2 Mode.
+        A key type with mandatory "metaSchemeID" and "schemeID" attributes and a value
       </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:minLength value="2"/>
-      <xs:maxLength value="2"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="metaSchemeID" type="xs:token" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Meta ID scheme. See the BIS for details.
+              This list is extensible for future use cases and hence not checked by XSD.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="schemeID" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The ID scheme of the key, depending on the Meta Scheme ID.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
+  <xs:complexType name="SubtotalType">
+    <xs:sequence>
+      <xs:element name="Key" type="SubtotalKeyType" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>The sub total keys</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SendingEndUsers" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Number of matching effective sending End Users</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReceivingEndUsers" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Number of matching effective receiving End Users</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="type" type="xs:token" use="required">
+      <xs:annotation>
+        <xs:documentation>Defines the expected Key elements and their meta schemes.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
 
   <xs:complexType name="EndUserReportType">
     <xs:annotation>
@@ -114,70 +160,6 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="TotalsType">
-    <xs:sequence>
-      <xs:element name="SendingEndUsers" type="xs:nonNegativeInteger"/>
-      <xs:element name="ReceivingEndUsers" type="xs:nonNegativeInteger"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="SubtotalType">
-    <xs:sequence>
-      <xs:element name="Key" type="SubtotalKeyType" maxOccurs="unbounded">
-        <xs:annotation>
-          <xs:documentation>The sub total keys</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="SendingEndUsers" type="xs:nonNegativeInteger">
-        <xs:annotation>
-          <xs:documentation>Number of matching effective senders</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ReceivingEndUsers" type="xs:nonNegativeInteger">
-        <xs:annotation>
-          <xs:documentation>Number of matching effective receivers</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-    <xs:attribute name="type" type="xs:token" use="required">
-      <xs:annotation>
-        <xs:documentation>
-          Currently The String value PerDT-PR as Per dataset type and process ID.
-        </xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
-
-
-  <xs:complexType name="SubtotalKeyType">
-    <xs:annotation>
-      <xs:documentation>
-        A key type with mandatory "metaSchemeID" and "schemeID" attributes and a value
-      </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute name="metaSchemeID" type="xs:token" use="required">
-          <xs:annotation>
-            <xs:documentation>
-              Meta ID scheme. Proposed values are:
-              * DT - Dataset Type
-              * PR - Process ID
-              This list is extensible for future use cases and hence not checked by XSD.
-            </xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="schemeID" type="xs:string" use="required">
-          <xs:annotation>
-            <xs:documentation>
-              The ID scheme of the key, depending on the Meta Scheme ID.
-            </xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:simpleContent>
   </xs:complexType>
 
   <xs:element name="EndUserReport" type="EndUserReportType">

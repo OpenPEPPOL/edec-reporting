@@ -89,11 +89,7 @@
         <xs:attribute name="metaSchemeID" type="xs:token" use="required">
           <xs:annotation>
             <xs:documentation>
-              Meta ID scheme. Proposed values are:
-                * SP - Service Provider
-                * DT - Dataset Type
-                * TP - Transport Profile
-                * CC - Country Code
+              Meta ID scheme. See the BIS for details.
               This list is extensible for future use cases and hence not checked by XSD.
             </xs:documentation>
           </xs:annotation>
