@@ -85,10 +85,5 @@
       <assert id="EUR-11" flag="fatal" test="count(eur:Key[normalize-space(@metaSchemeID) = 'PR']) = 1"
         >[EUR-11] $name MUST have one Key element with the meta scheme ID 'PR'</assert>
     </rule>
-
-    <rule context="//*[not(*) and not(normalize-space())]">
-      <assert id="EUR-12" flag="fatal" test="false()"
-      >[EUR-12] The Document MUST not contain empty elements.</assert>
-    </rule>
   </pattern>
 </schema>

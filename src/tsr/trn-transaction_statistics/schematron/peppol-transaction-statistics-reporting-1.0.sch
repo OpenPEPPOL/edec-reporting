@@ -200,10 +200,5 @@
                                              contains($cl_subtotalType, concat(' ', normalize-space(@type), ' '))"
       >[TSR-37] The Subtotal type (<value-of select="normalize-space(@type)"/>) MUST be coded according to the code list</assert>
     </rule>
-
-    <rule context="//*[not(*) and not(normalize-space())]">
-      <assert id="TSR-38" flag="fatal" test="false()"
-      >[TSR-38] The Document MUST not contain empty elements.</assert>
-    </rule>
   </pattern>
 </schema>
