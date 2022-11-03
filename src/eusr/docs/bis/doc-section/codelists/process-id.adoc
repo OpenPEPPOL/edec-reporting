@@ -8,7 +8,7 @@ https://docs.peppol.eu/edelivery/policies/PEPPOL-EDN-Policy-for-use-of-identifie
 [cols="1,4"]
 |===
 h| Document location
-| `eur:EndUsers/tsr:Subtotal/tsr:Key[@metaSchemeID="PR"]`
+| `eusr:EndUserStatisticsReport/eusr:Subtotal/eusr:Key[@metaSchemeID="PR"]`
 
 h| Source code list
 | link:https://docs.peppol.eu/edelivery/codelists/[Process Identifiers] (latest version)

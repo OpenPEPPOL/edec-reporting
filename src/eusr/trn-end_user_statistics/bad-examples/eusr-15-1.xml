@@ -13,6 +13,6 @@
   </Total>
   
   <!--
-  [EUR-15] The subtotals per 'Dataset Type ID and Process ID' MUST exist 
+  [SCH-EUSR-15] The subtotals per 'Dataset Type ID and Process ID' MUST exist 
    -->
 </EndUserStatisticsReport>

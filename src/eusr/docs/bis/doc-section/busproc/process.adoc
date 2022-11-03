@@ -1,9 +1,9 @@
-= End-User Reporting Process
+= End User Statistics Reporting Process
 
 The following diagrams provide an overview of the key steps when 
 Service Providers are reporting monthly End User Statistics:
 
-image::./images/eurProcessSimple.png[]
+image::./images/eusrProcessSimple.png[]
 
 Using detailed Archimate notation:
 

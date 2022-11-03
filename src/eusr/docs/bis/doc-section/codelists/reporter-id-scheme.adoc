@@ -6,7 +6,7 @@ Reporter Identification Schemes are used to identify the Service Provider inside
 [cols="1,4"]
 |===
 h| Document location
-| `eur:EndUserStatisticsReport/eur:Header/eur:ReporterID/@schemeID`
+| `eusr:EndUserStatisticsReport/eusr:Header/eusr:ReporterID/@schemeID`
 
 h| Source code list
 | link:../end_user_statistics/codelist/ReporterIDScheme/[Reporter ID Scheme code list]

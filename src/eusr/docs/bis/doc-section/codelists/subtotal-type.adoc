@@ -8,7 +8,7 @@ The Subtotal Type determines the kind of aggregation that is contained in
 [cols="1,4"]
 |===
 h| Document location
-| `eur:EndUserStatisticsReport/eur:Subtotal/@type`
+| `eusr:EndUserStatisticsReport/eusr:Subtotal/@type`
 
 h| Source code list
 | link:../end_user_statistics/codelist/SubtotalType/[Subtotal Type code list]

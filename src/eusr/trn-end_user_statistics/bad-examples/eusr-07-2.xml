@@ -4,7 +4,7 @@
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
   <Header>
     <ReportPeriod>2022-01</ReportPeriod>
-    <!-- [EUR-07] The Reporter ID scheme ID MUST be coded according to the code list -->
+    <!-- [SCH-EUSR-07] The Reporter ID scheme ID MUST be coded according to the code list -->
     <ReporterID>POP000360</ReporterID>
   </Header>
 

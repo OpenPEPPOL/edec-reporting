@@ -2,7 +2,7 @@
 <EndUserStatisticsReport xmlns="urn:fdc:peppol:end-user-statistics-report:1.0">
   <CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0</CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
-  <!-- [EUR-05] The ReportPeriod MUST NOT contain timezone information -->
+  <!-- [SCH-EUSR-05] The ReportPeriod MUST NOT contain timezone information -->
   <Header>
     <ReportPeriod>2022-01Z</ReportPeriod>
     <ReporterID schemeID="XCertSubjectCN">POP000360</ReporterID>

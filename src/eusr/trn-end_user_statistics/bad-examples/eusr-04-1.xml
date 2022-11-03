@@ -10,7 +10,7 @@
   <Total>
     <SendingEndUsers>9</SendingEndUsers>
     <!--
-    [EUR-04] The maximum of all subtotals of ReceivingEndUsers MUST be lower or equal to Totals/ReceivingEndUsers
+    [SCH-EUSR-04] The maximum of all subtotals of ReceivingEndUsers MUST be lower or equal to Totals/ReceivingEndUsers
     2 > 1
     -->
     <ReceivingEndUsers>1</ReceivingEndUsers>

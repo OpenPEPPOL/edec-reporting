@@ -9,6 +9,6 @@ arbitrary and not semantically significant.
 |Prefix
 |Namespace URI
 
-|eur
-|`urn:fdc:peppol:end-user-report:1.0`
+|eusr
+|`urn:fdc:peppol:end-user-statistics-report:1.0`
 |====

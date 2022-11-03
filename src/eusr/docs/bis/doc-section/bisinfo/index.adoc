@@ -17,8 +17,8 @@ In the table below you will find the values to be used as the specification iden
 .XML example representation
 [source, xml, indent=0]
 ----
-  <eur:CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-report:1.0</eur:CustomizationID>
-  <eur:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</eur:ProfileID>
+  <eusr:CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0</eusr:CustomizationID>
+  <eusr:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</eusr:ProfileID>
 ----
 
 .Full Peppol Document Type identifier

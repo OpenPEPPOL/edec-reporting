@@ -4,7 +4,7 @@
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
   <Header>
     <ReportPeriod>2022-01</ReportPeriod>
-    <!-- [EUR-08] The layout of the certificate subject CN is not a valid Peppol Seat ID -->
+    <!-- [SCH-EUSR-08] The layout of the certificate subject CN is not a valid Peppol Seat ID -->
     <ReporterID schemeID="CertSubjectCN">abc</ReporterID>
   </Header>
 
