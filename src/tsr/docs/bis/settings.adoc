@@ -1,7 +1,7 @@
 :lang: en
 
 :doctitle: Peppol Model for Transaction Statistics Reporting 
-:version: 1.0.0
+:version: 1.0.0 Final Draft
 :doctype: book
 
 :name-op-en: OpenPeppol AISBL, Operating Office
