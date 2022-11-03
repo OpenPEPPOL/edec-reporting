@@ -1,6 +1,6 @@
 = Subtotals
 
-An End User Report contains subtotals per distinct pairs of Dataset Type and Process ID.
+An End User Statistics Report contains subtotals per distinct pairs of Dataset Type and Process ID.
 The purpose of this grouping is to get information about number of end users that
 have participated in a certain data exchange process.
 
@@ -12,7 +12,7 @@ in the <<codelist-subtotaltype>> code list
 
 == Subtotal per Dataset Type and Process ID
 
-This subtotal is the only type that is currently supported by End User Reporting BIS.
+This subtotal is the only type that is currently supported by End User Statistics Reporting BIS.
 It is defined by the `@type` attribute having the value `PerDT-PR`.
 
 * This subtotal requires one `Key` element with a Meta Scheme ID of `DT` (Dataset Type).

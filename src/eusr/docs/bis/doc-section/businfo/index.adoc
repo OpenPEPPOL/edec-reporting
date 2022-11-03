@@ -1,6 +1,6 @@
 = Description of selected parts of the transaction
 
-Description of selected parts of the End User Report message.
+Description of selected parts of the End User Statistics Report message.
 
 :leveloffset: +1
 

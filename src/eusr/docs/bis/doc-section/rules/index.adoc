@@ -1,5 +1,5 @@
 = Rules
-End User Reporting process rules
+End User Statistics Reporting process rules
 
 .Business rules
 [cols="1h,5,1h",options="header"]
@@ -9,64 +9,64 @@ End User Reporting process rules
 |Requirement (depending, as applicable, on the respective business case)
 |Validation Level
 
-| BR-EUR-01
+| BR-EUSR-01
 | The Report MUST contain an identification of the specification it conforms to.
 | XSD
 
-SCH-EUR-01
+SCH-EUSR-01
 
-| BR-EUR-02
+| BR-EUSR-02
 | The Report MUST contain an identification of the business process context it appears in.
 | XSD
 
-SCH-EUR-02
+SCH-EUSR-02
 
-| BR-EUR-03
+| BR-EUSR-03
 | The Report MUST contain the year and the month in which the reported data was gathered.
 | XSD
 
-| BR-EUR-04
+| BR-EUSR-04
 | The Report MUST not contain timezone information for the Reporting Period.
-| SCH-EUR-05
+| SCH-EUSR-05
 
-| BR-EUR-05
+| BR-EUSR-05
 | The Report MUST uniquely identify the reporting Service Provider.
-| SCH-EUR-08
+| SCH-EUSR-08
 
-| BR-EUR-06
+| BR-EUSR-06
 | The scheme for identifying the reporting Service Provider MUST follow the "Reporter ID Scheme" code list
-| SCH-EUR-07
+| SCH-EUSR-07
 
-| BR-EUR-07
+| BR-EUSR-07
 | If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID MUST be the CN part of the Peppol AP certificate Subject
-| SCH-EUR-08
+| SCH-EUSR-08
 
-| BR-EUR-08
+| BR-EUSR-08
 | The Report MUST contain the total number of end users that have sent datasets during the Reporting Period.
 | XSD
 
-| BR-EUR-09
+| BR-EUSR-09
 | The Report MUST contain the total number of end users that have received datasets during the Reporting Period.
 | XSD
 
-| BR-EUR-10
+| BR-EUSR-10
 | The Report MUST contain the number of sending end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
-| SCH-EUR-15
+| SCH-EUSR-15
 
-| BR-EUR-11
+| BR-EUSR-11
 | The Report MUST contain the number of receiving end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
-| SCH-EUR-15
+| SCH-EUSR-15
 
-| BR-EUR-12
+| BR-EUSR-12
 | The total number of sending end users MUST be greater or equal to the maximum number of sending end users aggregated by Dataset Type ID and Process ID.
-| SCH-EUR-03
+| SCH-EUSR-03
 
-| BR-EUR-13
+| BR-EUSR-13
 | The total number of receiving end users MUST be greater or equal to the maximum number of receiving end users aggregated by Dataset Type ID and Process ID.
-| SCH-EUR-04
+| SCH-EUSR-04
 
-| BR-EUR-14
+| BR-EUSR-14
 | Each combination of Dataset Type ID and Process ID, for which data is aggregated, MUST NOT occur more than once.
-| SCH-EUR-13
+| SCH-EUSR-13
 
 |====

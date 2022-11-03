@@ -15,7 +15,7 @@ content:
 
   - id: ERBG-1
     name: Report Header
-    definition: End User Report header data.
+    definition: End User Statistics Report header data.
     cardinality: 1..1
     children:
       - id: ERBT-003

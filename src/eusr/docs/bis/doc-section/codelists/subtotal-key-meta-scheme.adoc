@@ -7,8 +7,8 @@ The Subtotal Key Meta Scheme defines the type of a single
 [cols="1,4"]
 |===
 h| Document location
-| `eur:EndUserReport/eur:Subtotal/eur:Key/@metaSchemeID`
+| `eur:EndUserStatisticsReport/eur:Subtotal/eur:Key/@metaSchemeID`
 
 h| Source code list
-| link:../EndUserReport/codelist/SubtotalKeyMetaScheme/[Subtotal Key Meta Scheme code list]
+| link:../EndUserStatisticsReport/codelist/SubtotalKeyMetaScheme/[Subtotal Key Meta Scheme code list]
 |===

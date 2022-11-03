@@ -9,8 +9,8 @@ In the table below you will find the values to be used as the specification iden
 |Element `CustomizationID`
 |Process ID
 
-|End User Report
-|`urn:fdc:peppol.eu:oo:trns:end-user-report:1.0`
+|End User Statistics Report
+|`urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0`
 |`urn:fdc:peppol.eu:oo:bis:reporting:1.0`
 |====
 
@@ -24,5 +24,5 @@ In the table below you will find the values to be used as the specification iden
 .Full Peppol Document Type identifier
 [source, indent=0]
 ----
-urn:fdc:peppol:end-user-report:1.0::EndUserReport##urn:fdc:peppol.eu:oo:trns:end-user-report:1.0::1.0
+urn:fdc:peppol:end-user-statistics-report:1.0::EndUserStatisticsReport##urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0::1.0
 ----

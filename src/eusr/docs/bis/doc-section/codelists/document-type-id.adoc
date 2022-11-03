@@ -6,7 +6,7 @@ Document Type Identifiers (aka Dataset Type Identifiers) are used to uniquely id
 [cols="1,4"]
 |===
 h| Document location
-| `eur:EndUserReport/eur:Subtotal/eur:Key[@metaSchemeID="DT"]`
+| `eur:EndUserStatisticsReport/eur:Subtotal/eur:Key[@metaSchemeID="DT"]`
 
 
 h| Source code list

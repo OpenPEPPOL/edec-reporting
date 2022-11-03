@@ -1,7 +1,7 @@
 = Total
 
 Defines the total amount of end users that have exchanged datasets in the Reporting Period.
-The element `Total` and its child elements MUST be provided for every End User Report.
+The element `Total` and its child elements MUST be provided for every End User Statistics Report.
 
 The element `eur:Total/eur:SendingEndUsers` contains the total number of end users that
 have sent datasets. Only values &ge; 0 are allowed.

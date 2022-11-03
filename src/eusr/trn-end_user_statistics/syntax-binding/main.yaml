@@ -1,13 +1,13 @@
 metadata:
   namespaces:
-    eur: urn:fdc:peppol:end-user-report:1.0
-    ## This is the XML schema for the Peppol End User Reporting.
+    eur: urn:fdc:peppol:end-user-statistics-report:1.0
+    ## This is the XML schema for the Peppol End User Statistics Reporting.
     ## This is based on the "Internal Regulations" document,
     ##   chapter 4.3 "Service Provider Reporting about End Users"
 content:
-  element: eur:EndUserReport
+  element: eur:EndUserStatisticsReport
   name: Root element
-  definition: The root element of the End User Report
+  definition: The root element of the End User Statistics Report
   cardinality: 1..1
   children:
   - element: eur:CustomizationID
@@ -60,4 +60,3 @@ content:
         reference: ERBT-012
       - element: eur:ReceivingEndUsers
         reference: ERBT-013
-

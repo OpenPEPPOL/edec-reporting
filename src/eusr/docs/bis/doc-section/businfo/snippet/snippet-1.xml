@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<EndUserReport xmlns="urn:fdc:peppol:end-user-report:1.0">
-  <CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-report:1.0</CustomizationID>
+<EndUserStatisticsReport xmlns="urn:fdc:peppol:end-user-statistics-report:1.0">
+  <CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0</CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
 
   <!-- tag::Header[] -->
@@ -30,4 +30,4 @@
   </Subtotal>
   <!-- end::SubtotalPerDT-PR[] -->
 
-</EndUserReport>
+</EndUserStatisticsReport>
