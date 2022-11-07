@@ -10,7 +10,10 @@
   <!-- tag::Header[] -->
   <tsr:Header>
     <!-- tag::Period[] -->
-    <tsr:ReportPeriod>2022-01</tsr:ReportPeriod>
+    <tsr:ReportPeriod>
+      <tsr:StartDate>2022-01-01</tsr:StartDate>
+      <tsr:EndDate>2022-01-31</tsr:EndDate>
+    </tsr:ReportPeriod>
     <!-- end::Period[] -->
     <!-- tag::Reporter[] -->
     <tsr:ReporterID schemeID="CertSubjectCN">POP000360</tsr:ReporterID>

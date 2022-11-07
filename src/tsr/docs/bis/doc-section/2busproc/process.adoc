@@ -12,9 +12,12 @@ image::./images/process-view.png[]
 == Data Gathering
 
 * Reporting Period
-** The Reporting Period starts with the first day of every month at 
+// [Jerry] This is my approach on different reporting periods
+** A monthly Reporting Period starts with the first day of every month at 
    00:00:00 UTC (inclusive) and ends with the last day of said month
    at 23:59:59 UTC (inclusive).
+** A quarterly Reporting Period starts with the first day of a month at 
+   00:00:00 UTC (inclusive) and ends with the last day of the month after next at 23:59:59 UTC (inclusive).
 * Data
 ** Only Service Providers operating a production Peppol Access Point must gather this data and
 transmit a Transaction Statistics Report.
@@ -39,7 +42,7 @@ transmit a Transaction Statistics Report.
    level MUST NOT to be considered for the report.
 *** End User Statistics Reports MUST NOT be counted for a Transaction Statistics Report
 *** Transaction Statistics Reports MUST NOT be counted for a Transaction Statistics Report
-*** Each message MUST be counted only once by an SP (incoming or outgoing), it MUST NOT be counted twice.
+*** Each message MUST be counted only once by a SP (incoming or outgoing), it MUST NOT be counted twice.
 
 // TODO agree with JD
 NOTE: * The Country of the sender and receiver will be mandatory, when the backing eDEC specifications become mandatory
@@ -66,8 +69,8 @@ The following aggregations MAY be provided to be compliant to this specification
 // Elaboration on Business Requirements (see Philip's Excel file) on Data Transmission
 
 * Frequency
-** A Transaction Statistics Report MUST be transmitted once per month 
-   (Reporting Period)
+// [Jerry] can we leave it like this?
+** A Transaction Statistics Report MUST be transmitted once per month or once per quarter (Reporting Period)
 ** A Transaction Statistics Report MUST be transmitted within 10 calendar days 
    (inclusive) after the end of the previous Reporting Period
 ** The Transaction Statistics Report MUST be transmitted, even if no other Peppol

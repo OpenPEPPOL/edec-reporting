@@ -77,7 +77,7 @@ NOTE: For outgoing messages, only the receiving Service Provider needs
 include::./snippet/snippet-1.xml[tags=SubtotalPerSP-DT-PR]
 ----
 
-== Subtotal per Service Provider, Dataset Type, Process ID Country Codes
+== Subtotal per Service Provider, Dataset Type, Process ID and Country Codes
 This subtotal is identified by the `@type` attribute having the value `PerSP-DT-PR-CC`.
 
 * This subtotal requires one `Key` element with a Meta Scheme ID of `SP`
@@ -123,7 +123,7 @@ NOTE: This subtotal is optional and will be mandatory when the backing eDEC
 specifications become mandatory.
 
 
-.Example of a subtotal per Service Provider, Dataset Type , Process ID and Country Codes:
+.Example of a subtotal per Service Provider, Dataset Type, Process ID and Country Codes:
 [source, xml]
 ----
 include::./snippet/snippet-1.xml[tags=SubtotalPerSP-DT-PR-CC]
