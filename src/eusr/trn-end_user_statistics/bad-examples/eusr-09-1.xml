@@ -3,7 +3,10 @@
   <CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0</CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
   <Header>
-    <ReportPeriod>2022-01</ReportPeriod>
+    <ReportPeriod>
+      <StartDate>2022-01-01</StartDate>
+      <EndDate>2022-01-31</EndDate>
+    </ReportPeriod>
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
 
@@ -13,7 +16,7 @@
   </Total>
 
   <Subtotal type="PerDT-PR">
-    <!-- [SCH-EUSR-09] The subtotal per Dataset Type ID and Process ID (PerDT-PR) MUST have two Key elements -->
+    <!-- [EUR-11] The subtotal per Dataset Type ID and Process ID (PerDT-PR) MUST have two Key elements -->
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <SendingEndUsers>4</SendingEndUsers>
     <ReceivingEndUsers>2</ReceivingEndUsers>

@@ -3,7 +3,10 @@
   <CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1.0</CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
   <Header>
-    <ReportPeriod>2022-01</ReportPeriod>
+    <ReportPeriod>
+      <StartDate>2022-01-01</StartDate>
+      <EndDate>2022-01-31</EndDate>
+    </ReportPeriod>
     <!-- [TSR-16] The reporter ID MUST be present -->
     <ReporterID schemeID="CertSubjectCN"></ReporterID>
   </Header>

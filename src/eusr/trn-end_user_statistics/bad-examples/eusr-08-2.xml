@@ -3,8 +3,11 @@
   <CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0</CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
   <Header>
-    <ReportPeriod>2022-01</ReportPeriod>
-    <!-- [SCH-EUSR-08] The layout of the certificate subject CN is not a valid Peppol Seat ID -->
+    <ReportPeriod>
+      <StartDate>2022-01-01</StartDate>
+      <EndDate>2022-01-31</EndDate>
+    </ReportPeriod>
+    <!-- [EUR-08] The layout of the certificate subject CN is not a valid Peppol Seat ID -->
     <ReporterID schemeID="CertSubjectCN">abc</ReporterID>
   </Header>
 

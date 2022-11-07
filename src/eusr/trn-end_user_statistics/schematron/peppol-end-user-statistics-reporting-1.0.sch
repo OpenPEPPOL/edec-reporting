@@ -13,7 +13,7 @@
       Philip Helger
 
     History:
-      2022-10-27, Muhammet Yildiz, Philip Helger - updates after the first review
+      2022-11-04, Muhammet Yildiz, Philip Helger - updates after the first review
       2022-04-15, Philip Helger - initial version
   </p>
 
@@ -46,11 +46,11 @@
                                                         $stdt in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
                                                         $stpr in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'PR'])  satisfies
                                                     count(eusr:Subtotal[normalize-space(@type) ='PerDT-PR'][every $dt in (eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
-                                                                                                                 $pr in (eusr:Key[normalize-space(@metaSchemeID) = 'PR']) satisfies
-                                                                                                           concat(normalize-space($dt/@schemeID),'::',normalize-space($dt),'::',
-                                                                                                                  normalize-space($pr/@schemeID),'::',normalize-space($pr)) =
-                                                                                                           concat(normalize-space($stdt/@schemeID),'::',normalize-space($stdt),'::',
-                                                                                                                  normalize-space($stpr/@schemeID),'::',normalize-space($stpr))]) = 1"
+                                                                                                                  $pr in (eusr:Key[normalize-space(@metaSchemeID) = 'PR']) satisfies
+                                                                                                            concat(normalize-space($dt/@schemeID),'::',normalize-space($dt),'::',
+                                                                                                                   normalize-space($pr/@schemeID),'::',normalize-space($pr)) =
+                                                                                                            concat(normalize-space($stdt/@schemeID),'::',normalize-space($stdt),'::',
+                                                                                                                   normalize-space($stpr/@schemeID),'::',normalize-space($stpr))]) = 1"
       >[SCH-EUSR-13] Each combination of 'Dataset Type ID and Process ID' MUST occur only once.</assert>
         
       <!-- Check that no other types are used -->  
@@ -59,8 +59,13 @@
     </rule>
 
     <rule context="/eusr:EndUserStatisticsReport/eusr:Header">
-      <assert id="SCH-EUSR-05" flag="fatal" test="matches(normalize-space(eusr:ReportPeriod), '^[0-9]{4}\-[0-9]{2}$')"
-      >[SCH-EUSR-05] The reporting period (<value-of select="normalize-space(eusr:ReportPeriod)"/>) MUST NOT contain timezone information</assert>
+      <assert id="SCH-EUSR-16" flag="fatal" test="matches(normalize-space(eusr:ReportPeriod/eusr:StartDate), '^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$')"
+      >[SCH-EUSR-16] The reporting period start date (<value-of select="normalize-space(eusr:ReportPeriod/eusr:StartDate)"/>) MUST NOT contain timezone information</assert>
+      <assert id="SCH-EUSR-17" flag="fatal" test="matches(normalize-space(eusr:ReportPeriod/eusr:EndDate), '^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$')"
+      >[SCH-EUSR-17] The reporting period end date (<value-of select="normalize-space(eusr:ReportPeriod/eusr:EndDate)"/>) MUST NOT contain timezone information</assert>
+      <!-- Note: the effective report period length is checked somewhere else -->
+      <assert id="SCH-EUSR-18" flag="fatal" test="eusr:ReportPeriod/eusr:EndDate &gt;= eusr:ReportPeriod/eusr:StartDate"
+      >[SCH-EUSR-18] The report period start date (<value-of select="normalize-space(eusr:ReportPeriod/eusr:StartDate)"/>) MUST NOT be after the report period end date (<value-of select="normalize-space(eusr:ReportPeriod/eusr:EndDate)"/>)</assert>
     </rule>
 
     <rule context="/eusr:EndUserStatisticsReport/eusr:Header/eusr:ReporterID">
@@ -78,6 +83,7 @@
     <!-- Per Dataset Type and Process ID aggregation -->
     <rule context="/eusr:EndUserStatisticsReport/eusr:Subtotal[normalize-space(@type) = 'PerDT-PR']">
       <let name="name" value="'The subtotal per Dataset Type ID and Process ID'"/>
+      
       <assert id="SCH-EUSR-09" flag="fatal" test="count(eusr:Key) = 2"
       >[SCH-EUSR-09] $name MUST have two Key elements</assert>
       <assert id="SCH-EUSR-10" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"

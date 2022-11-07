@@ -13,7 +13,7 @@
       Philip Helger
 
     History:
-      2022-10-27, Muhammet Yildiz, Philip Helger - updates after the review
+      2022-11-04, Muhammet Yildiz, Philip Helger - updates after the review
       2022-04-21, Philip Helger - initial version
   </p>
 
@@ -113,8 +113,13 @@
     </rule>
 
     <rule context="/tsr:TransactionStatisticsReport/tsr:Header">
-      <assert id="SCH-TSR-15" flag="fatal" test="matches(normalize-space(tsr:ReportPeriod), '^[0-9]{4}\-[0-9]{2}$')"
-      >[SCH-TSR-15] The report period (<value-of select="normalize-space(tsr:ReportPeriod)"/>) MUST NOT contain timezone information</assert>
+      <assert id="SCH-TSR-40" flag="fatal" test="matches(normalize-space(tsr:ReportPeriod/tsr:StartDate), '^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$')"
+      >[SCH-TSR-40] The report period start date (<value-of select="normalize-space(tsr:ReportPeriod/tsr:StartDate)"/>) MUST NOT contain timezone information</assert>
+      <assert id="SCH-TSR-41" flag="fatal" test="matches(normalize-space(tsr:ReportPeriod/tsr:EndDate), '^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$')"
+      >[SCH-TSR-41] The report period end date (<value-of select="normalize-space(tsr:ReportPeriod/tsr:EndDate)"/>) MUST NOT contain timezone information</assert>
+      <!-- Note: the effective report period length is checked somewhere else -->
+      <assert id="SCH-TSR-42" flag="fatal" test="tsr:ReportPeriod/tsr:EndDate &gt;= tsr:ReportPeriod/tsr:StartDate"
+      >[SCH-TSR-42] The report period start date (<value-of select="normalize-space(tsr:ReportPeriod/tsr:StartDate)"/>) MUST NOT be after the report period end date (<value-of select="normalize-space(tsr:ReportPeriod/tsr:EndDate)"/>)</assert>
     </rule>
 
     <rule context="/tsr:TransactionStatisticsReport/tsr:Header/tsr:ReporterID">

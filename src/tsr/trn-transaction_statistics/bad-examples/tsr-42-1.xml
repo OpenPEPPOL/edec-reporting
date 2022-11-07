@@ -3,7 +3,11 @@
   <CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1.0</CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
   <Header>
-    <ReportPeriod>2022-01</ReportPeriod>
+    <ReportPeriod>
+      <!-- [SCH-TSR-42] The report period start date MUST NOT be after the report period end date -->
+      <StartDate>2022-02-01</StartDate>
+      <EndDate>2022-01-31</EndDate>
+    </ReportPeriod>
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
 
@@ -12,12 +16,6 @@
     <Incoming>19</Incoming>
     <Outgoing>17</Outgoing>
   </Total>
-
-  <Subtotal type="UnsupportedType">
-    <Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</Key>
-    <Incoming>19</Incoming>
-    <Outgoing>17</Outgoing>
-  </Subtotal>
 
   <!-- Sum per TP must match TotalCount -->
   <Subtotal type="PerTP">

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-report:1.0">
-  <!-- [TSR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1.0' -->
+  <!-- [TSR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1' -->
   <CustomizationID></CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
   <Header>
-    <ReportPeriod>2022-01</ReportPeriod>
+    <ReportPeriod>
+      <StartDate>2022-01-01</StartDate>
+      <EndDate>2022-01-31</EndDate>
+    </ReportPeriod>
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
 

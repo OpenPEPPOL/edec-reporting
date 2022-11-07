@@ -3,14 +3,17 @@
   <CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0</CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
   <Header>
-    <ReportPeriod>2022-01</ReportPeriod>
+    <ReportPeriod>
+      <StartDate>2022-01-01</StartDate>
+      <EndDate>2022-01-31</EndDate>
+    </ReportPeriod>
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
 
   <Total>
     <SendingEndUsers>9</SendingEndUsers>
     <!--
-    [SCH-EUSR-04] The maximum of all subtotals of ReceivingEndUsers MUST be lower or equal to Totals/ReceivingEndUsers
+    [EUR-04] The maximum of all subtotals of ReceivingEndUsers MUST be lower or equal to Totals/ReceivingEndUsers
     2 > 1
     -->
     <ReceivingEndUsers>1</ReceivingEndUsers>
