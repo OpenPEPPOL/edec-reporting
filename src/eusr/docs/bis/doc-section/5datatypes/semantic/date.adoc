@@ -1,0 +1,24 @@
+= Date
+
+Dates shall be in accordance to the "Calendar date complete representation" 
+ as specified by https://www.iso.org/standard/40874.html[ISO 8601],
+ in the format *YYYY-MM-DD*.
+
+====
+IMPORTANT : Date values MUST NOT include timezone information.
+====
+
+
+.Date.Type
+[cols="1s,1,1,1", options="header"]
+|===
+|Component
+|Use
+|Primitive Type
+|Example
+
+|Content
+|Mandatory
+|Date
+|2022-11-04
+|===

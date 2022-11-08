@@ -10,7 +10,9 @@ Each SP will:
 
 * Collect relevant data, taking care of the accuracy and validity of this data.
 * Report this data in accordance to this document in a standardized and structured dataset. 
-* Ensure all data for a month is reported within 10 calendar days following the end of the month.
+* Ensure all data for a month is reported within 10 calendar days following the end of the reporting period.
+// [Jerry] please crosscheck
+  Note: the initial reporting period is defined by the PCA in a separate document.
 * Transmit the Peppol End User Statistics Reporting BIS document to the PCA in accordance with this specification.
 
 == OpenPeppol Operating Office (OO)

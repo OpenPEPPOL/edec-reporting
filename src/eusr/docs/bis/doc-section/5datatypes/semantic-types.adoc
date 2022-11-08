@@ -14,6 +14,6 @@ include::semantic/identifier.adoc[]
 
 include::semantic/text.adoc[]
 
-include::semantic/yearmonth.adoc[]
+include::semantic/date.adoc[]
 
 :leveloffset: -1

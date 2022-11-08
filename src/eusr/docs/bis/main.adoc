@@ -22,18 +22,18 @@ This document sets out the processes and procedures for reporting End User data 
 
 :leveloffset: +1
 
-include::./doc-section/intro/index.adoc[]
+include::./doc-section/1intro/index.adoc[]
 
-include::./doc-section/busproc/index.adoc[]
+include::./doc-section/2busproc/index.adoc[]
 
-include::./doc-section/businfo/index.adoc[]
+include::./doc-section/3syntax/index.adoc[]
 
-include::./doc-section/rules/index.adoc[]
+include::./doc-section/4rules/index.adoc[]
 
-include::./doc-section/datatypes/index.adoc[]
+include::./doc-section/5datatypes/index.adoc[]
 
-include::./doc-section/codelists/index.adoc[]
+include::./doc-section/6codelists/index.adoc[]
 
-include::./doc-section/bisinfo/index.adoc[]
+include::./doc-section/7bisinfo/index.adoc[]
 
 :leveloffset: -1
