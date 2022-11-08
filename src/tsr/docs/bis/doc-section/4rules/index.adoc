@@ -13,9 +13,13 @@ Transaction Statistics Reporting process rules
 | The Report MUST contain an identification of the specification it conforms to.
 | XSD
 
+SCH-TSR-01
+
 | BR-TSR-02
 | The Report MUST contain an identification of the business process context it appears in.
 | XSD
+
+SCH-TSR-02
 
 | BR-TSR-03
 | The Report MUST contain the reporting period in which the reported data was gathered.

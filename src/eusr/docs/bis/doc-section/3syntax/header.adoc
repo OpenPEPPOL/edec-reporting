@@ -11,10 +11,11 @@ include::./snippet/snippet-1.xml[tags=Header]
 
 == Reporting Period
 
-The element `ReportPeriod` MUST contain the year and month of the reporting period.
-This element MUST NOT contain time zone information.
+The element `ReportPeriod` MUST contain the start date (inclusive) and 
+  the end date (inclusive) of the reporting period.
+Start date and end date elements MUST NOT contain time zone information.
 
-.Example:
+.Example (for a monthly Reporting Period):
 [source, xml, indent=0]
 ----
 include::./snippet/snippet-1.xml[tags=Period]

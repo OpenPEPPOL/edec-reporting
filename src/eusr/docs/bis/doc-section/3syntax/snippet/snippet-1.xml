@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<EndUserStatisticsReport xmlns="urn:fdc:peppol:end-user-statistics-report:1.0">
-  <CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0</CustomizationID>
-  <ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</ProfileID>
+<eusr:EndUserStatisticsReport xmlns:eusr="urn:fdc:peppol:end-user-statistics-report:1.0">
+  <eusr:CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0</eusr:CustomizationID>
+  <eusr:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</eusr:ProfileID>
 
   <!-- tag::Header[] -->
-  <Header>
+  <eusr:Header>
     <!-- tag::Period[] -->
-    <ReportPeriod>2022-01</ReportPeriod>
+    <eusr:ReportPeriod>
+      <eusr:StartDate>2022-01-01</eusr:StartDate>
+      <eusr:EndDate>2022-01-31</eusr:EndDate>
+    </eusr:ReportPeriod>
     <!-- end::Period[] -->
     <!-- tag::Reporter[] -->
-    <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
+    <eusr:ReporterID schemeID="CertSubjectCN">POP000360</eusr:ReporterID>
     <!-- end::Reporter[] -->
-  </Header>
+  </eusr:Header>
   <!-- end::Header[] -->
 
   <!-- tag::Total[] -->
-  <Total>
-    <SendingEndUsers>9</SendingEndUsers>
-    <ReceivingEndUsers>4</ReceivingEndUsers>
-  </Total>
+  <eusr:Total>
+    <eusr:SendingEndUsers>9</eusr:SendingEndUsers>
+    <eusr:ReceivingEndUsers>4</eusr:ReceivingEndUsers>
+  </eusr:Total>
   <!-- end::Total[] -->
 
   <!-- tag::SubtotalPerDT-PR[] -->
-  <Subtotal type="PerDT-PR">
-    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
-    <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
-    <SendingEndUsers>4</SendingEndUsers>
-    <ReceivingEndUsers>2</ReceivingEndUsers>
-  </Subtotal>
+  <eusr:Subtotal type="PerDT-PR">
+    <eusr:Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</eusr:Key>
+    <eusr:Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</eusr:Key>
+    <eusr:SendingEndUsers>4</eusr:SendingEndUsers>
+    <eusr:ReceivingEndUsers>2</eusr:ReceivingEndUsers>
+  </eusr:Subtotal>
   <!-- end::SubtotalPerDT-PR[] -->
 
-</EndUserStatisticsReport>
+</eusr:EndUserStatisticsReport>
