@@ -16,8 +16,6 @@ Each SP will:
 
 == OpenPeppol Operating Office (OO)
 
-Operating Office is the sole receiver of all End User Statistics Reports sent by SPs.
-
 OO will:
 
 * Automatically check which providers have not submitted their End User Statistics Report. This check will be triggered automatically.
