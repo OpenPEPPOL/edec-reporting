@@ -1,7 +1,6 @@
 = Parties and Roles
 
-The following Parties are involved in the creation
-and submission of an Transaction Statistics Report. 
+The following Parties are involved in the creation and submission of an Transaction Statistics Report.
 
 == Service Provider (SP) 
 
@@ -11,15 +10,13 @@ Each SP will:
 
 * Collect relevant data, taking care of the accuracy and validity of this data.
 * Report this data in accordance to this specification in a standardized and structured dataset. 
-* Ensure all data for a reporting period is reported within 10 calendar days following the end of the reporting period.
-// [Jerry] please crosscheck
-  Note: the initial reporting period is defined by the PCA in a separate document.
+* Ensure all data for a Reporting Period is reported within 10 calendar days following the end of the Reporting Period.
+  Note: the Reporting Period is defined by the PCA in a separate document.
 * Transmit the Peppol Transaction Statistics Report BIS document to the PCA in accordance with this specification.
 
 == OpenPeppol Operating Office (OO)
 
-Operating Office is the sole receiver of all Transaction Statistics Reports
-sent by SPs.
+Operating Office is the sole receiver of all Transaction Statistics Reports sent by SPs.
 
 OO will:
 
