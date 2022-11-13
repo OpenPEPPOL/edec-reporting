@@ -25,6 +25,7 @@ Non-normative example how these values are meant to be calculated:
 * End User "B" sent 6 Invoices
 * End User "C" sent 15 Invoices
 * End User "D" received 2 Orders
+* End User "E" sent nothing and received nothing
 
 -> The value of `eusr:SendingEndUsers` is `3` (A, B and C)
 
