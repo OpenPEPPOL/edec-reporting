@@ -21,6 +21,7 @@
   <eusr:Total>
     <eusr:SendingEndUsers>9</eusr:SendingEndUsers>
     <eusr:ReceivingEndUsers>4</eusr:ReceivingEndUsers>
+    <eusr:DistinctEndUsers>12</eusr:DistinctEndUsers>
   </eusr:Total>
   <!-- end::Total[] -->
 

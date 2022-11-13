@@ -11,9 +11,13 @@
   </Header>
 
   <Total>
-    <SendingEndUsers>5</SendingEndUsers>
-    <ReceivingEndUsers>3</ReceivingEndUsers>
-    <DistinctEndUsers>6</DistinctEndUsers>
+    <SendingEndUsers>9</SendingEndUsers>
+    <ReceivingEndUsers>4</ReceivingEndUsers>
+    <!--
+    [SCH-EUSR-21] The total number of total DistinctEndUsers MUST be greater or equal to number of total ReceivingEndUsers
+    3 < 4
+    -->
+    <DistinctEndUsers>3</DistinctEndUsers>
   </Total>
 
   <Subtotal type="PerDT-PR">

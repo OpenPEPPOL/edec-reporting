@@ -12,11 +12,12 @@
 
   <Total>
     <!--
-    [EUR-03] The maximum of all subtotals of SendingEndUsers MUST be lower or equal to Totals/SendingEndUsers
+    [SCH-EUSR-03] The maximum of all subtotals of SendingEndUsers MUST be lower or equal to Totals/SendingEndUsers
     5 > 4
     -->
     <SendingEndUsers>4</SendingEndUsers>
     <ReceivingEndUsers>4</ReceivingEndUsers>
+    <DistinctEndUsers>8</DistinctEndUsers>
   </Total>
 
   <Subtotal type="PerDT-PR">

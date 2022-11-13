@@ -48,30 +48,35 @@ SCH-EUSR-17
 | SCH-EUSR-08
 
 | BR-EUSR-09
-| The Report MUST contain the total number of end users that have sent datasets during the Reporting Period.
+| The Report MUST contain the total number of distinct end users that have sent datasets during the Reporting Period.
 | XSD
 
 | BR-EUSR-10
-| The Report MUST contain the total number of end users that have received datasets during the Reporting Period.
+| The Report MUST contain the total number of distinct end users that have received datasets during the Reporting Period.
 | XSD
 
 | BR-EUSR-11
-| The Report MUST contain the number of sending end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
-| SCH-EUSR-15
+| The Report MUST contain the total number of distinct end users that have sent or received datasets during the Reporting Period.
+This is the union of the end users targeted by BR-EUSR-09 and BR-EUSR-10.
+| XSD
 
 | BR-EUSR-12
-| The Report MUST contain the number of receiving end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
+| The Report MUST contain the number of distinct sending end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
 | SCH-EUSR-15
 
 | BR-EUSR-13
+| The Report MUST contain the number of distinct receiving end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
+| SCH-EUSR-15
+
+| BR-EUSR-14
 | The total number of sending end users MUST be greater or equal to the maximum number of sending end users aggregated by Dataset Type ID and Process ID.
 | SCH-EUSR-03
 
-| BR-EUSR-14
+| BR-EUSR-15
 | The total number of receiving end users MUST be greater or equal to the maximum number of receiving end users aggregated by Dataset Type ID and Process ID.
 | SCH-EUSR-04
 
-| BR-EUSR-15
+| BR-EUSR-16
 | Each combination of Dataset Type ID and Process ID, for which data is aggregated, MUST NOT occur more than once.
 | SCH-EUSR-13
 

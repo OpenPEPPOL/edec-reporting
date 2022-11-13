@@ -13,9 +13,10 @@
   <Total>
     <SendingEndUsers>5</SendingEndUsers>
     <ReceivingEndUsers>3</ReceivingEndUsers>
+    <DistinctEndUsers>6</DistinctEndUsers>
   </Total>
   
   <!--
-  [EUR-15] The subtotals per 'Dataset Type ID and Process ID' MUST exist 
+  [SCH-EUSR-15] The subtotals per 'Dataset Type ID and Process ID' MUST exist 
    -->
 </EndUserStatisticsReport>

@@ -3,15 +3,31 @@
 Defines the total amount of end users that have exchanged datasets in the Reporting Period.
 The element `Total` and its child elements MUST be provided for every End User Statistics Report.
 
-The element `eusr:Total/eusr:SendingEndUsers` contains the total number of end users that
+The element `eusr:Total/eusr:SendingEndUsers` contains the total number of distinct end users that
 have sent datasets. Only values &ge; 0 are allowed.
 
-The element `eusr:Total/eusr:ReceivingEndUsers` contains the total number of end users that
+The element `eusr:Total/eusr:ReceivingEndUsers` contains the total number of distinct end users that
 have received datasets. Only values &ge; 0 are allowed.
 
-.Example of a `Total` element with 9 sending and 4 receiving end users:
+The element `eusr:Total/eusr:DistinctEndUsers` contains the total number of distinct end users that
+have either sent or received datasets. The  Only values &ge; 0 are allowed.
+
+.Example of a `Total` element with 9 sending, 4 receiving and 12 distinct end users:
 [source, xml]
 ----
 include::./snippet/snippet-1.xml[tags=Total]
 ----
 
+Non-normative example how these values are meant to be calculated:
+
+* End User "A" sent 2 Invoices and 3 Orders
+* End User "A" received 5 Invoices
+* End User "B" sent 6 Invoices
+* End User "C" sent 15 Invoices
+* End User "D" received 2 Orders
+
+-> The value of `eusr:SendingEndUsers` is `3` (A, B and C)
+
+-> The value of `eusr:ReceivingEndUsers` is `2` (A and D)
+
+-> The value of `eusr:DistinctEndUsers` is `4` (A, B, C and D)

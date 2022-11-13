@@ -89,6 +89,7 @@
     <xs:sequence>
       <xs:element name="SendingEndUsers" type="xs:nonNegativeInteger"/>
       <xs:element name="ReceivingEndUsers" type="xs:nonNegativeInteger"/>
+      <xs:element name="DistinctEndUsers" type="xs:nonNegativeInteger"/>
     </xs:sequence>
   </xs:complexType>
 

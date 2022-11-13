@@ -35,6 +35,13 @@
       >[SCH-EUSR-03] The maximum of all subtotals of SendingEndUsers MUST be lower or equal to Totals/SendingEndUsers</assert>
       <assert id="SCH-EUSR-04" flag="fatal" test="$empty or eusr:Subtotal/eusr:ReceivingEndUsers[not(. &lt; ../../eusr:Subtotal/eusr:ReceivingEndUsers)][1] &lt;= eusr:Total/eusr:ReceivingEndUsers"
       >[SCH-EUSR-04] The maximum of all subtotals of ReceivingEndUsers MUST be lower or equal to Totals/ReceivingEndUsers</assert>
+      
+      <assert id="SCH-EUSR-19" flag="fatal" test="eusr:Total/eusr:DistinctEndUsers &lt;= $total"
+      >[SCH-EUSR-19] The total number of total DistinctEndUsers (<value-of select="eusr:Total/eusr:DistinctEndUsers"/>) MUST be lower or equal to the sum of the total SendingEndUsers and total ReceivingEndUsers</assert>
+      <assert id="SCH-EUSR-20" flag="fatal" test="eusr:Total/eusr:DistinctEndUsers &gt;= eusr:Total/eusr:SendingEndUsers"
+      >[SCH-EUSR-20] The total number of total DistinctEndUsers (<value-of select="eusr:Total/eusr:DistinctEndUsers"/>) MUST be greater or equal to number of total SendingEndUsers (<value-of select="eusr:Total/eusr:SendingEndUsers"/>)</assert>
+      <assert id="SCH-EUSR-21" flag="fatal" test="eusr:Total/eusr:DistinctEndUsers &gt;= eusr:Total/eusr:ReceivingEndUsers"
+      >[SCH-EUSR-21] The total number of total DistinctEndUsers (<value-of select="eusr:Total/eusr:DistinctEndUsers"/>) MUST be greater or equal to number of total ReceivingEndUsers (<value-of select="eusr:Total/eusr:ReceivingEndUsers"/>)</assert>
         
       <!-- Per Dataset Type -->
       <!-- Check Subtotal existence -->

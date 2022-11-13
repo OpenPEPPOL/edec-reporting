@@ -7,13 +7,14 @@
       <StartDate>2022-01-01</StartDate>
       <EndDate>2022-01-31</EndDate>
     </ReportPeriod>
-    <!-- [EUR-07] The Reporter ID scheme ID MUST be coded according to the code list -->
+    <!-- [SCH-EUSR-07] The Reporter ID scheme ID MUST be coded according to the code list -->
     <ReporterID schemeID="XCertSubjectCN">POP000360</ReporterID>
   </Header>
 
   <Total>
     <SendingEndUsers>9</SendingEndUsers>
     <ReceivingEndUsers>4</ReceivingEndUsers>
+    <DistinctEndUsers>12</DistinctEndUsers>
   </Total>
 
   <Subtotal type="PerDT-PR">

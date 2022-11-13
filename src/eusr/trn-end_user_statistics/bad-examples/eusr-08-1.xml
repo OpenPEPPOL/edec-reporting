@@ -7,13 +7,14 @@
       <StartDate>2022-01-01</StartDate>
       <EndDate>2022-01-31</EndDate>
     </ReportPeriod>
-    <!-- [EUR-08] The layout of the certificate subject CN is not a valid Peppol Seat ID -->
+    <!-- [SCH-EUSR-08] The layout of the certificate subject CN is not a valid Peppol Seat ID -->
     <ReporterID schemeID="CertSubjectCN">XPOP000360</ReporterID>
   </Header>
 
   <Total>
     <SendingEndUsers>9</SendingEndUsers>
     <ReceivingEndUsers>4</ReceivingEndUsers>
+    <DistinctEndUsers>12</DistinctEndUsers>
   </Total>
 
   <Subtotal type="PerDT-PR">

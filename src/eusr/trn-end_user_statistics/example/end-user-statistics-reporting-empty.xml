@@ -13,5 +13,6 @@
   <Total>
     <SendingEndUsers>0</SendingEndUsers>
     <ReceivingEndUsers>0</ReceivingEndUsers>
+    <DistinctEndUsers>0</DistinctEndUsers>
   </Total>
 </EndUserStatisticsReport>
