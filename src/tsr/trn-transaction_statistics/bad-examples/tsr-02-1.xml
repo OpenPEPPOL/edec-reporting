@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TransactionStatisticsReport xmlns="urn:fdc:peppol:transaction-statistics-report:1.0">
-  <CustomizationID>urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1.0</CustomizationID>
-  <!-- [TSR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:oo:bis:reporting:1' -->
-  <ProfileID>Xurn:fdc:peppol.eu:oo:bis:reporting:1</ProfileID>
+  <CustomizationID>urn:fdc:peppol.eu:edec:trns:transaction-statistics-reporting:1.0</CustomizationID>
+  <!-- [TSR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:edec:bis:reporting:1' -->
+  <ProfileID>Xurn:fdc:peppol.eu:edec:bis:reporting:1</ProfileID>
   <Header>
     <ReportPeriod>
       <StartDate>2022-01-01</StartDate>

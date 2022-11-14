@@ -13,7 +13,7 @@
       Philip Helger
 
     History:
-      2022-11-04, Muhammet Yildiz, Philip Helger - updates after the first review
+      2022-11-14, Muhammet Yildiz, Philip Helger - updates after the first review
       2022-04-15, Philip Helger - initial version
   </p>
 
@@ -26,10 +26,10 @@
       <let name="total" value="eusr:Total/eusr:SendingEndUsers + eusr:Total/eusr:ReceivingEndUsers"/>
       <let name="empty" value="$total = 0"/>
 
-      <assert id="SCH-EUSR-01" flag="fatal" test="normalize-space(eusr:CustomizationID) = 'urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0'"
-      >[SCH-EUSR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0'</assert>
-      <assert id="SCH-EUSR-02" flag="fatal" test="normalize-space(eusr:ProfileID) = 'urn:fdc:peppol.eu:oo:bis:reporting:1.0'"
-      >[SCH-EUSR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:oo:bis:reporting:1.0'</assert>
+      <assert id="SCH-EUSR-01" flag="fatal" test="normalize-space(eusr:CustomizationID) = 'urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.0'"
+      >[SCH-EUSR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.0'</assert>
+      <assert id="SCH-EUSR-02" flag="fatal" test="normalize-space(eusr:ProfileID) = 'urn:fdc:peppol.eu:edec:bis:reporting:1.0'"
+      >[SCH-EUSR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:edec:bis:reporting:1.0'</assert>
 
       <assert id="SCH-EUSR-03" flag="fatal" test="$empty or eusr:Subtotal/eusr:SendingEndUsers[not(. &lt; ../../eusr:Subtotal/eusr:SendingEndUsers)][1] &lt;= eusr:Total/eusr:SendingEndUsers"
       >[SCH-EUSR-03] The maximum of all subtotals of SendingEndUsers MUST be lower or equal to Totals/SendingEndUsers</assert>

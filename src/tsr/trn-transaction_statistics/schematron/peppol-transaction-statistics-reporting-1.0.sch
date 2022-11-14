@@ -13,7 +13,7 @@
       Philip Helger
 
     History:
-      2022-11-04, Muhammet Yildiz, Philip Helger - updates after the review
+      2022-11-14, Muhammet Yildiz, Philip Helger - updates after the review
       2022-04-21, Philip Helger - initial version
   </p>
 
@@ -29,10 +29,10 @@
       <let name="total" value="tsr:Total/tsr:Incoming + tsr:Total/tsr:Outgoing"/>
       <let name="empty" value="$total = 0"/>
 
-      <assert id="SCH-TSR-01" flag="fatal" test="normalize-space(tsr:CustomizationID) = 'urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1.0'"
-      >[SCH-TSR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:oo:trns:transaction-statistics-reporting:1.0'</assert>
-      <assert id="SCH-TSR-02" flag="fatal" test="normalize-space(tsr:ProfileID) = 'urn:fdc:peppol.eu:oo:bis:reporting:1.0'"
-      >[SCH-TSR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:oo:bis:reporting:1.0'</assert>
+      <assert id="SCH-TSR-01" flag="fatal" test="normalize-space(tsr:CustomizationID) = 'urn:fdc:peppol.eu:edec:trns:transaction-statistics-reporting:1.0'"
+      >[SCH-TSR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:edec:trns:transaction-statistics-reporting:1.0'</assert>
+      <assert id="SCH-TSR-02" flag="fatal" test="normalize-space(tsr:ProfileID) = 'urn:fdc:peppol.eu:edec:bis:reporting:1.0'"
+      >[SCH-TSR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:edec:bis:reporting:1.0'</assert>
 
       <!-- Per Transport Protocol -->
       <!-- Check Subtotal existence -->
