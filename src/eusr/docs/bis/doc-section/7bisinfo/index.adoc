@@ -10,19 +10,19 @@ In the table below you will find the values to be used as the specification iden
 |Process ID
 
 |End User Statistics Report
-|`urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0`
-|`urn:fdc:peppol.eu:oo:bis:reporting:1.0`
+|`urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.0`
+|`urn:fdc:peppol.eu:edec:bis:reporting:1.0`
 |====
 
 .XML example representation
 [source, xml, indent=0]
 ----
-  <eusr:CustomizationID>urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0</eusr:CustomizationID>
-  <eusr:ProfileID>urn:fdc:peppol.eu:oo:bis:reporting:1.0</eusr:ProfileID>
+  <eusr:CustomizationID>urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.0</eusr:CustomizationID>
+  <eusr:ProfileID>urn:fdc:peppol.eu:edec:bis:reporting:1.0</eusr:ProfileID>
 ----
 
 .Full Peppol Document Type identifier
 [source, indent=0]
 ----
-urn:fdc:peppol:end-user-statistics-report:1.0::EndUserStatisticsReport##urn:fdc:peppol.eu:oo:trns:end-user-statistics-report:1.0::1.0
+urn:fdc:peppol:end-user-statistics-report:1.0::EndUserStatisticsReport##urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.0::1.0
 ----
