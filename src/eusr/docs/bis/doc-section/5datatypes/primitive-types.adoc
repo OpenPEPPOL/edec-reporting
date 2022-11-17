@@ -11,6 +11,9 @@ These primitive types were taken from https://www.iso.org/standard/61433.html[IS
 |Date
 |Time point representing a calendar day on a time scale consisting of an origin and a succession of calendar https://www.iso.org/standard/40874.html[ISO 8601].
 
+|Decimal
+|A subset of the real numbers, which can be represented by decimal numerals.
+
 |String
 |A finite sequence of zero or more characters.
 |===
