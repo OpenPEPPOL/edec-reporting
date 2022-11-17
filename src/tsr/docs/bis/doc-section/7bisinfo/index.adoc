@@ -1,0 +1,29 @@
+[[bis-identifiers]]
+= BIS Identifiers
+
+In the table below you will find the values to be used as the specification identifier and the business process type for this profile
+
+[cols="1s,2,2",options="header"]
+|====
+|Type
+|Element `CustomizationID`
+|Process ID
+
+|Transaction Statistics Report
+|`urn:fdc:peppol.eu:edec:trns:transaction-statistics-reporting:1.0`
+|`urn:fdc:peppol.eu:edec:bis:reporting:1.0`
+|====
+
+.XML example representation
+[source, xml, indent=0]
+----
+  <tsr:CustomizationID>urn:fdc:peppol.eu:edec:trns:transaction-statistics-reporting:1.0</tsr:CustomizationID>
+  <tsr:ProfileID>urn:fdc:peppol.eu:edec:bis:reporting:1.0</tsr:ProfileID>
+----
+
+.Full Peppol Document Type identifier
+[source, indent=0]
+----
+urn:fdc:peppol:transaction-statistics-report:1.0::TransactionStatisticsReport##urn:fdc:peppol.eu:edec:trns:transaction-statistics-reporting:1.0::1.0
+----
+      

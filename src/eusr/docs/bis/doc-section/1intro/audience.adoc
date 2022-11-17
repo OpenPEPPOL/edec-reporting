@@ -1,0 +1,7 @@
+= Audience
+
+* Peppol Coordinating Authority (PCA)
+** How the PCA will receive the reports.
+
+* Service Provider (SP)
+** How SPs are to submit their End User Statistics Reports to the PCA.

@@ -1,0 +1,43 @@
+= Subtotals
+
+An End User Statistics Report contains subtotals per distinct pairs of Dataset Type and Process ID.
+The purpose of this grouping is to get information about number of end users that
+have participated in a certain data exchange process.
+
+Currently only a data aggregation in terms of subtotal per Dataset Type and Process ID is required.
+A subtotal is represented by a `Subtotal` element, which requires an attribute
+named `@type` which is set to `PerDT-PR`. In order to keep the possibility of future
+extensions on the subtotal type, the value range for `@type` has been defined
+in the <<codelist-subtotaltype>> code list
+
+== Subtotal per Dataset Type and Process ID
+
+This subtotal is the only type that is currently supported by End User Statistics Reporting BIS.
+It is defined by the `@type` attribute having the value `PerDT-PR`.
+
+* This subtotal requires one `Key` element with a Meta Scheme ID of `DT` (Dataset Type).
+The `@schemeID` attribute of this `Key` element MUST be the Document Type Identifier Scheme
+of the exchanged Dataset (usually `busdox-docid-qns`). The value of the `Key` element MUST be
+the Dataset Type (Document Type) Identifier value of the exchanged dataset.
+
+* This subtotal requires one `Key` element with Meta Scheme ID of `PR` (Process ID).
+The `schemeID` attribute of this `Key` element MUST be the Process Identifier
+Scheme of the process (Peppol profile) used (usually `cenbii-procid-ubl`).
+The value of the `Key` element MUST be the Process ID value of the process
+(Peppol profile) used.
+
+Each distinct combination of the Dataset Type and Process ID MUST be reported in a separate
+`Subtotal` element.
+
+The sum of the number of all end users who have sent out datasets per Dataset Type and Process ID
+must match the total number of sending end users.
+
+The sum of the number of all end users who have received datasets per Dataset Type and Process ID
+must match the total number of receiving end users.
+
+
+.Example of a subtotal per Dataset Type and Process ID:
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=SubtotalPerDT-PR]
+----
