@@ -11,5 +11,5 @@ h| Document location
 | `tsr:TransactionStatisticsReport/tsr:Subtotal/@type`
 
 h| Source code list
-| link:../transaction_statistics/codelist/SubtotalType/[Subtotal Type code list]
+| link:../trn-transaction_statistics/codelist/SubtotalType/[Subtotal Type code list]
 |===

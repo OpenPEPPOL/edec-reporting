@@ -10,5 +10,5 @@ h| Document location
 | `tsr:TransactionStatisticsReport/tsr:Subtotal/tsr:Key[@metaSchemeID="CC"]`
 
 h| Source code list
-| link:../transaction_statistics/codelist/ISO3166/[Country Codes code list]
+| link:../trn-transaction_statistics/codelist/ISO3166/[Country Codes code list]
 |===

@@ -11,5 +11,5 @@ h| Document location
 | `eusr:EndUserStatisticsReport/eusr:Subtotal/@type`
 
 h| Source code list
-| link:../end_user_statistics/codelist/SubtotalType/[Subtotal Type code list]
+| link:../trn-end_user_statistics/codelist/SubtotalType/[Subtotal Type code list]
 |===
