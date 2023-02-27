@@ -32,7 +32,10 @@
       <CustomizationID></CustomizationID>
       <ProfileID>urn:fdc:peppol.eu:edec:bis:reporting:1.0</ProfileID>
       <Header>
-        <ReportPeriod>2022-01</ReportPeriod>
+        <ReportPeriod>
+          <StartDate>2022-01-01</StartDate>
+          <EndDate>2022-01-31</EndDate>
+        </ReportPeriod>
         <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
       </Header>
 
