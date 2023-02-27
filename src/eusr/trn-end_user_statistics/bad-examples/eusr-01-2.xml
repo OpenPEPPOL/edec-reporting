@@ -11,9 +11,9 @@
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
   
-  <Total>
+  <FullSet>
     <SendingEndUsers>0</SendingEndUsers>
     <ReceivingEndUsers>0</ReceivingEndUsers>
-    <DistinctEndUsers>0</DistinctEndUsers>
-  </Total>
+    <SendingOrReceivingEndUsers>0</SendingOrReceivingEndUsers>
+  </FullSet>
 </EndUserStatisticsReport>

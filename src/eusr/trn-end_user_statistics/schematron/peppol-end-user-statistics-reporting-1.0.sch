@@ -13,8 +13,12 @@
       Philip Helger
 
     History:
-      2022-11-14, Muhammet Yildiz, Philip Helger - updates after the first review
-      2022-04-15, Philip Helger - initial version
+      EUSR RC3
+      * 2023-02-27, Philip Helger - updates after second review
+      EUSR RC2
+      * 2022-11-14, Muhammet Yildiz, Philip Helger - updates after the first review
+      EUR RC1
+      * 2022-04-15, Philip Helger - initial version
   </p>
 
   <ns prefix="eusr" uri="urn:fdc:peppol:end-user-statistics-report:1.0"/>
@@ -23,7 +27,7 @@
     <let name="cl_spidtype" value="' CertSubjectCN '"/>
 
     <rule context="/eusr:EndUserStatisticsReport">
-      <let name="total" value="eusr:Total/eusr:SendingEndUsers + eusr:Total/eusr:ReceivingEndUsers"/>
+      <let name="total" value="eusr:FullSet/eusr:SendingEndUsers + eusr:FullSet/eusr:ReceivingEndUsers"/>
       <let name="empty" value="$total = 0"/>
 
       <assert id="SCH-EUSR-01" flag="fatal" test="normalize-space(eusr:CustomizationID) = 'urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.0'"
@@ -31,37 +35,59 @@
       <assert id="SCH-EUSR-02" flag="fatal" test="normalize-space(eusr:ProfileID) = 'urn:fdc:peppol.eu:edec:bis:reporting:1.0'"
       >[SCH-EUSR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:edec:bis:reporting:1.0'</assert>
 
-      <assert id="SCH-EUSR-03" flag="fatal" test="$empty or eusr:Subtotal/eusr:SendingEndUsers[not(. &lt; ../../eusr:Subtotal/eusr:SendingEndUsers)][1] &lt;= eusr:Total/eusr:SendingEndUsers"
-      >[SCH-EUSR-03] The maximum of all subtotals of SendingEndUsers MUST be lower or equal to Totals/SendingEndUsers</assert>
-      <assert id="SCH-EUSR-04" flag="fatal" test="$empty or eusr:Subtotal/eusr:ReceivingEndUsers[not(. &lt; ../../eusr:Subtotal/eusr:ReceivingEndUsers)][1] &lt;= eusr:Total/eusr:ReceivingEndUsers"
-      >[SCH-EUSR-04] The maximum of all subtotals of ReceivingEndUsers MUST be lower or equal to Totals/ReceivingEndUsers</assert>
-      
-      <assert id="SCH-EUSR-19" flag="fatal" test="eusr:Total/eusr:DistinctEndUsers &lt;= $total"
-      >[SCH-EUSR-19] The total number of total DistinctEndUsers (<value-of select="eusr:Total/eusr:DistinctEndUsers"/>) MUST be lower or equal to the sum of the total SendingEndUsers and total ReceivingEndUsers</assert>
-      <assert id="SCH-EUSR-20" flag="fatal" test="eusr:Total/eusr:DistinctEndUsers &gt;= eusr:Total/eusr:SendingEndUsers"
-      >[SCH-EUSR-20] The total number of total DistinctEndUsers (<value-of select="eusr:Total/eusr:DistinctEndUsers"/>) MUST be greater or equal to number of total SendingEndUsers (<value-of select="eusr:Total/eusr:SendingEndUsers"/>)</assert>
-      <assert id="SCH-EUSR-21" flag="fatal" test="eusr:Total/eusr:DistinctEndUsers &gt;= eusr:Total/eusr:ReceivingEndUsers"
-      >[SCH-EUSR-21] The total number of total DistinctEndUsers (<value-of select="eusr:Total/eusr:DistinctEndUsers"/>) MUST be greater or equal to number of total ReceivingEndUsers (<value-of select="eusr:Total/eusr:ReceivingEndUsers"/>)</assert>
-        
+      <assert id="SCH-EUSR-03" flag="fatal" test="$empty or eusr:Subset/eusr:SendingEndUsers[not(. &lt; ../../eusr:Subset/eusr:SendingEndUsers)][1] &lt;= eusr:FullSet/eusr:SendingEndUsers"
+      >[SCH-EUSR-03] The maximum of all subtotals of SendingEndUsers MUST be lower or equal to FullSet/SendingEndUsers</assert>
+      <assert id="SCH-EUSR-04" flag="fatal" test="$empty or eusr:Subset/eusr:ReceivingEndUsers[not(. &lt; ../../eusr:Subset/eusr:ReceivingEndUsers)][1] &lt;= eusr:FullSet/eusr:ReceivingEndUsers"
+      >[SCH-EUSR-04] The maximum of all subtotals of ReceivingEndUsers MUST be lower or equal to FullSet/ReceivingEndUsers</assert>
+      <assert id="SCH-EUSR-22" flag="fatal" test="$empty or eusr:Subset/eusr:SendingOrReceivingEndUsers[not(. &lt; ../../eusr:Subset/eusr:SendingOrReceivingEndUsers)][1] &lt;= eusr:FullSet/eusr:SendingOrReceivingEndUsers"
+      >[SCH-EUSR-22] The maximum of all subtotals of SendingOrReceivingEndUsers MUST be lower or equal to FullSet/SendingOrReceivingEndUsers</assert>
+
+      <assert id="SCH-EUSR-19" flag="fatal" test="eusr:FullSet/eusr:SendingOrReceivingEndUsers &lt;= $total"
+      >[SCH-EUSR-19] The total number of total SendingOrReceivingEndUsers (<value-of select="eusr:FullSet/eusr:SendingOrReceivingEndUsers"/>) MUST be lower or equal to the sum of the total SendingEndUsers and total ReceivingEndUsers</assert>
+      <assert id="SCH-EUSR-20" flag="fatal" test="eusr:FullSet/eusr:SendingOrReceivingEndUsers &gt;= eusr:FullSet/eusr:SendingEndUsers"
+      >[SCH-EUSR-20] The total number of total SendingOrReceivingEndUsers (<value-of select="eusr:FullSet/eusr:SendingOrReceivingEndUsers"/>) MUST be greater or equal to number of total SendingEndUsers (<value-of select="eusr:FullSet/eusr:SendingEndUsers"/>)</assert>
+      <assert id="SCH-EUSR-21" flag="fatal" test="eusr:FullSet/eusr:SendingOrReceivingEndUsers &gt;= eusr:FullSet/eusr:ReceivingEndUsers"
+      >[SCH-EUSR-21] The total number of total SendingOrReceivingEndUsers (<value-of select="eusr:FullSet/eusr:SendingOrReceivingEndUsers"/>) MUST be greater or equal to number of total ReceivingEndUsers (<value-of select="eusr:FullSet/eusr:ReceivingEndUsers"/>)</assert>
+
       <!-- Per Dataset Type -->
-      <!-- Check Subtotal existence -->
-      <assert id="SCH-EUSR-15" flag="fatal" test="$empty or eusr:Subtotal[normalize-space(@type) = 'PerDT-PR']"
+      <!-- Check Subset existence -->
+      <assert id="SCH-EUSR-15" flag="fatal" test="$empty or eusr:Subset[normalize-space(@type) = 'PerDT-PR']"
       >[SCH-EUSR-15] The subtotals per 'Dataset Type ID and Process ID' MUST exist</assert>
         
       <!-- Global uniqueness check per Key -->
-      <assert id="SCH-EUSR-13" flag="fatal" test="every $st in (eusr:Subtotal[normalize-space(@type) = 'PerDT-PR']),
+      <assert id="SCH-EUSR-13" flag="fatal" test="every $st in (eusr:Subset[normalize-space(@type) = 'PerDT-PR']),
                                                         $stdt in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
                                                         $stpr in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'PR'])  satisfies
-                                                    count(eusr:Subtotal[normalize-space(@type) ='PerDT-PR'][every $dt in (eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
-                                                                                                                  $pr in (eusr:Key[normalize-space(@metaSchemeID) = 'PR']) satisfies
-                                                                                                            concat(normalize-space($dt/@schemeID),'::',normalize-space($dt),'::',
-                                                                                                                   normalize-space($pr/@schemeID),'::',normalize-space($pr)) =
-                                                                                                            concat(normalize-space($stdt/@schemeID),'::',normalize-space($stdt),'::',
-                                                                                                                   normalize-space($stpr/@schemeID),'::',normalize-space($stpr))]) = 1"
+                                                    count(eusr:Subset[normalize-space(@type) ='PerDT-PR'][every $dt in (eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
+                                                                                                                $pr in (eusr:Key[normalize-space(@metaSchemeID) = 'PR']) satisfies
+                                                                                                          concat(normalize-space($dt/@schemeID),'::',normalize-space($dt),'::',
+                                                                                                                 normalize-space($pr/@schemeID),'::',normalize-space($pr)) =
+                                                                                                          concat(normalize-space($stdt/@schemeID),'::',normalize-space($stdt),'::',
+                                                                                                                 normalize-space($stpr/@schemeID),'::',normalize-space($stpr))]) = 1"
       >[SCH-EUSR-13] Each combination of 'Dataset Type ID and Process ID' MUST occur only once.</assert>
+
+      <assert id="SCH-EUSR-29" flag="fatal" test="every $st in (eusr:Subset[normalize-space(@type) = 'PerDT-PR-CC']),
+                                                        $stdt in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
+                                                        $stpr in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'PR']),
+                                                        $stsc in ($st/eusr:Key[normalize-space(@schemeID) = 'SenderCountry']),
+                                                        $strc in ($st/eusr:Key[normalize-space(@schemeID) = 'ReceiverCountry'])  satisfies
+                                                    count(eusr:Subset[normalize-space(@type) ='PerDT-PR-CC'][every $dt in (eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
+                                                                                                                   $pr in (eusr:Key[normalize-space(@metaSchemeID) = 'PR']),
+                                                                                                                   $sc in (eusr:Key[normalize-space(@schemeID) = 'SenderCountry']),
+                                                                                                                   $rc in (eusr:Key[normalize-space(@schemeID) = 'ReceiverCountry']) satisfies
+                                                                                                             concat(normalize-space($dt/@schemeID),'::',normalize-space($dt),'::',
+                                                                                                                    normalize-space($pr/@schemeID),'::',normalize-space($pr),'::',
+                                                                                                                    normalize-space($sc),'::',
+                                                                                                                    normalize-space($rc)) =
+                                                                                                             concat(normalize-space($stdt/@schemeID),'::',normalize-space($stdt),'::',
+                                                                                                                    normalize-space($stpr/@schemeID),'::',normalize-space($stpr),'::',
+                                                                                                                    normalize-space($sc),'::',
+                                                                                                                    normalize-space($rc))]) = 1"
+      >[SCH-EUSR-29] Each combination of 'Dataset Type ID, Process ID, Sender Country and Receiver Country' MUST occur only once.</assert>
         
       <!-- Check that no other types are used -->  
-      <assert id="SCH-EUSR-14" flag="fatal" test="count(eusr:Subtotal[normalize-space(@type) !='PerDT-PR']) = 0"
+      <assert id="SCH-EUSR-14" flag="fatal" test="count(eusr:Subset[normalize-space(@type) !='PerDT-PR' and 
+                                                                    normalize-space(@type) !='PerDT-PR-CC']) = 0"
       >[SCH-EUSR-14] Only allowed subtotal types MUST be used.</assert>
     </rule>
 
@@ -88,7 +114,7 @@
     </rule>
 
     <!-- Per Dataset Type and Process ID aggregation -->
-    <rule context="/eusr:EndUserStatisticsReport/eusr:Subtotal[normalize-space(@type) = 'PerDT-PR']">
+    <rule context="/eusr:EndUserStatisticsReport/eusr:Subset[normalize-space(@type) = 'PerDT-PR']">
       <let name="name" value="'The subtotal per Dataset Type ID and Process ID'"/>
       
       <assert id="SCH-EUSR-09" flag="fatal" test="count(eusr:Key) = 2"
@@ -97,6 +123,24 @@
       >[SCH-EUSR-10] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
       <assert id="SCH-EUSR-11" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'PR']) = 1"
       >[SCH-EUSR-11] $name MUST have one Key element with the meta scheme ID 'PR'</assert>
+    </rule>
+
+    <!-- Per Dataset Type, Process ID, Sender Country and Receiver Country aggregation -->
+    <rule context="/eusr:EndUserStatisticsReport/eusr:Subset[normalize-space(@type) = 'PerDT-PR-CC']">
+      <let name="name" value="'The subtotal per Dataset Type ID, Process ID, Sender Country and Receiver Country'"/>
+      
+      <assert id="SCH-EUSR-23" flag="fatal" test="count(eusr:Key) = 4"
+      >[SCH-EUSR-23] $name MUST have four Key elements</assert>
+      <assert id="SCH-EUSR-24" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
+      >[SCH-EUSR-24] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
+      <assert id="SCH-EUSR-25" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'PR']) = 1"
+      >[SCH-EUSR-25] $name MUST have one Key element with the meta scheme ID 'PR'</assert>
+      <assert id="SCH-EUSR-26" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC']) = 2"
+      >[SCH-EUSR-26] $name MUST have two Key elements with the meta scheme ID 'CC'</assert>
+      <assert id="SCH-EUSR-27" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'SenderCountry']) = 1"
+      >[SCH-EUSR-27] $name MUST have one CC Key element with the scheme ID 'SenderCountry'</assert>
+      <assert id="SCH-EUSR-28" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'ReceiverCountry']) = 1"
+      >[SCH-EUSR-28] $name MUST have one CC Key element with the scheme ID 'ReceiverCountry'</assert>
     </rule>
   </pattern>
 </schema>

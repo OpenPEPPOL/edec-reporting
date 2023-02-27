@@ -14,8 +14,12 @@
         Philip Helger
 
       History:
-        2022-11-04, Muhammet Yildiz, Philip Helger - updates after the first review
-        2022-04-14, Philip Helger - initial version
+        EUSR RC3
+        * 2023-02-27, Philip Helger - updates after second review
+        EUSR RC2
+        * 2022-11-04, Muhammet Yildiz, Philip Helger - updates after the first review
+        EUR RC1
+        * 2022-04-14, Philip Helger - initial version
     </xs:documentation>
   </xs:annotation>
 
@@ -85,15 +89,15 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="TotalsType">
+  <xs:complexType name="FullSetType">
     <xs:sequence>
       <xs:element name="SendingEndUsers" type="xs:nonNegativeInteger"/>
       <xs:element name="ReceivingEndUsers" type="xs:nonNegativeInteger"/>
-      <xs:element name="DistinctEndUsers" type="xs:nonNegativeInteger"/>
+      <xs:element name="SendingOrReceivingEndUsers" type="xs:nonNegativeInteger"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="SubtotalKeyType">
+  <xs:complexType name="SubsetKeyType">
     <xs:annotation>
       <xs:documentation>
         A key type with mandatory "metaSchemeID" and "schemeID" attributes and a value
@@ -120,9 +124,9 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="SubtotalType">
+  <xs:complexType name="SubsetType">
     <xs:sequence>
-      <xs:element name="Key" type="SubtotalKeyType" maxOccurs="unbounded">
+      <xs:element name="Key" type="SubsetKeyType" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation>The sub total keys</xs:documentation>
         </xs:annotation>
@@ -135,6 +139,11 @@
       <xs:element name="ReceivingEndUsers" type="xs:nonNegativeInteger">
         <xs:annotation>
           <xs:documentation>Number of matching effective receiving End Users</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SendingOrReceivingEndUsers" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Number of matching effective sending OR receiving End Users</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -173,12 +182,12 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Total" type="TotalsType" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="Subtotal" type="SubtotalType" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="FullSet" type="FullSetType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Subset" type="SubsetType" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation>
-            A subtotal representing the number of sending and receiving end users for
-            a particular dataset type and process ID
+            A subset representing the number of sending and/or receiving end users for
+            a particular combination of constraints.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
