@@ -13,6 +13,7 @@ include::./snippet/snippet-1.xml[tags=Header]
 
 The element `ReportPeriod` MUST contain the start date (inclusive) and 
   the end date (inclusive) of the reporting period.
+The start date can never be after the end date.
 Start date and end date elements MUST NOT contain time zone information.
 
 .Example (for a monthly Reporting Period):

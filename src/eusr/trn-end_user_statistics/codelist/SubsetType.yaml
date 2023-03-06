@@ -1,12 +1,15 @@
 title:
-  en: Subtotal Type
-identifier: Peppol:EUSR:SubtotalType
+  en: Subset Type
+identifier: Peppol:EUSR:SubsetType
 agency: OpenPeppol OO
 language: en
 version:
-  identifier: 2022-01
+  identifier: 2023-03
   status: draft
 codes:
 - id: PerDT-PR
   name:
     en: Aggregated per Dataset Type and Process ID
+- id: PerDT-PR-CC
+  name:
+    en: Aggregated per Dataset Type, Process ID, Sender Country and Receiver Country

@@ -3,6 +3,8 @@
 
 :leveloffset: +1
 
+include::country-code.adoc[]
+
 include::document-type-id.adoc[]
 
 include::process-id.adoc[]
