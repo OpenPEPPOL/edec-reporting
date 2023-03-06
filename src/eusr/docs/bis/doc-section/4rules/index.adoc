@@ -47,37 +47,105 @@ SCH-EUSR-17
 | If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID MUST be the CN part of the Peppol AP certificate Subject
 | SCH-EUSR-08
 
+
+
 | BR-EUSR-09
-| The Report MUST contain the total number of distinct end users that have sent datasets during the Reporting Period.
+| The Report MUST contain the number of distinct end users that have sent datasets during the Reporting Period.
 | XSD
 
 | BR-EUSR-10
-| The Report MUST contain the total number of distinct end users that have received datasets during the Reporting Period.
+| The Report MUST contain the number of distinct end users that have received datasets during the Reporting Period.
 | XSD
 
 | BR-EUSR-11
-| The Report MUST contain the total number of distinct end users that have sent or received datasets during the Reporting Period.
+| The Report MUST contain the number of distinct end users that have sent or received datasets during the Reporting Period.
 This is the union of the end users targeted by BR-EUSR-09 and BR-EUSR-10.
 | XSD
 
+
+
 | BR-EUSR-12
-| The Report MUST contain the number of distinct sending end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
-| SCH-EUSR-15
+| The Report MUST contain the number of distinct end users that have sent datasets during the Reporting Period,
+aggregated by Dataset Type ID and Process ID.
+| XSD
+
+SCH-EUSR-15
 
 | BR-EUSR-13
-| The Report MUST contain the number of distinct receiving end users, aggregated by Dataset Type ID and Process ID, if at least one Peppol Dataset was exchanged.
-| SCH-EUSR-15
+| The Report MUST contain the number of distinct end users that have received datasets during the Reporting Period,
+aggregated by Dataset Type ID and Process ID.
+| XSD 
+
+SCH-EUSR-15
 
 | BR-EUSR-14
-| The total number of sending end users MUST be greater or equal to the maximum number of sending end users aggregated by Dataset Type ID and Process ID.
-| SCH-EUSR-03
+| The Report MUST contain the number of distinct end users that have sent or received datasets during the Reporting Period,
+aggregated by Dataset Type ID and Process ID.
+This is the union of the end users targeted by BR-EUSR-12 and BR-EUSR-13.
+| XSD
+
+SCH-EUSR-15
+
 
 | BR-EUSR-15
-| The total number of receiving end users MUST be greater or equal to the maximum number of receiving end users aggregated by Dataset Type ID and Process ID.
-| SCH-EUSR-04
+| The maximum number of end users that have sent datasets from all subsets MUST be lower or equal to the full set number of end users that have sent datasets
+| SCH-EUSR-03
 
 | BR-EUSR-16
-| Each combination of Dataset Type ID and Process ID, for which data is aggregated, MUST NOT occur more than once.
+| The maximum number of end users that have received datasets from all subsets MUST be lower or equal to the full set number of end users that have received datasets.
+| SCH-EUSR-04
+
+| BR-EUSR-17
+| The maximum number of end users that have sent or received datasets from all subsets MUST be lower or equal to the full set number of end users that have sent or received datasets.
+| SCH-EUSR-22
+
+
+
+| BR-EUSR-18
+| The full set number of end users that have sent or received datasets MUST be lower or equal to the sum of the full set number of end users that have sent datasets and the full set number of end users that have received datasets
+| SCH-EUSR-19
+
+| BR-EUSR-19
+| The full set number of end users that have sent or received datasets MUST be greater or equal to the full set number of end users that have sent datasets
+| SCH-EUSR-20
+
+| BR-EUSR-20
+| The full set number of end users that have sent or received datasets MUST be greater or equal to the full set number of end users that have received datasets
+| SCH-EUSR-21
+
+
+
+| BR-EUSR-21
+| Each subset combination of Dataset Type ID and Process ID, for which data is aggregated, MUST NOT occur more than once.
 | SCH-EUSR-13
+
+| BR-EUSR-22
+| Each subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country for which data is aggregated, MUST NOT occur more than once.
+| SCH-EUSR-29
+
+
+
+| BR-EUSR-23
+| For each subset number of end users that have sent or received datasets MUST be lower or equal to the sum of the subset number of end users that have sent datasets and the subset number of end users that have received datasets
+| SCH-EUSR-33
+
+| BR-EUSR-24
+| For each subset number of end users that have sent or received datasets MUST be greater or equal to the subset number of end users that have sent datasets
+| SCH-EUSR-34
+
+| BR-EUSR-25
+| For each subset number of end users that have sent or received datasets MUST be greater or equal to the subset number of end users that have received datasets
+| SCH-EUSR-35
+
+| BR-EUSR-26
+| For each subset number of end users that have sent or received datasets MUST be greater to zero, otherwise the subset MUST not be emitted
+| SCH-EUSR-36
+
+
+
+| BR-EUSR-27
+| The subset combining Dataset Type ID, Process ID, Sender Country and Receiver Country MUST only be filled out by receiving entities. The value of end users that have sent datasets MUST hence always be zero 
+| SCH-EUSR-31
+
 
 |====
