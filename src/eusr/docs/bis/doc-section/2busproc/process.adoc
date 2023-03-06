@@ -30,6 +30,7 @@ Transmissions that failed on a network or protocol level MUST NOT to be consider
 *** Transaction Statistics Reports MUST NOT be counted for an End User Statistics Report.
 *** Each message MUST be counted only once by an SP (incoming or outgoing), it MUST NOT be counted twice.
 
+Note: If the same End User is represented with multiple Participant Identifiers, the data needs to be aggregated per End User and NOT per Participant Identifier.
 
 == Data Aggregation
 
@@ -38,7 +39,11 @@ can be performed on any of the above-mentioned source fields defined by the Inte
 
 The following aggregations MUST be provided to be compliant with this specification.
 
-* The Dataset Type and Process ID.
+* Dataset Type ID and Process ID
+
+The following aggregations MAY be provided to be compliant to this specification:
+
+* Dataset Type ID, Process ID, Sender Country and Receiver Country
 
 == Data Transmission
 
@@ -58,3 +63,4 @@ The following aggregations MUST be provided to be compliant with this specificat
 * Network
 ** End User Statistics Reports MUST be transmitted via the Peppol eDelivery Network.
 ** Only OpenPeppol is allowed to receive End User Statistics Reports directly.
+ 
