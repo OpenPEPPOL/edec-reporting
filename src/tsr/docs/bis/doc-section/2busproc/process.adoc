@@ -35,9 +35,9 @@ image::./images/tsr-process-view.png[]
    acknowledgment (like AS4 Receipts) MUST be included in the Transaction
    Statistics Report. Transmissions that failed on a network or protocol
    level MUST NOT to be considered for the report.
-*** End User Statistics Reports MUST NOT be counted for a Transaction Statistics Report
-*** Transaction Statistics Reports MUST NOT be counted for a Transaction Statistics Report
-*** Each message MUST be counted only once by a SP (incoming or outgoing), it MUST NOT be counted twice.
+** End User Statistics Reports MUST NOT be counted for a Transaction Statistics Report
+** Transaction Statistics Reports MUST NOT be counted for a Transaction Statistics Report
+** Only the sending SP MUST count the message as 'outgoing' and only the receiving SP MUST count the same message as 'incoming'.
 
 // TODO agree with JD
 NOTE: * The Country of the sender and receiver will be mandatory, when the backing eDEC specifications become mandatory
