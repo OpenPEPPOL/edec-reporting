@@ -52,11 +52,11 @@ Before the Transaction Statistics Report data is transmitted to OpenPeppol
 The following aggregations MUST be provided to be compliant to this specification:
 
 * Transport Protocol
-* Service Provider, Dataset Type and Process ID
+* Service Provider, Dataset Type ID and Process ID
 
 The following aggregations MAY be provided to be compliant to this specification:
 
-* Service Provider, Dataset Type, Process ID, Sender Country and Receiver Country
+* Service Provider, Dataset Type ID, Process ID, Sender Country and Receiver Country
 
 == Data Transmission
 
