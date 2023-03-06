@@ -28,23 +28,23 @@ Each distinct combination of the Dataset Type and Process ID MUST be reported in
 `Subset` element.
 
 
-The element `eusr:Subset/eusr:SendingEndUsers` contains the total number of distinct 
+The element `eusr:Subset/eusr:SendingEndUsers` contains the number of distinct 
   end users that have sent datasets using this combination of the Dataset Type and Process ID. 
   Only values &ge; 0 are allowed.
 
-The element `eusr:Subset/eusr:ReceivingEndUsers` contains the total number of distinct 
+The element `eusr:Subset/eusr:ReceivingEndUsers` contains the number of distinct 
   end users that have received datasets using this combination of the Dataset Type and Process ID. 
   Only values &ge; 0 are allowed.
 
-The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the total number of distinct 
+The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of distinct 
   end users that have either sent or received datasets using this combination of the Dataset Type and Process ID. 
   Only values &ge; 0 are allowed.
 
 
-.Example of a subtotal per Dataset Type and Process ID:
+.Example of a subset per Dataset Type and Process ID:
 [source, xml]
 ----
-include::./snippet/snippet-1.xml[tags=SubtotalPerDT-PR]
+include::./snippet/snippet-1.xml[tags=SubsetPerDT-PR]
 ----
 
 == Subset per Dataset Type, Process ID, Sender Country and Receiver Country
@@ -77,21 +77,21 @@ Each distinct combination of the Dataset Type, Process ID, Sender Country and Re
   MUST be reported in a separate `Subset` element.
 
 
-The element `eusr:Subset/eusr:SendingEndUsers` contains the total number of distinct 
+The element `eusr:Subset/eusr:SendingEndUsers` contains the number of distinct 
   end users that have sent datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
   Only values &ge; 0 are allowed.
 
-The element `eusr:Subset/eusr:ReceivingEndUsers` contains the total number of distinct 
+The element `eusr:Subset/eusr:ReceivingEndUsers` contains the number of distinct 
   end users that have received datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
   Only values &ge; 0 are allowed.
 
-The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the total number of distinct 
+The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of distinct 
   end users that have either sent or received datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
   Only values &ge; 0 are allowed.
 
 
-.Example of a subtotal per Dataset Type, Process ID, Sender Country and Receiver Country:
+.Example of a subset per Dataset Type, Process ID, Sender Country and Receiver Country:
 [source, xml]
 ----
-include::./snippet/snippet-1.xml[tags=SubtotalPerDT-PR-CC]
+include::./snippet/snippet-1.xml[tags=SubsetPerDT-PR-CC]
 ----

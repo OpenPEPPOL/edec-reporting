@@ -1,21 +1,21 @@
 = Full Set Information
 
-Defines the total amount of end users that have exchanged datasets in the Reporting Period.
+Defines the overall amount of end users that have exchanged datasets in the Reporting Period.
 The element `FullSet` and its child elements MUST be provided for every End User Statistics Report.
 
-The element `eusr:FullSet/eusr:SendingEndUsers` contains the total number of distinct end users that
+The element `eusr:FullSet/eusr:SendingEndUsers` contains the overall number of distinct end users that
 have sent datasets. Only values &ge; 0 are allowed.
 
-The element `eusr:FullSet/eusr:ReceivingEndUsers` contains the total number of distinct end users that
+The element `eusr:FullSet/eusr:ReceivingEndUsers` contains the overall number of distinct end users that
 have received datasets. Only values &ge; 0 are allowed.
 
-The element `eusr:FullSet/eusr:SendingOrReceivingEndUsers` contains the total number of distinct end users that
+The element `eusr:FullSet/eusr:SendingOrReceivingEndUsers` contains the overall number of distinct end users that
 have either sent or received datasets. Only values &ge; 0 are allowed.
 
 .Example of a `FullSet` element with 9 sending, 4 receiving and 12 sending or receiving end users:
 [source, xml]
 ----
-include::./snippet/snippet-1.xml[tags=Total]
+include::./snippet/snippet-1.xml[tags=FullSet]
 ----
 
 Non-normative example how these values are meant to be calculated:

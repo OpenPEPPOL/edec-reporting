@@ -17,15 +17,15 @@
   </eusr:Header>
   <!-- end::Header[] -->
 
-  <!-- tag::Total[] -->
+  <!-- tag::FullSet[] -->
   <eusr:FullSet>
     <eusr:SendingEndUsers>9</eusr:SendingEndUsers>
     <eusr:ReceivingEndUsers>4</eusr:ReceivingEndUsers>
     <eusr:SendingOrReceivingEndUsers>12</eusr:SendingOrReceivingEndUsers>
   </eusr:FullSet>
-  <!-- end::Total[] -->
+  <!-- end::FullSet[] -->
 
-  <!-- tag::SubtotalPerDT-PR[] -->
+  <!-- tag::SubsetPerDT-PR[] -->
   <eusr:Subset type="PerDT-PR">
     <eusr:Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</eusr:Key>
     <eusr:Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</eusr:Key>
@@ -33,9 +33,9 @@
     <eusr:ReceivingEndUsers>2</eusr:ReceivingEndUsers>
     <eusr:SendingOrReceivingEndUsers>3</eusr:SendingOrReceivingEndUsers>
   </eusr:Subset>
-  <!-- end::SubtotalPerDT-PR[] -->
+  <!-- end::SubsetPerDT-PR[] -->
 
-  <!-- tag::SubtotalPerDT-PR-CC[] -->
+  <!-- tag::SubsetPerDT-PR-CC[] -->
   <Subset type="PerDT-PR-CC">
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
@@ -45,6 +45,6 @@
     <ReceivingEndUsers>1</ReceivingEndUsers>
     <SendingOrReceivingEndUsers>1</SendingOrReceivingEndUsers>
   </Subset>
-  <!-- end::SubtotalPerDT-PR-CC[] -->
+  <!-- end::SubsetPerDT-PR-CC[] -->
 
 </eusr:EndUserStatisticsReport>
