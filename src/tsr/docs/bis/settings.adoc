@@ -1,6 +1,6 @@
 :lang: en
 
-:doctitle: Peppol Model for Transaction Statistics Reporting 
+:doctitle: Peppol Transaction Statistics Reporting Process 
 :version: 1.0.0 Final Draft
 :doctype: book
 
