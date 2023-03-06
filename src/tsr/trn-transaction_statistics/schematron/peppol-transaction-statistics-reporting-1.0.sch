@@ -198,7 +198,7 @@
       <assert id="SCH-TSR-36" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'ReceiverCountry']) = 1"
       >[SCH-TSR-36] $name MUST have one CC Key element with the scheme ID 'ReceiverCountry'</assert>
       <!-- TODO Should be added in 1.1 
-      <assert id="SCH-EUSR-38" flag="fatal" test="normalize-space(tsr:Outgoing) = '0'"
+      <assert id="SCH-EUSR-38" flag="fatal" test="tsr:Outgoing = 0"
       >[SCH-TSR-38] $name MUST have a 'Outgoing' value of '0' because that data cannot be gathered</assert>
       -->
     </rule>
