@@ -9,8 +9,8 @@ include::process-id.adoc[]
 
 include::reporter-id-scheme.adoc[]
 
-include::subtotal-type.adoc[]
+include::subset-type.adoc[]
 
-include::subtotal-key-meta-scheme.adoc[]
+include::subset-key-meta-scheme.adoc[]
 
 :leveloffset: -1

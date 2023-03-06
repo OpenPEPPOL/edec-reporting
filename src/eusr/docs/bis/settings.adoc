@@ -1,6 +1,6 @@
 :lang: en
 
-:doctitle: Peppol Model for End User Statistics Reporting
+:doctitle: Peppol End User Statistics Reporting Process
 :version: 1.0.0-RC2
 :doctype: book
 

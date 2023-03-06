@@ -8,7 +8,7 @@ Currently only a data aggregation in terms of subtotal per Dataset Type and Proc
 A subtotal is represented by a `Subtotal` element, which requires an attribute
 named `@type` which is set to `PerDT-PR`. In order to keep the possibility of future
 extensions on the subtotal type, the value range for `@type` has been defined
-in the <<codelist-subtotaltype>> code list
+in the <<codelist-subsettype>> code list
 
 == Subtotal per Dataset Type and Process ID
 

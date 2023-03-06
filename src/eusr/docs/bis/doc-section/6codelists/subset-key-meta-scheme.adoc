@@ -1,0 +1,14 @@
+[[codelist-subsetkeymeta]]
+= Subset Key Meta Scheme
+
+The Subset Key Meta Scheme defines the type of a single
+  key in a subset.
+
+[cols="1,4"]
+|===
+h| Document location
+| `eusr:EndUserStatisticsReport/eusr:Subset/eusr:Key/@metaSchemeID`
+
+h| Source code list
+| link:../trn-end_user_statistics/codelist/SubsetKeyMetaScheme/[Subset Key Meta Scheme code list]
+|===
