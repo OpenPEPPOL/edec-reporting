@@ -15,7 +15,7 @@
 
       History:
         EUSR RC3
-        * 2023-02-27, Philip Helger - updates after second review
+        * 2023-03-06, Philip Helger - updates after second review
         EUSR RC2
         * 2022-11-04, Muhammet Yildiz, Philip Helger - updates after the first review
         EUR RC1
@@ -128,7 +128,7 @@
     <xs:sequence>
       <xs:element name="Key" type="SubsetKeyType" maxOccurs="unbounded">
         <xs:annotation>
-          <xs:documentation>The sub total keys</xs:documentation>
+          <xs:documentation>The subset keys</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="SendingEndUsers" type="xs:nonNegativeInteger">

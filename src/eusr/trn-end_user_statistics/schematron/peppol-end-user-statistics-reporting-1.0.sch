@@ -14,7 +14,7 @@
 
     History:
       EUSR RC3
-      * 2023-02-27, Philip Helger - updates after second review
+      * 2023-03-06, Philip Helger - updates after second review
       EUSR RC2
       * 2022-11-14, Muhammet Yildiz, Philip Helger - updates after the first review
       EUR RC1
@@ -37,28 +37,28 @@
       >[SCH-EUSR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:edec:bis:reporting:1.0'</assert>
 
       <assert id="SCH-EUSR-03" flag="fatal" test="$empty or eusr:Subset/eusr:SendingEndUsers[not(. &lt; ../../eusr:Subset/eusr:SendingEndUsers)][1] &lt;= eusr:FullSet/eusr:SendingEndUsers"
-      >[SCH-EUSR-03] The maximum of all subtotals of SendingEndUsers MUST be lower or equal to FullSet/SendingEndUsers</assert>
+      >[SCH-EUSR-03] The maximum of all subsets of SendingEndUsers MUST be lower or equal to FullSet/SendingEndUsers</assert>
       <assert id="SCH-EUSR-04" flag="fatal" test="$empty or eusr:Subset/eusr:ReceivingEndUsers[not(. &lt; ../../eusr:Subset/eusr:ReceivingEndUsers)][1] &lt;= eusr:FullSet/eusr:ReceivingEndUsers"
-      >[SCH-EUSR-04] The maximum of all subtotals of ReceivingEndUsers MUST be lower or equal to FullSet/ReceivingEndUsers</assert>
+      >[SCH-EUSR-04] The maximum of all subsets of ReceivingEndUsers MUST be lower or equal to FullSet/ReceivingEndUsers</assert>
       <assert id="SCH-EUSR-22" flag="fatal" test="$empty or eusr:Subset/eusr:SendingOrReceivingEndUsers[not(. &lt; ../../eusr:Subset/eusr:SendingOrReceivingEndUsers)][1] &lt;= eusr:FullSet/eusr:SendingOrReceivingEndUsers"
-      >[SCH-EUSR-22] The maximum of all subtotals of SendingOrReceivingEndUsers MUST be lower or equal to FullSet/SendingOrReceivingEndUsers</assert>
+      >[SCH-EUSR-22] The maximum of all subsets of SendingOrReceivingEndUsers MUST be lower or equal to FullSet/SendingOrReceivingEndUsers</assert>
 
       <assert id="SCH-EUSR-19" flag="fatal" test="eusr:FullSet/eusr:SendingOrReceivingEndUsers &lt;= $total"
-      >[SCH-EUSR-19] The total number of total SendingOrReceivingEndUsers (<value-of select="eusr:FullSet/eusr:SendingOrReceivingEndUsers"/>) MUST be lower or equal to the sum of the total SendingEndUsers and total ReceivingEndUsers</assert>
+      >[SCH-EUSR-19] The number of SendingOrReceivingEndUsers (<value-of select="eusr:FullSet/eusr:SendingOrReceivingEndUsers"/>) MUST be lower or equal to the sum of the SendingEndUsers and ReceivingEndUsers (<value-of select="$total"/>)</assert>
       <assert id="SCH-EUSR-20" flag="fatal" test="eusr:FullSet/eusr:SendingOrReceivingEndUsers &gt;= eusr:FullSet/eusr:SendingEndUsers"
-      >[SCH-EUSR-20] The total number of total SendingOrReceivingEndUsers (<value-of select="eusr:FullSet/eusr:SendingOrReceivingEndUsers"/>) MUST be greater or equal to number of total SendingEndUsers (<value-of select="eusr:FullSet/eusr:SendingEndUsers"/>)</assert>
+      >[SCH-EUSR-20] The number of SendingOrReceivingEndUsers (<value-of select="eusr:FullSet/eusr:SendingOrReceivingEndUsers"/>) MUST be greater or equal to the number of SendingEndUsers (<value-of select="eusr:FullSet/eusr:SendingEndUsers"/>)</assert>
       <assert id="SCH-EUSR-21" flag="fatal" test="eusr:FullSet/eusr:SendingOrReceivingEndUsers &gt;= eusr:FullSet/eusr:ReceivingEndUsers"
-      >[SCH-EUSR-21] The total number of total SendingOrReceivingEndUsers (<value-of select="eusr:FullSet/eusr:SendingOrReceivingEndUsers"/>) MUST be greater or equal to number of total ReceivingEndUsers (<value-of select="eusr:FullSet/eusr:ReceivingEndUsers"/>)</assert>
+      >[SCH-EUSR-21] The number of SendingOrReceivingEndUsers (<value-of select="eusr:FullSet/eusr:SendingOrReceivingEndUsers"/>) MUST be greater or equal to the number of ReceivingEndUsers (<value-of select="eusr:FullSet/eusr:ReceivingEndUsers"/>)</assert>
 
       <!-- Per Dataset Type -->
       <!-- Check Subset existence -->
       <assert id="SCH-EUSR-15" flag="fatal" test="$empty or eusr:Subset[normalize-space(@type) = 'PerDT-PR']"
-      >[SCH-EUSR-15] The subtotals per 'Dataset Type ID and Process ID' MUST exist</assert>
+      >[SCH-EUSR-15] At least one subset per 'Dataset Type ID and Process ID' MUST exist</assert>
         
       <!-- Global uniqueness check per Key -->
       <assert id="SCH-EUSR-13" flag="fatal" test="every $st in (eusr:Subset[normalize-space(@type) = 'PerDT-PR']),
                                                         $stdt in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
-                                                        $stpr in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'PR'])  satisfies
+                                                        $stpr in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'PR']) satisfies
                                                     count(eusr:Subset[normalize-space(@type) ='PerDT-PR'][every $dt in (eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
                                                                                                                 $pr in (eusr:Key[normalize-space(@metaSchemeID) = 'PR']) satisfies
                                                                                                           concat(normalize-space($dt/@schemeID),'::',normalize-space($dt),'::',
@@ -71,7 +71,7 @@
                                                         $stdt in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
                                                         $stpr in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'PR']),
                                                         $stsc in ($st/eusr:Key[normalize-space(@schemeID) = 'SenderCountry']),
-                                                        $strc in ($st/eusr:Key[normalize-space(@schemeID) = 'ReceiverCountry'])  satisfies
+                                                        $strc in ($st/eusr:Key[normalize-space(@schemeID) = 'ReceiverCountry']) satisfies
                                                     count(eusr:Subset[normalize-space(@type) ='PerDT-PR-CC'][every $dt in (eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
                                                                                                                    $pr in (eusr:Key[normalize-space(@metaSchemeID) = 'PR']),
                                                                                                                    $sc in (eusr:Key[normalize-space(@schemeID) = 'SenderCountry']),
@@ -89,7 +89,21 @@
       <!-- Check that no other types are used -->  
       <assert id="SCH-EUSR-14" flag="fatal" test="count(eusr:Subset[normalize-space(@type) !='PerDT-PR' and 
                                                                     normalize-space(@type) !='PerDT-PR-CC']) = 0"
-      >[SCH-EUSR-14] Only allowed subtotal types MUST be used.</assert>
+      >[SCH-EUSR-14] Only allowed subset types MUST be used.</assert>
+      
+      <!-- Check generic key issues -->
+      <assert id="SCH-EUSR-33" flag="fatal" test="every $st in (eusr:Subset) satisfies
+                                                        $st/eusr:SendingOrReceivingEndUsers &lt;= ($st/eusr:SendingEndUsers + $st/eusr:ReceivingEndUsers)"
+      >[SCH-EUSR-33] The number of each Subset/SendingOrReceivingEndUsers MUST be lower or equal to the sum of the Subset/SendingEndUsers plus Subset/ReceivingEndUsers</assert>
+      <assert id="SCH-EUSR-34" flag="fatal" test="every $st in (eusr:Subset) satisfies
+                                                        $st/eusr:SendingOrReceivingEndUsers &gt;= $st/eusr:SendingEndUsers"
+      >[SCH-EUSR-34] The number of each Subset/SendingOrReceivingEndUsers MUST be greater or equal to the number of Subset/SendingEndUsers</assert>
+      <assert id="SCH-EUSR-35" flag="fatal" test="every $st in (eusr:Subset) satisfies
+                                                        $st/eusr:SendingOrReceivingEndUsers &gt;= $st/eusr:ReceivingEndUsers"
+      >[SCH-EUSR-35] The number of each Subset/SendingOrReceivingEndUsers MUST be greater or equal to the number of Subset/ReceivingEndUsers</assert>
+      <assert id="SCH-EUSR-36" flag="fatal" test="every $st in (eusr:Subset) satisfies
+                                                        $st/eusr:SendingOrReceivingEndUsers &gt; 0"
+      >[SCH-EUSR-36] The number of each Subset/SendingOrReceivingEndUsers MUST be greater then zero, otherwise it MUST be omitted</assert>
     </rule>
 
     <rule context="/eusr:EndUserStatisticsReport/eusr:Header">
@@ -114,7 +128,7 @@
       >[SCH-EUSR-08] The layout of the certificate subject CN (<value-of select="normalize-space(.)"/>) is not a valid Peppol Seat ID</assert>
     </rule>
     
-    <!-- Make this check outside to ensure it works for different subtotals -->
+    <!-- Make this check outside to ensure it works for different subsets -->
     <rule context="/eusr:EndUserStatisticsReport/eusr:Subset/eusr:Key[normalize-space(@schemeID) = 'SenderCountry' or 
                                                                       normalize-space(@schemeID) = 'ReceiverCountry']">
       <assert id="SCH-EUSR-30" flag="fatal" test="not(contains(normalize-space(.), ' ')) and 
@@ -124,7 +138,7 @@
 
     <!-- Per Dataset Type and Process ID aggregation -->
     <rule context="/eusr:EndUserStatisticsReport/eusr:Subset[normalize-space(@type) = 'PerDT-PR']">
-      <let name="name" value="'The subtotal per Dataset Type ID and Process ID'"/>
+      <let name="name" value="'The subset per Dataset Type ID and Process ID'"/>
       
       <assert id="SCH-EUSR-09" flag="fatal" test="count(eusr:Key) = 2"
       >[SCH-EUSR-09] $name MUST have two Key elements</assert>
@@ -136,7 +150,7 @@
 
     <!-- Per Dataset Type, Process ID, Sender Country and Receiver Country aggregation -->
     <rule context="/eusr:EndUserStatisticsReport/eusr:Subset[normalize-space(@type) = 'PerDT-PR-CC']">
-      <let name="name" value="'The subtotal per Dataset Type ID, Process ID, Sender Country and Receiver Country'"/>
+      <let name="name" value="'The subset per Dataset Type ID, Process ID, Sender Country and Receiver Country'"/>
       
       <assert id="SCH-EUSR-23" flag="fatal" test="count(eusr:Key) = 4"
       >[SCH-EUSR-23] $name MUST have four Key elements</assert>
