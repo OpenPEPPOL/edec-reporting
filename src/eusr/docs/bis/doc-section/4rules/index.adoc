@@ -66,21 +66,21 @@ This is the union of the end users targeted by BR-EUSR-09 and BR-EUSR-10.
 
 | BR-EUSR-12
 | The Report MUST contain the number of distinct end users that have sent datasets during the Reporting Period,
-aggregated by Dataset Type ID and Process ID.
+subset by Dataset Type ID and Process ID.
 | XSD
 
 SCH-EUSR-15
 
 | BR-EUSR-13
 | The Report MUST contain the number of distinct end users that have received datasets during the Reporting Period,
-aggregated by Dataset Type ID and Process ID.
+subset by Dataset Type ID and Process ID.
 | XSD 
 
 SCH-EUSR-15
 
 | BR-EUSR-14
 | The Report MUST contain the number of distinct end users that have sent or received datasets during the Reporting Period,
-aggregated by Dataset Type ID and Process ID.
+subset by Dataset Type ID and Process ID.
 This is the union of the end users targeted by BR-EUSR-12 and BR-EUSR-13.
 | XSD
 
@@ -116,11 +116,11 @@ SCH-EUSR-15
 
 
 | BR-EUSR-21
-| Each subset combination of Dataset Type ID and Process ID, for which data is aggregated, MUST NOT occur more than once.
+| Each subset combination of Dataset Type ID and Process ID, for which data is reported, MUST NOT occur more than once.
 | SCH-EUSR-13
 
 | BR-EUSR-22
-| Each subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country for which data is aggregated, MUST NOT occur more than once.
+| Each subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country for which data is reported, MUST NOT occur more than once.
 | SCH-EUSR-29
 
 

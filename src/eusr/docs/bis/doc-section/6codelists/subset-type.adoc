@@ -1,7 +1,7 @@
 [[codelist-subsettype]]
 = Subset Type
 
-The Subset Type determines the kind of aggregation that is contained in
+The Subset Type determines the kind of subset that is contained in
   a `Subset` element. It determines the count and types of
   keys for a subset.
 

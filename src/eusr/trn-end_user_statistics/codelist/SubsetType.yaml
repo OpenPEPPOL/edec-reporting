@@ -9,7 +9,7 @@ version:
 codes:
 - id: PerDT-PR
   name:
-    en: Aggregated per Dataset Type and Process ID
+    en: Subset per Dataset Type and Process ID
 - id: PerDT-PR-CC
   name:
-    en: Aggregated per Dataset Type, Process ID, Sender Country and Receiver Country
+    en: Subset per Dataset Type, Process ID, Sender Country and Receiver Country
