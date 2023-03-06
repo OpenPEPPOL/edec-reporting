@@ -22,20 +22,21 @@ image::./images/eusr-process-view.png[]
 ** The following data elements MUST be provided for each End User Statistics Report
 *** Number of End Users that have sent a Dataset
 *** Number of End Users that have received a Dataset
+*** Number of End Users that have sent or received a Dataset
 *** Peppol Dataset Type (Document Type ID) and Profile ID (Process ID)
 ** Only Dataset exchanges that resulted in a positive transport level
 acknowledgment (like AS4 Receipts) MUST be included in the End User Statistics Report.
 Transmissions that failed on a network or protocol level MUST NOT to be considered for the report.
-*** End User Statistics Reports MUST NOT be counted for an End User Statistics Report.
-*** Transaction Statistics Reports MUST NOT be counted for an End User Statistics Report.
-*** Each message MUST be counted only once by an SP (incoming or outgoing), it MUST NOT be counted twice.
+** End User Statistics Reports MUST NOT be counted for an End User Statistics Report.
+** Transaction Statistics Reports MUST NOT be counted for an End User Statistics Report.
+** Only the sending SP MUST count the message as 'outgoing' and only the receiving SP MUST count the same message as 'incoming'.
 
 Note: If the same End User is represented with multiple Participant Identifiers, the data needs to be aggregated per End User and NOT per Participant Identifier.
 
 == Data Aggregation
 
 Before the End User Statistics Report data is transmitted to OpenPeppol it needs to be aggregated. The aggregation
-can be performed on any of the above-mentioned source fields defined by the Internal Regulations.
+can be performed on any of the above-mentioned data elements defined by the Internal Regulations.
 
 The following aggregations MUST be provided to be compliant with this specification.
 
@@ -55,7 +56,7 @@ The following aggregations MAY be provided to be compliant to this specification
 ** End User Statistics Reports received after the deadline WILL NOT be processed.   
 
 * Data
-** Only End User Statistics Reports on the Production environment MUST be transmitted.
+** Only End User Statistics Reports on the Production environment MUST be transmitted. Data for non-production environments MUST NOT be transmitted.
 ** Each aggregation per Dataset Type and Process ID pair MUST NOT occur more than once in an End User Statistics Report.
 ** The Reporting Period MUST be part of the End User Statistics Report.
 ** An identifier uniquely identifying the reporting Service Provider MUST be part of the End User Statistics Report.

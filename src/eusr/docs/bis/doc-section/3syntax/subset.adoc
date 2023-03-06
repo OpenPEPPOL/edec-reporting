@@ -1,4 +1,4 @@
-= Subtotals
+= Subset Information
 
 An End User Statistics Report contains subtotals per distinct pairs of Dataset Type and Process ID.
 The purpose of this grouping is to get information about number of end users that
