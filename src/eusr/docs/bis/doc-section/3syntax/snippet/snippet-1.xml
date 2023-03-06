@@ -41,8 +41,10 @@
     <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
     <Key metaSchemeID="CC" schemeID="SenderCountry">FI</Key>
     <Key metaSchemeID="CC" schemeID="ReceiverCountry">PT</Key>
+    <!-- MUST always be zero -->
     <SendingEndUsers>0</SendingEndUsers>
     <ReceivingEndUsers>1</ReceivingEndUsers>
+    <!-- MUST always be the same as ReceivingEndUsers -->
     <SendingOrReceivingEndUsers>1</SendingOrReceivingEndUsers>
   </Subset>
   <!-- end::SubsetPerDT-PR-CC[] -->

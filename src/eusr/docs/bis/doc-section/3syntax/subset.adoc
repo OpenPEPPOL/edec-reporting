@@ -79,7 +79,7 @@ Each distinct combination of the Dataset Type, Process ID, Sender Country and Re
 
 The element `eusr:Subset/eusr:SendingEndUsers` contains the number of distinct 
   end users that have sent datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
-  Only values &ge; 0 are allowed.
+  Only the values `0` is allowed.
 
 The element `eusr:Subset/eusr:ReceivingEndUsers` contains the number of distinct 
   end users that have received datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
@@ -89,9 +89,19 @@ The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of
   end users that have either sent or received datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
   Only values &ge; 0 are allowed.
 
+====
+IMPORTANT: This subset can only be counted for receiving end users, because only those have the full data available.
+The count of sending end users in this subset must always be `0`.
+As a conclusion, `ReceivingEndUsers` and `SendingOrReceivingEndUsers` must be identical within this subset.
+====
+
+NOTE: This subset is currently optional and will be mandatory when the backing eDEC
+specifications (Peppol Envelope (SBDH)) become mandatory.
+
 
 .Example of a subset per Dataset Type, Process ID, Sender Country and Receiver Country:
 [source, xml]
 ----
 include::./snippet/snippet-1.xml[tags=SubsetPerDT-PR-CC]
-----
+---- 
+
