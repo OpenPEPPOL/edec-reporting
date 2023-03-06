@@ -35,4 +35,16 @@
   </eusr:Subset>
   <!-- end::SubtotalPerDT-PR[] -->
 
+  <!-- tag::SubtotalPerDT-PR-CC[] -->
+  <Subset type="PerDT-PR-CC">
+    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
+    <Key metaSchemeID="CC" schemeID="SenderCountry">FI</Key>
+    <Key metaSchemeID="CC" schemeID="ReceiverCountry">PT</Key>
+    <SendingEndUsers>0</SendingEndUsers>
+    <ReceivingEndUsers>1</ReceivingEndUsers>
+    <SendingOrReceivingEndUsers>1</SendingOrReceivingEndUsers>
+  </Subset>
+  <!-- end::SubtotalPerDT-PR-CC[] -->
+
 </eusr:EndUserStatisticsReport>
