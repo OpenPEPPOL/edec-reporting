@@ -150,8 +150,10 @@
       >[SCH-EUSR-27] $name MUST have one CC Key element with the scheme ID 'SenderCountry'</assert>
       <assert id="SCH-EUSR-28" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'ReceiverCountry']) = 1"
       >[SCH-EUSR-28] $name MUST have one CC Key element with the scheme ID 'ReceiverCountry'</assert>
-      <assert id="SCH-EUSR-31" flag="fatal" test="normalize-space(eusr:SendingEndUsers) = '0'"
+      <assert id="SCH-EUSR-31" flag="fatal" test="eusr:SendingEndUsers = 0"
       >[SCH-EUSR-31] $name MUST have a 'SendingEndUsers' value of '0' because that data cannot be gathered</assert>
+      <assert id="SCH-EUSR-32" flag="fatal" test="eusr:ReceivingEndUsers = eusr:SendingOrReceivingEndUsers"
+      >[SCH-EUSR-32] $name MUST have the same count for 'ReceivingEndUsers' (<value-of select="eusr:ReceivingEndUsers"/>) and 'SendingOrReceivingEndUsers' (<value-of select="eusr:SendingOrReceivingEndUsers"/>)</assert>
     </rule>
   </pattern>
 </schema>
