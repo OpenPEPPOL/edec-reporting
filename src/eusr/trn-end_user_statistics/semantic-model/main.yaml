@@ -1,7 +1,7 @@
 content:
   - id: ERBT-001
     name: Specification identifier
-    definition: An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.
+    definition: An identification of the specification containing the set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.
     cardinality: 1..1
     value:
       datatype: Identifier
@@ -58,24 +58,24 @@ content:
 
   - id: ERBG-3
     name: Full set information
-    definition: Contains the total number of effective sending and receiving end users
+    definition: Contains the number of effective sending and receiving end users
     cardinality: 1..1
     children:
       - id: ERBT-007
         name: Sending end users
-        definition: The total number of the end users that have sent Datasets in the reporting period
+        definition: The number of the end users that have sent Datasets in the reporting period
         cardinality: 1..1
         value:
           datatype: Count
       - id: ERBT-008
         name: Receiving end users
-        definition: The total number of the end users that have received Datasets in the reporting period
+        definition: The number of the end users that have received Datasets in the reporting period
         cardinality: 1..1
         value:
           datatype: Count
       - id: ERBT-009
         name: Sending or Receiving end users
-        definition: The total number of the end users that have either sent or received Datasets in the reporting period
+        definition: The number of the end users that have either sent or received Datasets in the reporting period
         cardinality: 1..1
         value:
           datatype: Count
