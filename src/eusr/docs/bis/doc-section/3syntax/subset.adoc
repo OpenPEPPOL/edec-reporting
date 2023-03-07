@@ -1,7 +1,9 @@
 = Subset Information
 
 An End User Statistics Report contains information about subsets of End Users.
-Each subset represents a different view on the End User Statistics data.
+Each subset represents a different view on the End User statistics data, and
+  subset cardinality is the concept in set theory that refers to the number of 
+  elements in it. 
 
 The technical representation of the subsets was designed in a generic way,
   to allow for future extension without modifying the underlying schema.
@@ -9,7 +11,7 @@ The technical representation of the subsets was designed in a generic way,
   the type of the subset. The value range is defined by the
   <<codelist-subsettype>> code list.
   
-== Subset per Dataset Type and Process ID
+== Subset Cardinality per Dataset Type and Process ID
 
 This subset is identified by the `@type` attribute having the value `PerDT-PR`.
 
@@ -29,15 +31,15 @@ Each distinct combination of the Dataset Type and Process ID MUST be reported in
 
 
 The element `eusr:Subset/eusr:SendingEndUsers` contains the number of distinct 
-  end users that have sent datasets using this combination of the Dataset Type and Process ID. 
+  end users (cardinality) that have sent datasets using this combination of the Dataset Type and Process ID. 
   Only values &ge; 0 are allowed.
 
 The element `eusr:Subset/eusr:ReceivingEndUsers` contains the number of distinct 
-  end users that have received datasets using this combination of the Dataset Type and Process ID. 
+  end users (cardinality) that have received datasets using this combination of the Dataset Type and Process ID. 
   Only values &ge; 0 are allowed.
 
 The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of distinct 
-  end users that have either sent or received datasets using this combination of the Dataset Type and Process ID. 
+  end users (cardinality) that have either sent or received datasets using this combination of the Dataset Type and Process ID. 
   Only values &ge; 0 are allowed.
 
 
@@ -47,7 +49,7 @@ The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of
 include::./snippet/snippet-1.xml[tags=SubsetPerDT-PR]
 ----
 
-== Subset per Dataset Type, Process ID, Sender Country and Receiver Country
+== Subset Cardinality per Dataset Type, Process ID, Sender Country and Receiver Country
 
 This subset is identified by the `@type` attribute having the value `PerDT-PR-CC`.
 
@@ -78,16 +80,17 @@ Each distinct combination of the Dataset Type, Process ID, Sender Country and Re
 
 
 The element `eusr:Subset/eusr:SendingEndUsers` contains the number of distinct 
-  end users that have sent datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
+  end users (cardinality) that have sent datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
   Only the values `0` is allowed.
 
 The element `eusr:Subset/eusr:ReceivingEndUsers` contains the number of distinct 
-  end users that have received datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
+  end users (cardinality) that have received datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
   Only values &ge; 0 are allowed.
 
 The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of distinct 
-  end users that have either sent or received datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
+  end users (cardinality) that have either sent or received datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
   Only values &ge; 0 are allowed.
+
 
 ====
 IMPORTANT: This subset can only be counted for receiving end users, because only those have the full data available.
