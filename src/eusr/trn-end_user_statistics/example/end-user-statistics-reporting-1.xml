@@ -37,7 +37,7 @@
     <Key metaSchemeID="CC" schemeID="SenderCountry">FI</Key>
     <Key metaSchemeID="CC" schemeID="ReceiverCountry">PT</Key>
     <SendingEndUsers>0</SendingEndUsers>
-    <ReceivingEndUsers>1</ReceivingEndUsers>
-    <SendingOrReceivingEndUsers>1</SendingOrReceivingEndUsers>
+    <ReceivingEndUsers>3</ReceivingEndUsers>
+    <SendingOrReceivingEndUsers>3</SendingOrReceivingEndUsers>
   </Subset>
 </EndUserStatisticsReport>
