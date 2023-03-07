@@ -1,0 +1,9 @@
+[[appendix-1]]
+= Appendix 1 (non-normative)
+
+The following example message represents a valid example message. 
+
+[source, xml]
+----
+include::../trn-end_user_statistics/example/end-user-statistics-reporting-1.xml[]
+----
