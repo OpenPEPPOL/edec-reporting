@@ -1,7 +1,7 @@
 [[appendix-1]]
 = Appendix 1 (non-normative)
 
-The following example message represents a valid example message. 
+The following example report represents a valid example message. 
 
 [source, xml]
 ----
