@@ -5,5 +5,5 @@ The following example message represents a valid example message.
 
 [source, xml]
 ----
-include::../trn-end_user_statistics/example/end-user-statistics-reporting-1.xml[]
+include::../../../../trn-end_user_statistics/example/end-user-statistics-reporting-1.xml[]
 ----
