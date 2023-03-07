@@ -18,6 +18,18 @@ have either sent or received datasets. Only values &ge; 0 are allowed.
 include::./snippet/snippet-1.xml[tags=FullSet]
 ----
 
+The following non-normative diagram shows an overview of the theoretical concept of sets behind End User Statistics.
+Each shape represents a group of end users.
+The Full Set is comprised from the outer green and blue shapes.
+The overlapping part of green and blue indicate the end users that did send *and* receive.
+The orange shape indicates the subset of end users that deals with invoices - this effects both sending and receiving end users.
+The inner yellow shape indicates the subset of end users that deals with invoices from Finland (FI) to Germany (DE) and hence is a subset of the orange shape.
+
+image::./images/eusr-venn.png[]
+
+NOTE: The above figure only shows a few selected sets and does not reflect a full breakdown of all possible sets. 
+
+
 Non-normative example how these values are meant to be calculated:
 
 * End User "A" sent 2 Invoices and 3 Orders
