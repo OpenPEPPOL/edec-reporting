@@ -31,7 +31,7 @@
     <eusr:Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</eusr:Key>
     <eusr:SendingEndUsers>4</eusr:SendingEndUsers>
     <eusr:ReceivingEndUsers>2</eusr:ReceivingEndUsers>
-    <eusr:SendingOrReceivingEndUsers>3</eusr:SendingOrReceivingEndUsers>
+    <eusr:SendingOrReceivingEndUsers>5</eusr:SendingOrReceivingEndUsers>
   </eusr:Subset>
   <!-- end::SubsetPerDT-PR[] -->
 
