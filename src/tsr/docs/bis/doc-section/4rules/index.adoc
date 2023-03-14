@@ -112,7 +112,7 @@ SCH-TSR-41
 |
 
 | BR-TSR-22
-| The sum of all amounts of outgoing / sent Peppol Datasets in the Reporting Period aggregated by Sender Country ID and Receiver Country ID, MUST match the total amount of outgoing / sent Peppol Datasets.
+| The sum of all amounts of outgoing / sent Peppol Datasets in the Reporting Period aggregated by Sender Country ID and Receiver Country ID, MUST be 0.
 |
 
 | BR-TSR-23
