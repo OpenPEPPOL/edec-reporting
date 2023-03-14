@@ -40,14 +40,13 @@ The preparation can be performed on any of the above-mentioned data elements def
 
 The following subsets MUST be prepared to be compliant with this specification.
 
-* Dataset Type ID and Process ID
+* Dataset Type ID (Document Type ID) and Process ID
 
-The following subsets MUST be provided for receiving end users only to be compliant to this specification:
+The following subsets MUST be provided for **receiving end users only** to be compliant to this specification:
 
-* Dataset Type ID, Process ID, Sender Country and Receiver Country
+* Dataset Type ID (Document Type ID) and Process ID, Country of sender and Country of receiver^*^
 
-NOTE: This subset is currently optional and will be mandatory when the backing eDEC
-specifications (Peppol Envelope (SBDH)) become mandatory.
+NOTE: ^*^ The Country of sender and receiver will be mandatory, once the backing eDEC specifications become mandatory
 
 == Data Transmission
 
