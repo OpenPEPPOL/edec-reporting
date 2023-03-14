@@ -9,6 +9,6 @@
 ** The text of BT-TSR-33 was adopted
 ** This implies updated Schematron validation rules
 
-== Version 1.0.0 (2022-03-14)
+== Version 1.0.0 (2022-11-23)
 
 * Initial version
