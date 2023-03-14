@@ -31,7 +31,7 @@ Transmissions that failed on a network or protocol level MUST NOT to be consider
 ** Transaction Statistics Reports MUST NOT be counted for an End User Statistics Report.
 ** Only the sending SP MUST count the message as 'outgoing' and only the receiving SP MUST count the same message as 'incoming'.
 
-Note: If the same End User is represented with multiple Participant Identifiers, the data needs to be gathered per End User and NOT per Participant Identifier.
+NOTE: If the same End User is represented with multiple Participant Identifiers, the data needs to be gathered per End User and NOT per Participant Identifier.
 
 == Data Preparation
 

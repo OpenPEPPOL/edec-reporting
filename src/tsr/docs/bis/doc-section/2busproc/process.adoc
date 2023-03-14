@@ -27,7 +27,6 @@ image::./images/tsr-process-view.png[]
 // NOTE: Process ID was deliberately left out in order to ensure alignment with the IR
     5. Peppol Dataset Type (Document Type ID)
     6. Transport protocol used
-// NOTE: CC's need to be optional
     7. Country of sender^*^
     8. Country of receiver^*^
 
