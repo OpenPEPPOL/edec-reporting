@@ -72,7 +72,7 @@
     <Key metaSchemeID="CC" schemeID="SenderCountry">AT</Key>
     <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
     <Incoming>4</Incoming>
-    <Outgoing>2</Outgoing>
+    <Outgoing>0</Outgoing>
   </Subtotal>
 
   <Subtotal type="PerSP-DT-PR-CC">
@@ -82,7 +82,7 @@
     <Key metaSchemeID="CC" schemeID="SenderCountry">DE</Key>
     <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
     <Incoming>1</Incoming>
-    <Outgoing>1</Outgoing>
+    <Outgoing>0</Outgoing>
   </Subtotal>
 
   <Subtotal type="PerSP-DT-PR-CC">
@@ -92,27 +92,7 @@
     <Key metaSchemeID="CC" schemeID="SenderCountry">BE</Key>
     <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
     <Incoming>2</Incoming>
-    <Outgoing>2</Outgoing>
-  </Subtotal>
-
-  <Subtotal type="PerSP-DT-PR-CC">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000002</Key>
-    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Order-2::Order##urn:fdc:peppol.eu:poacc:trns:order:3::2.1</Key>
-    <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">cenbii-procid-ubl::urn:fdc:peppol.eu:poacc:bis:ordering:3</Key>
-    <Key metaSchemeID="CC" schemeID="SenderCountry">AT</Key>
-    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
-    <Incoming>0</Incoming>
-    <Outgoing>7</Outgoing>
-  </Subtotal>
-
-  <Subtotal type="PerSP-DT-PR-CC">
-    <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000002</Key>
-    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Order-2::Order##urn:fdc:peppol.eu:poacc:trns:order:3::2.1</Key>
-    <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">cenbii-procid-ubl::urn:fdc:peppol.eu:poacc:bis:ordering:3</Key>
-    <Key metaSchemeID="CC" schemeID="SenderCountry">DE</Key>
-    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
-    <Incoming>0</Incoming>
-    <Outgoing>5</Outgoing>
+    <Outgoing>0</Outgoing>
   </Subtotal>
 
   <Subtotal type="PerSP-DT-PR-CC">
