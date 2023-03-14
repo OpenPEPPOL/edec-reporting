@@ -94,7 +94,7 @@ The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of
 
 ====
 IMPORTANT: This subset can only be counted for receiving end users, because only those have the full data available.
-The count of sending end users in this subset must always be `0`.
+The count of sending end users in this subset MUST always be `0`.
 As a conclusion, `ReceivingEndUsers` and `SendingOrReceivingEndUsers` must be identical within this subset.
 ====
 
