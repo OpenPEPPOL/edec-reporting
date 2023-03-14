@@ -5,6 +5,8 @@ content:
     cardinality: 1..1
     value:
       datatype: Identifier
+    rule:
+    - id: BR-EUSR-01
 
   - id: ERBT-002
     name: Business process type
@@ -12,6 +14,8 @@ content:
     cardinality: 1..1
     value:
       datatype: Identifier
+    rule:
+    - id: BR-EUSR-02
 
   - id: ERBG-1
     name: Report Header
@@ -30,6 +34,11 @@ content:
           cardinality: 1..1
           value:
             datatype: Date
+          rule:
+          - id: BR-EUSR-03
+          - id: BR-EUSR-04
+          - id: BR-EUSR-05
+          
         - id: ERBT-004
           name: Report period end date
           definition: The date of the ebd of the reporting period.
@@ -37,6 +46,10 @@ content:
           cardinality: 1..1
           value:
             datatype: Date
+          rule:
+          - id: BR-EUSR-03
+          - id: BR-EUSR-04
+          - id: BR-EUSR-05
 
       - id: ERBT-005
         name: Reporter identification
@@ -45,6 +58,9 @@ content:
         cardinality: 1..1
         value:
           datatype: Identifier
+        rule:
+        - id: BR-EUSR-06
+        - id: BR-EUSR-08
 
       - id: ERBT-006
         name: Reporter identification scheme
@@ -55,6 +71,8 @@ content:
         value:
           datatype: Code
           codelist: ReporterIDScheme
+        rule:
+        - id: BR-EUSR-07
 
   - id: ERBG-3
     name: Full set information
@@ -67,18 +85,32 @@ content:
         cardinality: 1..1
         value:
           datatype: Count
+        rule:
+        - id: BR-EUSR-09
+        - id: BR-EUSR-15
+
       - id: ERBT-008
         name: Receiving end users
         definition: The number of the end users that have received Datasets in the reporting period
         cardinality: 1..1
         value:
           datatype: Count
+        rule:
+        - id: BR-EUSR-10
+        - id: BR-EUSR-16
+
       - id: ERBT-009
         name: Sending or Receiving end users
         definition: The number of the end users that have either sent or received Datasets in the reporting period
         cardinality: 1..1
         value:
           datatype: Count
+        rule:
+        - id: BR-EUSR-11
+        - id: BR-EUSR-12
+        - id: BR-EUSR-13
+        - id: BR-EUSR-14
+        - id: BR-EUSR-17
 
   - id: ERBG-4
     name: Subset information
@@ -97,6 +129,9 @@ content:
         name: Subset key
         definition: Defines the keys of the subset, depending on the chosen Subset Type
         cardinality: 1..n
+        rule:
+        - id: BR-EUSR-25
+        - id: BR-EUSR-26
         children:
           - id: ERBT-011
             name: Meta scheme identifier
@@ -128,6 +163,9 @@ content:
         cardinality: 1..1
         value:
           datatype: Count
+        rule:
+        - id: BR-EUSR-22
+        - id: BR-EUSR-27
 
       - id: ERBT-015
         name: Receiving end users
@@ -135,6 +173,8 @@ content:
         cardinality: 1..1
         value:
           datatype: Count
+        rule:
+        - id: BR-EUSR-23
 
       - id: ERBT-016
         name: Sending or Receiving end users
@@ -142,3 +182,9 @@ content:
         cardinality: 1..1
         value:
           datatype: Count
+        rule:
+        - id: BR-EUSR-18
+        - id: BR-EUSR-19
+        - id: BR-EUSR-20
+        - id: BR-EUSR-21
+        - id: BR-EUSR-24

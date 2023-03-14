@@ -97,22 +97,22 @@ This is the Cardinality of the union of the End Users targeted by BR-EUSR-09 and
 // For all Subsets
 
 | BR-EUSR-18
-| For each Subset End User Cardinality that have sent or received datasets MUST be 
+| The Subset End User Cardinality that have sent or received datasets MUST be 
   lower or equal to the sum of the Subset End User Cardinality that have sent datasets and the Subset End User Cardinality that have received datasets.
 | SCH-EUSR-33
 
 | BR-EUSR-19
-| For each Subset End User Cardinality that have sent or received datasets MUST be 
+| The Subset End User Cardinality that have sent or received datasets MUST be 
   greater or equal to the Subset End User Cardinality that have sent datasets.
 | SCH-EUSR-34
 
 | BR-EUSR-20
-| For each Subset End User Cardinality that have sent or received datasets MUST be 
+| The Subset End User Cardinality that have sent or received datasets MUST be 
   greater or equal to the Subset End User Cardinality that have received datasets.
 | SCH-EUSR-35
 
 | BR-EUSR-21
-| For each Subset End User Cardinality that have sent or received datasets MUST be 
+| The Subset End User Cardinality that have sent or received datasets MUST be 
   greater to zero, otherwise the subset MUST not be emitted.
 | SCH-EUSR-36
 
