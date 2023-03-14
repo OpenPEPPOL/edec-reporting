@@ -113,8 +113,14 @@ The sum all incoming amounts `PerSP-DT-PR-CC` Type MUST match the total incoming
 
 The sum all outgoing amounts `PerSP-DT-PR-CC`  MUST match the total outgoing amount.
 
-NOTE: For outgoing messages, only the receiving Service Provider needs
-  to be counted. For incoming messages, only the sending Service Provider needs
+
+====
+IMPORTANT: This subtotal can only be counted by receiving Service Providers, because only those have the full data available.
+The outgoing count in this subtotal MUST always be `0`.
+====
+
+
+NOTE: For incoming messages, only the sending Service Provider needs
   to be counted. The other side must always be the reporting Service Provider
   that is already part of the header data.
 

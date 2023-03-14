@@ -1,0 +1,14 @@
+= Changelog
+
+:sectnums!:
+
+== Version 1.0.1 (2023-03-14)
+
+* Due to changes in the Peppol Envelope Specification, sending Service Providers are no longer able to report the 
+  Subtotal per Service Provider, Dataset Type, Process ID and Country Codes.
+** The text of BT-TSR-33 was adopted
+** This implies updated Schematron validation rules
+
+== Version 1.0.0 (2022-03-14)
+
+* Initial version

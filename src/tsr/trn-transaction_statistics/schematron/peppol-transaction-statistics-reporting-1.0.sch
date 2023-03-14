@@ -13,8 +13,11 @@
       Philip Helger
 
     History:
-      2022-11-14, Muhammet Yildiz, Philip Helger - updates after the review
-      2022-04-21, Philip Helger - initial version
+      v1.0.1
+        2023-03-14, Philip Helger - removed rule SCH-TSR-13; added rule SCH-TSR-43 
+      v1.0.0
+        2022-11-14, Muhammet Yildiz, Philip Helger - updates after the review
+        2022-04-21, Philip Helger - initial version
   </p>
 
   <ns prefix="tsr" uri="urn:fdc:peppol:transaction-statistics-report:1.0"/>
@@ -81,8 +84,11 @@
       <!-- TSR-11 was removed late in the process -->
       <assert id="SCH-TSR-12" flag="warning" test="not($cc_exists) or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']/tsr:Incoming) = tsr:Total/tsr:Incoming"
       >[SCH-TSR-12] The sum of all subtotals per $name_spdtprcc incoming MUST match the total incoming count</assert>
+      <!-- SCH-TSR-13 was removed in v1.0.1 -->
+      <!-- 
       <assert id="SCH-TSR-13" flag="warning" test="not($cc_exists) or sum(tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']/tsr:Outgoing) = tsr:Total/tsr:Outgoing"
       >[SCH-TSR-13] The sum of all subtotals per $name_spdtprcc outgoing MUST match the total outgoing count</assert>
+       -->
       <assert id="SCH-TSR-14" flag="fatal" test="every $st in (tsr:Subtotal[normalize-space(@type) = 'PerSP-DT-PR-CC']),
                                                        $stsp in ($st/tsr:Key[normalize-space(@metaSchemeID) = 'SP']),
                                                        $stdt in ($st/tsr:Key[normalize-space(@metaSchemeID) = 'DT']),
@@ -197,10 +203,9 @@
       >[SCH-TSR-35] $name MUST have one CC Key element with the scheme ID 'SenderCountry'</assert>
       <assert id="SCH-TSR-36" flag="fatal" test="count(tsr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'ReceiverCountry']) = 1"
       >[SCH-TSR-36] $name MUST have one CC Key element with the scheme ID 'ReceiverCountry'</assert>
-      <!-- TODO Should be added in 1.1 
-      <assert id="SCH-EUSR-38" flag="fatal" test="tsr:Outgoing = 0"
-      >[SCH-TSR-38] $name MUST have a 'Outgoing' value of '0' because that data cannot be gathered</assert>
-      -->
+      <!-- Added in v1.0.1 --> 
+      <assert id="SCH-TSR-43" flag="fatal" test="tsr:Outgoing = 0"
+      >[SCH-TSR-43] $name MUST have a 'Outgoing' value of '0' because that data cannot be gathered</assert>
     </rule>
 
     <!-- After all the specific Subtotals -->
