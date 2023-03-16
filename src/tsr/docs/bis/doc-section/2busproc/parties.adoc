@@ -12,7 +12,7 @@ Each SP will:
 * Report this data in accordance to this specification in a standardized and structured dataset. 
 * Ensure all data for a Reporting Period is reported within 10 calendar days following the end of the Reporting Period.
   Note: the Reporting Period is defined by the PCA in a separate document.
-* Transmit the Peppol Transaction Statistics Report BIS document to the PCA in accordance with this specification.
+* Transmit the Peppol Transaction Statistics Report document to the PCA in accordance with this specification.
 
 == OpenPeppol Operating Office (OO)
 

@@ -13,7 +13,7 @@
       Philip Helger
 
     History:
-      EUSR RC3
+      EUSR 1.0.0
       * 2023-03-06, Philip Helger - updates after second review
       EUSR RC2
       * 2022-11-14, Muhammet Yildiz, Philip Helger - updates after the first review

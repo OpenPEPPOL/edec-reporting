@@ -1,6 +1,6 @@
 include::./settings.adoc[]
 
-:description: Peppol Transaction Reporting BIS.
+:description: Peppol Transaction Statistics Reporting Specification.
 :icons: font
 :stem:
 :toc: left

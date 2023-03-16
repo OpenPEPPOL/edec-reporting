@@ -1,7 +1,7 @@
 :lang: en
 
 :doctitle: Peppol End User Statistics Reporting Process
-:version: 1.0.0-RC3
+:version: 1.0.0 Final Draft
 :doctype: book
 
 :name-op-en: OpenPeppol AISBL, Operating Office
