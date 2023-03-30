@@ -1,0 +1,3 @@
+include::a1.adoc[]
+
+include::a2.adoc[]

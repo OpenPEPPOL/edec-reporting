@@ -1,0 +1,10 @@
+[[appendix-1]]
+= Appendix 1 (non-normative)
+
+The following example report represents a valid example message.
+This example represents the data for a Service Provider that both sent and received documents within a Reporting Period.
+
+[source, xml]
+----
+include::../../../../trn-transaction_statistics/example/transaction-statistics-2.xml[]
+----
