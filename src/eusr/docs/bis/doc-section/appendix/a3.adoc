@@ -1,0 +1,10 @@
+[[appendix-3]]
+= Appendix 3 (non-normative)
+
+The following example report represents a valid example message.
+This example represents a message in case no transmissions were performed within a Reporting Period.
+
+[source, xml]
+----
+include::../../../../trn-end_user_statistics/example/end-user-statistics-reporting-empty.xml[]
+----

@@ -1,0 +1,11 @@
+[[appendix-2]]
+= Appendix 2 (non-normative)
+
+The following example report represents a valid example message.
+This example represents the data for a Service Provider that only sent documents within a Reporting Period.
+This implies, that the "Subsets per Dataset Type, Process ID, Sender Country and Receiver Country" is not contained.
+
+[source, xml]
+----
+include::../../../../trn-end_user_statistics/example/end-user-statistics-reporting-2.xml[]
+----

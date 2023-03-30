@@ -36,6 +36,6 @@ include::./doc-section/6codelists/index.adoc[]
 
 include::./doc-section/7bisinfo/index.adoc[]
 
-include::./doc-section/appendix1/index.adoc[]
+include::./doc-section/appendix/index.adoc[]
 
 :leveloffset: -1
