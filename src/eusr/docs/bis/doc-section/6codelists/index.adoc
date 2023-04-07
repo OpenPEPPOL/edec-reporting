@@ -1,0 +1,18 @@
+[[codelist]]
+= Code Lists
+
+:leveloffset: +1
+
+include::country-code.adoc[]
+
+include::document-type-id.adoc[]
+
+include::process-id.adoc[]
+
+include::reporter-id-scheme.adoc[]
+
+include::subset-type.adoc[]
+
+include::subset-key-meta-scheme.adoc[]
+
+:leveloffset: -1

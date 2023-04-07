@@ -1,0 +1,17 @@
+= Changelog
+
+:sectnums!:
+
+== Version 1.0.1 (2023-03-14)
+
+* Due to changes in the Peppol Envelope Specification, sending Service Providers are no longer able to report the 
+  Subtotal per Service Provider, Dataset Type, Process ID and Country Codes.
+** The text of the business rules `BR-TSR-22` and `BR-TSR-33` were changed
+** This implies updated Schematron validation rules (removed rule `SCH-TSR-13`; added rule `SCH-TSR-43`)
+* The semantic model was missing the "Report period start date" and "Report period end date" elements as separate fields
+
+== Version 1.0.0 (2022-11-23)
+
+* Initial version
+
+:sectnums:

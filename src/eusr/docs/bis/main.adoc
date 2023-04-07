@@ -1,0 +1,41 @@
+include::./settings.adoc[]
+
+:description: Peppol End User Statistics Reporting Specification.
+:icons: font
+:stem:
+:toc: left
+:hugo-weight: 1
+:toclevels: 2
+:source-highlighter: coderay
+:source-language: xml
+:sectanchors:
+:sectnums:
+:doctype: book
+
+image::./images/peppol.png[pdfwidth=3.5in,align=center]
+
+= {doctitle}
+
+{name-op-en} v{version}
+
+This document sets out the processes and procedures for reporting End User Statistics data in the Peppol environment.
+
+:leveloffset: +1
+
+include::./doc-section/1intro/index.adoc[]
+
+include::./doc-section/2busproc/index.adoc[]
+
+include::./doc-section/3syntax/index.adoc[]
+
+include::./doc-section/4rules/index.adoc[]
+
+include::./doc-section/5datatypes/index.adoc[]
+
+include::./doc-section/6codelists/index.adoc[]
+
+include::./doc-section/7bisinfo/index.adoc[]
+
+include::./doc-section/appendix/index.adoc[]
+
+:leveloffset: -1

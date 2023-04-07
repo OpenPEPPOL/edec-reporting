@@ -1,6 +1,6 @@
 metadata:
   namespaces:
-    tsr: urn:fdc:peppol:transaction-statistics-reporting:1.0
+    tsr: urn:fdc:peppol:transaction-statistics-report:1.0
     ## This is the schema for the Peppol Transaction Statistics Reporting
     ##  This is based on the "Internal Regulations" document,
     ##    chapter 4.4 "Service Provider Reporting on Transaction Statistics
@@ -10,52 +10,52 @@ content:
   cardinality: 1..1
   children:
   - element: tsr:CustomizationID
-    reference: IBT-001
+    reference: TRBT-001
 
   - element: tsr:ProfileID
-    reference: IBT-002
+    reference: TRBT-002
 
   - element: tsr:Header
-    reference: IBG-1
+    reference: TRBG-1
     children:  
     
     - element: tsr:ReportPeriod
-      reference: IBT-003
+      reference: TRBT-003
 
     - element: tsr:ReporterID
-      reference: IBT-004
+      reference: TRBT-004
       attribute:
       - element: schemeID
-        reference: IBT-005
+        reference: TRBT-005
 
   - element: tsr:Total
-    reference: IBG-2
+    reference: TRBG-2
     children:  
       - element: tsr:Incoming
-        reference: IBT-006
+        reference: TRBT-006
         
       - element: tsr:Outgoing
-        reference: IBT-007
+        reference: TRBT-007
 
   - element: tsr:Subtotal
-    reference: IBG-3
+    reference: TRBG-3
     attribute:
     - element: type
-      reference: IBT-008
+      reference: TRBT-008
 
     children:  
     - element: tsr:Key
-      reference: IBT-011
-      # Als reference: IBG-4
+      reference: TRBT-011
+      # Als reference: TRBG-4
       attribute:
       - element: metaSchemeID
-        reference: IBT-009
+        reference: TRBT-009
 
       - element: schemeID
-        reference: IBT-010
+        reference: TRBT-010
       
     - element: tsr:Incoming
-      reference: IBT-012
+      reference: TRBT-012
       
     - element: tsr:Outgoing
-      reference: IBT-013
+      reference: TRBT-013

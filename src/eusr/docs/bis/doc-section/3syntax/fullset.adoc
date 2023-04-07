@@ -1,0 +1,46 @@
+= Full Set Information
+
+Defines the overall amount of end users that have exchanged datasets in the Reporting Period.
+The element `FullSet` and its child elements MUST be provided for every End User Statistics Report.
+
+The element `eusr:FullSet/eusr:SendingEndUsers` contains the overall number of distinct end users that
+have sent datasets. Only values &ge; 0 are allowed.
+
+The element `eusr:FullSet/eusr:ReceivingEndUsers` contains the overall number of distinct end users that
+have received datasets. Only values &ge; 0 are allowed.
+
+The element `eusr:FullSet/eusr:SendingOrReceivingEndUsers` contains the overall number of distinct end users that
+have either sent or received datasets. Only values &ge; 0 are allowed.
+
+.Example of a `FullSet` element with 9 sending, 4 receiving and 12 sending or receiving end users:
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=FullSet]
+----
+
+The following non-normative diagram shows an overview of the theoretical concept of sets behind End User Statistics.
+Each shape represents a group of end users.
+The Full Set is comprised from the outer green and blue shapes.
+The overlapping part of green and blue indicate the end users that did send *and* receive.
+The orange shape indicates the subset of end users that deals with invoices - this effects both sending and receiving end users.
+The inner yellow shape indicates the subset of end users that deals with invoices from Finland (FI) to Germany (DE) and hence is a subset of the orange shape.
+
+image::./images/eusr-venn.png[]
+
+NOTE: The above figure only shows a few selected sets and does not reflect a full breakdown of all possible sets. 
+
+
+Non-normative example how these values are meant to be calculated:
+
+* End User "A" sent 2 Invoices and 3 Orders
+* End User "A" received 5 Invoices
+* End User "B" sent 6 Invoices
+* End User "C" sent 15 Invoices
+* End User "D" received 2 Orders
+* End User "E" sent nothing and received nothing
+
+-> The value of `eusr:SendingEndUsers` is `3` (A, B and C)
+
+-> The value of `eusr:ReceivingEndUsers` is `2` (A and D)
+
+-> The value of `eusr:SendingOrReceivingEndUsers` is `4` (A, B, C and D)

@@ -1,39 +1,68 @@
 content:
-  - id: IBT-001
+  - id: TRBT-001
     name: Specification identifier
     definition: An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.
     cardinality: 1..1
     value:
       datatype: Identifier
+    rule:
+    - id: BR-TSR-01
 
-  - id: IBT-002
+  - id: TRBT-002
     name: Business process type
     definition: Identifies the business process context in which the transaction appears, to enable the receiver to process the document in an appropriate way.
     cardinality: 1..1
     value:
       datatype: Identifier
+    rule:
+    - id: BR-TSR-02
 
-  - id: IBG-1
+  - id: TRBG-1
     name: Report Header
     definition: Transaction Statistics header metadata.
     cardinality: 1..1
     children:
-      - id: IBT-003
+      - id: TRBG-2
         name: Report period
-        definition: The year and month the data in this report refers to.
+        definition: The period the data in this report refers to.
         cardinality: 1..1
-        value:
-          datatype: YearMonth
+        children:
+        - id: TRBT-003
+          name: Report period start date
+          definition: The date of the beginning of the reporting period.
+            The relevant contents of this day must be part of the reporting data.
+          cardinality: 1..1
+          value:
+            datatype: Date
+          rule:
+          - id: BR-TSR-03
+          - id: BR-TSR-04
+          - id: BR-TSR-05
+          
+        - id: TRBT-004
+          name: Report period end date
+          definition: The date of the ebd of the reporting period.
+            The relevant contents of this day must be part of the reporting data.
+          cardinality: 1..1
+          value:
+            datatype: Date
+          rule:
+          - id: BR-TSR-03
+          - id: BR-TSR-04
+          - id: BR-TSR-05
 
-      - id: IBT-004
+      - id: TRBT-005
         name: Reporter identification
         definition: The unique identification of the Service Provider that 
           is providing the data.
         cardinality: 1..1
         value:
           datatype: Identifier
+        rule:
+        - id: BR-TSR-06
+        - id: BR-TSR-08
         
-      - id: IBT-005
+      - id: TRBT-006
         name: Reporter identification scheme
         definition: This value must follow the "ReporterIDScheme" code list.
           Currently only "CertSubjectCN" for the Peppol AP Certificate 
@@ -42,35 +71,57 @@ content:
         value:
           datatype: Code
           codelist: ReporterIDScheme
+        rule:
+        - id: BR-TSR-07
 
-  - id: IBG-2
+  - id: TRBG-3
     name: Total values
-    definition: Contains the actual total of exchanged Datasets
+    definition: Contains the total of exchanged Datasets
     cardinality: 1..1
     children:
 
-      - id: IBT-006
+      - id: TRBT-007
         name: Incoming total
         definition: The total number of received Datasets in the reporting period
         cardinality: 1..1
         value:
           datatype: Count
+        rule:
+        - id: BR-TSR-10
+        - id: BR-TSR-13
+        - id: BR-TSR-16
+        - id: BR-TSR-19
+        - id: BR-TSR-23
+        - id: BR-TSR-26
+        - id: BR-TSR-32
 
-      - id: IBT-007
+      - id: TRBT-008
         name: Outgoing total
         definition: The total number of sent Datasets in the reporting period
         cardinality: 1..1
         value:
           datatype: Count
+        rule:
+        - id: BR-TSR-09
+        - id: BR-TSR-12
+        - id: BR-TSR-15
+        - id: BR-TSR-18
+        - id: BR-TSR-27
+        - id: BR-TSR-33
 
-  - id: IBG-3
+  - id: TRBG-4
     name: Subtotal values
     definition: Contains the number of exchanged datasets for different aggregations.
-       The "type" attribute of this element defines the expected content.
     cardinality: 0..n
+    rule:
+    - id: BR-TSR-11
+    - id: BR-TSR-14
+    - id: BR-TSR-17
+    - id: BR-TSR-20
+    - id: BR-TSR-21
     children:
 
-      - id: IBT-008
+      - id: TRBT-009
         name: Subtotal type
         definition: Defines the expected Key elements and their meta schemes.
           The codelist for this field is "SubtotalType"
@@ -79,23 +130,28 @@ content:
           datatype: Code
           codelist: SubtotalType
           
-        # Note: IBG-4 is not referenced from the syntax model and that is fine          
-      - id: IBG-4
+        # Note: TRBG-5 is not referenced from the syntax model and that is fine          
+      - id: TRBG-5
         name: Subtotal key
         definition: Defines the keys, depending on the chosen Subtotal Type
         cardinality: 1..n
+        rule:
+        - id: BR-TSR-28
+        - id: BR-TSR-29
+        - id: BR-TSR-34
+        - id: BR-TSR-35
         children:
           
-          - id: IBT-009
+          - id: TRBT-010
             name: Meta scheme identifier
             definition: Defines the meta scheme identifier of this subtotal key
-              Must follow the "SubtotalKeyMetaScheme" code list
+              must follow the "SubtotalKeyMetaScheme" code list
             cardinality: 1..1
             value:
               datatype: Code
               codelist: SubtotalKeyMetaScheme
               
-          - id: IBT-010
+          - id: TRBT-011
             name: Scheme identifier
             definition: Defines the scheme identifier, depending on the Meta scheme
               identifier.
@@ -103,23 +159,30 @@ content:
             value:
               datatype: Identifier
               
-          - id: IBT-011
+          - id: TRBT-012
             name: Identifier value
             definition: Defines the main identifier value following the Scheme identifier.
             cardinality: 1..1
             value:
               datatype: Identifier
 
-      - id: IBT-012
+      - id: TRBT-013
         name: Incoming subtotal
         definition: The number of received Datasets in the reporting period matching this subtotal
         cardinality: 1..1
         value:
           datatype: Count
+        rule:
+        - id: BR-TSR-24
+        - id: BR-TSR-30
 
-      - id: IBT-013
+      - id: TRBT-014
         name: Outgoing subtotal
         definition: The total number of sent Datasets in the reporting period matching this subtotal
         cardinality: 1..1
         value:
           datatype: Count
+        rule:
+        - id: BR-TSR-22
+        - id: BR-TSR-25
+        - id: BR-TSR-31

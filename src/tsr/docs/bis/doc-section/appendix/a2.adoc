@@ -1,0 +1,10 @@
+[[appendix-2]]
+= Appendix 2 (non-normative)
+
+The following example report represents a valid example message.
+This example represents a message in case no transmissions were performed within a Reporting Period.
+
+[source, xml]
+----
+include::../../../../trn-transaction_statistics/example/transaction-statistics-empty.xml[]
+----

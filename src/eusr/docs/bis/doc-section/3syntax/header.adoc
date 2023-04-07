@@ -1,0 +1,37 @@
+= Header
+
+The element `Header` contains the reporting period
+and the ID of the reporting Service Provider.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet/snippet-1.xml[tags=Header]
+----
+
+== Reporting Period
+
+The element `ReportPeriod` MUST contain the start date (inclusive) and 
+  the end date (inclusive) of the reporting period.
+The start date can never be after the end date.
+Start date and end date elements MUST NOT contain time zone information.
+
+.Example (for a monthly Reporting Period):
+[source, xml, indent=0]
+----
+include::./snippet/snippet-1.xml[tags=Period]
+----
+
+== Reporter Identification
+
+The element `ReporterID` MUST contain the unique identification of the 
+  Service Provider that is providing the data.
+If the `schemeID` attribute is set to `CertSubjectCN` than the value must be
+  the Peppol AP Certificate Subject CN (Common Name). 
+  See <<codelist-repidscheme>> for the full code list.
+
+.Example:
+[source, xml, indent=0]
+----
+include::./snippet/snippet-1.xml[tags=Reporter]
+----

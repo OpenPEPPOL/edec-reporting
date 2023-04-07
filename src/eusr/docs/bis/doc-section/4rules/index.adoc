@@ -1,0 +1,163 @@
+= Rules
+End User Statistics Reporting process rules.
+
+NOTE: The term "Cardinality" in the business rules below refers to the number of elements in a set.
+
+.Business rules
+[cols="1h,5,1h",options="header"]
+|====
+
+|RuleID
+|Requirement (depending, as applicable, on the respective business case)
+|Validation Level
+
+// Pre-Header information
+
+| BR-EUSR-01
+| The Report MUST contain an identification of the specification it conforms to.
+| XSD
+
+SCH-EUSR-01
+
+| BR-EUSR-02
+| The Report MUST contain an identification of the business process context it appears in.
+| XSD
+
+SCH-EUSR-02
+
+// Header information
+
+| BR-EUSR-03
+| The Report MUST contain the reporting period in which the reported data was gathered.
+| XSD
+
+| BR-EUSR-04
+| The Report MUST NOT contain timezone information for the Reporting Period start date and end date.
+| SCH-EUSR-16
+
+SCH-EUSR-17
+
+| BR-EUSR-05
+| The Report Period start date MUST NOT be after the Report Period end date.
+| SCH-EUSR-18
+
+| BR-EUSR-06
+| The Report MUST uniquely identify the reporting Service Provider.
+| SCH-EUSR-08
+
+| BR-EUSR-07
+| The scheme for identifying the reporting Service Provider MUST follow the "Reporter ID Scheme" code list
+| SCH-EUSR-07
+
+| BR-EUSR-08
+| If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID MUST be the CN part of the Peppol AP certificate Subject
+| SCH-EUSR-08
+
+// Full Set information
+
+| BR-EUSR-09
+| The Report MUST contain the Full Set End User Cardinality that have sent datasets during the Reporting Period.
+| XSD
+
+| BR-EUSR-10
+| The Report MUST contain the Full Set End User Cardinality that have received datasets during the Reporting Period.
+| XSD
+
+| BR-EUSR-11
+| The Report MUST contain the Full Set End User Cardinality that have sent or received datasets during the Reporting Period.
+This is the Cardinality of the union of the End Users targeted by BR-EUSR-09 and BR-EUSR-10.
+| XSD
+
+
+| BR-EUSR-12
+| The Full Set End User Cardinality that have sent or received datasets MUST be lower or equal to the sum of the Full Set End User Cardinality that have sent datasets and the Full Set End User Cardinality that have received datasets.
+| SCH-EUSR-19
+
+| BR-EUSR-13
+| The Full Set End User Cardinality that have sent or received datasets MUST be greater or equal to the Full Set End User Cardinality that have sent datasets.
+| SCH-EUSR-20
+
+| BR-EUSR-14
+| The Full Set End User Cardinality that have sent or received datasets MUST be greater or equal to the Full Set End User Cardinality that have received datasets.
+| SCH-EUSR-21
+
+
+| BR-EUSR-15
+| The Full Set End User Cardinality that have sent datasets MUST be greater or equal to the Subset maximum End User Cardinality that have sent datasets.
+| SCH-EUSR-03
+
+| BR-EUSR-16
+| The Full Set End User Cardinality that have received datasets MUST be greater or equal to the Subset maximum End User Cardinality that have received datasets.
+| SCH-EUSR-04
+
+| BR-EUSR-17
+| The Full Set End User Cardinality that have sent or received datasets MUST be greater or equal to the Subset maximum End User Cardinality that have sent or received datasets.
+| SCH-EUSR-22
+
+// For all Subsets
+
+| BR-EUSR-18
+| The Subset End User Cardinality that have sent or received datasets MUST be 
+  lower or equal to the sum of the Subset End User Cardinality that have sent datasets and the Subset End User Cardinality that have received datasets.
+| SCH-EUSR-33
+
+| BR-EUSR-19
+| The Subset End User Cardinality that have sent or received datasets MUST be 
+  greater or equal to the Subset End User Cardinality that have sent datasets.
+| SCH-EUSR-34
+
+| BR-EUSR-20
+| The Subset End User Cardinality that have sent or received datasets MUST be 
+  greater or equal to the Subset End User Cardinality that have received datasets.
+| SCH-EUSR-35
+
+| BR-EUSR-21
+| The Subset End User Cardinality that have sent or received datasets MUST be 
+  greater to zero, otherwise the subset MUST not be emitted.
+| SCH-EUSR-36
+
+
+
+// Subset DT-PR
+
+| BR-EUSR-22
+| The Report MUST contain the End User Cardinality that have sent datasets during the Reporting Period,
+subset by Dataset Type ID and Process ID.
+| XSD
+
+SCH-EUSR-15
+
+| BR-EUSR-23
+| The Report MUST contain the End User Cardinality that have received datasets during the Reporting Period,
+subset by Dataset Type ID and Process ID.
+| XSD 
+
+SCH-EUSR-15
+
+| BR-EUSR-24
+| The Report MUST contain the End User Cardinality that have sent or received datasets during the Reporting Period,
+subset by Dataset Type ID and Process ID.
+This is the Cardinality of the union of the End Users targeted by BR-EUSR-22 and BR-EUSR-23.
+| XSD
+
+SCH-EUSR-15
+
+
+
+| BR-EUSR-25
+| Each Subset combination of Dataset Type ID and Process ID, for which data is reported, MUST NOT occur more than once per Report.
+| SCH-EUSR-13
+
+// Subset DT-PR-CC
+
+| BR-EUSR-26
+| Each Subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country for which data is reported, MUST NOT occur more than once per Report.
+| SCH-EUSR-29
+
+| BR-EUSR-27
+| The Subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country MUST only be filled out by receiving entities (C3).
+  The End User Cardinality that have sent datasets MUST hence always be zero. 
+| SCH-EUSR-31
+
+
+|====

@@ -1,0 +1,190 @@
+content:
+  - id: ERBT-001
+    name: Specification identifier
+    definition: An identification of the specification containing the set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.
+    cardinality: 1..1
+    value:
+      datatype: Identifier
+    rule:
+    - id: BR-EUSR-01
+
+  - id: ERBT-002
+    name: Business process type
+    definition: Identifies the business process context in which the transaction appears, to enable the receiver to process the document in an appropriate way.
+    cardinality: 1..1
+    value:
+      datatype: Identifier
+    rule:
+    - id: BR-EUSR-02
+
+  - id: ERBG-1
+    name: Report Header
+    definition: End User Statistics Report header data.
+    cardinality: 1..1
+    children:
+      - id: ERBG-2
+        name: Report period
+        definition: The period the data in this report refers to.
+        cardinality: 1..1
+        children:
+        - id: ERBT-003
+          name: Report period start date
+          definition: The date of the beginning of the reporting period.
+            The relevant contents of this day must be part of the reporting data.
+          cardinality: 1..1
+          value:
+            datatype: Date
+          rule:
+          - id: BR-EUSR-03
+          - id: BR-EUSR-04
+          - id: BR-EUSR-05
+          
+        - id: ERBT-004
+          name: Report period end date
+          definition: The date of the ebd of the reporting period.
+            The relevant contents of this day must be part of the reporting data.
+          cardinality: 1..1
+          value:
+            datatype: Date
+          rule:
+          - id: BR-EUSR-03
+          - id: BR-EUSR-04
+          - id: BR-EUSR-05
+
+      - id: ERBT-005
+        name: Reporter identification
+        definition: The unique identification of the Service Provider that
+          is providing the data.
+        cardinality: 1..1
+        value:
+          datatype: Identifier
+        rule:
+        - id: BR-EUSR-06
+        - id: BR-EUSR-08
+
+      - id: ERBT-006
+        name: Reporter identification scheme
+        definition: This value must follow the "ReporterIDScheme" code list.
+          Currently only "CertSubjectCN" for the Peppol AP Certificate
+          Subject CN (Common Name) is supported.
+        cardinality: 1..1
+        value:
+          datatype: Code
+          codelist: ReporterIDScheme
+        rule:
+        - id: BR-EUSR-07
+
+  - id: ERBG-3
+    name: Full set information
+    definition: Contains the number of effective sending and receiving end users
+    cardinality: 1..1
+    children:
+      - id: ERBT-007
+        name: Sending end users
+        definition: The number of the end users that have sent Datasets in the reporting period
+        cardinality: 1..1
+        value:
+          datatype: Count
+        rule:
+        - id: BR-EUSR-09
+        - id: BR-EUSR-15
+
+      - id: ERBT-008
+        name: Receiving end users
+        definition: The number of the end users that have received Datasets in the reporting period
+        cardinality: 1..1
+        value:
+          datatype: Count
+        rule:
+        - id: BR-EUSR-10
+        - id: BR-EUSR-16
+
+      - id: ERBT-009
+        name: Sending or Receiving end users
+        definition: The number of the end users that have either sent or received Datasets in the reporting period
+        cardinality: 1..1
+        value:
+          datatype: Count
+        rule:
+        - id: BR-EUSR-11
+        - id: BR-EUSR-12
+        - id: BR-EUSR-13
+        - id: BR-EUSR-14
+        - id: BR-EUSR-17
+
+  - id: ERBG-4
+    name: Subset information
+    definition: Contains the reporting data for a single subset. 
+    cardinality: 0..n
+    children:
+      - id: ERBT-010
+        name: Subset type
+        definition: Defines the expected Key elements and their meta schemes.
+          The codelist for this field is "SubsetType"
+        cardinality: 1..1
+        value:
+          datatype: Code
+          codelist: SubsetType
+      - id: ERBG-5
+        name: Subset key
+        definition: Defines the keys of the subset, depending on the chosen Subset Type
+        cardinality: 1..n
+        rule:
+        - id: BR-EUSR-25
+        - id: BR-EUSR-26
+        children:
+          - id: ERBT-011
+            name: Meta scheme identifier
+            definition: Defines the meta scheme identifier of this subset key
+              must follow the "SubsetKeyMetaScheme" code list
+            cardinality: 1..1
+            value:
+              datatype: Code
+              codelist: SubsetKeyMetaScheme
+
+          - id: ERBT-012
+            name: Scheme identifier
+            definition: Defines the scheme identifier, depending on the Meta scheme
+              identifier.
+            cardinality: 1..1
+            value:
+              datatype: Identifier
+
+          - id: ERBT-013
+            name: Identifier value
+            definition: Defines the main identifier value following the Scheme identifier.
+            cardinality: 1..1
+            value:
+              datatype: Identifier
+
+      - id: ERBT-014
+        name: Sending end users
+        definition: The number of the end users that have sent the dataset in the reporting period matching this subset
+        cardinality: 1..1
+        value:
+          datatype: Count
+        rule:
+        - id: BR-EUSR-22
+        - id: BR-EUSR-27
+
+      - id: ERBT-015
+        name: Receiving end users
+        definition: The number of the end users that have received the dataset in the reporting period matching this subset
+        cardinality: 1..1
+        value:
+          datatype: Count
+        rule:
+        - id: BR-EUSR-23
+
+      - id: ERBT-016
+        name: Sending or Receiving end users
+        definition: The number of the end users that have sent or received the dataset in the reporting period matching this subset
+        cardinality: 1..1
+        value:
+          datatype: Count
+        rule:
+        - id: BR-EUSR-18
+        - id: BR-EUSR-19
+        - id: BR-EUSR-20
+        - id: BR-EUSR-21
+        - id: BR-EUSR-24

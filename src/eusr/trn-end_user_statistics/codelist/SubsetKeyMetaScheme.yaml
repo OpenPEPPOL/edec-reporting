@@ -1,0 +1,18 @@
+title:
+  en: Subset Key Meta Scheme
+identifier: Peppol:EUSR:SubsetKeyMetaScheme
+agency: OpenPeppol OO
+language: en
+version:
+  identifier: 2023-03
+  status: draft
+codes:
+- id: DT
+  name:
+    en: Dataset Type ID
+- id: PR
+  name:
+    en: Process ID
+- id: CC
+  name:
+    en: Country Code

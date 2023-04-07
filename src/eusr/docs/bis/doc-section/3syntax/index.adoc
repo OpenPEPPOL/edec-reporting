@@ -1,0 +1,13 @@
+= Description of selected parts of the transaction
+
+Description of selected parts of the End User Statistics Report message.
+
+:leveloffset: +1
+
+include::header.adoc[]
+
+include::fullset.adoc[]
+
+include::subset.adoc[]
+
+:leveloffset: -1

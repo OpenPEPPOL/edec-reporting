@@ -1,0 +1,75 @@
+metadata:
+  namespaces:
+    eusr: urn:fdc:peppol:end-user-statistics-report:1.0
+    ## This is the XML schema for the Peppol End User Statistics Reporting.
+    ## This is based on the "Internal Regulations" document,
+    ##   chapter 4.3 "Service Provider Reporting about End Users"
+content:
+  element: eusr:EndUserStatisticsReport
+  name: Root element
+  definition: The root element of the End User Statistics Report
+  cardinality: 1..1
+  children:
+  - element: eusr:CustomizationID
+    reference: ERBT-001
+
+  - element: eusr:ProfileID
+    reference: ERBT-002
+
+  - element: eusr:Header
+    reference: ERBG-1
+    children:
+
+    - element: eusr:ReportPeriod
+      reference: ERBG-2
+      children:
+      - element: eusr:StartDate
+        reference: ERBT-003
+        
+      - element: eusr:EndDate
+        reference: ERBT-004
+
+    - element: eusr:ReporterID
+      reference: ERBT-005
+      attribute:
+      - element: schemeID
+        reference: ERBT-006
+
+  - element: eusr:FullSet
+    reference: ERBG-3
+    children:
+      - element: eusr:SendingEndUsers
+        reference: ERBT-007
+        
+      - element: eusr:ReceivingEndUsers
+        reference: ERBT-008
+        
+      - element: eusr:SendingOrReceivingEndUsers  
+        reference: ERBT-009
+
+  - element: eusr:Subset
+    reference: ERBG-4
+    attribute:
+      - element: type
+        reference: ERBT-010
+
+    children:
+      - element: eusr:Key
+        # TODO: can PDK reference two? Shouldn't ERBG-4 be preferred on ERBT-011
+        reference: ERBT-013
+        # Also reference: ERBG-5
+        attribute:
+          - element: metaSchemeID
+            reference: ERBT-011
+
+          - element: schemeID
+            reference: ERBT-012
+            
+      - element: eusr:SendingEndUsers
+        reference: ERBT-014
+        
+      - element: eusr:ReceivingEndUsers
+        reference: ERBT-015
+        
+      - element: eusr:SendingOrReceivingEndUsers
+        reference: ERBT-016

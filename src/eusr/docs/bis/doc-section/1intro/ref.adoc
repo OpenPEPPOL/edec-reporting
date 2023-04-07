@@ -1,0 +1,3 @@
+= References
+
+* https://openpeppol.atlassian.net/wiki/spaces/AF/pages/2889252865/Internal+Regulations[Internal Regulations - Use of Peppol Network v1.0]

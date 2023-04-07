@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="urn:fdc:peppol:transaction-statistics-reporting:1.0" 
+<xs:schema xmlns="urn:fdc:peppol:transaction-statistics-report:1.0" 
            xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-           targetNamespace="urn:fdc:peppol:transaction-statistics-reporting:1.0" 
+           targetNamespace="urn:fdc:peppol:transaction-statistics-report:1.0" 
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
   <xs:annotation>
     <xs:documentation>
-       This is the XML schema for the Peppol Transaction Statistics Reporting
-       This is based on the "Internal Regulations" document, 
-         chapter 4.4 "Service Provider Reporting on Transaction Statistics"
-       
-       Author:
-         Philip Helger
+      This is the XML schema for the Peppol Transaction Statistics Reporting
+      This is based on the "Internal Regulations" document, 
+        chapter 4.4 "Service Provider Reporting on Transaction Statistics"
+      
+      Author:
+        Philip Helger
 
-       History: 
-         2022-04-13, Philip Helger
-           initial version
+      History: 
+        2022-11-04, Muhammet Yildiz, Philip Helger - updates after the review
+        2022-04-13, Philip Helger - initial version
     </xs:documentation>
   </xs:annotation>
 
@@ -36,17 +36,39 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:complexType name="ReportPeriodType">
+    <xs:annotation>
+      <xs:documentation>The type for the report period.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="StartDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+            The first day (inclusive) of the reporting period covered by that report.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EndDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+            The last day (inclusive) of the reporting period covered by that report.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="HeaderType">
     <xs:annotation> 
       <xs:documentation>
-        The type for the report metadata.
+        The type for the report header metadata.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="ReportPeriod" type="xs:gYearMonth">
+      <xs:element name="ReportPeriod" type="ReportPeriodType">
         <xs:annotation>
           <xs:documentation>
-            The year and month of the data, this report refers to. 
+            The period that this report covers.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -89,11 +111,7 @@
         <xs:attribute name="metaSchemeID" type="xs:token" use="required">
           <xs:annotation>
             <xs:documentation>
-              Meta ID scheme. Proposed values are:
-                * SP - Service Provider
-                * DT - Dataset Type
-                * TP - Transport Profile
-                * CC - Country Code
+              Meta ID scheme. See the BIS for details.
               This list is extensible for future use cases and hence not checked by XSD.
             </xs:documentation>
           </xs:annotation>
@@ -173,7 +191,6 @@
         <xs:annotation>
           <xs:documentation>
             Contains the number of exchanged datasets for different aggregations.
-            The "type" attribute of this element defines the expected content.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
