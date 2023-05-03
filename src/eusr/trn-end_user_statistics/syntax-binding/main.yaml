@@ -10,45 +10,60 @@ content:
   definition: The root element of the End User Statistics Report
   cardinality: 1..1
   children:
+
   - element: eusr:CustomizationID
     reference: ERBT-001
+    cardinality: 1..1
 
   - element: eusr:ProfileID
     reference: ERBT-002
+    cardinality: 1..1
 
   - element: eusr:Header
     reference: ERBG-1
+    cardinality: 1..1
     children:
 
     - element: eusr:ReportPeriod
       reference: ERBG-2
+      cardinality: 1..1
       children:
       - element: eusr:StartDate
         reference: ERBT-003
+        cardinality: 1..1
         
       - element: eusr:EndDate
         reference: ERBT-004
+        cardinality: 1..1
 
     - element: eusr:ReporterID
       reference: ERBT-005
+      cardinality: 1..1
       attribute:
       - element: schemeID
         reference: ERBT-006
+        cardinality: 1..1
 
   - element: eusr:FullSet
     reference: ERBG-3
+    cardinality: 1..1
     children:
+
       - element: eusr:SendingEndUsers
         reference: ERBT-007
+        cardinality: 1..1
         
       - element: eusr:ReceivingEndUsers
         reference: ERBT-008
+        cardinality: 1..1
         
       - element: eusr:SendingOrReceivingEndUsers  
         reference: ERBT-009
+        cardinality: 1..1
 
   - element: eusr:Subset
     reference: ERBG-4
+    cardinality: 0..n
     attribute:
       - element: type
         reference: ERBT-010
@@ -58,18 +73,24 @@ content:
         # TODO: can PDK reference two? Shouldn't ERBG-4 be preferred on ERBT-011
         reference: ERBT-013
         # Also reference: ERBG-5
+        cardinality: 1..n
         attribute:
           - element: metaSchemeID
             reference: ERBT-011
+            cardinality: 1..1
 
           - element: schemeID
             reference: ERBT-012
+            cardinality: 1..1
             
       - element: eusr:SendingEndUsers
         reference: ERBT-014
+        cardinality: 1..1
         
       - element: eusr:ReceivingEndUsers
         reference: ERBT-015
+        cardinality: 1..1
         
       - element: eusr:SendingOrReceivingEndUsers
         reference: ERBT-016
+        cardinality: 1..1
