@@ -49,4 +49,19 @@
     <ReceivingEndUsers>2</ReceivingEndUsers>
     <SendingOrReceivingEndUsers>2</SendingOrReceivingEndUsers>
   </Subset>
+  <!-- Subsets per Dataset Type and End User Country -->
+  <Subset type="PerDT-EUC">
+    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <Key metaSchemeID="CC" schemeID="EndUserCountry">PT</Key>
+    <SendingEndUsers>5</SendingEndUsers>
+    <ReceivingEndUsers>2</ReceivingEndUsers>
+    <SendingOrReceivingEndUsers>6</SendingOrReceivingEndUsers>
+  </Subset>
+  <!-- Subsets per End User Country -->
+  <Subset type="PerEUC">
+    <Key metaSchemeID="CC" schemeID="EndUserCountry">PT</Key>
+    <SendingEndUsers>12</SendingEndUsers>
+    <ReceivingEndUsers>23</ReceivingEndUsers>
+    <SendingOrReceivingEndUsers>26</SendingOrReceivingEndUsers>
+  </Subset>
 </EndUserStatisticsReport>
