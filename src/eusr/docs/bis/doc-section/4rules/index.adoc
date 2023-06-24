@@ -159,5 +159,54 @@ SCH-EUSR-15
   The End User Cardinality that have sent datasets MUST hence always be zero. 
 | SCH-EUSR-31
 
+// Subset PerDT-EUC
+
+| BR-EUSR-28
+| The Report MUST contain the End User Cardinality that have sent datasets during the Reporting Period,
+subset by Dataset Type DI and End User Country.
+| XSD
+
+SCH-EUSR-37
+
+| BR-EUSR-29
+| The Report MUST contain the End User Cardinality that have received datasets during the Reporting Period,
+subset by Dataset Type ID and End User Country.
+| XSD
+
+SCH-EUSR-38
+
+| BR-EUSR-30
+| The Report MUST contain the End User Cardinality that have sent or received datasets during the Reporting Period,
+subset by Dataset Type ID and End User Country.
+This is the Cardinality of the union of the End Users targeted by BR-EUSR-28 and BR-EUSR-29.
+| XSD
+
+SCH-EUSR-38
+
+
+// Subset PerEUC
+
+
+| BR-EUSR-31
+| The Report MUST contain the End User Cardinality that have sent datasets during the Reporting Period,
+subset End User Country.
+| XSD
+
+SCH-EUSR-39
+
+| BR-EUSR-32
+| The Report MUST contain the End User Cardinality that have received datasets during the Reporting Period,
+subset End User Country.
+| XSD
+
+SCH-EUSR-40
+
+| BR-EUSR-33
+| The Report MUST contain the End User Cardinality that have sent or received datasets during the Reporting Period,
+subset by End User Country.
+This is the Cardinality of the union of the End Users targeted by BR-EUSR-31 and BR-EUSR-32.
+| XSD
+
+SCH-EUSR-40
 
 |====

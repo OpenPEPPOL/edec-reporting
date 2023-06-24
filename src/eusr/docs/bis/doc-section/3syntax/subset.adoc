@@ -10,7 +10,41 @@ The technical representation of the subsets was designed in a generic way,
   Each `Subset` element therefore requires a `@type` attribute that defines
   the type of the subset. The value range is defined by the
   <<codelist-subsettype>> code list.
-  
+
+== Subset Cardinality per End Users Country
+This subset is identifierd by the `@type` attribute having the value `PerEUC`.
+
+* This subset requires one `Key` element with a Meta Scheme ID of `CC`
+(Country Code) and the `schemeID` attribute of `EndUserCountry`.
+The value of the `Key` element MUST have a value according to the
+<<codelist-countrycode>> code list.
+
+.Example of a subset per Dataset Type and Process ID:
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=SubsetPerEUC]
+----
+
+== Subset Cardinality per Dataset Type and End Users Country
+This subset is identifierd by the `@type` attribute having the value `PerDT-EUC`.
+
+* This subset requires one `Key` element with a Meta Scheme ID of `DT` (Dataset Type).
+The `@schemeID` attribute of this `Key` element MUST be the Document Type Identifier Scheme
+of the exchanged Dataset (usually `busdox-docid-qns`). The value of the `Key` element MUST be
+the Dataset Type (Document Type) Identifier value of the exchanged dataset.
+
+* This subset requires one `Key` element with a Meta Scheme ID of `CC`
+(Country Code) and the `schemeID` attribute of `EndUserCountry`.
+The value of the `Key` element MUST have a value according to the
+<<codelist-countrycode>> code list.
+
+.Example of a subset per Dataset Type and Process ID:
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=SubsetPerDT-EUC]
+----
+
+
 == Subset Cardinality per Dataset Type and Process ID
 
 This subset is identified by the `@type` attribute having the value `PerDT-PR`.
@@ -98,9 +132,7 @@ The count of sending end users in this subset MUST always be `0`.
 As a conclusion, `ReceivingEndUsers` and `SendingOrReceivingEndUsers` must be identical within this subset.
 ====
 
-NOTE: This subset is currently optional and will be mandatory when the backing eDEC
-specifications (Peppol Envelope (SBDH)) become mandatory.
-
+NOTE: This subset is optional
 
 .Example of a subset per Dataset Type, Process ID, Sender Country and Receiver Country:
 [source, xml]

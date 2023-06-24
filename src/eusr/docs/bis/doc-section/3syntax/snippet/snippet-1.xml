@@ -25,12 +25,40 @@
   </eusr:FullSet>
   <!-- end::FullSet[] -->
 
+  <!-- tag::SubsetPerEUC[] -->
+  <eusr:Subset type="PerEUC">
+    <eusr:Key metaSchemeID="CC" schemeID="EndUserCountry">PT</eusr:Key>
+    <!-- How many distinct end users from PT received transactions -->
+    <eusr:SendingEndUsers>12</eusr:SendingEndUsers>
+    <!-- How many distinct end users from PT sent transactions -->
+    <eusr:ReceivingEndUsers>23</eusr:ReceivingEndUsers>
+    <!-- How many distinct end users from PT were involved in transactions (sent or received) -->
+    <eusr:SendingOrReceivingEndUsers>26</eusr:SendingOrReceivingEndUsers>
+  </eusr:Subset>
+  <!-- end::SubsetPerEUC[] -->
+
+  <!-- tag::SubsetPerDT-EUC[] -->
+  <Subset type="PerDT-EUC">
+    <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <Key metaSchemeID="CC" schemeID="EndUserCountry">PT</Key>
+    <!-- How many distinct end users from PT received transactions for dataset ...eu:2017:poacc:billing:3.0::2.1 -->
+    <SendingEndUsers>5</SendingEndUsers>
+    <!-- How many distinct end users from PT sent transactions for dataset ...eu:2017:poacc:billing:3.0::2.1 -->
+    <ReceivingEndUsers>2</ReceivingEndUsers>
+    <!-- How many distinct end users from PT were involved in transactions (sent or received) for dataset ...eu:2017:poacc:billing:3.0::2.1 -->
+    <SendingOrReceivingEndUsers>6</SendingOrReceivingEndUsers>
+  </Subset>
+  <!-- end::SubsetPerDT-EUC[] -->
+
   <!-- tag::SubsetPerDT-PR[] -->
   <eusr:Subset type="PerDT-PR">
     <eusr:Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</eusr:Key>
     <eusr:Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</eusr:Key>
+    <!-- How many distinct end users sent transactions containing the above dataset type and process id -->
     <eusr:SendingEndUsers>4</eusr:SendingEndUsers>
+    <!-- How many distinct end users received transactions containing the above dataset type and process id -->
     <eusr:ReceivingEndUsers>2</eusr:ReceivingEndUsers>
+    <!-- How many distinct end users were involved in transactions (sent or received) containing the above dataset type and process id -->
     <eusr:SendingOrReceivingEndUsers>5</eusr:SendingOrReceivingEndUsers>
   </eusr:Subset>
   <!-- end::SubsetPerDT-PR[] -->

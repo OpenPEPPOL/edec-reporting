@@ -24,6 +24,7 @@ image::./images/eusr-process-view.png[]
 *** Number of End Users that have received a Dataset
 *** Number of End Users that have sent or received a Dataset
 *** Peppol Dataset Type (Document Type ID) and Profile ID (Process ID)
+*** End Users Country Code
 ** Only Dataset exchanges that resulted in a positive transport level
 acknowledgment (like AS4 Receipts) MUST be included in the End User Statistics Report.
 Transmissions that failed on a network or protocol level MUST NOT to be considered for the report.
@@ -40,19 +41,19 @@ The preparation can be performed on any of the above-mentioned data elements def
 
 The following subsets MUST be prepared to be compliant with this specification.
 
+* Dataset Type ID (Document Type ID) and End Users Country
+* End Users Country
 * Dataset Type ID (Document Type ID) and Process ID
 
-The following subsets MUST be provided for **receiving end users only** to be compliant to this specification:
+The following subsets MAY be provided for **receiving end users only** to be compliant to this specification:
 
-* Dataset Type ID (Document Type ID) and Process ID, Country of sender and Country of receiver^*^
-
-NOTE: ^*^ The Country of sender and receiver will be mandatory, once the backing eDEC specifications become mandatory
+* Dataset Type ID (Document Type ID) and Process ID, Country of sender and Country of receiver
 
 == Data Transmission
 
 * Frequency
 ** An End User Statistics Report MUST be transmitted once per Reporting Period.
-** An End User Statistics Report MUST be transmitted within 10 calendar days (inclusive) after the end of the previous Reporting Period.
+** An End User Statistics Report MUST be transmitted within 16 calendar days (inclusive) after the end of the previous Reporting Period.
 ** The End User Statistics Report MUST be transmitted, even if no other Peppol transactions happened in the Reporting Period.
 ** In case the End User Statistics Report of one Service Provider is received multiple times for one Reporting Period, only the latest received document will be processed.
 ** End User Statistics Reports received after the deadline WILL NOT be processed.   
