@@ -10,3 +10,7 @@ generated/
 ~$*
 # Ignore local scripts (starting with a dot)
 .*.sh
+Gemfile
+./Gemfile
+./Gemfile.lock
+Gemfile.lock

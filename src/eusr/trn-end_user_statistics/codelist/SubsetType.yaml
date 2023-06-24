@@ -13,3 +13,9 @@ codes:
 - id: PerDT-PR-CC
   name:
     en: Subset per Dataset Type, Process ID, Sender Country and Receiver Country
+- id: PerDT-EUC
+  name:
+    en: Subset per Dataset Type and End User Country
+- id: PerEUC
+  name:
+    en: Subset per End User Country
