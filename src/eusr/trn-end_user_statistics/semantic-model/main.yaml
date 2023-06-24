@@ -7,6 +7,12 @@ content:
       datatype: Identifier
     rule:
     - id: BR-EUSR-01
+      description: The Report MUST contain an identification of the specification it conforms to.
+      schematron:
+        - SCH-EUSR-01
+      #relatesTo:
+      #  - ERBG-003
+      #  - ERBT-012
 
   - id: ERBT-002
     name: Business process type
@@ -16,6 +22,9 @@ content:
       datatype: Identifier
     rule:
     - id: BR-EUSR-02
+      description: The Report MUST contain an identification of the business process context it appears in.
+      schematron:
+        - SCH-EUSR-02
 
   - id: ERBG-1
     name: Report Header
@@ -36,9 +45,17 @@ content:
             datatype: Date
           rule:
           - id: BR-EUSR-03
+            description: The Report MUST contain the reporting period in which the reported data was gathered.
           - id: BR-EUSR-04
+            description: The Report MUST NOT contain timezone information for the Reporting Period start date and end date.
+            schematron:
+              - SCH-EUSR-16
+              - SCH-EUSR-17
           - id: BR-EUSR-05
-          
+            description: The Report Period start date MUST NOT be after the Report Period end date.
+            schematron:
+              - SCH-EUSR-18
+
         - id: ERBT-004
           name: Report period end date
           definition: The date of the ebd of the reporting period.
@@ -47,9 +64,17 @@ content:
           value:
             datatype: Date
           rule:
-          - id: BR-EUSR-03
-          - id: BR-EUSR-04
-          - id: BR-EUSR-05
+            - id: BR-EUSR-03
+              description: The Report MUST contain the reporting period in which the reported data was gathered.
+            - id: BR-EUSR-04
+              description: The Report MUST NOT contain timezone information for the Reporting Period start date and end date.
+              schematron:
+                - SCH-EUSR-16
+                - SCH-EUSR-17
+            - id: BR-EUSR-05
+              description: The Report Period start date MUST NOT be after the Report Period end date.
+              schematron:
+                - SCH-EUSR-18
 
       - id: ERBT-005
         name: Reporter identification
@@ -60,7 +85,13 @@ content:
           datatype: Identifier
         rule:
         - id: BR-EUSR-06
+          description: The Report MUST uniquely identify the reporting Service Provider.
+          schematron:
+            - SCH-EUSR-08
         - id: BR-EUSR-08
+          description: If the Reporter ID scheme is set to "CertSubjectCN", the Reporter ID MUST be the CN part of the Peppol AP certificate Subject
+          schematron:
+            - SCH-EUSR-08
 
       - id: ERBT-006
         name: Reporter identification scheme
@@ -73,6 +104,9 @@ content:
           codelist: ReporterIDScheme
         rule:
         - id: BR-EUSR-07
+          description: The scheme for identifying the reporting Service Provider MUST follow the "Reporter ID Scheme" code list
+          schematron:
+            - SCH-EUSR-07
 
   - id: ERBG-3
     name: Full set information
@@ -87,7 +121,11 @@ content:
           datatype: Count
         rule:
         - id: BR-EUSR-09
+          description: The Report MUST contain the Full Set End User Cardinality that have received datasets during the Reporting Period.
         - id: BR-EUSR-15
+          description: The Full Set End User Cardinality that have sent datasets MUST be greater or equal to the Subset maximum End User Cardinality that have sent datasets.
+          schematron:
+            - SCH-EUSR-03
 
       - id: ERBT-008
         name: Receiving end users
@@ -97,7 +135,11 @@ content:
           datatype: Count
         rule:
         - id: BR-EUSR-10
+          description: The Report MUST contain the Full Set End User Cardinality that have received datasets during the Reporting Period.
         - id: BR-EUSR-16
+          description: The Full Set End User Cardinality that have received datasets MUST be greater or equal to the Subset maximum End User Cardinality that have received datasets.
+          schematron:
+            - SCH-EUSR-04
 
       - id: ERBT-009
         name: Sending or Receiving end users
@@ -107,10 +149,23 @@ content:
           datatype: Count
         rule:
         - id: BR-EUSR-11
+          description: The Report MUST contain the Full Set End User Cardinality that have sent or received datasets during the Reporting Period. This is the Cardinality of the union of the End Users targeted by BR-EUSR-09 and BR-EUSR-10.
         - id: BR-EUSR-12
+          description: The Full Set End User Cardinality that have sent or received datasets MUST be lower or equal to the sum of the Full Set End User Cardinality that have sent datasets and the Full Set End User Cardinality that have received datasets.
+          schematron:
+            - SCH-EUSR-19
         - id: BR-EUSR-13
+          description: The Full Set End User Cardinality that have sent or received datasets MUST be greater or equal to the Full Set End User Cardinality that have sent datasets.
+          schematron:
+            - SCH-EUSR-20
         - id: BR-EUSR-14
+          description: The Full Set End User Cardinality that have sent or received datasets MUST be greater or equal to the Full Set End User Cardinality that have received datasets.
+          schematron:
+            - SCH-EUSR-21
         - id: BR-EUSR-17
+          description: The Full Set End User Cardinality that have sent or received datasets MUST be greater or equal to the Subset maximum End User Cardinality that have sent or received datasets.
+          schematron:
+            - SCH-EUSR-22
 
   - id: ERBG-4
     name: Subset information
@@ -131,7 +186,13 @@ content:
         cardinality: 1..n
         rule:
         - id: BR-EUSR-25
+          description: Each Subset combination of Dataset Type ID and Process ID, for which data is reported, MUST NOT occur more than once per Report.
+          schematron:
+            - SCH-EUSR-13
         - id: BR-EUSR-26
+          description: Each Subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country for which data is reported, MUST NOT occur more than once per Report.
+          schematron:
+            - SCH-EUSR-29
         children:
           - id: ERBT-011
             name: Meta scheme identifier
@@ -165,7 +226,11 @@ content:
           datatype: Count
         rule:
         - id: BR-EUSR-22
+          description: The Report MUST contain the End User Cardinality that have sent datasets during the Reporting Period, subset by Dataset Type ID and Process ID.
         - id: BR-EUSR-27
+          description: The Subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country MUST only be filled out by receiving entities (C3). The End User Cardinality that have sent datasets MUST hence always be zero.
+          schematron:
+            - SCH-EUSR-31
 
       - id: ERBT-015
         name: Receiving end users
@@ -175,6 +240,7 @@ content:
           datatype: Count
         rule:
         - id: BR-EUSR-23
+          description: The Report MUST contain the End User Cardinality that have received datasets during the Reporting Period, subset by Dataset Type ID and Process ID.
 
       - id: ERBT-016
         name: Sending or Receiving end users
@@ -184,7 +250,22 @@ content:
           datatype: Count
         rule:
         - id: BR-EUSR-18
+          description: The Subset End User Cardinality that have sent or received datasets MUST be lower or equal to the sum of the Subset End User Cardinality that have sent datasets and the Subset End User Cardinality that have received datasets.
+          schematron:
+            - SCH-EUSR-33
         - id: BR-EUSR-19
+          description: The Subset End User Cardinality that have sent or received datasets MUST be greater or equal to the Subset End User Cardinality that have sent datasets.
+          schematron:
+            - SCH-EUSR-34
         - id: BR-EUSR-20
+          description: The Subset End User Cardinality that have sent or received datasets MUST be greater or equal to the Subset End User Cardinality that have received datasets.
+          schematron:
+            - SCH-EUSR-35
         - id: BR-EUSR-21
+          description: The Subset End User Cardinality that have sent or received datasets MUST be greater to zero, otherwise the subset MUST not be emitted.
+          schematron:
+            - SCH-EUSR-36
         - id: BR-EUSR-24
+          description: The Report MUST contain the End User Cardinality that have sent or received datasets during the Reporting Period, subset by Dataset Type ID and Process ID. This is the Cardinality of the union of the End Users targeted by BR-EUSR-22 and BR-EUSR-23.
+          schematron:
+            - SCH-EUSR-15
