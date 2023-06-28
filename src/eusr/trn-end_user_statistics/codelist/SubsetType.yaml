@@ -4,7 +4,7 @@ identifier: Peppol:EUSR:SubsetType
 agency: OpenPeppol OO
 language: en
 version:
-  identifier: 2023-03
+  identifier: 2023-06
   status: draft
 codes:
 - id: PerDT-PR
