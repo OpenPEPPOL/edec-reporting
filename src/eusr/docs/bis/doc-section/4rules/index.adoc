@@ -163,7 +163,7 @@ SCH-EUSR-15
 
 | BR-EUSR-28
 | The Report MUST contain the End User Cardinality that have sent datasets during the Reporting Period,
-subset by Dataset Type DI and End User Country.
+subset by Dataset Type ID and End User Country.
 | XSD
 
 SCH-EUSR-37
@@ -189,14 +189,14 @@ SCH-EUSR-38
 
 | BR-EUSR-31
 | The Report MUST contain the End User Cardinality that have sent datasets during the Reporting Period,
-subset End User Country.
+subset by End User Country.
 | XSD
 
 SCH-EUSR-39
 
 | BR-EUSR-32
 | The Report MUST contain the End User Cardinality that have received datasets during the Reporting Period,
-subset End User Country.
+subset by End User Country.
 | XSD
 
 SCH-EUSR-40
