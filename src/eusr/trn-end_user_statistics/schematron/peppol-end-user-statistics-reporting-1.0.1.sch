@@ -195,8 +195,8 @@
       >[SCH-EUSR-24] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
       <assert id="SCH-EUSR-25" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'PR']) = 1"
       >[SCH-EUSR-25] $name MUST have one Key element with the meta scheme ID 'PR'</assert>
-      <assert id="SCH-EUSR-26" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC']) = 2"
-      >[SCH-EUSR-26] $name MUST have two Key elements with the meta scheme ID 'CC'</assert>
+      <assert id="SCH-EUSR-26" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC']) = 1"
+      >[SCH-EUSR-26] $name MUST have one Key element with the meta scheme ID 'CC'</assert>
       <assert id="SCH-EUSR-27" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'EndUserCountry']) = 1"
       >[SCH-EUSR-27] $name MUST have one CC Key element with the scheme ID 'EndUserCountry'</assert>
     </rule>
