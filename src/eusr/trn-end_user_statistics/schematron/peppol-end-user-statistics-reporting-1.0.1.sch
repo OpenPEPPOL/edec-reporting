@@ -73,29 +73,23 @@
                                                                                                                  normalize-space($stpr/@schemeID),'::',normalize-space($stpr))]) = 1"
       >[SCH-EUSR-13] Each combination of 'Dataset Type ID and Process ID' MUST occur only once.</assert>
       
-      <!-- Per Dataset Type ID, Process ID, Sender Country and Receiver Country -->
-      
-      <!-- Note: This Subset is optional -->
+      <!-- Per Dataset Type ID, Process ID and End User Country -->
 
       <!-- Global uniqueness check per Key -->
-      <assert id="SCH-EUSR-29" flag="fatal" test="every $st in (eusr:Subset[normalize-space(@type) = 'PerDT-PR-CC']),
+      <assert id="SCH-EUSR-29" flag="fatal" test="every $st in (eusr:Subset[normalize-space(@type) = 'PerDT-PR-EUC']),
                                                         $stdt in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
                                                         $stpr in ($st/eusr:Key[normalize-space(@metaSchemeID) = 'PR']),
-                                                        $stsc in ($st/eusr:Key[normalize-space(@schemeID) = 'SenderCountry']),
-                                                        $strc in ($st/eusr:Key[normalize-space(@schemeID) = 'ReceiverCountry']) satisfies
-                                                    count(eusr:Subset[normalize-space(@type) ='PerDT-PR-CC'][every $dt in (eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
+                                                        $stuc in ($st/eusr:Key[normalize-space(@schemeID) = 'EndUserCountry']) satisfies
+                                                    count(eusr:Subset[normalize-space(@type) ='PerDT-PR-EUC'][every $dt in (eusr:Key[normalize-space(@metaSchemeID) = 'DT']),
                                                                                                                    $pr in (eusr:Key[normalize-space(@metaSchemeID) = 'PR']),
-                                                                                                                   $sc in (eusr:Key[normalize-space(@schemeID) = 'SenderCountry']),
-                                                                                                                   $rc in (eusr:Key[normalize-space(@schemeID) = 'ReceiverCountry']) satisfies
+                                                                                                                   $uc in (eusr:Key[normalize-space(@schemeID) = 'EndUserCountry']) satisfies
                                                                                                              concat(normalize-space($dt/@schemeID),'::',normalize-space($dt),'::',
                                                                                                                     normalize-space($pr/@schemeID),'::',normalize-space($pr),'::',
-                                                                                                                    normalize-space($sc),'::',
-                                                                                                                    normalize-space($rc)) =
+                                                                                                                    normalize-space($uc)) =
                                                                                                              concat(normalize-space($stdt/@schemeID),'::',normalize-space($stdt),'::',
                                                                                                                     normalize-space($stpr/@schemeID),'::',normalize-space($stpr),'::',
-                                                                                                                    normalize-space($stsc),'::',
-                                                                                                                    normalize-space($strc))]) = 1"
-      >[SCH-EUSR-29] Each combination of 'Dataset Type ID, Process ID, Sender Country and Receiver Country' MUST occur only once.</assert>
+                                                                                                                    normalize-space($stuc))]) = 1"
+      >[SCH-EUSR-29] Each combination of 'Dataset Type ID, Process ID and End User Country' MUST occur only once.</assert>
 
 
       <!-- Per Dataset Type ID and End User Country -->
@@ -130,7 +124,7 @@
         
       <!-- Check that no other Subset types are used -->  
       <assert id="SCH-EUSR-14" flag="fatal" test="count(eusr:Subset[normalize-space(@type) !='PerDT-PR' and 
-                                                                    normalize-space(@type) !='PerDT-PR-CC' and 
+                                                                    normalize-space(@type) !='PerDT-PR-EUC' and
                                                                     normalize-space(@type) !='PerDT-EUC' and 
                                                                     normalize-space(@type) !='PerEUC']) = 0"
       >[SCH-EUSR-14] Only allowed subset types MUST be used.</assert>
@@ -173,9 +167,7 @@
     </rule>
     
     <!-- Make this check outside to ensure it works for different subsets -->
-    <rule context="/eusr:EndUserStatisticsReport/eusr:Subset/eusr:Key[normalize-space(@schemeID) = 'SenderCountry' or 
-                                                                      normalize-space(@schemeID) = 'ReceiverCountry' or 
-                                                                      normalize-space(@schemeID) = 'EndUserCountry']">
+    <rule context="/eusr:EndUserStatisticsReport/eusr:Subset/eusr:Key[normalize-space(@schemeID) = 'EndUserCountry']">
       <assert id="SCH-EUSR-30" flag="fatal" test="not(contains(normalize-space(.), ' ')) and 
                                                   contains($cl_iso3166, concat(' ', normalize-space(.), ' '))"
       >[SCH-EUSR-30] The country code MUST be coded with ISO code ISO 3166-1 alpha-2. Nevertheless, Greece may use the code 'EL', Kosovo may use the code 'XK' or '1A'.</assert>
@@ -193,9 +185,9 @@
       >[SCH-EUSR-11] $name MUST have one Key element with the meta scheme ID 'PR'</assert>
     </rule>
 
-    <!-- Per Dataset Type, Process ID, Sender Country and Receiver Country aggregation -->
-    <rule context="/eusr:EndUserStatisticsReport/eusr:Subset[normalize-space(@type) = 'PerDT-PR-CC']">
-      <let name="name" value="'The subset per Dataset Type ID, Process ID, Sender Country and Receiver Country'"/>
+    <!-- Per Dataset Type, Process ID and End User Country aggregation -->
+    <rule context="/eusr:EndUserStatisticsReport/eusr:Subset[normalize-space(@type) = 'PerDT-PR-EUC']">
+      <let name="name" value="'The subset per Dataset Type ID, Process ID and End User Country'"/>
       
       <assert id="SCH-EUSR-23" flag="fatal" test="count(eusr:Key) = 4"
       >[SCH-EUSR-23] $name MUST have four Key elements</assert>
@@ -205,14 +197,8 @@
       >[SCH-EUSR-25] $name MUST have one Key element with the meta scheme ID 'PR'</assert>
       <assert id="SCH-EUSR-26" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC']) = 2"
       >[SCH-EUSR-26] $name MUST have two Key elements with the meta scheme ID 'CC'</assert>
-      <assert id="SCH-EUSR-27" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'SenderCountry']) = 1"
-      >[SCH-EUSR-27] $name MUST have one CC Key element with the scheme ID 'SenderCountry'</assert>
-      <assert id="SCH-EUSR-28" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'ReceiverCountry']) = 1"
-      >[SCH-EUSR-28] $name MUST have one CC Key element with the scheme ID 'ReceiverCountry'</assert>
-      <assert id="SCH-EUSR-31" flag="fatal" test="eusr:SendingEndUsers = 0"
-      >[SCH-EUSR-31] $name MUST have a 'SendingEndUsers' value of '0' because that data cannot be gathered</assert>
-      <assert id="SCH-EUSR-32" flag="fatal" test="eusr:ReceivingEndUsers = eusr:SendingOrReceivingEndUsers"
-      >[SCH-EUSR-32] $name MUST have the same count for 'ReceivingEndUsers' (<value-of select="eusr:ReceivingEndUsers"/>) and 'SendingOrReceivingEndUsers' (<value-of select="eusr:SendingOrReceivingEndUsers"/>)</assert>
+      <assert id="SCH-EUSR-27" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'EndUserCountry']) = 1"
+      >[SCH-EUSR-27] $name MUST have one CC Key element with the scheme ID 'EndUserCountry'</assert>
     </rule>
 
     <!-- Per Dataset Type and End User Country aggregation -->

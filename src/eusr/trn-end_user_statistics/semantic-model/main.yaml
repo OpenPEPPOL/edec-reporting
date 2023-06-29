@@ -190,7 +190,7 @@ content:
           schematron:
             - SCH-EUSR-13
         - id: BR-EUSR-26
-          description: Each Subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country for which data is reported, MUST NOT occur more than once per Report.
+          description: Each Subset combination of Dataset Type ID, Process ID and End User Country for which data is reported, MUST NOT occur more than once per Report.
           schematron:
             - SCH-EUSR-29
         children:
@@ -227,10 +227,6 @@ content:
         rule:
         - id: BR-EUSR-22
           description: The Report MUST contain the End User Cardinality that have sent datasets during the Reporting Period, subset by Dataset Type ID and Process ID.
-        - id: BR-EUSR-27
-          description: The Subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country MUST only be filled out by receiving entities (C3). The End User Cardinality that have sent datasets MUST hence always be zero.
-          schematron:
-            - SCH-EUSR-31
 
       - id: ERBT-015
         name: Receiving end users

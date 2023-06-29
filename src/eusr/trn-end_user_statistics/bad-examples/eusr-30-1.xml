@@ -31,7 +31,7 @@
     <SendingOrReceivingEndUsers>5</SendingOrReceivingEndUsers>
   </Subset>
 
-  <Subset type="PerDT-PR-CC">
+  <Subset type="PerDT-PR-EUC">
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
     <Key metaSchemeID="CC" schemeID="SenderCountry">AA</Key>

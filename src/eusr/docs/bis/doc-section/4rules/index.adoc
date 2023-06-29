@@ -151,13 +151,8 @@ SCH-EUSR-15
 // Subset DT-PR-CC
 
 | BR-EUSR-26
-| Each Subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country for which data is reported, MUST NOT occur more than once per Report.
+| Each Subset combination of Dataset Type ID, Process ID and End User Country for which data is reported, MUST NOT occur more than once per Report.
 | SCH-EUSR-29
-
-| BR-EUSR-27
-| The Subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country MUST only be filled out by receiving entities (C3).
-  The End User Cardinality that have sent datasets MUST hence always be zero. 
-| SCH-EUSR-31
 
 // Subset PerDT-EUC
 
