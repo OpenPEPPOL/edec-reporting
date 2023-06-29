@@ -148,7 +148,7 @@ SCH-EUSR-15
 | Each Subset combination of Dataset Type ID and Process ID, for which data is reported, MUST NOT occur more than once per Report.
 | SCH-EUSR-13
 
-// Subset DT-PR-CC
+// Subset DT-PR-EUC
 
 | BR-EUSR-26
 | Each Subset combination of Dataset Type ID, Process ID and End User Country for which data is reported, MUST NOT occur more than once per Report.
@@ -159,9 +159,7 @@ SCH-EUSR-15
 | BR-EUSR-28
 | The Report MUST contain the End User Cardinality that have sent datasets during the Reporting Period,
 subset by Dataset Type ID and End User Country.
-| XSD
-
-SCH-EUSR-37
+| SCH-EUSR-37
 
 | BR-EUSR-29
 | The Report MUST contain the End User Cardinality that have received datasets during the Reporting Period,
@@ -200,8 +198,6 @@ SCH-EUSR-40
 | The Report MUST contain the End User Cardinality that have sent or received datasets during the Reporting Period,
 subset by End User Country.
 This is the Cardinality of the union of the End Users targeted by BR-EUSR-31 and BR-EUSR-32.
-| XSD
-
-SCH-EUSR-40
+| SCH-EUSR-40
 
 |====

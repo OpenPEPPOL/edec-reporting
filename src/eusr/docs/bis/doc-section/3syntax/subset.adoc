@@ -109,7 +109,7 @@ Each distinct combination of the Dataset Type, Process ID and End User Country
 
 The element `eusr:Subset/eusr:SendingEndUsers` contains the number of distinct 
   end users (cardinality) that have sent datasets using this combination of the Dataset Type, Process ID and End User Country.
-  Only the values `0` is allowed.
+  Only values &ge; 0 are allowed.
 
 The element `eusr:Subset/eusr:ReceivingEndUsers` contains the number of distinct 
   end users (cardinality) that have received datasets using this combination of the Dataset Type, Process ID and End User Country.
