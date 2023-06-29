@@ -189,8 +189,8 @@
     <rule context="/eusr:EndUserStatisticsReport/eusr:Subset[normalize-space(@type) = 'PerDT-PR-EUC']">
       <let name="name" value="'The subset per Dataset Type ID, Process ID and End User Country'"/>
       
-      <assert id="SCH-EUSR-23" flag="fatal" test="count(eusr:Key) = 4"
-      >[SCH-EUSR-23] $name MUST have four Key elements</assert>
+      <assert id="SCH-EUSR-23" flag="fatal" test="count(eusr:Key) = 3"
+      >[SCH-EUSR-23] $name MUST have three Key elements</assert>
       <assert id="SCH-EUSR-24" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
       >[SCH-EUSR-24] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
       <assert id="SCH-EUSR-25" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'PR']) = 1"
