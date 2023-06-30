@@ -50,7 +50,7 @@ subsets MUST be prepared to be compliant with this specification.
 
 * Frequency
 ** An End User Statistics Report MUST be transmitted once per Reporting Period.
-** An End User Statistics Report MUST be transmitted within the Statistics Reporting Period, which is defined external to this document, after the end of the previous Reporting Period.
+** An End User Statistics Report MUST be transmitted within the Statistics Report Submitting Period, which is defined external to this document, after the end of the previous Reporting Period.
 ** The End User Statistics Report MUST be transmitted, even if no other Peppol transactions happened in the Reporting Period.
 ** In case the End User Statistics Report of one Service Provider is received multiple times for one Reporting Period, only the latest received document will be processed.
 ** End User Statistics Reports received after the deadline WILL NOT be processed.   
