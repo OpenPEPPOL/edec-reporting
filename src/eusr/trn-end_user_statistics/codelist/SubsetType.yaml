@@ -4,12 +4,18 @@ identifier: Peppol:EUSR:SubsetType
 agency: OpenPeppol OO
 language: en
 version:
-  identifier: 2023-03
+  identifier: 2023-06
   status: draft
 codes:
 - id: PerDT-PR
   name:
     en: Subset per Dataset Type and Process ID
-- id: PerDT-PR-CC
+- id: PerDT-PR-EUC
   name:
-    en: Subset per Dataset Type, Process ID, Sender Country and Receiver Country
+    en: Subset per Dataset Type, Process ID and End User Country
+- id: PerDT-EUC
+  name:
+    en: Subset per Dataset Type and End User Country
+- id: PerEUC
+  name:
+    en: Subset per End User Country

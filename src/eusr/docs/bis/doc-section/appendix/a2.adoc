@@ -3,7 +3,7 @@
 
 The following example report represents a valid example message.
 This example represents the data for a Service Provider that only sent documents within a Reporting Period.
-This implies, that the "Subsets per Dataset Type, Process ID, Sender Country and Receiver Country" is not contained.
+This implies, that the "Subsets per Dataset Type, Process ID and End User Country" is not contained.
 
 [source, xml]
 ----

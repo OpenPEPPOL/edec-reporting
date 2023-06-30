@@ -148,16 +148,56 @@ SCH-EUSR-15
 | Each Subset combination of Dataset Type ID and Process ID, for which data is reported, MUST NOT occur more than once per Report.
 | SCH-EUSR-13
 
-// Subset DT-PR-CC
+// Subset DT-PR-EUC
 
 | BR-EUSR-26
-| Each Subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country for which data is reported, MUST NOT occur more than once per Report.
+| Each Subset combination of Dataset Type ID, Process ID and End User Country for which data is reported, MUST NOT occur more than once per Report.
 | SCH-EUSR-29
 
-| BR-EUSR-27
-| The Subset combination of Dataset Type ID, Process ID, Sender Country and Receiver Country MUST only be filled out by receiving entities (C3).
-  The End User Cardinality that have sent datasets MUST hence always be zero. 
-| SCH-EUSR-31
+// Subset PerDT-EUC
 
+| BR-EUSR-28
+| The Report MUST contain the End User Cardinality that have sent datasets during the Reporting Period,
+subset by Dataset Type ID and End User Country.
+| SCH-EUSR-37
+
+| BR-EUSR-29
+| The Report MUST contain the End User Cardinality that have received datasets during the Reporting Period,
+subset by Dataset Type ID and End User Country.
+| XSD
+
+SCH-EUSR-38
+
+| BR-EUSR-30
+| The Report MUST contain the End User Cardinality that have sent or received datasets during the Reporting Period,
+subset by Dataset Type ID and End User Country.
+This is the Cardinality of the union of the End Users targeted by BR-EUSR-28 and BR-EUSR-29.
+| XSD
+
+SCH-EUSR-38
+
+
+// Subset PerEUC
+
+
+| BR-EUSR-31
+| The Report MUST contain the End User Cardinality that have sent datasets during the Reporting Period,
+subset by End User Country.
+| XSD
+
+SCH-EUSR-39
+
+| BR-EUSR-32
+| The Report MUST contain the End User Cardinality that have received datasets during the Reporting Period,
+subset by End User Country.
+| XSD
+
+SCH-EUSR-40
+
+| BR-EUSR-33
+| The Report MUST contain the End User Cardinality that have sent or received datasets during the Reporting Period,
+subset by End User Country.
+This is the Cardinality of the union of the End Users targeted by BR-EUSR-31 and BR-EUSR-32.
+| SCH-EUSR-40
 
 |====

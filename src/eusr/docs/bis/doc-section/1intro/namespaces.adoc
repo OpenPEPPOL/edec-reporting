@@ -10,5 +10,5 @@ arbitrary and not semantically significant.
 |Namespace URI
 
 |eusr
-|`urn:fdc:peppol:end-user-statistics-report:1.0`
+|`urn:fdc:peppol:end-user-statistics-report:1.1`
 |====

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<EndUserStatisticsReport xmlns="urn:fdc:peppol:end-user-statistics-report:1.0">
-  <!-- [SCH-EUSR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.0' -->
+<EndUserStatisticsReport xmlns="urn:fdc:peppol:end-user-statistics-report:1.1">
+  <!-- [SCH-EUSR-01] The customization ID MUST use the value 'urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.1' -->
   <CustomizationID></CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:edec:bis:reporting:1.0</ProfileID>
   <Header>

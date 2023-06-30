@@ -10,7 +10,65 @@ The technical representation of the subsets was designed in a generic way,
   Each `Subset` element therefore requires a `@type` attribute that defines
   the type of the subset. The value range is defined by the
   <<codelist-subsettype>> code list.
-  
+
+== Subset Cardinality per End Users Country
+This subset is identifierd by the `@type` attribute having the value `PerEUC`.
+
+* This subset requires one `Key` element with a Meta Scheme ID of `CC`
+(Country Code) and the `schemeID` attribute of `EndUserCountry`.
+The value of the `Key` element MUST have a value according to the
+<<codelist-countrycode>> code list.
+
+The element `eusr:Subset/eusr:SendingEndUsers` contains the number of distinct
+end users (cardinality) from the given End User Country, who have sent transactions.
+Only values &ge; 0 are allowed.
+
+The element `eusr:Subset/eusr:ReceivingEndUsers` contains the number of distinct
+end users (cardinality) from the given End User Country, who have received transactions.
+Only values &ge; 0 are allowed.
+
+The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of distinct
+end users (cardinality) from the given End User Country, who have sent/received transactions.
+Only values &ge; 0 are allowed.
+
+
+.Example of a subset per Dataset Type and Process ID:
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=SubsetPerEUC]
+----
+
+== Subset Cardinality per Dataset Type and End Users Country
+This subset is identifierd by the `@type` attribute having the value `PerDT-EUC`.
+
+* This subset requires one `Key` element with a Meta Scheme ID of `DT` (Dataset Type).
+The `@schemeID` attribute of this `Key` element MUST be the Document Type Identifier Scheme
+of the exchanged Dataset (usually `busdox-docid-qns`). The value of the `Key` element MUST be
+the Dataset Type (Document Type) Identifier value of the exchanged dataset.
+
+* This subset requires one `Key` element with a Meta Scheme ID of `CC`
+(Country Code) and the `schemeID` attribute of `EndUserCountry`.
+The value of the `Key` element MUST have a value according to the
+<<codelist-countrycode>> code list.
+
+The element `eusr:Subset/eusr:SendingEndUsers` contains the number of distinct
+end users (cardinality) from the given End User Country, who have sent transactions containing the given Dataset Type.
+Only values &ge; 0 are allowed.
+
+The element `eusr:Subset/eusr:ReceivingEndUsers` contains the number of distinct
+end users (cardinality) from the given End User Country, who have received transactions containing the given Dataset Type.
+Only values &ge; 0 are allowed.
+
+The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of distinct
+end users (cardinality) from the given End User Country, who have sent/received transactions containing the given Dataset Type.
+Only values &ge; 0 are allowed.
+
+.Example of a subset per Dataset Type and Process ID:
+[source, xml]
+----
+include::./snippet/snippet-1.xml[tags=SubsetPerDT-EUC]
+----
+
 == Subset Cardinality per Dataset Type and Process ID
 
 This subset is identified by the `@type` attribute having the value `PerDT-PR`.
@@ -49,9 +107,9 @@ The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of
 include::./snippet/snippet-1.xml[tags=SubsetPerDT-PR]
 ----
 
-== Subset Cardinality per Dataset Type, Process ID, Sender Country and Receiver Country
+== Subset Cardinality per Dataset Type, Process ID and End User Country
 
-This subset is identified by the `@type` attribute having the value `PerDT-PR-CC`.
+This subset is identified by the `@type` attribute having the value `PerDT-PR-EUC`.
 
 * This subset requires one `Key` element with a Meta Scheme ID of `DT` (Dataset Type).
 The `@schemeID` attribute of this `Key` element MUST be the Document Type Identifier Scheme
@@ -65,46 +123,30 @@ The value of the `Key` element MUST be the Process ID value of the process
 (Peppol profile) used.
 
 * This subset requires one `Key` element with a Meta Scheme ID of `CC`
-  (Country Code) and the `schemeID` attribute of `SenderCountry`.
-  The value of the `Key` element MUST have a value according to the
-  <<codelist-countrycode>> code list.
-  
-* This subset requires one `Key` element with a Meta Scheme ID of `CC`
-  (Country Code) and the `schemeID` attribute of `ReceiverCountry`.
+  (Country Code) and the `schemeID` attribute of `EndUserCountry`.
   The value of the `Key` element MUST have a value according to the
   <<codelist-countrycode>> code list.
 
-
-Each distinct combination of the Dataset Type, Process ID, Sender Country and Receiver Country 
+Each distinct combination of the Dataset Type, Process ID and End User Country
   MUST be reported in a separate `Subset` element.
 
 
 The element `eusr:Subset/eusr:SendingEndUsers` contains the number of distinct 
-  end users (cardinality) that have sent datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
-  Only the values `0` is allowed.
+  end users (cardinality) that have sent datasets using this combination of the Dataset Type, Process ID and End User Country.
+  Only values &ge; 0 are allowed.
 
 The element `eusr:Subset/eusr:ReceivingEndUsers` contains the number of distinct 
-  end users (cardinality) that have received datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
+  end users (cardinality) that have received datasets using this combination of the Dataset Type, Process ID and End User Country.
   Only values &ge; 0 are allowed.
 
 The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of distinct 
-  end users (cardinality) that have either sent or received datasets using this combination of the Dataset Type, Process ID, Sender Country and Receiver Country. 
+  end users (cardinality) that have either sent or received datasets using this combination of the Dataset Type, Process ID and End User Country.
   Only values &ge; 0 are allowed.
 
 
-====
-IMPORTANT: This subset can only be counted for receiving end users, because only those have the full data available.
-The count of sending end users in this subset MUST always be `0`.
-As a conclusion, `ReceivingEndUsers` and `SendingOrReceivingEndUsers` must be identical within this subset.
-====
-
-NOTE: This subset is currently optional and will be mandatory when the backing eDEC
-specifications (Peppol Envelope (SBDH)) become mandatory.
-
-
-.Example of a subset per Dataset Type, Process ID, Sender Country and Receiver Country:
+.Example of a subset per Dataset Type, Process ID and End User Country:
 [source, xml]
 ----
-include::./snippet/snippet-1.xml[tags=SubsetPerDT-PR-CC]
+include::./snippet/snippet-1.xml[tags=SubsetPerDT-PR-EUC]
 ---- 
 
