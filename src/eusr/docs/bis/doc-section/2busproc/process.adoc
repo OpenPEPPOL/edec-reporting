@@ -30,7 +30,6 @@ acknowledgment (like AS4 Receipts) MUST be included in the End User Statistics R
 Transmissions that failed on a network or protocol level MUST NOT to be considered for the report.
 ** End User Statistics Reports MUST NOT be counted for an End User Statistics Report.
 ** Transaction Statistics Reports MUST NOT be counted for an End User Statistics Report.
-** Only the sending SP MUST count the message as 'outgoing' and only the receiving SP MUST count the same message as 'incoming'.
 
 NOTE: If the same End User is represented with multiple Participant Identifiers, the data needs to be gathered per End User and NOT per Participant Identifier.
 
@@ -39,7 +38,8 @@ NOTE: If the same End User is represented with multiple Participant Identifiers,
 Before the End User Statistics Report data is transmitted to OpenPeppol it needs to be prepared for subsets. 
 The preparation can be performed on any of the above-mentioned data elements defined by the Internal Regulations.
 
-The following subsets MUST be prepared to be compliant with this specification.
+IF there are end users who have sent / received transactions within the reporting period, then the following
+subsets MUST be prepared to be compliant with this specification.
 
 * Dataset Type ID (Document Type ID) and End Users Country
 * End Users Country
