@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<eusr:EndUserStatisticsReport xmlns:eusr="urn:fdc:peppol:end-user-statistics-report:1.0">
-  <eusr:CustomizationID>urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.0</eusr:CustomizationID>
+<eusr:EndUserStatisticsReport xmlns:eusr="urn:fdc:peppol:end-user-statistics-report:1.1">
+  <eusr:CustomizationID>urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.1</eusr:CustomizationID>
   <eusr:ProfileID>urn:fdc:peppol.eu:edec:bis:reporting:1.0</eusr:ProfileID>
 
   <!-- tag::Header[] -->

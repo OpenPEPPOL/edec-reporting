@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="urn:fdc:peppol:end-user-statistics-report:1.0"
+<xs:schema xmlns="urn:fdc:peppol:end-user-statistics-report:1.1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="urn:fdc:peppol:end-user-statistics-report:1.0"
+           targetNamespace="urn:fdc:peppol:end-user-statistics-report:1.1"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
   <xs:annotation>
@@ -14,6 +14,8 @@
         Philip Helger
 
       History:
+        EUSR 1.1.0
+        * 2023-03-29, Muhammet Yildiz - namespaces updated
         EUSR 1.0.0
         * 2023-03-06, Philip Helger - updates after second review
         EUSR RC2
