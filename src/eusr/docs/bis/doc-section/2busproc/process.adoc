@@ -44,16 +44,13 @@ The following subsets MUST be prepared to be compliant with this specification.
 * Dataset Type ID (Document Type ID) and End Users Country
 * End Users Country
 * Dataset Type ID (Document Type ID) and Process ID
-
-The following subsets MAY be provided for **receiving end users only** to be compliant to this specification:
-
-* Dataset Type ID (Document Type ID) and Process ID, Country of sender and Country of receiver
+* Dataset Type ID (Document Type ID) and Process ID and End Users Country
 
 == Data Transmission
 
 * Frequency
 ** An End User Statistics Report MUST be transmitted once per Reporting Period.
-** An End User Statistics Report MUST be transmitted within 15 calendar days (inclusive) after the end of the previous Reporting Period.
+** An End User Statistics Report MUST be transmitted within the Statistics Reporting Period, which is defined external to this document, after the end of the previous Reporting Period.
 ** The End User Statistics Report MUST be transmitted, even if no other Peppol transactions happened in the Reporting Period.
 ** In case the End User Statistics Report of one Service Provider is received multiple times for one Reporting Period, only the latest received document will be processed.
 ** End User Statistics Reports received after the deadline WILL NOT be processed.   
