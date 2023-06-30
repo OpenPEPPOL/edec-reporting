@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<Tests xmlns="urn:fdc:schunit.com:2020:v1">
+  <Description>Verify existence of header in document.</Description>
+  <Scope>SCH-EUSR-26</Scope>
+
+  <Test>
+    <Trigger>SCH-EUSR-26</Trigger>
 <EndUserStatisticsReport xmlns="urn:fdc:peppol:end-user-statistics-report:1.1">
   <CustomizationID>urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.1</CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:edec:bis:reporting:1.0</ProfileID>
@@ -34,7 +40,9 @@
   <Subset type="PerDT-PR-EUC">
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
-    <Key metaSchemeID="CC" schemeID="EndUserCountry">AA</Key>
+    <!-- [SCH-EUSR-26] $name MUST have two Key elements with the meta scheme ID 'CC' -->
+    <Key metaSchemeID="DD" schemeID="EndUserCountry">FI</Key>
+    <Key metaSchemeID="CC" schemeID="ReceiverCountry">PT</Key>
     <SendingEndUsers>1</SendingEndUsers>
     <ReceivingEndUsers>1</ReceivingEndUsers>
     <SendingOrReceivingEndUsers>1</SendingOrReceivingEndUsers>
@@ -53,3 +61,5 @@
     <SendingOrReceivingEndUsers>1</SendingOrReceivingEndUsers>
   </Subset>
 </EndUserStatisticsReport>
+  </Test>
+</Tests>

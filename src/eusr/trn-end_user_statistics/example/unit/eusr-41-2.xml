@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<Tests xmlns="urn:fdc:schunit.com:2020:v1">
+  <Description>Verify existence of header in document.</Description>
+  <Scope>SCH-EUSR-41</Scope>
+
+  <Test>
+    <Trigger>SCH-EUSR-41</Trigger>
 <EndUserStatisticsReport xmlns="urn:fdc:peppol:end-user-statistics-report:1.1">
   <CustomizationID>urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.1</CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:edec:bis:reporting:1.0</ProfileID>
@@ -12,8 +18,8 @@
 
   <FullSet>
     <SendingEndUsers>5</SendingEndUsers>
-    <ReceivingEndUsers>3</ReceivingEndUsers>
-    <SendingOrReceivingEndUsers>6</SendingOrReceivingEndUsers>
+    <ReceivingEndUsers>4</ReceivingEndUsers>
+    <SendingOrReceivingEndUsers>8</SendingOrReceivingEndUsers>
   </FullSet>
 
   <Subset type="PerDT-PR">
@@ -21,7 +27,7 @@
     <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
     <SendingEndUsers>4</SendingEndUsers>
     <ReceivingEndUsers>2</ReceivingEndUsers>
-    <SendingOrReceivingEndUsers>5</SendingOrReceivingEndUsers>
+    <SendingOrReceivingEndUsers>4</SendingOrReceivingEndUsers>
   </Subset>
   <Subset type="PerDT-PR">
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
@@ -30,19 +36,10 @@
     <ReceivingEndUsers>2</ReceivingEndUsers>
     <SendingOrReceivingEndUsers>5</SendingOrReceivingEndUsers>
   </Subset>
-
-  <Subset type="PerDT-PR-EUC">
-    <!-- [SCH-EUSR-25] $name MUST have one Key element with the meta scheme ID 'PR' -->
-    <Key metaSchemeID="PR" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
-    <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Key>
-    <Key metaSchemeID="CC" schemeID="EndUserCountry">FI</Key>
-    <Key metaSchemeID="CC" schemeID="ReceiverCountry">PT</Key>
-    <SendingEndUsers>1</SendingEndUsers>
-    <ReceivingEndUsers>1</ReceivingEndUsers>
-    <SendingOrReceivingEndUsers>1</SendingOrReceivingEndUsers>
-  </Subset>
   <Subset type="PerDT-EUC">
+    <!-- [SCH-EUSR-41] $name MUST have two Key elements -->
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
+    <Key metaSchemeID="CC" schemeID="EndUserCountry">PT</Key>
     <Key metaSchemeID="CC" schemeID="EndUserCountry">PT</Key>
     <SendingEndUsers>1</SendingEndUsers>
     <ReceivingEndUsers>0</ReceivingEndUsers>
@@ -55,3 +52,5 @@
     <SendingOrReceivingEndUsers>1</SendingOrReceivingEndUsers>
   </Subset>
 </EndUserStatisticsReport>
+  </Test>
+</Tests>
