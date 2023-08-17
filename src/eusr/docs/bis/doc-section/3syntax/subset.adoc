@@ -32,7 +32,7 @@ end users (cardinality) from the given End User Country, who have sent/received 
 Only values &ge; 0 are allowed.
 
 
-.Example of a subset per Dataset Type and Process ID:
+.Example of a subset per End Users Country:
 [source, xml]
 ----
 include::./snippet/snippet-1.xml[tags=SubsetPerEUC]
