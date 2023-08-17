@@ -28,9 +28,9 @@
   <!-- tag::SubsetPerEUC[] -->
   <eusr:Subset type="PerEUC">
     <eusr:Key metaSchemeID="CC" schemeID="EndUserCountry">PT</eusr:Key>
-    <!-- How many distinct end users from PT received transactions -->
-    <eusr:SendingEndUsers>12</eusr:SendingEndUsers>
     <!-- How many distinct end users from PT sent transactions -->
+    <eusr:SendingEndUsers>12</eusr:SendingEndUsers>
+    <!-- How many distinct end users from PT received transactions -->
     <eusr:ReceivingEndUsers>23</eusr:ReceivingEndUsers>
     <!-- How many distinct end users from PT were involved in transactions (sent or received) -->
     <eusr:SendingOrReceivingEndUsers>26</eusr:SendingOrReceivingEndUsers>
@@ -41,9 +41,9 @@
   <Subset type="PerDT-EUC">
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
     <Key metaSchemeID="CC" schemeID="EndUserCountry">PT</Key>
-    <!-- How many distinct end users from PT received transactions for dataset ...eu:2017:poacc:billing:3.0::2.1 -->
-    <SendingEndUsers>5</SendingEndUsers>
     <!-- How many distinct end users from PT sent transactions for dataset ...eu:2017:poacc:billing:3.0::2.1 -->
+    <SendingEndUsers>5</SendingEndUsers>
+    <!-- How many distinct end users from PT received transactions for dataset ...eu:2017:poacc:billing:3.0::2.1 -->
     <ReceivingEndUsers>2</ReceivingEndUsers>
     <!-- How many distinct end users from PT were involved in transactions (sent or received) for dataset ...eu:2017:poacc:billing:3.0::2.1 -->
     <SendingOrReceivingEndUsers>6</SendingOrReceivingEndUsers>

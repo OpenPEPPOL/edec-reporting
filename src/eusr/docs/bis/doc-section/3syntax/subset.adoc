@@ -63,7 +63,7 @@ The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of
 end users (cardinality) from the given End User Country, who have sent/received transactions containing the given Dataset Type.
 Only values &ge; 0 are allowed.
 
-.Example of a subset per Dataset Type and Process ID:
+.Example of a subset per Dataset Type and End Users Country:
 [source, xml]
 ----
 include::./snippet/snippet-1.xml[tags=SubsetPerDT-EUC]
