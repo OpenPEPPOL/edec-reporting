@@ -4,4 +4,4 @@
 ** How the PCA will receive the reports.
 
 * Service Provider (SP)
-** How SPs are to submit their Transaction statistics Reports to the PCA.
+** How SPs are to submit their Transaction Statistics Reports to the PCA.

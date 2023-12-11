@@ -19,7 +19,7 @@ image::./images/tsr-process-view.png[]
 * Data
 ** Only Service Providers operating a production Peppol Access Point MUST gather this data and transmit a Transaction Statistics Report.
 ** Only data for the production network MUST be gathered.
-** According to the Internal Regulations (IR), chapter 4.4, the following information elements need to be gathered for each exchanged Dataset:
+** The following information elements need to be gathered for each exchanged Dataset:
     1. Timing of the exchange
     2. Direction of the exchange (incoming or outgoing)
     3. Sending Peppol Service Provider
@@ -28,7 +28,7 @@ image::./images/tsr-process-view.png[]
     5. Peppol Dataset Type (Document Type ID)
     6. Transport protocol used
     7. Country of sender^*^
-    8. Country of receiver^*^
+    8. Country of receiver^**^
 
 ** Only Dataset exchanges that resulted in a positive transport level
    acknowledgment (like AS4 Receipts) MUST be included in the Transaction
@@ -39,6 +39,8 @@ image::./images/tsr-process-view.png[]
 ** Only the sending SP MUST count the message as 'outgoing' and only the receiving SP MUST count the same message as 'incoming'.
 
 NOTE: ^*^ The Country of sender will be mandatory, once the backing eDEC specification becomes mandatory
+
+NOTE: ^**^ The Country of receiver can only be determined by the receiving Service Provider (C3)
 
 
 == Data Aggregation
