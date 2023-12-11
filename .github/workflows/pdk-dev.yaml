@@ -27,13 +27,13 @@ jobs:
 
 
       - name: Pull docker image
-        run: docker pull public.ecr.aws/openpeppol/pdk:latest
+        run: docker pull 070318080841.dkr.ecr.eu-west-1.amazonaws.com/pdk:latest
 
       - name: Prepare PDK
-        run: docker run --rm -i -v $(pwd):/src public.ecr.aws/openpeppol/pdk:latest pdk -T
+        run: docker run --rm -i -v $(pwd):/src 070318080841.dkr.ecr.eu-west-1.amazonaws.com/pdk:latest pdk -T
 
       - name: Run PDK
-        run: docker run --rm -i -v $(pwd):/src public.ecr.aws/openpeppol/pdk:latest pdk
+        run: docker run --rm -i -v $(pwd):/src 070318080841.dkr.ecr.eu-west-1.amazonaws.com/pdk:latest pdk
 
       - name: Publish to Test-Docs
         env:
