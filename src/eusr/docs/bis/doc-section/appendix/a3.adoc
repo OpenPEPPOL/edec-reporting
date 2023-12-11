@@ -6,5 +6,5 @@ This example represents a message in case no transmissions were performed within
 
 [source, xml]
 ----
-include::../../../../trn-end_user_statistics/example/end-user-statistics-reporting-empty.xml[]
+include::../../../../trn-end_user_statistics/example/end-user-statistics-reporting-appendix3.xml[]
 ----

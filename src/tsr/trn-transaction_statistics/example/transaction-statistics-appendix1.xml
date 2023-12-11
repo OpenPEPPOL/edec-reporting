@@ -9,22 +9,17 @@
     </ReportPeriod>
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
-
   <!-- Totals -->
   <Total>
     <Incoming>27</Incoming>
     <Outgoing>23</Outgoing>
   </Total>
-
-
   <!-- Sum per TP must match TotalCount -->
   <Subtotal type="PerTP">
     <Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</Key>
     <Incoming>27</Incoming>
     <Outgoing>23</Outgoing>
   </Subtotal>
-
-
   <!-- region PerSP-DT-PR -->
   <!-- Subtotals must match Total -->
   <Subtotal type="PerSP-DT-PR">
@@ -34,7 +29,6 @@
     <Incoming>2</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>
-  
   <Subtotal type="PerSP-DT-PR">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
@@ -42,7 +36,6 @@
     <Incoming>13</Incoming>
     <Outgoing>11</Outgoing>
   </Subtotal>
-  
   <Subtotal type="PerSP-DT-PR">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2::OrderResponse##urn:fdc:peppol.eu:poacc:trns:order_response:3::2.1</Key>
@@ -50,7 +43,6 @@
     <Incoming>12</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>
-  
   <Subtotal type="PerSP-DT-PR">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000002</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Order-2::Order##urn:fdc:peppol.eu:poacc:trns:order:3::2.1</Key>
@@ -59,8 +51,6 @@
     <Outgoing>12</Outgoing>
   </Subtotal>
   <!-- endregion -->
-
-
   <!-- region PerSP-DT-PR-CC -->
   <!-- Subtotals must match Total -->
   <Subtotal type="PerSP-DT-PR-CC">
@@ -72,7 +62,6 @@
     <Incoming>2</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>
-  
   <Subtotal type="PerSP-DT-PR-CC">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
@@ -82,7 +71,6 @@
     <Incoming>4</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>
-  
   <Subtotal type="PerSP-DT-PR-CC">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
@@ -92,7 +80,6 @@
     <Incoming>9</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>
-  
   <Subtotal type="PerSP-DT-PR-CC">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2::OrderResponse##urn:fdc:peppol.eu:poacc:trns:order_response:3::2.1</Key>
@@ -102,7 +89,6 @@
     <Incoming>7</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>
-  
   <Subtotal type="PerSP-DT-PR-CC">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2::OrderResponse##urn:fdc:peppol.eu:poacc:trns:order_response:3::2.1</Key>

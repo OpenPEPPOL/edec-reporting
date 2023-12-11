@@ -6,5 +6,5 @@ This example represents the data for a Service Provider that both sent and recei
 
 [source, xml]
 ----
-include::../../../../trn-end_user_statistics/example/end-user-statistics-reporting-1.xml[]
+include::../../../../trn-end_user_statistics/example/end-user-statistics-reporting-appendix1.xml[]
 ----
