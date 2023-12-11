@@ -6,5 +6,5 @@ This example represents the data for a Service Provider that both sent and recei
 
 [source, xml]
 ----
-include::../../../../trn-transaction_statistics/example/transaction-statistics-2.xml[]
+include::../../../../trn-transaction_statistics/example/transaction-statistics-appendix1.xml[]
 ----
