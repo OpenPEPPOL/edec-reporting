@@ -2,8 +2,8 @@ name: PDK-Dev
 
 on:
   push:
-    branches:
-      - Develop
+    branches-ignore:
+      - main
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
 
       - name: Login with docker to ECR
         id: login-ecr
-        run: aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
+        run: aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 070318080841.dkr.ecr.eu-west-1.amazonaws.com
 
 
       - name: Pull docker image
@@ -41,3 +41,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
             aws s3 sync --acl public-read --region eu-west-1 target/site ${{ secrets.AWS_S3_PATH }}/reporting/${GITHUB_REF#refs/heads/}
+            
