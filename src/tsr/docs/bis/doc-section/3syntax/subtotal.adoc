@@ -9,7 +9,7 @@ The technical representation of the subtotals was designed in a generic way,
   the type of the subtotal. The value range is defined by the
   <<codelist-subtotaltype>> code list.
 
-Subtotals without any matching transaction (i.e. if `Incoming` and `Outgoing` are `0`) 
+Subtotals without any matching transaction (i.e. if `Incoming` is `0` and if `Outgoing` is `0`) 
   MUST NOT be part of the Report.
 
 All values in this subchapter are case-sensitive, except stated otherwise.
@@ -69,10 +69,9 @@ The sum all incoming amounts per Service Provider, Dataset Type and Process ID M
 The sum all outgoing amounts per Service Provider, Dataset Type and Process ID MUST
   match the total outgoing amount.
 
-NOTE: For outgoing messages, only the receiving Service Provider needs
-  to be counted. For incoming messages, only the sending Service Provider needs
-  to be counted. The other side must always be the reporting Service Provider
-  that is already part of the header data. 
+NOTE: For outgoing messages, only the receiving SP (C3) needs to be counted. 
+  For incoming messages, only the sending SP (C2) needs to be counted. 
+  The other side must always be the reporting SP that is already part of the Report header data. 
 
 .Example of a subtotal per Service Provider, Dataset Type and Process ID:
 [source, xml]
@@ -116,14 +115,12 @@ The sum all incoming amounts per Service Provider, Dataset Type, Process ID and
   Country Code MUST match the total incoming amount.
 
 ====
-IMPORTANT: This subtotal can only be counted by receiving Service Providers, because only those have the full data available.
-The outgoing count in this subtotal MUST always be `0`.
+IMPORTANT: This subtotal can only be counted by receiving SPs (C3), because only those have the full data available.
+  The outgoing count in this subtotal MUST always be `0`.
 ====
 
-
-NOTE: For incoming messages, only the sending Service Provider needs
-  to be counted. The other side must always be the reporting Service Provider
-  that is already part of the Report header data.
+NOTE: For incoming messages, only the sending SP (C2) needs to be counted. 
+  The other side must always be the reporting SP that is already part of the Report header data.
 
 
 .Example of a subtotal per Service Provider, Dataset Type, Process ID and Country Codes:
