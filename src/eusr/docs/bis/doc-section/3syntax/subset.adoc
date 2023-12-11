@@ -48,7 +48,7 @@ This subset is identifierd by the `@type` attribute having the value `PerDT-EUC`
 
 * This subset requires one `Key` element with a Meta Scheme ID of `DT` (Dataset Type).
 The `@schemeID` attribute of this `Key` element MUST be the Document Type Identifier Scheme
-of the exchanged Dataset (usually `busdox-docid-qns`). The value of the `Key` element MUST be
+of the exchanged Dataset (usually `busdox-docid-qns` or `peppol-doctype-wildcard`). The value of the `Key` element MUST be
 the Dataset Type (Document Type) Identifier value of the exchanged dataset.
 
 * This subset requires one `Key` element with a Meta Scheme ID of `CC`
@@ -80,7 +80,7 @@ This subset is identified by the `@type` attribute having the value `PerDT-PR`.
 
 * This subset requires one `Key` element with a Meta Scheme ID of `DT` (Dataset Type).
 The `@schemeID` attribute of this `Key` element MUST be the Document Type Identifier Scheme
-of the exchanged Dataset (usually `busdox-docid-qns`). The value of the `Key` element MUST be
+of the exchanged Dataset (usually `busdox-docid-qns` or `peppol-doctype-wildcard`). The value of the `Key` element MUST be
 the Dataset Type (Document Type) Identifier value of the exchanged dataset.
 
 * This subset requires one `Key` element with Meta Scheme ID of `PR` (Process ID).
@@ -118,7 +118,7 @@ This subset is identified by the `@type` attribute having the value `PerDT-PR-EU
 
 * This subset requires one `Key` element with a Meta Scheme ID of `DT` (Dataset Type).
 The `@schemeID` attribute of this `Key` element MUST be the Document Type Identifier Scheme
-of the exchanged Dataset (usually `busdox-docid-qns`). The value of the `Key` element MUST be
+of the exchanged Dataset (usually `busdox-docid-qns` or `peppol-doctype-wildcard`). The value of the `Key` element MUST be
 the Dataset Type (Document Type) Identifier value of the exchanged dataset.
 
 * This subset requires one `Key` element with Meta Scheme ID of `PR` (Process ID).

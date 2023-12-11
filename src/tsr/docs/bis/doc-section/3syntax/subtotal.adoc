@@ -50,7 +50,7 @@ The value of the `Key` element MUST follow the rules of the chosen scheme.
 * This subtotal requires one `Key` element with a Meta Scheme ID of `DT`
   (Dataset Type).
 The `schemeID` attribute of this `Key` element MUST be the Document Type
-  Identifier Scheme of the exchanged Dataset (usually `busdox-docid-qns`).
+  Identifier Scheme of the exchanged Dataset (usually `busdox-docid-qns` or `peppol-doctype-wildcard`).
 The value of the `Key` element MUST be the Dataset Type (Document Type)
   Identifier value of the exchanged Dataset.
 * This subtotal requires one `Key` element with a Meta Scheme ID of `PR`
@@ -91,7 +91,7 @@ The value of the `Key` element MUST follow the rules of the chosen scheme.
 * This subtotal requires one `Key` element with a Meta Scheme ID of `DT`
   (Dataset Type).
 The `schemeID` attribute of this `Key` element MUST be the Document Type
-  Identifier Scheme of the exchanged Dataset (usually `busdox-docid-qns`).
+  Identifier Scheme of the exchanged Dataset (usually `busdox-docid-qns` or `peppol-doctype-wildcard`).
 The value of the `Key` element MUST be the Dataset Type (Document Type)
   Identifier value of the exchanged Dataset.
 * This subtotal requires one `Key` element with a Meta Scheme ID of `PR`
