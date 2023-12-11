@@ -109,10 +109,8 @@ The value of the `Key` element MUST have a value according to the
 Each combination of Service Provider, Dataset Type, Process ID, Sender Country
   and Receiver Country MUST be reported in a separate `Subtotal` element.
 
-The sum all incoming amounts `PerSP-DT-PR-CC` Type MUST match the total incoming amount.
-
-The sum all outgoing amounts `PerSP-DT-PR-CC`  MUST match the total outgoing amount.
-
+The sum all incoming amounts per Service Provider, Dataset Type, Process ID and 
+  Country Code MUST match the total incoming amount.
 
 ====
 IMPORTANT: This subtotal can only be counted by receiving Service Providers, because only those have the full data available.
@@ -122,11 +120,7 @@ The outgoing count in this subtotal MUST always be `0`.
 
 NOTE: For incoming messages, only the sending Service Provider needs
   to be counted. The other side must always be the reporting Service Provider
-  that is already part of the header data.
-
-
-NOTE: This subtotal is optional and will be mandatory when the backing eDEC
-specifications become mandatory.
+  that is already part of the Report header data.
 
 
 .Example of a subtotal per Service Provider, Dataset Type, Process ID and Country Codes:
