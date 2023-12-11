@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<Tests xmlns="urn:fdc:schunit.com:2020:v1">
+  <Description>Verify existence of header in document.</Description>
+  <Scope>SCH-EUSR-27</Scope>
+
+  <Test>
+    <Trigger>SCH-EUSR-27</Trigger>
 <EndUserStatisticsReport xmlns="urn:fdc:peppol:end-user-statistics-report:1.1">
   <CustomizationID>urn:fdc:peppol.eu:edec:trns:end-user-statistics-report:1.1</CustomizationID>
   <ProfileID>urn:fdc:peppol.eu:edec:bis:reporting:1.0</ProfileID>
@@ -55,3 +61,5 @@
     <SendingOrReceivingEndUsers>1</SendingOrReceivingEndUsers>
   </Subset>
 </EndUserStatisticsReport>
+  </Test>
+</Tests>
