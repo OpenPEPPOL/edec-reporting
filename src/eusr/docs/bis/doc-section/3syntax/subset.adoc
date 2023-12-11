@@ -7,9 +7,8 @@ Each subset represents a different view on the End User statistics data, and
 
 The technical representation of the subsets was designed in a generic way,
   to allow for future extension without modifying the underlying schema.
-  Each `Subset` element therefore requires a `@type` attribute that defines
-  the type of the subset. The value range is defined by the
-  <<codelist-subsettype>> code list.
+  Each `Subset` element requires a `@type` attribute that defines the type 
+  of the subset. The value range is defined by the <<codelist-subsettype>> code list.
 
 Subsets without any matching transaction (i.e. if `SendingOrReceivingEndUsers` is `0`) 
   MUST NOT be part of the Report.
@@ -25,15 +24,15 @@ The value of the `Key` element MUST have a value according to the
 <<codelist-countrycode>> code list.
 
 The element `eusr:Subset/eusr:SendingEndUsers` contains the number of distinct
-end users (cardinality) from the given End User Country, who have sent transactions.
+end users (cardinality) from the given End Users Country, who have sent transactions.
 Only values &ge; 0 are allowed.
 
 The element `eusr:Subset/eusr:ReceivingEndUsers` contains the number of distinct
-end users (cardinality) from the given End User Country, who have received transactions.
+end users (cardinality) from the given End Users Country, who have received transactions.
 Only values &ge; 0 are allowed.
 
 The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of distinct
-end users (cardinality) from the given End User Country, who have sent/received transactions.
+end users (cardinality) from the given End Users Country, who have either sent or received transactions.
 Only values &ge; 0 are allowed.
 
 
@@ -57,15 +56,15 @@ The value of the `Key` element MUST have a value according to the
 <<codelist-countrycode>> code list.
 
 The element `eusr:Subset/eusr:SendingEndUsers` contains the number of distinct
-end users (cardinality) from the given End User Country, who have sent transactions containing the given Dataset Type.
+end users (cardinality) from the given End Users Country, who have sent transactions containing the given Dataset Type.
 Only values &ge; 0 are allowed.
 
 The element `eusr:Subset/eusr:ReceivingEndUsers` contains the number of distinct
-end users (cardinality) from the given End User Country, who have received transactions containing the given Dataset Type.
+end users (cardinality) from the given End Users Country, who have received transactions containing the given Dataset Type.
 Only values &ge; 0 are allowed.
 
 The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of distinct
-end users (cardinality) from the given End User Country, who have sent/received transactions containing the given Dataset Type.
+end users (cardinality) from the given End Users Country, who have either sent or received transactions containing the given Dataset Type.
 Only values &ge; 0 are allowed.
 
 .Example of a subset per Dataset Type and End Users Country:
@@ -112,7 +111,7 @@ The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of
 include::./snippet/snippet-1.xml[tags=SubsetPerDT-PR]
 ----
 
-== Subset Cardinality per Dataset Type, Process ID and End User Country
+== Subset Cardinality per Dataset Type, Process ID and End Users Country
 
 This subset is identified by the `@type` attribute having the value `PerDT-PR-EUC`.
 
@@ -137,19 +136,19 @@ Each distinct combination of the Dataset Type, Process ID and End User Country
 
 
 The element `eusr:Subset/eusr:SendingEndUsers` contains the number of distinct 
-  end users (cardinality) that have sent datasets using this combination of the Dataset Type, Process ID and End User Country.
+  end users (cardinality) that have sent datasets using this combination of the Dataset Type, Process ID and End Users Country.
   Only values &ge; 0 are allowed.
 
 The element `eusr:Subset/eusr:ReceivingEndUsers` contains the number of distinct 
-  end users (cardinality) that have received datasets using this combination of the Dataset Type, Process ID and End User Country.
+  end users (cardinality) that have received datasets using this combination of the Dataset Type, Process ID and End Users Country.
   Only values &ge; 0 are allowed.
 
 The element `eusr:Subset/eusr:SendingOrReceivingEndUsers` contains the number of distinct 
-  end users (cardinality) that have either sent or received datasets using this combination of the Dataset Type, Process ID and End User Country.
+  end users (cardinality) that have either sent or received datasets using this combination of the Dataset Type, Process ID and End Users Country.
   Only values &ge; 0 are allowed.
 
 
-.Example of a subset per Dataset Type, Process ID and End User Country:
+.Example of a subset per Dataset Type, Process ID and End Users Country:
 [source, xml]
 ----
 include::./snippet/snippet-1.xml[tags=SubsetPerDT-PR-EUC]

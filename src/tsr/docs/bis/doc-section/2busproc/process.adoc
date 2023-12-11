@@ -62,11 +62,11 @@ The following aggregations MAY be provided to be compliant to this specification
 ** A Transaction Statistics Report MUST be transmitted within the Statistics Report Submitting Period after the end of the previous Reporting Period. 
 ** The Transaction Statistics Report MUST be transmitted, even if no other Peppol exchange happened in the Reporting Period.
 ** In case the Transaction Statistics Report of one SP is received multiple times for one Reporting Period, only the latest received document will be processed.
-** Transaction Statistics Reports received after the deadline WILL NOT be processed.   
+** Transaction Statistics Reports received after the deadline (=the end of the Statistics Report Submitting Period) WILL NOT be processed.   
 
 * Data
 ** Only Transaction Statistics Reports on the Production environment MUST be transmitted.
-** Each Transaction Statistics Subtotal MUST NOT occur more than once in a Transaction Statistics Report.
+** Each Subtotal key combination MUST NOT occur more than once in a Transaction Statistics Report.
 ** The data of each Transaction Statistics MUST be reported in the designated elements.
 ** The Reporting Period MUST be part of the Transaction Statistics Report.
 ** An identifier uniquely identifying the reporting SP MUST be part of the Transaction Statistics Report.
