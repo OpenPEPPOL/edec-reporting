@@ -8,6 +8,7 @@
 * Fixed some editorial bugs
 * Removed the operational statement on the number of calendar days before a reminder is sent
 * Added a statement, that empty subtotals are not allowed
+* Extended the country code list based on ISO-3166 to allow the `ZZ` value
 
 == Version 1.0.1 (2023-03-14)
 

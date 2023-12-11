@@ -784,3 +784,7 @@ codes:
 - id: XI
   name:
     en: United Kingdom (Northern Ireland)
+# For TSR only!    
+- id: ZZ
+  name:
+    en: The Peppol sending SP did not include the mandatory `COUNTRY_C1` in its SBDH
