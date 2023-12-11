@@ -109,8 +109,8 @@
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000002</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2::OrderResponse##urn:fdc:peppol.eu:poacc:trns:order_response:3::2.1</Key>
     <Key metaSchemeID="PR" schemeID="cenbii-procid-ubl">cenbii-procid-ubl::urn:fdc:peppol.eu:poacc:bis:ordering:3</Key>
-    <Key metaSchemeID="CC" schemeID="SenderCountry">DE</Key>
-    <Key metaSchemeID="CC" schemeID="ReceiverCountry">DE</Key>
+    <Key metaSchemeID="CC" schemeID="SenderCountry">ZZ</Key>
+    <Key metaSchemeID="CC" schemeID="ReceiverCountry">ZZ</Key>
     <Incoming>5</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>
