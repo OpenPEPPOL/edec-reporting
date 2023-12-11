@@ -522,7 +522,7 @@ codes:
 - id: NL
   name:
     en: Netherlands
-- id: NO
+- id: 'NO'
   name:
     en: Norway
     nb: Norge
