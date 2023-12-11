@@ -21,4 +21,6 @@ include::ref.adoc[]
 
 include::namespaces.adoc[]
 
+include::changelog.adoc[]
+
 :leveloffset: -1
