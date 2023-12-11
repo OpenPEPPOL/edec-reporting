@@ -14,14 +14,15 @@
     <Incoming>27</Incoming>
     <Outgoing>23</Outgoing>
   </Total>
+  <!-- SubTotals per Transport Protocol -->
   <!-- Sum per TP must match TotalCount -->
   <Subtotal type="PerTP">
     <Key metaSchemeID="TP" schemeID="Peppol">peppol-transport-as4-v2_0</Key>
     <Incoming>27</Incoming>
     <Outgoing>23</Outgoing>
   </Subtotal>
-  <!-- region PerSP-DT-PR -->
-  <!-- Subtotals must match Total -->
+  <!-- SubTotals per Service Provider, Dataset Type and Process ID -->
+  <!-- Sum must match TotalCount -->
   <Subtotal type="PerSP-DT-PR">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
@@ -50,9 +51,8 @@
     <Incoming>0</Incoming>
     <Outgoing>12</Outgoing>
   </Subtotal>
-  <!-- endregion -->
-  <!-- region PerSP-DT-PR-CC -->
-  <!-- Subtotals must match Total -->
+  <!-- SubTotals per Service Provider, Dataset Type, Process ID and Country Codes -->
+  <!-- Sum of incoming must match TotalCount -->
   <Subtotal type="PerSP-DT-PR-CC">
     <Key metaSchemeID="SP" schemeID="CertSubjectCN">POP000001</Key>
     <Key metaSchemeID="DT" schemeID="busdox-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2::CreditNote##urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1</Key>
@@ -98,5 +98,4 @@
     <Incoming>5</Incoming>
     <Outgoing>0</Outgoing>
   </Subtotal>
-  <!-- endregion -->
 </TransactionStatisticsReport>

@@ -4,6 +4,7 @@
 The following example report represents a valid example message.
 This example represents a message in case no transmissions were performed within a Reporting Period.
 
+// Note: empty lines in the source code kill the XML formatting
 [source, xml]
 ----
 include::../../../../trn-transaction_statistics/example/transaction-statistics-appendix2.xml[]

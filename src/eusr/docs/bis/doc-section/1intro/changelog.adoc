@@ -7,6 +7,7 @@
 * Updated the Schematron rules to v1.1.4
 * Fixed some editorial bugs
 * Added a statement, that empty subsets are not allowed
+* Updated the example in Appendix 1 and Appendix 2 to be fully consistent
 
 == Version 1.1.0 (2023-06-30)
 
