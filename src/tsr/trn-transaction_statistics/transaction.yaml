@@ -10,5 +10,4 @@ validation:
   # xsd is for verifying XSD conformance
   xsd: resources/xsd/peppol-transaction-statistics-reporting-1.0.xsd
   schematron:
-   - schematron/peppol-transaction-statistics-reporting-1.0.sch
-   
+   - schematron/peppol-transaction-statistics-reporting-1.0.4.sch
