@@ -8,7 +8,10 @@ The technical representation of the subtotals was designed in a generic way,
   Each `Subtotal` element therefore requires a `@type` attribute that defines
   the type of the subtotal. The value range is defined by the
   <<codelist-subtotaltype>> code list.
-  
+
+Subtotals without any matching transaction (i.e. if `Incoming` and `Outgoing` are `0`) 
+  MUST NOT be part of the Report.
+
 All values in this subchapter are case-sensitive, except stated otherwise.
 
 == Subtotal per Transport Protocol
@@ -28,7 +31,7 @@ The sum all incoming amounts per Transport Protocol MUST match the total
 
 The sum all outgoing amounts per Transport Protocol MUST match the total
   outgoing amount. 
-
+  
 .Example of a subtotal per Transport Protocol:
 [source, xml]
 ----

@@ -11,6 +11,11 @@ The technical representation of the subsets was designed in a generic way,
   the type of the subset. The value range is defined by the
   <<codelist-subsettype>> code list.
 
+Subsets without any matching transaction (i.e. if `SendingOrReceivingEndUsers` is `0`) 
+  MUST NOT be part of the Report.
+
+All values in this subchapter are case-sensitive, except stated otherwise.
+
 == Subset Cardinality per End Users Country
 This subset is identifierd by the `@type` attribute having the value `PerEUC`.
 
