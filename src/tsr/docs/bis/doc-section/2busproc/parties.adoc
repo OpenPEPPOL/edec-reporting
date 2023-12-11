@@ -10,8 +10,8 @@ Each SP will:
 
 * Collect relevant data, taking care of the accuracy and validity of this data.
 * Report this data in accordance to this specification in a standardized and structured dataset. 
-* Ensure all data for a Reporting Period is reported within 10 calendar days following the end of the Reporting Period.
-  Note: the Reporting Period is defined by the PCA in a separate document.
+* Ensure all data for a Reporting Period is reported within the Statistics Report Submitting Period following the end of the Reporting Period.
+  Note: the Reporting Period is defined by OpenPeppol in a separate document.
 * Transmit the Peppol Transaction Statistics Report document to the PCA in accordance with this specification.
 
 == OpenPeppol Operating Office (OO)
