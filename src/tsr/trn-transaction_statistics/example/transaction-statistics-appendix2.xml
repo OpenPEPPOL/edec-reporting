@@ -10,11 +10,13 @@
     <ReporterID schemeID="CertSubjectCN">POP000360</ReporterID>
   </Header>
 
+
   <!-- Totals -->
   <Total>
     <Incoming>0</Incoming>
     <Outgoing>0</Outgoing>
   </Total>
+  
   
   <!-- No Subtotal because they would all contain only zeroes -->
 </TransactionStatisticsReport>
