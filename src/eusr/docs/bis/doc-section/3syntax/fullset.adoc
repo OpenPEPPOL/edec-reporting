@@ -22,7 +22,7 @@ The following non-normative diagram shows an overview of the theoretical concept
 Each shape represents a group of end users.
 The Full Set is comprised from the outer green and blue shapes.
 The overlapping part of green and blue indicate the end users that did send *and* receive.
-The orange shape indicates the subset of end users that deals with invoices - this effects both sending and receiving end users.
+The orange shape indicates the subset of end users that deals with invoices - this affects both sending and receiving end users.
 The inner yellow indicates the subset of End Users that deals with invoices from/to Finland (FI) and hence is a subset of the orange shape.
 
 image::./images/eusr-venn.png[]

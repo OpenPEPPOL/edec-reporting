@@ -8,7 +8,10 @@ The technical representation of the subtotals was designed in a generic way,
   Each `Subtotal` element therefore requires a `@type` attribute that defines
   the type of the subtotal. The value range is defined by the
   <<codelist-subtotaltype>> code list.
-  
+
+Subtotals without any matching transaction (i.e. if `Incoming` is `0` and if `Outgoing` is `0`) 
+  MUST NOT be part of the Report.
+
 All values in this subchapter are case-sensitive, except stated otherwise.
 
 == Subtotal per Transport Protocol
@@ -28,7 +31,7 @@ The sum all incoming amounts per Transport Protocol MUST match the total
 
 The sum all outgoing amounts per Transport Protocol MUST match the total
   outgoing amount. 
-
+  
 .Example of a subtotal per Transport Protocol:
 [source, xml]
 ----
@@ -47,7 +50,7 @@ The value of the `Key` element MUST follow the rules of the chosen scheme.
 * This subtotal requires one `Key` element with a Meta Scheme ID of `DT`
   (Dataset Type).
 The `schemeID` attribute of this `Key` element MUST be the Document Type
-  Identifier Scheme of the exchanged Dataset (usually `busdox-docid-qns`).
+  Identifier Scheme of the exchanged Dataset (usually `busdox-docid-qns` or `peppol-doctype-wildcard`).
 The value of the `Key` element MUST be the Dataset Type (Document Type)
   Identifier value of the exchanged Dataset.
 * This subtotal requires one `Key` element with a Meta Scheme ID of `PR`
@@ -66,10 +69,9 @@ The sum all incoming amounts per Service Provider, Dataset Type and Process ID M
 The sum all outgoing amounts per Service Provider, Dataset Type and Process ID MUST
   match the total outgoing amount.
 
-NOTE: For outgoing messages, only the receiving Service Provider needs
-  to be counted. For incoming messages, only the sending Service Provider needs
-  to be counted. The other side must always be the reporting Service Provider
-  that is already part of the header data. 
+NOTE: For outgoing messages, only the receiving SP (C3) needs to be counted. 
+  For incoming messages, only the sending SP (C2) needs to be counted. 
+  The other side must always be the reporting SP that is already part of the Report header data. 
 
 .Example of a subtotal per Service Provider, Dataset Type and Process ID:
 [source, xml]
@@ -88,7 +90,7 @@ The value of the `Key` element MUST follow the rules of the chosen scheme.
 * This subtotal requires one `Key` element with a Meta Scheme ID of `DT`
   (Dataset Type).
 The `schemeID` attribute of this `Key` element MUST be the Document Type
-  Identifier Scheme of the exchanged Dataset (usually `busdox-docid-qns`).
+  Identifier Scheme of the exchanged Dataset (usually `busdox-docid-qns` or `peppol-doctype-wildcard`).
 The value of the `Key` element MUST be the Dataset Type (Document Type)
   Identifier value of the exchanged Dataset.
 * This subtotal requires one `Key` element with a Meta Scheme ID of `PR`
@@ -109,24 +111,16 @@ The value of the `Key` element MUST have a value according to the
 Each combination of Service Provider, Dataset Type, Process ID, Sender Country
   and Receiver Country MUST be reported in a separate `Subtotal` element.
 
-The sum all incoming amounts `PerSP-DT-PR-CC` Type MUST match the total incoming amount.
-
-The sum all outgoing amounts `PerSP-DT-PR-CC`  MUST match the total outgoing amount.
-
+The sum all incoming amounts per Service Provider, Dataset Type, Process ID and 
+  Country Code MUST match the total incoming amount.
 
 ====
-IMPORTANT: This subtotal can only be counted by receiving Service Providers, because only those have the full data available.
-The outgoing count in this subtotal MUST always be `0`.
+IMPORTANT: This subtotal can only be counted by receiving SPs (C3), because only those have the full data available.
+  The outgoing count in this subtotal MUST always be `0`.
 ====
 
-
-NOTE: For incoming messages, only the sending Service Provider needs
-  to be counted. The other side must always be the reporting Service Provider
-  that is already part of the header data.
-
-
-NOTE: This subtotal is optional and will be mandatory when the backing eDEC
-specifications become mandatory.
+NOTE: For incoming messages, only the sending SP (C2) needs to be counted. 
+  The other side must always be the reporting SP that is already part of the Report header data.
 
 
 .Example of a subtotal per Service Provider, Dataset Type, Process ID and Country Codes:

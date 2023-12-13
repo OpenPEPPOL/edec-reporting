@@ -1,0 +1,22 @@
+= Changelog
+
+:sectnums!:
+
+== Version 1.1.1 (2023-12-11)
+
+* Updated the Schematron rules to v1.1.4
+* Fixed some editorial bugs
+* Added a statement, that empty subsets are not allowed
+* Updated the example in Appendix 1 and Appendix 2 to be fully consistent
+
+== Version 1.1.0 (2023-06-30)
+
+* Reworked from "End User Report" to "End User Statistics Report"
+* Updated XML Schema
+* Updated Schematron rules
+
+== Version 1.0.0 (2022-11-23)
+
+* Initial version
+
+:sectnums:

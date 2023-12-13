@@ -11,18 +11,27 @@
 
     Author:
       Philip Helger
+      Muhammet Yildiz
 
-    History:
+    History
+      EUSR 1.1.4
+        2023-11-10, Philip Helger - reverted the changes from 1.1.3 - the country code `ZZ` is only allowed in TSR
+      EUSR 1.1.3
+        2023-11-02, Philip Helger - add country code `ZZ` as an allowed one
+      EUSR 1.1.2
+        2023-10-12, Muhammet Yildiz - replaced $xyz values with `value-of select ="$xyz"` in the messages
       EUSR 1.1.0
-      * 2023-06-29, Muhammet Yildiz - Updates related to changing "PerDTPRCC" to "PerDTPREUC". Rules 28,31,32 removed. Rules 14, 23, 26, 27, 29, 30 modified
+        2023-09-18, Philip Helger - using function "max" in rules 03, 04, 22 to fix an issue if the same value appears more then once
+                                    explicitly added "xs:integer" casts where necessary
+        2023-06-29, Muhammet Yildiz - updates related to changing "PerDTPRCC" to "PerDTPREUC". Rules 28,31,32 removed. Rules 14, 23, 26, 27, 29, 30 modified
       EUSR 1.0.1
-      * 2023-06-23, Philip Helger - hotfix for new subsets "PerEUC" and "PerDT-EUC". Added new rules SCH-EUSR-37 to SCH-EUSR-47
+        2023-06-23, Philip Helger - hotfix for new subsets "PerEUC" and "PerDT-EUC". Added new rules SCH-EUSR-37 to SCH-EUSR-47
       EUSR 1.0.0
-      * 2023-03-06, Philip Helger - updates after second review
+        2023-03-06, Philip Helger - updates after second review
       EUSR RC2
-      * 2022-11-14, Muhammet Yildiz, Philip Helger - updates after the first review
+        2022-11-14, Muhammet Yildiz, Philip Helger - updates after the first review
       EUR RC1
-      * 2022-04-15, Philip Helger - initial version
+        2022-04-15, Philip Helger - initial version
   </p>
 
   <ns prefix="eusr" uri="urn:fdc:peppol:end-user-statistics-report:1.1"/>
@@ -32,7 +41,7 @@
     <let name="cl_spidtype" value="' CertSubjectCN '"/>
 
     <rule context="/eusr:EndUserStatisticsReport">
-      <let name="total" value="eusr:FullSet/eusr:SendingEndUsers + eusr:FullSet/eusr:ReceivingEndUsers"/>
+      <let name="total" value="xs:integer(eusr:FullSet/eusr:SendingEndUsers) + xs:integer(eusr:FullSet/eusr:ReceivingEndUsers)"/>
       <let name="empty" value="$total = 0"/>
 
       <!-- Customization ID and Profile ID -->
@@ -42,19 +51,19 @@
       >[SCH-EUSR-02] The profile ID MUST use the value 'urn:fdc:peppol.eu:edec:bis:reporting:1.0'</assert>
 
       <!-- Check Subset count vs. FullSet count -->
-      <assert id="SCH-EUSR-03" flag="fatal" test="$empty or eusr:Subset/eusr:SendingEndUsers[not(. &lt; ../../eusr:Subset/eusr:SendingEndUsers)][1] &lt;= eusr:FullSet/eusr:SendingEndUsers"
-      >[SCH-EUSR-03] The maximum of all subsets of SendingEndUsers MUST be lower or equal to FullSet/SendingEndUsers</assert>
-      <assert id="SCH-EUSR-04" flag="fatal" test="$empty or eusr:Subset/eusr:ReceivingEndUsers[not(. &lt; ../../eusr:Subset/eusr:ReceivingEndUsers)][1] &lt;= eusr:FullSet/eusr:ReceivingEndUsers"
-      >[SCH-EUSR-04] The maximum of all subsets of ReceivingEndUsers MUST be lower or equal to FullSet/ReceivingEndUsers</assert>
-      <assert id="SCH-EUSR-22" flag="fatal" test="$empty or eusr:Subset/eusr:SendingOrReceivingEndUsers[not(. &lt; ../../eusr:Subset/eusr:SendingOrReceivingEndUsers)][1] &lt;= eusr:FullSet/eusr:SendingOrReceivingEndUsers"
-      >[SCH-EUSR-22] The maximum of all subsets of SendingOrReceivingEndUsers MUST be lower or equal to FullSet/SendingOrReceivingEndUsers</assert>
+      <assert id="SCH-EUSR-03" flag="fatal" test="$empty or max(eusr:Subset/eusr:SendingEndUsers) le xs:integer(eusr:FullSet/eusr:SendingEndUsers)"
+      >[SCH-EUSR-03] The maximum of all subsets of SendingEndUsers (<value-of select="max(eusr:Subset/eusr:SendingEndUsers)"/>) MUST be lower or equal to FullSet/SendingEndUsers (<value-of select="xs:integer(eusr:FullSet/eusr:SendingEndUsers)" />)</assert>
+      <assert id="SCH-EUSR-04" flag="fatal" test="$empty or max(eusr:Subset/eusr:ReceivingEndUsers) le xs:integer(eusr:FullSet/eusr:ReceivingEndUsers)"
+      >[SCH-EUSR-04] The maximum of all subsets of ReceivingEndUsers (<value-of select="max(eusr:Subset/eusr:ReceivingEndUsers)"/>) MUST be lower or equal to FullSet/ReceivingEndUsers (<value-of select="xs:integer(eusr:FullSet/eusr:ReceivingEndUsers)" />)</assert>
+      <assert id="SCH-EUSR-22" flag="fatal" test="$empty or max(eusr:Subset/eusr:SendingOrReceivingEndUsers) le xs:integer(eusr:FullSet/eusr:SendingOrReceivingEndUsers)"
+      >[SCH-EUSR-22] The maximum of all subsets of SendingOrReceivingEndUsers (<value-of select="max(eusr:Subset/eusr:SendingOrReceivingEndUsers)"/>) MUST be lower or equal to FullSet/SendingOrReceivingEndUsers (<value-of select="xs:integer(eusr:FullSet/eusr:SendingOrReceivingEndUsers)"/>)</assert>
 
       <!-- Check consistency inside FullSet -->  
-      <assert id="SCH-EUSR-19" flag="fatal" test="eusr:FullSet/eusr:SendingOrReceivingEndUsers &lt;= $total"
+      <assert id="SCH-EUSR-19" flag="fatal" test="xs:integer(eusr:FullSet/eusr:SendingOrReceivingEndUsers) &lt;= $total"
       >[SCH-EUSR-19] The number of SendingOrReceivingEndUsers (<value-of select="eusr:FullSet/eusr:SendingOrReceivingEndUsers"/>) MUST be lower or equal to the sum of the SendingEndUsers and ReceivingEndUsers (<value-of select="$total"/>)</assert>
-      <assert id="SCH-EUSR-20" flag="fatal" test="eusr:FullSet/eusr:SendingOrReceivingEndUsers &gt;= eusr:FullSet/eusr:SendingEndUsers"
+      <assert id="SCH-EUSR-20" flag="fatal" test="xs:integer(eusr:FullSet/eusr:SendingOrReceivingEndUsers) &gt;= xs:integer(eusr:FullSet/eusr:SendingEndUsers)"
       >[SCH-EUSR-20] The number of SendingOrReceivingEndUsers (<value-of select="eusr:FullSet/eusr:SendingOrReceivingEndUsers"/>) MUST be greater or equal to the number of SendingEndUsers (<value-of select="eusr:FullSet/eusr:SendingEndUsers"/>)</assert>
-      <assert id="SCH-EUSR-21" flag="fatal" test="eusr:FullSet/eusr:SendingOrReceivingEndUsers &gt;= eusr:FullSet/eusr:ReceivingEndUsers"
+      <assert id="SCH-EUSR-21" flag="fatal" test="xs:integer(eusr:FullSet/eusr:SendingOrReceivingEndUsers) &gt;= xs:integer(eusr:FullSet/eusr:ReceivingEndUsers)"
       >[SCH-EUSR-21] The number of SendingOrReceivingEndUsers (<value-of select="eusr:FullSet/eusr:SendingOrReceivingEndUsers"/>) MUST be greater or equal to the number of ReceivingEndUsers (<value-of select="eusr:FullSet/eusr:ReceivingEndUsers"/>)</assert>
 
       <!-- Per Dataset Type -->
@@ -133,16 +142,16 @@
       
       <!-- Check generic Subset cardinality against FullSet cardinality -->
       <assert id="SCH-EUSR-33" flag="fatal" test="every $st in (eusr:Subset) satisfies
-                                                        $st/eusr:SendingOrReceivingEndUsers &lt;= ($st/eusr:SendingEndUsers + $st/eusr:ReceivingEndUsers)"
+                                                        xs:integer($st/eusr:SendingOrReceivingEndUsers) &lt;= xs:integer($st/eusr:SendingEndUsers + $st/eusr:ReceivingEndUsers)"
       >[SCH-EUSR-33] The number of each Subset/SendingOrReceivingEndUsers MUST be lower or equal to the sum of the Subset/SendingEndUsers plus Subset/ReceivingEndUsers</assert>
       <assert id="SCH-EUSR-34" flag="fatal" test="every $st in (eusr:Subset) satisfies
-                                                        $st/eusr:SendingOrReceivingEndUsers &gt;= $st/eusr:SendingEndUsers"
-      >[SCH-EUSR-34] The number of each Subset/SendingOrReceivingEndUsers MUST be greater or equal to the number of Subset/SendingEndUsers</assert>
+                                                        xs:integer($st/eusr:SendingOrReceivingEndUsers) &gt;= xs:integer($st/eusr:SendingEndUsers)"
+      >[SCH-EUSR-34] The number of each Subset/SendingOrReceivingEndUsers MUST be greater or equal to the number of Subset/SendingEndUsers (<value-of select="eusr:Subset/eusr:SendingEndUsers"/>)</assert>
       <assert id="SCH-EUSR-35" flag="fatal" test="every $st in (eusr:Subset) satisfies
-                                                        $st/eusr:SendingOrReceivingEndUsers &gt;= $st/eusr:ReceivingEndUsers"
-      >[SCH-EUSR-35] The number of each Subset/SendingOrReceivingEndUsers MUST be greater or equal to the number of Subset/ReceivingEndUsers</assert>
+                                                        xs:integer($st/eusr:SendingOrReceivingEndUsers) &gt;= xs:integer($st/eusr:ReceivingEndUsers)"
+      >[SCH-EUSR-35] The number of each Subset/SendingOrReceivingEndUsers MUST be greater or equal to the number of Subset/ReceivingEndUsers (<value-of select="eusr:Subset/eusr:ReceivingEndUsers"/>)</assert>
       <assert id="SCH-EUSR-36" flag="fatal" test="every $st in (eusr:Subset) satisfies
-                                                        $st/eusr:SendingOrReceivingEndUsers &gt; 0"
+                                                        xs:integer($st/eusr:SendingOrReceivingEndUsers) &gt; 0"
       >[SCH-EUSR-36] The number of each Subset/SendingOrReceivingEndUsers MUST be greater then zero, otherwise it MUST be omitted</assert>
     </rule>
 
@@ -180,11 +189,11 @@
       <let name="name" value="'The subset per Dataset Type ID and Process ID'"/>
       
       <assert id="SCH-EUSR-09" flag="fatal" test="count(eusr:Key) = 2"
-      >[SCH-EUSR-09] $name MUST have two Key elements</assert>
+      >[SCH-EUSR-09] <value-of select ="$name" /> MUST have two Key elements</assert>
       <assert id="SCH-EUSR-10" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
-      >[SCH-EUSR-10] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
+      >[SCH-EUSR-10] <value-of select ="$name" /> MUST have one Key element with the meta scheme ID 'DT'</assert>
       <assert id="SCH-EUSR-11" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'PR']) = 1"
-      >[SCH-EUSR-11] $name MUST have one Key element with the meta scheme ID 'PR'</assert>
+      >[SCH-EUSR-11] <value-of select ="$name" /> MUST have one Key element with the meta scheme ID 'PR'</assert>
     </rule>
 
     <!-- Per Dataset Type, Process ID and End User Country aggregation -->
@@ -192,15 +201,15 @@
       <let name="name" value="'The subset per Dataset Type ID, Process ID and End User Country'"/>
       
       <assert id="SCH-EUSR-23" flag="fatal" test="count(eusr:Key) = 3"
-      >[SCH-EUSR-23] $name MUST have three Key elements</assert>
+      >[SCH-EUSR-23] <value-of select ="$name" /> MUST have three Key elements</assert>
       <assert id="SCH-EUSR-24" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
-      >[SCH-EUSR-24] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
+      >[SCH-EUSR-24] <value-of select ="$name" /> MUST have one Key element with the meta scheme ID 'DT'</assert>
       <assert id="SCH-EUSR-25" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'PR']) = 1"
-      >[SCH-EUSR-25] $name MUST have one Key element with the meta scheme ID 'PR'</assert>
+      >[SCH-EUSR-25] <value-of select ="$name" /> MUST have one Key element with the meta scheme ID 'PR'</assert>
       <assert id="SCH-EUSR-26" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC']) = 1"
-      >[SCH-EUSR-26] $name MUST have one Key element with the meta scheme ID 'CC'</assert>
+      >[SCH-EUSR-26] <value-of select ="$name" /> MUST have one Key element with the meta scheme ID 'CC'</assert>
       <assert id="SCH-EUSR-27" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'EndUserCountry']) = 1"
-      >[SCH-EUSR-27] $name MUST have one CC Key element with the scheme ID 'EndUserCountry'</assert>
+      >[SCH-EUSR-27] <value-of select ="$name" /> MUST have one CC Key element with the scheme ID 'EndUserCountry'</assert>
     </rule>
 
     <!-- Per Dataset Type and End User Country aggregation -->
@@ -208,13 +217,13 @@
       <let name="name" value="'The subset per Dataset Type ID and End User Country'"/>
       
       <assert id="SCH-EUSR-41" flag="fatal" test="count(eusr:Key) = 2"
-      >[SCH-EUSR-41] $name MUST have two Key elements</assert>
+      >[SCH-EUSR-41] <value-of select ="$name" /> MUST have two Key elements</assert>
       <assert id="SCH-EUSR-42" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'DT']) = 1"
-      >[SCH-EUSR-42] $name MUST have one Key element with the meta scheme ID 'DT'</assert>
+      >[SCH-EUSR-42] <value-of select ="$name" /> MUST have one Key element with the meta scheme ID 'DT'</assert>
       <assert id="SCH-EUSR-43" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC']) = 1"
-      >[SCH-EUSR-43] $name MUST have one Key element with the meta scheme ID 'CC'</assert>
+      >[SCH-EUSR-43] <value-of select ="$name" /> MUST have one Key element with the meta scheme ID 'CC'</assert>
       <assert id="SCH-EUSR-44" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'EndUserCountry']) = 1"
-      >[SCH-EUSR-44] $name MUST have one CC Key element with the scheme ID 'EndUserCountry'</assert>
+      >[SCH-EUSR-44] <value-of select ="$name" /> MUST have one CC Key element with the scheme ID 'EndUserCountry'</assert>
     </rule>
 
     <!-- Per End User Country aggregation -->
@@ -222,11 +231,11 @@
       <let name="name" value="'The subset per End User Country'"/>
       
       <assert id="SCH-EUSR-45" flag="fatal" test="count(eusr:Key) = 1"
-      >[SCH-EUSR-45] $name MUST have one Key element</assert>
+      >[SCH-EUSR-45] <value-of select ="$name" /> MUST have one Key element</assert>
       <assert id="SCH-EUSR-46" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC']) = 1"
-      >[SCH-EUSR-46] $name MUST have one Key element with the meta scheme ID 'CC'</assert>
+      >[SCH-EUSR-46] <value-of select ="$name" /> MUST have one Key element with the meta scheme ID 'CC'</assert>
       <assert id="SCH-EUSR-47" flag="fatal" test="count(eusr:Key[normalize-space(@metaSchemeID) = 'CC'][normalize-space(@schemeID) = 'EndUserCountry']) = 1"
-      >[SCH-EUSR-47] $name MUST have one CC Key element with the scheme ID 'EndUserCountry'</assert>
+      >[SCH-EUSR-47] <value-of select ="$name" /> MUST have one CC Key element with the scheme ID 'EndUserCountry'</assert>
     </rule>
   </pattern>
 </schema>

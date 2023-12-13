@@ -1,7 +1,7 @@
 :lang: en
 
 :doctitle: Peppol Transaction Statistics Reporting Process 
-:version: 1.0.1
+:version: 1.0.2
 :doctype: book
 
-:name-op-en: OpenPeppol AISBL, Operating Office
+:name-op-en: OpenPeppol AISBL, eDEC

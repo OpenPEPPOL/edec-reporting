@@ -1,7 +1,7 @@
 = Audience
 
-* Peppol Coordinating Authority (PCA)
-** How the PCA will receive the reports.
+* OpenPeppol acting as the Peppol Coordinating Authority
+** How OpenPeppol will receive the reports.
 
 * Service Provider (SP)
-** How SPs are to submit their Transaction statistics Reports to the PCA.
+** How SPs are to submit their Transaction Statistics Reports to OpenPeppol.

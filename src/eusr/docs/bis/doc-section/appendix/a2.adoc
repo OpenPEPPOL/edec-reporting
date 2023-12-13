@@ -3,9 +3,9 @@
 
 The following example report represents a valid example message.
 This example represents the data for a Service Provider that only sent documents within a Reporting Period.
-This implies, that the "Subsets per Dataset Type, Process ID and End User Country" is not contained.
 
+// Note: empty lines in the source code kill the XML formatting
 [source, xml]
 ----
-include::../../../../trn-end_user_statistics/example/end-user-statistics-reporting-2.xml[]
+include::../../../../trn-end_user_statistics/example/end-user-statistics-reporting-appendix2.xml[]
 ----
