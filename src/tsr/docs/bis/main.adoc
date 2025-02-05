@@ -10,7 +10,6 @@ include::./settings.adoc[]
 :source-language: xml
 :sectanchors:
 :sectnums:
-:doctype: book
 
 image::./images/peppol.png[pdfwidth=3.5in,align=center]
 

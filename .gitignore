@@ -14,3 +14,4 @@ Gemfile
 ./Gemfile
 ./Gemfile.lock
 Gemfile.lock
+.asciidoctorconfig.adoc
