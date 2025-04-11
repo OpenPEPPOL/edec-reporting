@@ -4,6 +4,7 @@
 src/_library/
 target/
 generated/
+.settings/
 
 *.iml
 .project
